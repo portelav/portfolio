@@ -2,6 +2,18 @@
 
 Portfolio pessoal desenvolvido para apresentar minha formacao, habilidades e projetos na area de tecnologia. A proposta do site e reunir, em uma interface moderna e responsiva, informacoes sobre minha trajetoria como estudante de Ciencia da Computacao e meus primeiros projetos de desenvolvimento de software.
 
+## Trabalho Academico
+
+Projeto desenvolvido para atividade academica do curso de Ciencia da Computacao da Afya UNIMA.
+
+Este repositorio atende aos criterios de entrega propostos:
+
+1. Codigo versionado em repositorio publico.
+2. README com informacoes do projeto e link do site publicado.
+3. URL de publicacao preparada para acesso online.
+4. Todas as secoes obrigatorias presentes e preenchidas.
+5. Visual organizado, com boa leitura em desktop e mobile.
+
 ## Objetivo
 
 O projeto tem como foco criar uma apresentacao profissional, visualmente organizada e adequada para publicacao online. A interface utiliza uma paleta escura, elementos com transparencia, microinteracoes e animacoes suaves para reforcar uma identidade moderna e tecnologica.
@@ -61,15 +73,19 @@ Build command: `npm run build`
 
 Output directory: `dist`
 
+Install command: `npm install`
+
+O comando `npm run dev` e usado apenas para desenvolvimento local.
+
 ## Links
 
 Email: `lucasportelav@gmail.com`
 
 WhatsApp: `+55 82 99617 6726`
 
-GitHub: `https://github.com/portelav/`
+Repositorio: `https://github.com/portelav/portfolio`
 
-Portfolio publicado: `link em breve`
+Portfolio publicado: `aguardando URL da Vercel`
 
 ## Observacoes
 
