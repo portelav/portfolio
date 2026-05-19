@@ -1,22 +1,22 @@
 # Lucas Portela | Portfolio
 
-Portfolio pessoal desenvolvido para apresentar minha formacao, habilidades e projetos na area de tecnologia. A proposta do site e reunir, em uma interface moderna e responsiva, informacoes sobre minha trajetoria como estudante de Ciencia da Computacao e meus primeiros projetos de desenvolvimento de software.
+Portfólio pessoal desenvolvido para apresentar minha formação, habilidades e projetos na área de tecnologia. A proposta do site é reunir, em uma interface moderna e responsiva, informações sobre minha trajetória como estudante de Ciência da Computação e meus primeiros projetos de desenvolvimento de software.
 
-## Trabalho Academico
+## Trabalho Acadêmico
 
-Projeto desenvolvido para atividade academica do curso de Ciencia da Computacao da Afya UNIMA.
+Projeto desenvolvido para atividade acadêmica do curso de Ciência da Computação da Afya UNIMA.
 
-Este repositorio atende aos criterios de entrega propostos:
+Este repositório atende aos critérios de entrega propostos:
 
-1. Codigo versionado em repositorio publico.
-2. README com informacoes do projeto e link do site publicado.
-3. URL de publicacao preparada para acesso online.
-4. Todas as secoes obrigatorias presentes e preenchidas.
+1. Código versionado em repositório público.
+2. README com informações do projeto e link do site publicado.
+3. URL de publicação preparada para acesso online.
+4. Todas as seções obrigatórias presentes e preenchidas.
 5. Visual organizado, com boa leitura em desktop e mobile.
 
 ## Objetivo
 
-O projeto tem como foco criar uma apresentacao profissional, visualmente organizada e adequada para publicacao online. A interface utiliza uma paleta escura, elementos com transparencia, microinteracoes e animacoes suaves para reforcar uma identidade moderna e tecnologica.
+O projeto tem como foco criar uma apresentação profissional, visualmente organizada e adequada para publicação online. A interface utiliza uma paleta escura, elementos com transparência, microinterações e animações suaves para reforçar uma identidade moderna e tecnológica.
 
 ## Tecnologias Utilizadas
 
@@ -27,11 +27,11 @@ O projeto tem como foco criar uma apresentacao profissional, visualmente organiz
 5. Framer Motion
 6. Git e GitHub
 
-## Secoes do Site
+## Seções do Site
 
-1. Hero com nome, apresentacao, avatar estilizado e links principais
-2. Sobre mim com resumo academico e profissional
-3. Habilidades tecnicas
+1. Hero com nome, apresentação, avatar estilizado e links principais
+2. Sobre mim com resumo acadêmico e profissional
+3. Habilidades técnicas
 4. Projetos em destaque
 5. Contato com email, WhatsApp e GitHub
 
@@ -48,14 +48,14 @@ README.md
 package.json
 ```
 
-## Execucao Local
+## Execução Local
 
 ```bash
 npm install
 npm run dev
 ```
 
-O ambiente de desenvolvimento e iniciado pelo Vite.
+O ambiente de desenvolvimento é iniciado pelo Vite.
 
 ## Build
 
@@ -63,11 +63,11 @@ O ambiente de desenvolvimento e iniciado pelo Vite.
 npm run build
 ```
 
-O build de producao e gerado na pasta `dist/`.
+O build de produção é gerado na pasta `dist/`.
 
-## Publicacao
+## Publicação
 
-O projeto esta preparado para deploy em plataformas como Vercel ou GitHub Pages. Por usar Vite, a configuracao de producao utiliza:
+O projeto está preparado para deploy em plataformas como Vercel ou GitHub Pages. Por usar Vite, a configuração de produção utiliza:
 
 Build command: `npm run build`
 
@@ -75,7 +75,7 @@ Output directory: `dist`
 
 Install command: `npm install`
 
-O comando `npm run dev` e usado apenas para desenvolvimento local.
+O comando `npm run dev` é usado apenas para desenvolvimento local.
 
 ## Links
 
@@ -83,10 +83,10 @@ Email: `lucasportelav@gmail.com`
 
 WhatsApp: `+55 82 99617 6726`
 
-Repositorio: `https://github.com/portelav/portfolio`
+Repositório: `https://github.com/portelav/portfolio`
 
-Portfolio publicado: `aguardando URL da Vercel`
+Portfólio publicado: `aguardando URL da Vercel`
 
-## Observacoes
+## Observações
 
-Os principais textos, links e informacoes pessoais ficam centralizados em `src/content.ts`, facilitando futuras atualizacoes do portfolio.
+Os principais textos, links e informações pessoais ficam centralizados em `src/content.ts`, facilitando futuras atualizações do portfólio.

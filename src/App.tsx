@@ -92,7 +92,7 @@ export default function App() {
     const email = String(formData.get("email") || "").trim();
     const message = String(formData.get("message") || "").trim();
     const text = [
-      "Ola Lucas, vi seu portfolio e gostaria de conversar.",
+      "Olá Lucas, vi seu portfólio e gostaria de conversar.",
       name ? `Nome: ${name}` : "",
       email ? `Email: ${email}` : "",
       message ? `Mensagem: ${message}` : "",
@@ -111,7 +111,7 @@ export default function App() {
       <motion.div className="scroll-progress" style={{ scaleX: smoothProgress }} />
 
       <header className={`navbar ${isScrolled ? "navbar--scrolled" : ""}`}>
-        <nav aria-label="Navegacao principal">
+        <nav aria-label="Navegação principal">
           {navItems.map((item) => (
             <a key={item.href} href={item.href}>
               {item.label}
@@ -133,7 +133,7 @@ export default function App() {
             <h1 id="hero-title">{profile.name}</h1>
             <p className="hero__tagline">{profile.tagline}</p>
             <p className="hero__description">{profile.description}</p>
-            <div className="hero__meta" aria-label="Formacao e localizacao">
+            <div className="hero__meta" aria-label="Formação e localização">
               <span>{profile.education}</span>
               <span>{profile.location}</span>
             </div>
@@ -169,7 +169,7 @@ export default function App() {
           </div>
         </motion.div>
 
-        <div className="stats-grid" aria-label="Resumo do portfolio">
+        <div className="stats-grid" aria-label="Resumo do portfólio">
           {stats.map((item) => (
             <div className="stat-card" key={item.label}>
               <strong>{item.value}</strong>
@@ -182,7 +182,7 @@ export default function App() {
       <SectionReveal className="section split-section" >
         <div className="section__label" id="sobre">Sobre mim</div>
         <div className="about-panel">
-          <h2>Aprendizado continuo aplicado em projetos reais.</h2>
+          <h2>Aprendizado contínuo aplicado em projetos reais.</h2>
           <p>{profile.about}</p>
           <p>{profile.aboutComplement}</p>
         </div>
@@ -190,10 +190,10 @@ export default function App() {
 
       <section className="section" id="habilidades" aria-labelledby="skills-title">
         <SectionReveal className="section-heading">
-          <p className="eyebrow">Stack em evolucao</p>
+          <p className="eyebrow">Stack em evolução</p>
           <h2 id="skills-title">Habilidades principais</h2>
           <p>
-            Tecnologias usadas em estudos, projetos academicos e experimentos pessoais de software.
+            Tecnologias usadas em estudos, projetos acadêmicos e experimentos pessoais de software.
           </p>
         </SectionReveal>
 
@@ -218,7 +218,7 @@ export default function App() {
           <p className="eyebrow">Trabalhos selecionados</p>
           <h2 id="projects-title">Projetos</h2>
           <p>
-            Cards com mockups estilizados para destacar problema, tecnologia e apresentacao visual.
+            Cards com mockups estilizados para destacar problema, tecnologia e apresentação visual.
           </p>
         </SectionReveal>
 
@@ -262,8 +262,8 @@ export default function App() {
             <p className="eyebrow">Contato</p>
             <h2 id="contact-title">Vamos conversar sobre tecnologia?</h2>
             <p>
-              Para contatos academicos, oportunidades ou feedback sobre projetos, preencha o
-              formulario para montar uma mensagem no WhatsApp. Atualmente em {profile.location}.
+              Para contatos acadêmicos, oportunidades ou feedback sobre projetos, preencha o
+              formulário para montar uma mensagem no WhatsApp. Atualmente em {profile.location}.
             </p>
             <div className="contact-links">
               <div className="contact-card contact-card--static">
@@ -300,7 +300,7 @@ export default function App() {
           </div>
 
           <form className="contact-form" onSubmit={handleSubmit}>
-            {/* Labels visiveis mantem o formulario acessivel e facil de editar. */}
+            {/* Labels visíveis mantêm o formulário acessível e fácil de editar. */}
             <label>
               Nome
               <input name="name" type="text" placeholder="Seu nome" autoComplete="name" />
