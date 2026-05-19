@@ -41,17 +41,19 @@ export const skills = [
 
 export const projects = [
   {
-    title: "Sistema de gestão comercial em Python",
+    title: "Buscador de restaurantes por proximidade",
     description:
-      "Aplicação para controle de clientes, produtos e vendas, com foco em organização, fluxo de dados e operações comerciais básicas.",
-    tags: ["Python", "Lógica", "Gestão"],
+      "Site desenvolvido para atividade acadêmica, com foco em ajudar usuários a encontrar restaurantes próximos dentro de uma cidade.",
+    tags: ["Web", "Faculdade", "Localização"],
+    url: "https://github.com/portelav/projeto3P",
     accent: "cyan",
   },
   {
-    title: "Cadastro de clientes com Tkinter e JSON",
+    title: "MELLK, sistema de gestão comercial",
     description:
-      "Sistema desktop com interface gráfica em Python, persistência em JSON e experiência simples para registrar e consultar clientes.",
-    tags: ["Python", "Tkinter", "JSON"],
+      "Sistema de gestão comercial desenvolvido para controlar cadastros, vendas, estoque e finanças de forma integrada.",
+    tags: ["Gestão", "Estoque", "Finanças"],
+    url: "https://github.com/LukBomfim/MELLK",
     accent: "violet",
   },
   {
@@ -59,6 +61,7 @@ export const projects = [
     description:
       "Site responsivo com apresentação profissional, animações suaves, cards interativos e estrutura pronta para deploy.",
     tags: ["React", "CSS", "Framer Motion"],
+    url: "https://github.com/portelav/portfolio",
     accent: "lime",
   },
 ];

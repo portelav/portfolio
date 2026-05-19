@@ -246,7 +246,7 @@ export default function App() {
                     <span key={tag}>{tag}</span>
                   ))}
                 </div>
-                <a className="project-link" href={profile.github} target="_blank" rel="noreferrer">
+                <a className="project-link" href={project.url} target="_blank" rel="noreferrer">
                   Ver projeto
                   <Icon name="arrow" />
                 </a>
