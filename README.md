@@ -1,67 +1,71 @@
 # Lucas Portela | Portfolio
 
-Portfolio pessoal moderno criado para uma atividade da faculdade, com foco em apresentacao profissional, responsividade, animacoes suaves e organizacao de projetos.
+Portfolio pessoal desenvolvido para apresentar minha formacao, habilidades e projetos na area de tecnologia. A proposta do site e reunir, em uma interface moderna e responsiva, informacoes sobre minha trajetoria como estudante de Ciencia da Computacao e meus primeiros projetos de desenvolvimento de software.
 
-## Tecnologias
+## Objetivo
+
+O projeto tem como foco criar uma apresentacao profissional, visualmente organizada e adequada para publicacao online. A interface utiliza uma paleta escura, elementos com transparencia, microinteracoes e animacoes suaves para reforcar uma identidade moderna e tecnologica.
+
+## Tecnologias Utilizadas
 
 - React
 - TypeScript
 - Vite
-- CSS moderno
+- CSS
 - Framer Motion
+- Git e GitHub
 
-## Funcionalidades
+## Secoes do Site
 
-- Hero com avatar estilizado, links sociais e chamada principal
-- Secao sobre mim com texto profissional
-- Habilidades com cards e barras de progresso
-- Projetos com mockups visuais, tecnologias e chamada para repositorio
-- Contato com email, GitHub, localizacao e formulario visual
-- Navbar fixa, scroll suave, reveal on scroll e microinteracoes
-- Layout responsivo para desktop, notebook, tablet e celular
-- Suporte a `prefers-reduced-motion`
+- Hero com nome, apresentacao, avatar estilizado e links principais
+- Sobre mim com resumo academico e profissional
+- Habilidades tecnicas
+- Projetos em destaque
+- Contato com email e GitHub
 
-## Como Rodar Localmente
+## Estrutura
+
+```text
+src/
+  App.tsx
+  content.ts
+  main.tsx
+  styles.css
+index.html
+README.md
+package.json
+```
+
+## Execucao Local
 
 ```bash
 npm install
 npm run dev
 ```
 
-Depois, acesse o endereco mostrado no terminal.
+O ambiente de desenvolvimento e iniciado pelo Vite.
 
-## Build de Producao
+## Build
 
 ```bash
 npm run build
 ```
 
-Os arquivos finais ficam na pasta `dist/`.
+O build de producao e gerado na pasta `dist/`.
 
-## Deploy
+## Publicacao
 
-### Vercel
+O projeto esta preparado para deploy em plataformas como Vercel ou GitHub Pages. Por usar Vite, a configuracao de producao utiliza:
 
-1. Envie o projeto para o GitHub.
-2. Importe o repositorio na Vercel.
-3. Use as configuracoes padrao do Vite:
-   - Build command: `npm run build`
-   - Output directory: `dist`
-
-### GitHub Pages
-
-1. Rode `npm run build`.
-2. Publique a pasta `dist/` usando GitHub Pages ou uma action de deploy.
+- Build command: `npm run build`
+- Output directory: `dist`
 
 ## Links
 
 - Email: `lucasportelav@gmail.com`
 - GitHub: `https://github.com/portelav/`
-- LinkedIn: `adicione-quando-tiver`
-- Site publicado: `adicione-o-link-aqui`
+- Portfolio publicado: `link-em-breve`
 
-## Edicao Rapida
+## Observacoes
 
-Os principais textos e links ficam em `src/content.ts`.
-
-Para trocar cores, espacamentos e estilos visuais, edite `src/styles.css`.
+Os principais textos, links e informacoes pessoais ficam centralizados em `src/content.ts`, facilitando futuras atualizacoes do portfolio.
