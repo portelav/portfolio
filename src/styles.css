@@ -103,66 +103,43 @@ button {
 
 .navbar {
   position: fixed;
-  inset: 1rem clamp(1rem, 4vw, 2rem) auto;
+  inset: 0 0 auto;
   z-index: 50;
-  display: flex;
+  display: grid;
   align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  width: min(calc(100% - 2rem), var(--container));
-  min-height: 4rem;
-  margin-inline: auto;
-  padding: 0.55rem 0.65rem;
-  border: 1px solid transparent;
-  border-radius: var(--radius);
+  width: 100%;
+  min-height: 4.25rem;
+  padding: 0.55rem clamp(0.75rem, 4vw, 2rem);
+  border-bottom: 1px solid var(--line);
+  background: rgba(7, 10, 17, 0.9);
+  box-shadow: 0 12px 34px rgba(0, 0, 0, 0.22);
+  backdrop-filter: blur(18px);
   transition:
     background-color 220ms ease,
     border-color 220ms ease,
-    box-shadow 220ms ease,
-    backdrop-filter 220ms ease;
+    box-shadow 220ms ease;
 }
 
 .navbar--scrolled {
-  background: rgba(7, 10, 17, 0.74);
-  border-color: var(--line);
-  box-shadow: 0 18px 52px rgba(0, 0, 0, 0.28);
-  backdrop-filter: blur(18px);
+  background: rgba(7, 10, 17, 0.96);
+  box-shadow: 0 18px 52px rgba(0, 0, 0, 0.34);
 }
 
-.brand,
 .navbar nav,
 .navbar nav a,
 .button,
 .project-link,
-.contact-links a {
+.contact-card {
   display: inline-flex;
   align-items: center;
 }
 
-.brand {
-  gap: 0.7rem;
-  min-height: 2.75rem;
-  padding-inline: 0.35rem 0.8rem;
-  color: var(--text);
-  font-size: 0.94rem;
-  font-weight: 760;
-}
-
-.brand__mark {
-  display: grid;
-  width: 2.55rem;
-  height: 2.55rem;
-  place-items: center;
-  border: 1px solid var(--line-strong);
-  border-radius: 50%;
-  background: linear-gradient(135deg, rgba(94, 231, 255, 0.18), rgba(167, 139, 250, 0.16));
-  color: var(--blue);
-  font-size: 0.78rem;
-  font-weight: 800;
-}
-
 .navbar nav {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 0.25rem;
+  width: min(100%, var(--container));
+  margin-inline: auto;
   padding: 0.25rem;
   border: 1px solid var(--line);
   border-radius: var(--radius);
@@ -170,12 +147,14 @@ button {
 }
 
 .navbar nav a {
+  justify-content: center;
   min-height: 2.55rem;
   padding-inline: 0.9rem;
   border-radius: 6px;
   color: var(--muted);
   font-size: 0.88rem;
   font-weight: 680;
+  text-align: center;
   transition:
     color 180ms ease,
     background-color 180ms ease;
@@ -336,8 +315,8 @@ h3 {
 .project-card:hover,
 .project-card:focus-within,
 .skill-card:hover,
-.contact-links a:hover,
-.contact-links a:focus-visible {
+.contact-card[href]:hover,
+.contact-card[href]:focus-visible {
   transform: translateY(-2px);
 }
 
@@ -759,16 +738,16 @@ h3 {
 }
 
 .contact-links {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0.75rem;
   margin-top: 1.5rem;
 }
 
-.contact-links a {
+.contact-card {
   gap: 0.5rem;
-  min-height: 2.85rem;
-  padding: 0.65rem 0.85rem;
+  min-height: 4.25rem;
+  padding: 0.8rem 0.9rem;
   border: 1px solid var(--line);
   border-radius: var(--radius);
   color: var(--muted);
@@ -779,11 +758,33 @@ h3 {
     background-color 180ms ease;
 }
 
-.contact-links a:hover,
-.contact-links a:focus-visible {
+.contact-card[href]:hover,
+.contact-card[href]:focus-visible {
+  transform: translateY(-2px);
   border-color: var(--line-strong);
   background: rgba(94, 231, 255, 0.08);
   color: var(--text);
+}
+
+.contact-card--static {
+  cursor: text;
+  user-select: text;
+}
+
+.contact-card > span {
+  display: grid;
+  min-width: 0;
+  gap: 0.18rem;
+}
+
+.contact-card strong {
+  color: var(--text);
+  font-size: 0.82rem;
+}
+
+.contact-card span span {
+  overflow-wrap: anywhere;
+  font-size: 0.86rem;
 }
 
 .contact-form {
@@ -832,11 +833,10 @@ h3 {
   box-shadow: 0 0 0 4px rgba(94, 231, 255, 0.08);
 }
 
-.brand:focus-visible,
 .navbar nav a:focus-visible,
 .button:focus-visible,
 .project-link:focus-visible,
-.contact-links a:focus-visible {
+.contact-card[href]:focus-visible {
   outline: 3px solid rgba(94, 231, 255, 0.32);
   outline-offset: 4px;
 }
@@ -878,16 +878,14 @@ h3 {
 
 @media (max-width: 720px) {
   .navbar {
-    inset: 0.75rem 0.75rem auto;
-    width: calc(100% - 1.5rem);
-  }
-
-  .brand {
-    font-size: 0;
+    inset: 0 0 auto;
+    width: 100%;
+    padding-inline: 0.5rem;
   }
 
   .navbar nav {
-    max-width: calc(100vw - 5.7rem);
+    width: 100%;
+    max-width: 100%;
     overflow-x: auto;
     scrollbar-width: none;
   }
@@ -947,6 +945,7 @@ h3 {
 
   .contact-links {
     display: grid;
+    grid-template-columns: 1fr;
   }
 }
 

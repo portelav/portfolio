@@ -1,4 +1,4 @@
-import { FormEvent, useEffect, useMemo, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 import {
   motion,
   useReducedMotion,
@@ -9,7 +9,7 @@ import {
 import { navItems, profile, projects, skills, stats } from "./content";
 import avatarLucas from "./assets/avatar-lucas.jpeg";
 
-type IconName = "github" | "linkedin" | "mail" | "arrow" | "code" | "spark";
+type IconName = "github" | "linkedin" | "mail" | "phone" | "arrow" | "code" | "spark";
 
 const iconPaths: Record<IconName, string[]> = {
   github: [
@@ -24,6 +24,9 @@ const iconPaths: Record<IconName, string[]> = {
   mail: [
     "M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2Z",
     "m22 6-10 7L2 6",
+  ],
+  phone: [
+    "M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.7.6 2.5a2 2 0 0 1-.4 2.1L8 9.6a16 16 0 0 0 6.4 6.4l1.3-1.3a2 2 0 0 1 2.1-.4c.8.3 1.6.5 2.5.6a2 2 0 0 1 1.7 2Z",
   ],
   arrow: ["M5 12h14", "m13 5 7 7-7 7"],
   code: ["m16 18 6-6-6-6", "m8 6-6 6 6 6"],
@@ -64,7 +67,7 @@ function SectionReveal({
 
 export default function App() {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [formStatus, setFormStatus] = useState("Enviar mensagem");
+  const [formStatus, setFormStatus] = useState("Enviar pelo WhatsApp");
   const shouldReduceMotion = useReducedMotion();
   const { scrollYProgress } = useScroll();
   const smoothProgress = useSpring(scrollYProgress, {
@@ -75,15 +78,6 @@ export default function App() {
   const heroY = useTransform(smoothProgress, [0, 0.35], [0, -90]);
   const heroOpacity = useTransform(smoothProgress, [0, 0.35], [1, 0.35]);
 
-  const mailto = useMemo(() => {
-    const params = new URLSearchParams({
-      subject: "Contato pelo portfolio",
-      body: "Ola Lucas, vi seu portfolio e gostaria de conversar.",
-    });
-
-    return `mailto:${profile.email}?${params.toString()}`;
-  }, []);
-
   useEffect(() => {
     const onScroll = () => setIsScrolled(window.scrollY > 20);
     onScroll();
@@ -93,9 +87,23 @@ export default function App() {
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    setFormStatus("Abrindo email...");
-    window.location.href = mailto;
-    window.setTimeout(() => setFormStatus("Enviar mensagem"), 1400);
+    const formData = new FormData(event.currentTarget);
+    const name = String(formData.get("name") || "").trim();
+    const email = String(formData.get("email") || "").trim();
+    const message = String(formData.get("message") || "").trim();
+    const text = [
+      "Ola Lucas, vi seu portfolio e gostaria de conversar.",
+      name ? `Nome: ${name}` : "",
+      email ? `Email: ${email}` : "",
+      message ? `Mensagem: ${message}` : "",
+    ]
+      .filter(Boolean)
+      .join("\n");
+    const params = new URLSearchParams({ text });
+
+    setFormStatus("Abrindo WhatsApp...");
+    window.open(`https://wa.me/${profile.whatsappNumber}?${params.toString()}`, "_blank", "noreferrer");
+    window.setTimeout(() => setFormStatus("Enviar pelo WhatsApp"), 1400);
   }
 
   return (
@@ -103,11 +111,6 @@ export default function App() {
       <motion.div className="scroll-progress" style={{ scaleX: smoothProgress }} />
 
       <header className={`navbar ${isScrolled ? "navbar--scrolled" : ""}`}>
-        <a className="brand" href="#inicio" aria-label="Voltar ao inicio">
-          <span className="brand__mark">LP</span>
-          <span>Lucas Portela</span>
-        </a>
-
         <nav aria-label="Navegacao principal">
           {navItems.map((item) => (
             <a key={item.href} href={item.href}>
@@ -160,7 +163,7 @@ export default function App() {
                 <img src={avatarLucas} alt="Avatar ilustrado de Lucas Portela" />
                 <span className="avatar__ring" />
               </div>
-              <div className="floating-chip floating-chip--top">Front-end</div>
+              <div className="floating-chip floating-chip--top">Front end</div>
               <div className="floating-chip floating-chip--bottom">Software</div>
             </div>
           </div>
@@ -259,22 +262,38 @@ export default function App() {
             <p className="eyebrow">Contato</p>
             <h2 id="contact-title">Vamos conversar sobre tecnologia?</h2>
             <p>
-              Para contatos academicos, oportunidades ou feedback sobre projetos, use os links
-              abaixo ou envie uma mensagem pelo formulario. Atualmente em {profile.location}.
+              Para contatos academicos, oportunidades ou feedback sobre projetos, preencha o
+              formulario para montar uma mensagem no WhatsApp. Atualmente em {profile.location}.
             </p>
             <div className="contact-links">
-              <a href={`mailto:${profile.email}`}>
+              <div className="contact-card contact-card--static">
                 <Icon name="mail" />
-                {profile.email}
+                <span>
+                  <strong>Email</strong>
+                  <span>{profile.email}</span>
+                </span>
+              </div>
+              <a className="contact-card" href={`https://wa.me/${profile.whatsappNumber}`} target="_blank" rel="noreferrer">
+                <Icon name="phone" />
+                <span>
+                  <strong>WhatsApp</strong>
+                  <span>{profile.phone}</span>
+                </span>
               </a>
-              <a href={profile.github} target="_blank" rel="noreferrer">
+              <a className="contact-card" href={profile.github} target="_blank" rel="noreferrer">
                 <Icon name="github" />
-                GitHub
+                <span>
+                  <strong>GitHub</strong>
+                  <span>portelav</span>
+                </span>
               </a>
               {profile.linkedin ? (
-                <a href={profile.linkedin} target="_blank" rel="noreferrer">
+                <a className="contact-card" href={profile.linkedin} target="_blank" rel="noreferrer">
                   <Icon name="linkedin" />
-                  LinkedIn
+                  <span>
+                    <strong>LinkedIn</strong>
+                    <span>Perfil profissional</span>
+                  </span>
                 </a>
               ) : null}
             </div>
@@ -295,7 +314,7 @@ export default function App() {
               <textarea name="message" placeholder="Escreva sua mensagem" rows={4} />
             </label>
             <button className="button button--primary" type="submit">
-              <Icon name="mail" />
+              <Icon name="phone" />
               {formStatus}
             </button>
           </form>

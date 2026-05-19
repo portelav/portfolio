@@ -8,20 +8,20 @@ O projeto tem como foco criar uma apresentacao profissional, visualmente organiz
 
 ## Tecnologias Utilizadas
 
-- React
-- TypeScript
-- Vite
-- CSS
-- Framer Motion
-- Git e GitHub
+1. React
+2. TypeScript
+3. Vite
+4. CSS
+5. Framer Motion
+6. Git e GitHub
 
 ## Secoes do Site
 
-- Hero com nome, apresentacao, avatar estilizado e links principais
-- Sobre mim com resumo academico e profissional
-- Habilidades tecnicas
-- Projetos em destaque
-- Contato com email e GitHub
+1. Hero com nome, apresentacao, avatar estilizado e links principais
+2. Sobre mim com resumo academico e profissional
+3. Habilidades tecnicas
+4. Projetos em destaque
+5. Contato com email, WhatsApp e GitHub
 
 ## Estrutura
 
@@ -57,14 +57,19 @@ O build de producao e gerado na pasta `dist/`.
 
 O projeto esta preparado para deploy em plataformas como Vercel ou GitHub Pages. Por usar Vite, a configuracao de producao utiliza:
 
-- Build command: `npm run build`
-- Output directory: `dist`
+Build command: `npm run build`
+
+Output directory: `dist`
 
 ## Links
 
-- Email: `lucasportelav@gmail.com`
-- GitHub: `https://github.com/portelav/`
-- Portfolio publicado: `link-em-breve`
+Email: `lucasportelav@gmail.com`
+
+WhatsApp: `+55 82 99617 6726`
+
+GitHub: `https://github.com/portelav/`
+
+Portfolio publicado: `link em breve`
 
 ## Observacoes
 

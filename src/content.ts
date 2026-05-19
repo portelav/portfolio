@@ -4,13 +4,15 @@ export const profile = {
   tagline: "Construindo software com clareza, curiosidade e visao de futuro.",
   description:
     "Estudante de Ciencia da Computacao apaixonado por tecnologia, programacao e desenvolvimento de software, com foco em evoluir na pratica por meio de projetos proprios.",
-  education: "Afya UNIMA - Ciencia da Computacao - 3o periodo",
+  education: "Afya UNIMA, Ciencia da Computacao, 3o periodo",
   location: "Maceio/AL",
   about:
     "Sou estudante de Ciencia da Computacao na Afya UNIMA e tenho grande interesse por tecnologia, programacao e desenvolvimento de software. Atualmente aprofundo meus conhecimentos em desenvolvimento web e Python, criando projetos proprios para transformar estudo em pratica e evoluir minhas habilidades tecnicas.",
   aboutComplement:
     "Busco aprender constantemente, desenvolver uma base solida em logica e boas praticas, e crescer profissionalmente na area de tecnologia com projetos bem organizados, funcionais e pensados para pessoas.",
   email: "lucasportelav@gmail.com",
+  phone: "+55 82 99617 6726",
+  whatsappNumber: "5582996176726",
   github: "https://github.com/portelav/",
   linkedin: "",
 };
