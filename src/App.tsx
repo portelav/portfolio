@@ -6,6 +6,16 @@ import {
   useSpring,
   useTransform,
 } from "framer-motion";
+import type { IconType } from "react-icons";
+import {
+  SiCss,
+  SiGithub,
+  SiHtml5,
+  SiJavascript,
+  SiOpenai,
+  SiOpenjdk,
+  SiPython,
+} from "react-icons/si";
 import { navItems, profile, projects, skills, stats } from "./content";
 import avatarLucas from "./assets/avatar-lucas.png";
 
@@ -31,6 +41,16 @@ const iconPaths: Record<IconName, string[]> = {
   arrow: ["M5 12h14", "m13 5 7 7-7 7"],
   code: ["m16 18 6-6-6-6", "m8 6-6 6 6 6"],
   spark: ["M12 2v4", "M12 18v4", "M4.9 4.9l2.8 2.8", "M16.3 16.3l2.8 2.8", "M2 12h4", "M18 12h4", "M4.9 19.1l2.8-2.8", "M16.3 7.7l2.8-2.8"],
+};
+
+const skillIcons: Record<string, IconType> = {
+  html: SiHtml5,
+  css: SiCss,
+  javascript: SiJavascript,
+  python: SiPython,
+  java: SiOpenjdk,
+  github: SiGithub,
+  ai: SiOpenai,
 };
 
 function Icon({ name }: { name: IconName }) {
@@ -163,7 +183,7 @@ export default function App() {
                 <img src={avatarLucas} alt="Avatar ilustrado de Lucas Portela" />
                 <span className="avatar__ring" />
               </div>
-              <div className="floating-chip floating-chip--top">Front end</div>
+              <div className="floating-chip floating-chip--top">Full stack</div>
               <div className="floating-chip floating-chip--bottom">Software</div>
             </div>
           </div>
@@ -198,18 +218,24 @@ export default function App() {
         </SectionReveal>
 
         <div className="skills-grid">
-          {skills.map((skill, index) => (
-            <SectionReveal className="skill-card" key={skill.name}>
-              <div className="skill-card__top">
-                <span>{String(index + 1).padStart(2, "0")}</span>
-                <strong>{skill.name}</strong>
-              </div>
-              <p>{skill.detail}</p>
-              <div className="skill-meter" aria-label={`${skill.name}: ${skill.level}%`}>
-                <span style={{ "--level": `${skill.level}%` } as React.CSSProperties} />
-              </div>
-            </SectionReveal>
-          ))}
+          {skills.map((skill) => {
+            const SkillIcon = skillIcons[skill.icon];
+
+            return (
+              <SectionReveal className="skill-card" key={skill.name}>
+                <div className="skill-card__top">
+                  <span
+                    className="skill-logo"
+                    style={{ "--skill-color": skill.color } as React.CSSProperties}
+                  >
+                    <SkillIcon aria-hidden="true" />
+                  </span>
+                  <strong>{skill.name}</strong>
+                </div>
+                <p>{skill.detail}</p>
+              </SectionReveal>
+            );
+          })}
         </div>
       </section>
 

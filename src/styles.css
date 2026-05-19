@@ -137,33 +137,62 @@ button {
 .navbar nav {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 0.25rem;
+  gap: 0.35rem;
   width: min(100%, var(--container));
   margin-inline: auto;
-  padding: 0.25rem;
+  padding: 0.3rem;
   border: 1px solid var(--line);
-  border-radius: var(--radius);
+  border-radius: 999px;
   background: rgba(255, 255, 255, 0.035);
 }
 
 .navbar nav a {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
   justify-content: center;
   min-height: 2.55rem;
   padding-inline: 0.9rem;
-  border-radius: 6px;
+  border-radius: 999px;
   color: var(--muted);
   font-size: 0.88rem;
   font-weight: 680;
   text-align: center;
   transition:
+    transform 180ms ease,
     color 180ms ease,
-    background-color 180ms ease;
+    background-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.navbar nav a::before {
+  position: absolute;
+  inset: 0.2rem;
+  z-index: -1;
+  content: "";
+  border-radius: inherit;
+  background:
+    radial-gradient(circle at 30% 20%, rgba(94, 231, 255, 0.22), transparent 44%),
+    linear-gradient(135deg, rgba(94, 231, 255, 0.12), rgba(167, 139, 250, 0.1));
+  opacity: 0;
+  transform: scale(0.92);
+  transition:
+    opacity 200ms ease,
+    transform 200ms ease;
 }
 
 .navbar nav a:hover,
 .navbar nav a:focus-visible {
-  background: rgba(94, 231, 255, 0.1);
+  transform: translateY(-1px);
+  background: rgba(255, 255, 255, 0.035);
   color: var(--text);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.18);
+}
+
+.navbar nav a:hover::before,
+.navbar nav a:focus-visible::before {
+  opacity: 1;
+  transform: scale(1);
 }
 
 .section {
@@ -498,18 +527,31 @@ h3 {
 
 .split-section {
   display: grid;
-  grid-template-columns: 14rem minmax(0, 1fr);
-  gap: clamp(1.5rem, 5vw, 4rem);
+  grid-template-columns: minmax(12rem, 0.42fr) minmax(0, 1fr);
+  gap: clamp(1.5rem, 4vw, 3rem);
   align-items: start;
+  padding-top: clamp(2.75rem, 6vw, 4.5rem);
 }
 
 .section__label {
   position: sticky;
   top: 6.5rem;
-  color: var(--blue);
-  font-size: 0.82rem;
+  max-width: 8ch;
+  color: var(--text);
+  font-size: clamp(2rem, 4vw, 3.6rem);
   font-weight: 800;
-  text-transform: uppercase;
+  line-height: 1.02;
+  text-transform: none;
+}
+
+.section__label::after {
+  display: block;
+  width: 4rem;
+  height: 0.2rem;
+  margin-top: 1rem;
+  border-radius: 999px;
+  content: "";
+  background: linear-gradient(90deg, var(--blue), var(--violet));
 }
 
 .about-panel {
@@ -539,11 +581,12 @@ h3 {
 
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
   gap: 1rem;
 }
 
 .skill-card {
+  min-height: 10.5rem;
   padding: 1.15rem;
   transition:
     transform 180ms ease,
@@ -557,38 +600,32 @@ h3 {
 }
 
 .skill-card__top {
-  display: flex;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
   align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
+  gap: 0.85rem;
   margin-bottom: 1.2rem;
 }
 
-.skill-card__top span {
-  color: var(--subtle);
-  font-size: 0.78rem;
-  font-weight: 800;
+.skill-logo {
+  display: grid;
+  width: 2.9rem;
+  height: 2.9rem;
+  place-items: center;
+  border: 1px solid color-mix(in srgb, var(--skill-color) 36%, transparent);
+  border-radius: var(--radius);
+  background: color-mix(in srgb, var(--skill-color) 14%, transparent);
+  color: var(--skill-color);
+}
+
+.skill-logo svg {
+  width: 1.55rem;
+  height: 1.55rem;
 }
 
 .skill-card__top strong {
   color: var(--text);
   font-size: 1.12rem;
-}
-
-.skill-meter {
-  overflow: hidden;
-  height: 0.55rem;
-  margin-top: 1.35rem;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.08);
-}
-
-.skill-meter span {
-  display: block;
-  width: var(--level);
-  height: 100%;
-  border-radius: inherit;
-  background: linear-gradient(90deg, var(--blue-deep), var(--blue), var(--lime));
 }
 
 .projects-grid {
@@ -868,6 +905,7 @@ h3 {
 
   .section__label {
     position: static;
+    max-width: none;
   }
 
   .skills-grid,
@@ -903,6 +941,19 @@ h3 {
   .section {
     width: min(calc(100% - 1.25rem), var(--container));
     padding: clamp(4.25rem, 13vw, 6rem) 0;
+  }
+
+  .split-section {
+    gap: 1.2rem;
+    padding-top: 2.6rem;
+  }
+
+  .section__label {
+    font-size: clamp(2rem, 12vw, 3.2rem);
+  }
+
+  .section__label::after {
+    margin-top: 0.75rem;
   }
 
   .hero {

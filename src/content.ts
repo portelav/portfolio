@@ -1,9 +1,9 @@
 export const profile = {
   name: "Lucas Portela",
-  role: "Estudante de Ciência da Computação",
-  tagline: "Construindo software com clareza, curiosidade e visão de futuro.",
+  role: "Desenvolvedor full stack",
+  tagline: "Construindo soluções digitais com clareza, curiosidade e visão de futuro.",
   description:
-    "Estudante de Ciência da Computação apaixonado por tecnologia, programação e desenvolvimento de software, com foco em evoluir na prática por meio de projetos próprios.",
+    "Estudante de Ciência da Computação e desenvolvedor full stack em evolução, apaixonado por tecnologia, programação e desenvolvimento de software.",
   education: "Afya UNIMA, Ciência da Computação, 3º período",
   location: "Maceió/AL",
   about:
@@ -26,17 +26,18 @@ export const navItems = [
 
 export const stats = [
   { value: "03", label: "projetos em destaque" },
-  { value: "06", label: "tecnologias base" },
+  { value: "07", label: "tecnologias base" },
   { value: "100%", label: "foco em evolução" },
 ];
 
 export const skills = [
-  { name: "HTML", level: 88, detail: "Estrutura semântica e acessível" },
-  { name: "CSS", level: 84, detail: "Layouts responsivos e interfaces modernas" },
-  { name: "JavaScript", level: 78, detail: "Interatividade e lógica para web" },
-  { name: "Python", level: 82, detail: "Sistemas, automação e dados locais" },
-  { name: "Java", level: 68, detail: "Programação orientada a objetos" },
-  { name: "Git/GitHub", level: 74, detail: "Versionamento e publicação de projetos" },
+  { name: "HTML", icon: "html", color: "#e34f26", detail: "Estrutura semântica e acessível" },
+  { name: "CSS", icon: "css", color: "#1572b6", detail: "Layouts responsivos e interfaces modernas" },
+  { name: "JavaScript", icon: "javascript", color: "#f7df1e", detail: "Interatividade e lógica para web" },
+  { name: "Python", icon: "python", color: "#3776ab", detail: "Sistemas, automação e dados locais" },
+  { name: "Java", icon: "java", color: "#f89820", detail: "Programação orientada a objetos" },
+  { name: "Git/GitHub", icon: "github", color: "#f4f8ff", detail: "Versionamento e publicação de projetos" },
+  { name: "IA first", icon: "ai", color: "#74aa9c", detail: "Uso de inteligência artificial como apoio ao desenvolvimento" },
 ];
 
 export const projects = [

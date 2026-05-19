@@ -18,6 +18,8 @@ Este repositório atende aos critérios de entrega propostos:
 
 O projeto tem como foco criar uma apresentação profissional, visualmente organizada e adequada para publicação online. A interface utiliza uma paleta escura, elementos com transparência, microinterações e animações suaves para reforçar uma identidade moderna e tecnológica.
 
+O conteúdo apresenta meu perfil como desenvolvedor full stack em formação, com destaque para desenvolvimento web, projetos acadêmicos e uso de inteligência artificial como apoio ao processo de desenvolvimento.
+
 ## Tecnologias Utilizadas
 
 1. React
@@ -26,12 +28,13 @@ O projeto tem como foco criar uma apresentação profissional, visualmente organ
 4. CSS
 5. Framer Motion
 6. Git e GitHub
+7. React Icons
 
 ## Seções do Site
 
 1. Hero com nome, apresentação, avatar estilizado e links principais
 2. Sobre mim com resumo acadêmico e profissional
-3. Habilidades técnicas
+3. Habilidades técnicas com logos das tecnologias
 4. Projetos em destaque
 5. Contato com email, WhatsApp e GitHub
 
