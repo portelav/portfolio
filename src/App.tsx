@@ -7,7 +7,7 @@ import {
   useTransform,
 } from "framer-motion";
 import { navItems, profile, projects, skills, stats } from "./content";
-import avatarLucas from "./assets/avatar-lucas.jpeg";
+import avatarLucas from "./assets/avatar-lucas.png";
 
 type IconName = "github" | "linkedin" | "mail" | "phone" | "arrow" | "code" | "spark";
 
