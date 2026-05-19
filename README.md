@@ -1,5 +1,11 @@
 # Lucas Portela | Portfolio
 
+## Site Publicado
+
+### [Acessar portfólio online](https://portelav.vercel.app)
+
+`https://portelav.vercel.app`
+
 Portfólio pessoal desenvolvido para apresentar minha formação, habilidades e projetos na área de tecnologia. A proposta do site é reunir, em uma interface moderna e responsiva, informações sobre minha trajetória como estudante de Ciência da Computação e meus primeiros projetos de desenvolvimento de software.
 
 ## Trabalho Acadêmico
