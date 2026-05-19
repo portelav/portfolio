@@ -85,7 +85,7 @@ WhatsApp: `+55 82 99617 6726`
 
 Repositório: `https://github.com/portelav/portfolio`
 
-Portfólio publicado: `aguardando URL da Vercel`
+Portfólio publicado: `https://portelav.vercel.app`
 
 ## Observações
 
