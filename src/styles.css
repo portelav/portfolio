@@ -422,6 +422,7 @@ h3 {
   width: min(18rem, 64vw);
   aspect-ratio: 1;
   place-items: center;
+  overflow: visible;
   border: 1px solid rgba(94, 231, 255, 0.36);
   border-radius: 50%;
   background:
@@ -432,10 +433,16 @@ h3 {
     0 30px 90px rgba(0, 0, 0, 0.4);
 }
 
-.avatar__initials {
-  color: var(--text);
-  font-size: clamp(4.5rem, 9vw, 7rem);
-  font-weight: 860;
+.avatar img {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
 }
 
 .avatar__ring {

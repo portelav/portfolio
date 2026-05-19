@@ -7,6 +7,7 @@ import {
   useTransform,
 } from "framer-motion";
 import { navItems, profile, projects, skills, stats } from "./content";
+import avatarLucas from "./assets/avatar-lucas.jpeg";
 
 type IconName = "github" | "linkedin" | "mail" | "arrow" | "code" | "spark";
 
@@ -156,7 +157,7 @@ export default function App() {
             <div className="avatar-card">
               <div className="avatar-card__glow" />
               <div className="avatar">
-                <span className="avatar__initials">LP</span>
+                <img src={avatarLucas} alt="Avatar ilustrado de Lucas Portela" />
                 <span className="avatar__ring" />
               </div>
               <div className="floating-chip floating-chip--top">Front-end</div>
