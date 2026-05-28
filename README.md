@@ -55,3 +55,7 @@ This project was created to improve my frontend development skills, UI/UX unders
 
 🇧🇷  
 Este projeto foi criado para aprimorar minhas habilidades em desenvolvimento frontend, entendimento de UI/UX e apresentação profissional.
+
+## Preview
+
+Screenshots will be added soon.
