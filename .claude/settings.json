@@ -1,0 +1,17 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"${CLAUDE_PROJECT_DIR}/.claude/hooks/valida-frontmatter.mjs\"",
+            "timeout": 15,
+            "statusMessage": "Validando frontmatter de agents, commands e skills..."
+          }
+        ]
+      }
+    ]
+  }
+}
