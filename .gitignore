@@ -1,0 +1,17 @@
+node_modules/
+dist/
+.codex/
+.DS_Store
+*.local
+*.tsbuildinfo
+
+# Project
+.next/
+next-env.d.ts
+.vercel/
+.env*
+!.env.example
+.claude/settings.local.json
+
+# Internal notes, never public
+private/
