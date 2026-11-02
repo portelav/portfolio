@@ -38,7 +38,7 @@ Casos em destaque (D3):
 
 | Caso | Tipo | Código | Link |
 |---|---|---|---|
-| Landing da Dra. Thaiane Lessa | Cliente real | Repositório público | https://www.drathaianelessa.com.br |
+| Landing da Dra. Thaiane Lessa | Projeto real, no ar | Repositório público | https://www.drathaianelessa.com.br |
 | DraftCS | Jogo web, feito em dupla | Repositório privado | https://draftcs.com |
 | Crewz | Rede social, feita em dupla | Repositório privado | > TODO: confirmar o link público |
 
@@ -92,10 +92,10 @@ Graus de certeza:
 |---|---|---|
 | Inflar a própria participação em projeto feito em dupla | Perde credibilidade com quem avalia | Cada caso diz o que Lucas fez, sem arredondar para cima |
 | Caso publicado sem autorização | Problema para cliente ou colega | Caso só vai ao ar com autorização de quem aparece ou divide a autoria |
-| Print de cliente com paciente ou dado sensível | Problema profissional para a cliente | Paciente nunca aparece. Imagem de pessoa só com autorização |
+| Print da landing com paciente ou dado sensível | Problema profissional para a Dra. Thaiane | Paciente nunca aparece. Imagem de pessoa só com autorização |
 | Site com cara de template | Contradiz a marca e a proposta | Seguir "O que não fazer" do `DESIGN.md` |
 | Texto em dois idiomas sair de sincronia | Parte do site fica sem tradução | Toda entrega traz as duas línguas. Falta de mensagem quebra o build |
-| Número de WhatsApp público | Spam | Aceito pelo dono. O número mora em um arquivo só, para trocar ou tirar fácil |
+| Número de WhatsApp e e-mail públicos | Spam | Aceito pelo dono. Cada um mora em um arquivo só, para trocar ou tirar fácil |
 | Site pela metade substituir o atual | Má impressão | Repositório e projeto próprios na Vercel. O endereço público só muda no lançamento (D21) |
 
 ## 10. Critérios de pronto
@@ -138,3 +138,9 @@ Cada rodada é uma conversa com o dono. Decisões numeradas (D1, D2...) para o a
 
 - **D20.** Repositório novo `portelav/portfolio`, sem o histórico da versão antiga, que era acadêmica. A versão antiga fica em um repositório privado à parte. Substitui D4.
 - **D21.** Sem branch `v2`. A `main` do repositório novo é a reconstrução, em projeto próprio na Vercel. `portelav.vercel.app` passa para esse projeto no lançamento. Substitui D15.
+
+### Rodada 3 (2026-11-02): revisão do PRD
+
+- **D22.** A landing da Dra. Thaiane aparece como projeto real, sem ser chamada de cliente.
+- **D23.** A troca do Direito pela computação pode aparecer no site. É o motivo da Reescrita.
+- **D24.** O e-mail de contato no site é o Gmail do próprio Lucas, por escolha do dono. Mora em um arquivo só.
