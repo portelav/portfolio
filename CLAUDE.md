@@ -5,17 +5,17 @@ Contexto operacional para agentes neste repositório. Ler antes de qualquer tare
 ## Projeto
 
 **portfolio**: site pessoal de Lucas Portela (`portelav`), estudante de Ciência da Computação em Maceió. Para quem avalia estudante para estágio e para quem quer contratar um site, com o mesmo peso.
-Reconstrução do zero sobre o repositório do portfólio antigo. A identidade visual já está pronta e não se redesenha aqui.
+Reconstrução do zero, em repositório novo. A identidade visual já está pronta e não se redesenha aqui.
 
 ## Equipe
 
 Lucas Portela (`portelav`), sozinho. Lucas aprova conteúdo e visual e faz o merge.
 
-Repositório: `portelav/portfolio` (público). Deploy: Vercel, produção a partir da `main`.
+Repositório: `portelav/portfolio` (público). Deploy: Vercel, em projeto próprio, produção a partir da `main`.
 
 ## Marco atual
 
-Reconstrução na branch `v2`. A versão antiga segue no ar até o lançamento, quando `v2` entra na `main`. Lista de trabalho em `docs/ROADMAP.md`.
+Reconstrução na `main` deste repositório. A versão antiga vem de outro repositório, privado, e segue em `portelav.vercel.app` até o lançamento, quando esse endereço passa para o projeto novo na Vercel. Lista de trabalho em `docs/ROADMAP.md`.
 
 Onde está cada coisa:
 
@@ -30,7 +30,7 @@ Onde está cada coisa:
 
 ## Estado atual
 
-Só documentação e fluxo prontos. O código em `src/` ainda é da versão antiga (tag `v1-academic`, Vite e React) e sai na entrega da base técnica. No ar: https://portelav.vercel.app, ainda a versão antiga.
+Só documentação e fluxo prontos. Ainda não há código: a entrega da base técnica cria a aplicação. No ar: https://portelav.vercel.app, ainda a versão antiga.
 
 ## Ambientes
 
@@ -38,7 +38,7 @@ Só documentação e fluxo prontos. O código em `src/` ainda é da versão anti
 |---|---|
 | Local | `http://localhost:3000` depois da base técnica |
 | Preview | URL da Vercel de cada branch e de cada PR |
-| Produção (`main`) | https://portelav.vercel.app |
+| Produção (`main`) | URL do projeto novo na Vercel até o lançamento. Depois, https://portelav.vercel.app |
 
 ## Stack
 
@@ -97,11 +97,11 @@ QA automático no navegador pelo MCP do Chrome DevTools, sem pedir licença, avi
 - Commits pequenos, uma mudança lógica por commit.
 - Conventional Commits: `feat`, `fix`, `chore`, `docs`, `refactor`, `test`, `style`, `perf`, `ci`. Título em inglês, imperativo, sem ponto final, até 72 caracteres.
 - NUNCA adicionar Co-Authored-By, Generated with ou qualquer atribuição ou menção a IA em commits, PRs ou no README.
-- **Base de trabalho:** `v2` até o lançamento, `main` depois. Na `main`, antes do lançamento, entra só o que não muda o site no ar.
+- **Base de trabalho:** `main`. Ela não toca no site antigo, que vem de outro repositório.
 - **Padrão:** branch `tipo/nome` a partir da base e PR sem squash.
 - **Ajuste pequeno vai direto na base, sem branch e sem PR:** texto, documentação ou correção que não muda layout, comportamento nem dependência.
 - PR nunca é rascunho. Confirmar com Lucas antes de abrir, porque Lucas testa antes.
-- Nunca `git push --force` em `main` ou `v2`. Nunca commitar `.env`, segredos ou credenciais.
+- Nunca `git push --force` em `main`. Nunca commitar `.env`, segredos ou credenciais.
 - Lockfile: rodar `npm ci` limpo antes do push quando o npm local reescrever entradas que não têm a ver com a mudança.
 
 ## Repositório público
@@ -129,15 +129,7 @@ Tudo que entra no git fica visível para sempre, inclusive no histórico e nos d
 
 ## Comandos
 
-Hoje, versão antiga:
-
-```bash
-npm ci
-npm run dev
-npm run build
-```
-
-A partir da base técnica, antes de abrir PR, estes ficam verdes:
+Ainda não há aplicação. A partir da base técnica, antes de abrir PR, estes ficam verdes:
 
 ```bash
 npm run lint
@@ -147,7 +139,7 @@ npm run build
 
 ## Estrutura do código
 
-> TODO: descrever na entrega da base técnica. Hoje `src/` tem só a versão antiga.
+> TODO: descrever na entrega da base técnica. Hoje não há código.
 
 ## Kit
 

@@ -2,7 +2,7 @@
 
 Site pessoal de Lucas Portela, estudante de Ciência da Computação na Afya UNIMA, em Maceió.
 
-**Estado:** em reconstrução do zero, na branch `v2`. Até o lançamento, https://portelav.vercel.app e o código em `src/` continuam sendo a versão antiga, também guardada na tag `v1-academic`.
+**Estado:** em reconstrução do zero. Até o lançamento, https://portelav.vercel.app continua mostrando a versão antiga, que não vem deste repositório.
 
 ## O que vem aí
 
