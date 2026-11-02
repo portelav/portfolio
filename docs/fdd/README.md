@@ -9,7 +9,7 @@ Regra: seção sem FDD não entra em desenvolvimento.
 
 | Seção | Status | Plano |
 |---|---|---|
-| [Cabeçalho e rodapé](cabecalho-rodape.md) | rascunho | `tasks/cabecalho-rodape.md` |
+| [Cabeçalho e rodapé](cabecalho-rodape.md) | aprovado | `tasks/cabecalho-rodape.md` |
 | [Abertura](abertura.md) | aprovado | a criar no `/plan` |
 
 ## Template
