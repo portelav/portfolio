@@ -166,3 +166,4 @@ Cada rodada é uma conversa com o dono. Decisões numeradas (D1, D2...) para o a
 - **D34.** A troca do Direito pela computação é contada no Sobre. A abertura tem só a frase curta de apresentação.
 - **D35.** As chamadas da abertura são "Ver projetos" e "Falar comigo".
 - **D36.** A frase de apresentação não cita o período do curso, para não envelhecer.
+- **D37.** A frase de apresentação é "Me chamo Lucas Portela e estudo Ciência da Computação. Atualmente estou aprendendo a desenvolver com IA." Fala de como Lucas aprende, por escolha do dono, e não é atribuição de autoria. Ajusta o início previsto na D28.
