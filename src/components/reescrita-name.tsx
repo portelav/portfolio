@@ -1,4 +1,11 @@
-import { brandGlyphs, cursor, nameViewBox, serifGlyphs } from "@/lib/reescrita-glyphs";
+import type { CSSProperties } from "react";
+
+import {
+  brandGlyphs,
+  cursor,
+  nameViewBox,
+  serifGlyphs,
+} from "@/lib/reescrita-glyphs";
 import {
   brandHiddenFor,
   cursorKeyframes,
@@ -19,45 +26,57 @@ const script = `(function(){try{if(matchMedia("(prefers-reduced-motion: reduce)"
 
 const styles = `${cursorKeyframes()}@media (prefers-reduced-motion:no-preference){html[data-reescrita] .reescrita-cursor{animation:reescrita-cursor ${sequenceDuration}ms step-end,brand-cursor-blink 1.06s steps(1) 4.7 ${sequenceDuration}ms}}`;
 
-export function ReescritaName({ label, className }: ReescritaNameProps) {
+function timed(ms: number) {
+  return { "--reescrita-time": `${ms}ms` } as CSSProperties;
+}
+
+// Goes right before the name. React moves the style to the head.
+export function ReescritaStart() {
   return (
     <>
-      <style dangerouslySetInnerHTML={{ __html: styles }} />
+      <style href="reescrita" precedence="default">
+        {styles}
+      </style>
       <script dangerouslySetInnerHTML={{ __html: script }} />
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox={nameViewBox}
-        role="img"
-        aria-label={label}
-        className={`overflow-visible ${className ?? ""}`}
-      >
-        <g fill="var(--fg)" fillRule="evenodd">
-          {serifGlyphs.map((d, index) => (
-            <path
-              key={d}
-              className="reescrita-serif"
-              style={{ "--reescrita-time": `${serifVisibleFor[index]}ms` } as React.CSSProperties}
-              d={d}
-            />
-          ))}
-          {brandGlyphs.map((d, index) => (
-            <path
-              key={d}
-              className="reescrita-brand"
-              style={{ "--reescrita-time": `${brandHiddenFor[index]}ms` } as React.CSSProperties}
-              d={d}
-            />
-          ))}
-        </g>
-        <rect
-          className="brand-cursor reescrita-cursor"
-          x={cursor.x}
-          y={cursor.y}
-          width={cursor.width}
-          height={cursor.height}
-          fill="var(--accent)"
-        />
-      </svg>
     </>
+  );
+}
+
+export function ReescritaName({ label, className }: ReescritaNameProps) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox={nameViewBox}
+      role="img"
+      aria-label={label}
+      className={`overflow-visible ${className ?? ""}`}
+    >
+      <g fill="var(--fg)" fillRule="evenodd">
+        {serifGlyphs.map((d, index) => (
+          <path
+            key={d}
+            className="reescrita-serif"
+            style={timed(serifVisibleFor[index])}
+            d={d}
+          />
+        ))}
+        {brandGlyphs.map((d, index) => (
+          <path
+            key={d}
+            className="reescrita-brand"
+            style={timed(brandHiddenFor[index])}
+            d={d}
+          />
+        ))}
+      </g>
+      <rect
+        className="brand-cursor reescrita-cursor"
+        x={cursor.x}
+        y={cursor.y}
+        width={cursor.width}
+        height={cursor.height}
+        fill="var(--accent)"
+      />
+    </svg>
   );
 }
