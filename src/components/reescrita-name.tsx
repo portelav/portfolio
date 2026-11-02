@@ -49,7 +49,7 @@ export function ReescritaName({ label, className }: ReescritaNameProps) {
       viewBox={nameViewBox}
       role="img"
       aria-label={label}
-      className={`overflow-visible ${className ?? ""}`}
+      className={className}
     >
       <g fill="var(--fg)" fillRule="evenodd">
         {serifGlyphs.map((d, index) => (
