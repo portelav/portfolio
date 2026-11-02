@@ -11,8 +11,8 @@ Em poucos segundos, o visitante vê o nome `portelav` ser reescrito, sabe que el
 
 - Nome `portelav`, com o cursor âmbar no fim.
 - A palavra primeiro em Libre Caslon Text, a letra de livro de Direito. Depois em IBM Plex Mono Medium, a da marca. As duas em vetor.
-- Frase de apresentação, em texto, começando com "Lucas Portela" (PRD, D28).
-- > TODO: texto final da frase, em pt-BR e inglês. Depende de Lucas. Ela não cita o período, para não envelhecer (PRD, D36).
+- Frase de apresentação, em texto (PRD, D37): "Me chamo Lucas Portela e estudo Ciência da Computação. Atualmente estou aprendendo a desenvolver com IA." Em inglês: "My name is Lucas Portela and I study Computer Science. Right now I'm learning to build software with AI."
+- A frase não cita o período, para não envelhecer (PRD, D36).
 - A troca do Direito pela computação é contada no Sobre, não aqui (PRD, D34).
 - Duas chamadas: "Ver projetos" e "Falar comigo"; em inglês, "See projects" e "Get in touch" (PRD, D35).
 
