@@ -12,10 +12,9 @@ Em poucos segundos, o visitante vê o nome `portelav` ser reescrito, sabe que el
 - Nome `portelav`, com o cursor âmbar no fim.
 - A palavra primeiro em Libre Caslon Text, a letra de livro de Direito. Depois em IBM Plex Mono Medium, a da marca. As duas em vetor.
 - Frase de apresentação, em texto, começando com "Lucas Portela" (PRD, D28).
-- > TODO: resto da frase, em pt-BR e inglês. Depende de Lucas. Dados confirmados: Ciência da Computação, Afya UNIMA, 4º período (PRD, D17).
-- > TODO: a troca do Direito pela computação é dita nesta frase ou no Sobre (PRD, D23). Depende de Lucas.
-- Duas chamadas, para Projetos e para Contato (PRD, D28).
-- > TODO: texto das chamadas, em pt-BR e inglês. Depende de Lucas.
+- > TODO: texto final da frase, em pt-BR e inglês. Depende de Lucas. Ela não cita o período, para não envelhecer (PRD, D36).
+- A troca do Direito pela computação é contada no Sobre, não aqui (PRD, D34).
+- Duas chamadas: "Ver projetos" e "Falar comigo"; em inglês, "See projects" e "Get in touch" (PRD, D35).
 
 ## Comportamento
 
@@ -24,9 +23,9 @@ Em poucos segundos, o visitante vê o nome `portelav` ser reescrito, sabe que el
 - Na primeira dobra, o cabeçalho mostra só os seletores. O nome entra nele depois que a abertura sai da tela (PRD, D30). O detalhe fica no FDD de Cabeçalho e rodapé.
 - A animação não prende o visitante: ele pode rolar e usar as chamadas enquanto ela roda.
 - A Reescrita roda só na primeira carga da sessão, marcada em `sessionStorage`. Recarregar ou trocar de idioma ou de tema não a repete: o visitante vê o quadro final (PRD, D29).
-- O HTML traz o quadro final. Um script curto, antes da primeira pintura, troca para o quadro em Caslon só quando a Reescrita vai rodar. Assim o visitante nunca vê o nome pronto voltar para o início.
-- Se a Reescrita não começar até 1 s depois da primeira pintura, o nome vai direto para o quadro final. Valor proposto, a ajustar no protótipo.
-- > TODO: layout final. Decidir no `/plan`, com protótipo no navegador.
+- O HTML traz o quadro final. Um script curto, antes de o nome ser pintado, marca a página só quando a Reescrita vai rodar, e o CSS cuida da sequência. Assim ela não espera o JavaScript da página, e o visitante nunca vê o nome pronto voltar para o início.
+- As chamadas levam às seções Projetos e Contato. Até essas seções existirem, os links não têm destino. O lançamento exige que funcionem.
+- > TODO: layout final. Lucas decide no preview, junto do tempo, antes do PR.
 
 ## Movimento
 
@@ -81,7 +80,7 @@ Nunca anima: nada além da letra e do cursor. Sem desfoque, sem glitch, sem fade
 - [ ] Na primeira dobra, em 390 px e no computador, aparecem "Lucas Portela" e as duas chamadas, e elas levam a Projetos e a Contato.
 - [ ] Dá para rolar e usar as chamadas durante a animação.
 - [ ] Recarregar na mesma sessão, ou trocar de idioma ou de tema, não repete a Reescrita.
-- [ ] Com CPU e rede limitadas, o nome pronto não aparece antes do quadro em Caslon. Se a Reescrita atrasar mais que o limite, o nome vai direto ao quadro final.
+- [ ] Com CPU e rede limitadas, o nome pronto não aparece antes do quadro em Caslon.
 - [ ] Quadro final comparado ao `nome-escuro.svg` e ao `nome-claro.svg`, sem diferença visível.
 - [ ] O cursor para aceso depois de 5 s e volta a piscar com hover. Na abertura, o nome não entra na ordem de foco.
 - [ ] Com `prefers-reduced-motion`, nenhuma animação roda, nem no hover.
