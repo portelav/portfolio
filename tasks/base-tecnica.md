@@ -3,8 +3,8 @@
 **Slug:** `base-tecnica`
 **Branch:** `chore/base-tecnica`
 **Seção ou área:** infraestrutura do site
-**Status:** Planning
-**Gate S2:** Bloqueado
+**Status:** Execution
+**Gate S2:** Livre
 
 ---
 
@@ -53,9 +53,7 @@
 11. O preview da Vercel do PR abre, e `portelav.vercel.app` continua mostrando a versão antiga.
 
 ### Perguntas bloqueadoras
-1. **Modo padrão:** começar sempre no escuro ou seguir o sistema? Recomendação: escuro. É o fundo de apresentação da marca, e também o que aparece sem JavaScript.
-2. **Fonte do texto corrido:** Red Hat Text ou Red Hat Display? Recomendação: Red Hat Text, desenhada para leitura em tamanhos menores. Títulos seguem em Red Hat Display, e detalhes em Red Hat Mono.
-3. **Valores propostos de tipografia e forma:** ver Stage 3, bloco 4. Lucas aprova o visual.
+- Nenhuma. Respondidas por Lucas em 2026-11-02: modo padrão escuro, Red Hat Text no texto corrido, e valores do Stage 3, bloco 4, aprovados, com ajuste possível depois.
 
 ### Premissas
 - Lucas importa o repositório na Vercel, porque não há CLI nem token neste ambiente.
@@ -136,10 +134,10 @@ Antes do PR: QA no navegador pelo MCP do Chrome DevTools, depois o teste manual 
 
 - [x] Textos previstos em pt-BR e inglês
 - [x] FDD existe ou está no checklist: não se aplica, o PRD dispensa FDD neste item
-- [ ] Decisão de produto coberta pelo PRD ou pergunta aberta: três perguntas abertas no Stage 1
+- [x] Decisão de produto coberta pelo PRD ou pergunta aberta: respondidas no Stage 1
 - [x] Checklist ≤ 10, SoT ≤ 4, decisão única, evidências ≤ 7
 
-**Gate S2:** Bloqueado
+**Gate S2:** Livre
 
 ---
 
