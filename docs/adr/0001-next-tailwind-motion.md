@@ -22,3 +22,5 @@ Next.js 16 com App Router, React 19 e TypeScript, Tailwind CSS 4 para os tokens 
 - Next.js 16 muda convenções: `proxy.ts`, parâmetros assíncronos. Ler `node_modules/next/dist/docs/` antes de escrever código.
 - Motion pesa no bundle. Entra só nos componentes que precisam dele. Efeito simples, como o piscar do cursor, fica em CSS.
 - O código antigo sai por inteiro na entrega da base técnica. Ele continua acessível pela tag `v1-academic`.
+
+Nota (2026-11-02): o repositório foi recriado sem o código antigo, que ficou em um repositório privado à parte. Ver PRD, D20. A escolha de stack não muda.

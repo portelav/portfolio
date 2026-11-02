@@ -23,3 +23,5 @@ Hospedagem na Vercel, com produção a partir da `main` e preview por branch e p
 - URL e parâmetro de busca não podem carregar dado pessoal, porque entram na medição.
 - O plano grátis tem limite de eventos. Conferir no painel depois do lançamento.
 - Trocar de hospedagem mais tarde exige trocar também a medição.
+
+Nota (2026-11-02): não há `v2`. A reconstrução tem projeto próprio na Vercel, e `portelav.vercel.app` passa para ele no lançamento. Ver PRD, D21. A escolha de hospedagem e medição não muda.
