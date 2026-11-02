@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+@custom-variant light (&:where([data-theme="light"], [data-theme="light"] *));
+
+/* Brand tokens from docs/design/DESIGN.md. Dark is the default mode. */
+:root {
+  color-scheme: dark;
+  --bg: #0b0b0c;
+  --fg: #f2f2f0;
+  --accent: #e3a33b;
+}
+
+[data-theme="light"] {
+  color-scheme: light;
+  --bg: #f3f2ee;
+  --fg: #141413;
+  --accent: #a8650a;
+}
+
+@theme inline {
+  /* Only the design system values exist: the default scales are removed. */
+  --color-*: initial;
+  --color-bg: var(--bg);
+  --color-fg: var(--fg);
+  --color-accent: var(--accent);
+
+  --font-*: initial;
+  --font-sans: var(--font-red-hat-text), sans-serif;
+  --font-display: var(--font-red-hat-display), sans-serif;
+  --font-mono: var(--font-red-hat-mono), monospace;
+
+  --text-*: initial;
+  --text-sm: 0.875rem;
+  --text-sm--line-height: 1.5;
+  --text-base: 1.0625rem;
+  --text-base--line-height: 1.6;
+  --text-lg: 1.25rem;
+  --text-lg--line-height: 1.5;
+  --text-xl: 1.75rem;
+  --text-xl--line-height: 1.3;
+  --text-display: clamp(2.25rem, 1.7rem + 2.25vw, 3.5rem);
+  --text-display--line-height: 1.1;
+
+  --radius-*: initial;
+  --shadow-*: initial;
+}
+
+@layer base {
+  body {
+    @apply bg-bg text-fg font-sans text-base;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+
+  button,
+  select,
+  summary,
+  [role="button"] {
+    min-width: 2.75rem;
+    min-height: 2.75rem;
+  }
+}
