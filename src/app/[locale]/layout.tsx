@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { hasLocale } from "next-intl";
+import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
 
@@ -66,9 +66,12 @@ export default async function LocaleLayout({
         <ThemeScript />
       </head>
       <body className="flex min-h-dvh flex-col">
-        <SiteHeader />
-        {children}
-        <SiteFooter />
+        {/* Client components get their texts as props, so no messages ship. */}
+        <NextIntlClientProvider messages={null}>
+          <SiteHeader />
+          {children}
+          <SiteFooter />
+        </NextIntlClientProvider>
       </body>
     </html>
   );
