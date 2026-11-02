@@ -34,7 +34,7 @@ Regras do guia, sempre:
 - Símbolo e nome nunca aparecem juntos.
 - Em volta da logo, espaço livre de pelo menos a largura do bloco âmbar.
 - Nome com no mínimo 96 px de largura.
-- O nome vem do arquivo, nunca digitado em texto. A única exceção é a Reescrita, em que a digitação é a ideia, e o quadro final precisa ser igual ao arquivo.
+- O nome vem do arquivo, nunca digitado em texto. Na Reescrita, a digitação é a revelação do próprio vetor do arquivo, letra por letra.
 - Sem esticar, girar, trocar cor, nem pôr sombra, contorno ou degradê.
 - Sobre foto ou fundo agitado, só com área calma atrás.
 
@@ -68,7 +68,7 @@ Por causa da última linha, texto pequeno em destaque no modo claro usa `--fg`, 
 | Papel | Fonte | Tamanho e peso |
 |---|---|---|
 | Logo e quadro final da Reescrita | IBM Plex Mono Medium, em vetor | Definido pelo arquivo |
-| Primeiro quadro da Reescrita | Libre Caslon Text Regular | Mesmo corpo do nome |
+| Primeiro quadro da Reescrita | Libre Caslon Text Regular, em vetor | Mesmo corpo do nome |
 | Títulos | Red Hat Display | > TODO: escala na base técnica |
 | Detalhes e dado real: datas, tags, links | Red Hat Mono | > TODO: escala na base técnica |
 | Texto corrido | > TODO: não definido. Decidir na base técnica, entre as Red Hat | > TODO |
@@ -83,8 +83,8 @@ Fontes carregadas por `next/font`, servidas do próprio site. Nada abaixo de 14 
 
 | O quê | Gatilho | Duração e curva | Por quê |
 |---|---|---|---|
-| Reescrita | Primeira carga da página | Cada letra de 140 a 230 ms, ver `docs/fdd/abertura.md` | Conta a troca do Direito pelo código |
-| Cursor do nome | Fim da digitação; hover ou foco | Ciclo de 1,06 s em `steps(1)`, por 5 s, e depois aceso | A marca é o instante da digitação |
+| Reescrita | Primeira carga da sessão | No máximo 3 s, com cada letra de 140 a 230 ms, ver `docs/fdd/abertura.md` | Conta a troca do Direito pelo código |
+| Cursor do nome | Fim da digitação; hover; foco onde o nome é link | Ciclo de 1,06 s em `steps(1)`, por 5 s, e depois aceso | A marca é o instante da digitação |
 
 - Animação só de `transform` e `opacity`; nada de desfoque ou `mix-blend-mode` em elemento que se move.
 - O que se mexe sozinho por mais de 5 s tem como pausar ou para sozinho (WCAG 2.2.2).
@@ -94,7 +94,7 @@ Fontes carregadas por `next/font`, servidas do próprio site. Nada abaixo de 14 
 
 | Componente | Onde | Estados |
 |---|---|---|
-| Nome com cursor | Abertura, cabeçalho | Animando, piscando, aceso, movimento reduzido |
+| Nome com cursor | Abertura; cabeçalho, depois que a abertura sai da tela | Animando, piscando, aceso, movimento reduzido |
 | Seletor de idioma | Cabeçalho | pt-BR, en, foco |
 | Seletor de tema | Cabeçalho | Escuro, claro, foco |
 | Botão de WhatsApp | Contato | Padrão, foco, hover |
