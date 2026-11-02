@@ -199,4 +199,57 @@ Extras: o hook passou nos três casos (sem mudança em código, com código vál
 
 ## Stage 9 — Walkthrough
 
-*(Preenchido pelo walkthrough.)*
+> Data: 2026-11-02
+
+### Resumo
+- **Veredito:** WARNINGS
+- **Arquivos analisados:** 43
+- **Findings:** 0 críticos, 5 avisos
+
+### Checklist
+| Item | Status | Observação |
+|---|---|---|
+| Escopo | OK | Só o que o plano previa, com os desvios do Stage 6 |
+| Next.js 16 | OK | `proxy.ts`, `await params`, `next typegen`, ESLint direto, nenhum `"use client"` |
+| Segredo | OK | Nenhuma variável de ambiente. `gitleaks` limpo no histórico da branch e nos arquivos rastreados |
+| Produto | OK | ADR 0002, D25 e D31 atendidos. Decisões novas foram perguntadas a Lucas |
+| Regras de fora | OK | Nenhum cookie. Nenhum conteúdo de terceiro entrou |
+| Textos | OK | Tudo nos arquivos de mensagens, nos dois idiomas, sem travessão e sem palavra vetada |
+| Repositório público | Ressalva | Sem dado de terceiro nem nota interna. PNGs sem metadado. `favicon.ico` não inspecionado por dentro |
+| Tokens e marca | OK | Cor só nos tokens e no `theme-color` do kit. Nome pelo arquivo, 240 px, sem símbolo ao lado |
+| 390 px e computador | OK | `/` e `/en`, escuro e claro, sem rolagem horizontal |
+| Toque, foco e alternativo | Ressalva | Texto alternativo conferido. Regras de foco e 44 px estão no CSS, mas a página não tem elemento interativo para exercitá-las |
+| Movimento | OK | Nada se move nesta entrega |
+| Desempenho | OK | CLS 0. Sem recurso de outra origem. Motion instalado e sem uso |
+| Verificações | Ressalva | Verdes no local, depois de `npm ci` limpo. CI ainda não rodou |
+| Commits | OK | Conventional Commits, até 72 caracteres, sem atribuição |
+| `.env.example` | Não se aplica | Nenhuma variável nova |
+| Docs | Ressalva | Atualizados, ver aviso sobre "feito" |
+
+### Findings
+#### Critical
+- Nenhum.
+
+#### Warnings
+- CI e preview ainda não rodaram, e os critérios 10 e 11 seguem abertos — `.github/workflows/ci.yml` — conferir no PR antes do merge. A Vercel é o item 10, passo de Lucas.
+- PRD e `CLAUDE.md` já dizem que a base está pronta, antes do merge — `docs/PRD.md:30`, `CLAUDE.md:33` — só vale depois do merge. Se o PR mudar de rumo, corrigir os dois.
+- `theme-color` fica sempre escuro, também no modo claro — `src/lib/site.ts:18` — tratar junto do seletor de tema, no item Cabeçalho e rodapé.
+- Red Hat Display e Red Hat Mono estão configuradas, mas nada as usa ainda, então não foram vistas renderizando — `src/lib/fonts.ts:9` — conferir no primeiro uso, e rever o `preload: false` da Display, que deve ser a fonte dos títulos.
+- Chrome avisa sobre dimensões de imagem com carga preguiçosa, sem erro e com CLS 0 — `src/components/brand-name.tsx:16` — a Abertura troca esse componente. Reavaliar lá.
+
+#### Positive
+- O QA de rotas pegou o `matcher` sem escape, que deixava o proxy rodando só em `/`.
+- Chave faltando em um só arquivo de mensagens quebra o `typecheck`, testado de verdade.
+- A primeira pintura já sai no tema salvo, medido no navegador.
+- O lockfile traz os pacotes de Linux que o CI precisa.
+- Nenhum cookie em nenhuma rota testada, inclusive as de 404.
+
+### Verificações executadas
+- `npm ci` limpo, sem mudar o lockfile; `npm run lint`, `npm run typecheck` e `npm run build`: verdes.
+- Lint testado com arquivo de sonda: `no-img-element` e `alt-text` disparam, e a sonda foi apagada.
+- `node --test .claude/hooks/valida-frontmatter.test.mjs`: 1 passou.
+- `git log --format=%B origin/main..HEAD | grep -i -E "co-authored|generated with|claude"`: vazio.
+- Tags `actions/checkout@v6`, `actions/setup-node@v7` e `gitleaks/gitleaks-action@v3` existem. O workflow em si só roda no PR.
+- `portelav.vercel.app` respondeu 200, ainda da versão antiga.
+
+**Gate S9 — WARNINGS**
