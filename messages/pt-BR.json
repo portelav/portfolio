@@ -5,7 +5,9 @@
   },
   "Home": {
     "name": "portelav",
-    "status": "Este site está sendo refeito."
+    "intro": "Me chamo Lucas Portela e estudo Ciência da Computação. Atualmente estou aprendendo a desenvolver com IA.",
+    "seeProjects": "Ver projetos",
+    "getInTouch": "Falar comigo"
   },
   "Header": {
     "homeLabel": "portelav, voltar ao início",
