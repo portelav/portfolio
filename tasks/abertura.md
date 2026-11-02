@@ -3,8 +3,8 @@
 **Slug:** `abertura`
 **Branch:** `feat/abertura`
 **Seção ou área:** abertura, com a animação Reescrita
-**Status:** Planning
-**Gate S2:** Bloqueado
+**Status:** Execution
+**Gate S2:** Livre
 
 ---
 
@@ -20,7 +20,7 @@
 - **Terceiros e regras de fora:** nenhum conteúdo de terceiro. Vale a regra de nenhum cookie: a marca da sessão fica em `sessionStorage`.
 - **Trivial?** Não.
 - **ADR novo?** Não. O ADR 0001 já prevê efeito simples em CSS. Ver Decisão única.
-- **PRD cobre?** Falta o texto final da frase. Layout e tempo são decididos por Lucas no preview.
+- **PRD cobre?** Sim, com a D37. Layout e tempo são decididos por Lucas no preview.
 
 ### Objetivo
 - Fazer o visitante ver o nome ser reescrito, saber que é de Lucas Portela e ter um caminho claro para os projetos e o contato.
@@ -35,12 +35,7 @@ Os da seção "Critérios de aceite" de `docs/fdd/abertura.md`, mais:
 2. A página não baixa IBM Plex Mono nem Libre Caslon Text.
 
 ### Perguntas bloqueadoras
-1. **Texto da frase.** Recomendação, por falar com os dois públicos (D1) sem pose (D2):
-   - pt-BR: "Lucas Portela. Estudo Ciência da Computação em Maceió, busco estágio e faço sites."
-   - Inglês: "Lucas Portela. I study Computer Science in Maceió, Brazil. I'm looking for an internship and I build websites."
-   - Alternativa, sem dizer o que procura: "Lucas Portela. Estudo Ciência da Computação em Maceió e construo projetos reais para a web."
-2. **Chamadas antes das seções existirem:** entrar agora, com os links sem destino até Projetos e Contato ficarem prontos, ou só depois? Recomendação: agora, porque elas fazem parte do layout que Lucas vai avaliar, e o endereço público ainda é o site antigo. O lançamento já exige que funcionem.
-3. **Confirmar os ajustes no FDD:** a Reescrita roda em CSS, e o limite de 1 s sai, porque ela não depende mais do JavaScript da página.
+- Nenhuma. Respondidas por Lucas em 2026-11-02: frase da D37, chamadas entram agora, ainda sem destino, e Reescrita em CSS.
 
 ### Premissas
 - Lucas fecha o tempo e o layout no preview, antes do PR (PRD, D29). Sem essa escolha, o PR não abre.
@@ -95,7 +90,7 @@ Os da seção "Critérios de aceite" de `docs/fdd/abertura.md`, mais:
 
 Até 10 itens, um commit cada, na ordem do `/exec`.
 
-1. [ ] **FDD:** ajustes confirmados e texto final da frase.
+1. [x] **FDD:** ajustes confirmados e texto final da frase, já aplicados com a abertura do Gate.
 2. [ ] **Mensagens:** frase e chamadas nos dois idiomas. Sai a frase provisória.
 3. [ ] **Letras:** `reescrita-glyphs.ts`, conferindo com o kit, ponto a ponto.
 4. [ ] **Sequência:** `reescrita-timeline.ts` e o CSS da Reescrita.
@@ -113,10 +108,10 @@ Antes do PR: QA no navegador pelo MCP do Chrome DevTools, com CPU e rede limitad
 
 - [x] Textos previstos em pt-BR e inglês
 - [x] FDD existe ou está no checklist
-- [ ] Decisão de produto coberta pelo PRD ou pergunta aberta: três perguntas abertas no Stage 1
+- [x] Decisão de produto coberta pelo PRD ou pergunta aberta: respondidas no Stage 1
 - [x] Checklist ≤ 10, SoT ≤ 4, decisão única, evidências ≤ 7
 
-**Gate S2:** Bloqueado
+**Gate S2:** Livre
 
 ---
 
