@@ -3,7 +3,7 @@
 **Slug:** `cabecalho-rodape`
 **Branch:** `feat/cabecalho-rodape`
 **Seção ou área:** cabeçalho, rodapé e página 404
-**Status:** Walkthrough
+**Status:** Done (PR #2 mergeado em 2026-11-02)
 **Gate S2:** Livre
 
 ---
