@@ -110,7 +110,7 @@ Tudo que entra no git fica visível para sempre, inclusive no histórico e nos d
 
 - **Segredo nunca.** Chave, token, senha e `.env` só na hospedagem ou em `.env.local`. O CI roda `gitleaks` e barra, a partir da base técnica.
 - **Dado de terceiro nunca:** paciente, cliente, colega, telefone pessoal, CPF, endereço de casa. Paciente não aparece nem com consentimento. Imagem de cliente ou de colega, como um print de projeto, só entra com autorização de quem aparece.
-- **Exceção registrada:** o número de WhatsApp do próprio Lucas aparece no site e no código por escolha própria (PRD, D9). Mora em um arquivo só.
+- **Exceção registrada:** o número de WhatsApp e o Gmail do próprio Lucas aparecem no site e no código por escolha própria (PRD, D9 e D24). Cada um mora em um arquivo só. Commit continua com o e-mail noreply.
 - **Documento interno fica em `private/`** (ignorado aqui): dúvida aberta, pendência de terceiro, estratégia, opinião sobre alguém, situação pessoal. O doc público registra só decisão tomada e regra.
 - **Mídia sem metadado.** Foto e vídeo novos entram limpos (`exiftool -all=`, `magick -strip`, `ffmpeg -map_metadata -1`): GPS, aparelho, autor, conta e id do documento saem.
 - **Commit com o e-mail noreply** do GitHub, já configurado neste clone.
