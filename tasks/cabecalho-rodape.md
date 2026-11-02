@@ -174,4 +174,56 @@ Extras: nenhuma mensagem no HTML além das usadas, sem erro no console. O único
 
 ## Stage 9 — Walkthrough
 
-*(Preenchido pelo walkthrough.)*
+> Data: 2026-11-02
+
+### Resumo
+- **Veredito:** WARNINGS
+- **Arquivos analisados:** 26
+- **Findings:** 0 críticos em aberto (1 encontrado e corrigido), 6 avisos
+
+### Checklist
+| Item | Status | Observação |
+|---|---|---|
+| Escopo | OK | Só o previsto, com os desvios do Stage 6 |
+| Next.js 16 | OK | `await params`, `proxy.ts`, `"use client"` só em `theme-toggle` e `header-name` |
+| Segredo | OK | Nenhuma variável nova. `gitleaks` limpo na branch |
+| Produto | Ressalva | Bate com D30, D32 e D33. FDD ajustado em três pontos, a confirmar com Lucas |
+| Regras de fora | OK | Nenhum cookie nas rotas testadas |
+| Textos | OK | Tudo nos arquivos de mensagens, nos dois idiomas, sem travessão |
+| Repositório público | OK | Sem dado de terceiro nem nota interna. Nenhuma mídia nova |
+| Tokens e marca | OK | Cores por token, e os valores de `theme-color` iguais a `--bg`. Sem símbolo junto do nome, 96 px no cabeçalho |
+| 390 px e computador | Ressalva | Sem transbordo. A combinação inteira de tamanho, idioma e tema não foi percorrida |
+| Toque, foco e alternativo | OK | 44 px medidos, contorno de 2 px, nomes acessíveis conferidos |
+| Movimento | Ressalva | `transform` e `opacity`, e `visibility` só troca de estado. Cursor termina em 4,98 s |
+| Desempenho | OK | Menos duas imagens. Header de altura fixa |
+| Verificações | Ressalva | Verdes no local. CI só roda no PR |
+| Commits | OK | Conventional Commits, até 72 caracteres, sem atribuição |
+| `.env.example` | Não se aplica | Nenhuma variável nova |
+| Docs | OK | FDD, PRD, ROADMAP, `DESIGN.md` e `CLAUDE.md` |
+
+### Findings
+#### Critical
+- Corrigido: `PT` não fazia parte do nome acessível `Português`, o que falha o critério 2.5.3 da WCAG, nível A. O nome passou a ser `PT, Português`, e `EN, English` pelo mesmo padrão — `messages/pt-BR.json`, `messages/en.json`.
+
+#### Warnings
+- A 404 é montada no navegador: sem JavaScript fica vazia, e com JavaScript pode haver um instante sem conteúdo e com o tema padrão. A causa no Next.js não foi confirmada — `src/app/[locale]/[...rest]/page.tsx` — limite registrado no FDD. Reavaliar se o Next.js mudar.
+- Sem JavaScript, o cabeçalho foi conferido só pelo HTML do servidor — `src/app/globals.css:4` — conferir no teste manual.
+- Não foram exercitados de verdade: clique no link do nome, hover com mouse, navegação com Tab e leitor de tela — `src/components/site-header.tsx` — conferir no teste manual.
+- O link para o português aponta para `/pt-BR` e passa por um 307 até `/` — `src/components/locale-switcher.tsx:23` — funciona. Rever só se medir lentidão.
+- `visibility` entra na lista de transição, fora de `transform` e `opacity` — `src/components/header-name.tsx:35` — é só troca de estado, necessária para a saída do nome.
+- Três pontos mudaram no FDD depois da aprovação: idioma leva ao início, limite da 404 e o nome acessível do idioma — `docs/fdd/cabecalho-rodape.md` — Lucas confirma no PR.
+
+#### Positive
+- O QA pegou o provider ausente, o `dynamicParams` que barrava a 404 e o tema que não aplicava nela.
+- Nenhuma mensagem é enviada ao navegador. Os componentes cliente recebem os textos por props.
+- Os avisos anteriores de `theme-color` e da imagem do nome foram resolvidos, e Red Hat Mono e Display foram vistas renderizando.
+- Depois de desconectado, o projeto antigo da Vercel não reagiu ao push, e `portelav.vercel.app` manteve o mesmo ETag.
+
+### Verificações executadas
+- `npm ci`, `npm run lint`, `npm run typecheck` e `npm run build`: verdes, depois da correção.
+- `git log --format=%B origin/main..HEAD | grep -i -E "co-authored|generated with|claude"`: vazio.
+- `gitleaks` na branch: limpo. `npm audit --omit=dev`: 0 vulnerabilidades.
+- `curl`: `/` e `/en` 200, `/xx` e `/en/xx` 404, `aria-label` novos no HTML.
+- Status da Vercel no último push antes desta correção: só `portelav-site`, com sucesso.
+
+**Gate S9 — WARNINGS**
