@@ -14,7 +14,7 @@ Textos nos arquivos de mensagens, em pt-BR e inglês. Valores propostos, a confi
 | Lugar | pt-BR | Inglês |
 |---|---|---|
 | Idioma, visível | `PT` e `EN` | `PT` e `EN` |
-| Idioma, para leitor de tela | Português; English | Português; English |
+| Idioma, para leitor de tela | PT, Português; EN, English | PT, Português; EN, English |
 | Tema, visível | `Claro` no modo escuro; `Escuro` no modo claro | `Light` no modo escuro; `Dark` no modo claro |
 | Tema, para leitor de tela | Mudar para o modo claro; Mudar para o modo escuro | Switch to light mode; Switch to dark mode |
 | Nome, para leitor de tela | portelav, voltar ao início | portelav, back to top |
