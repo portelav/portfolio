@@ -30,7 +30,7 @@ Onde está cada coisa:
 
 ## Estado atual
 
-Base técnica pronta, com página provisória fora do índice dos buscadores. As seções ainda não foram construídas. No ar: https://portelav.vercel.app, ainda a versão antiga.
+Base técnica, cabeçalho, rodapé e página 404 prontos, com página provisória fora do índice dos buscadores. As demais seções ainda não foram construídas. No ar: https://portelav.vercel.app, ainda a versão antiga.
 
 ## Ambientes
 
@@ -147,12 +147,12 @@ npm run build
 
 ```text
 messages/            textos em pt-BR e inglês
-public/              ícones e manifesto do kit; nome em public/brand/
-src/app/[locale]/    layout raiz e páginas, só composição
+public/              ícones e manifesto do kit
+src/app/[locale]/    layout raiz, páginas e 404, só composição
 src/app/globals.css  tokens do DESIGN.md
 src/components/      componentes
 src/i18n/            rotas e carga de mensagens de next-intl
-src/lib/             fontes e metadados da marca
+src/lib/             fontes, tema e metadados da marca
 src/proxy.ts         resolve o idioma pela URL
 ```
 

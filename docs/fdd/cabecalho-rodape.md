@@ -1,6 +1,6 @@
 # FDD: Seção Cabeçalho e rodapé
 
-Status: aprovado
+Status: implementado
 PRD: seção 6, item Cabeçalho e rodapé; D25, D26, D27, D30, D32 e D33
 
 ## Objetivo

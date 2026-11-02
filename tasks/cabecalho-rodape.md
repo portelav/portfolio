@@ -3,7 +3,7 @@
 **Slug:** `cabecalho-rodape`
 **Branch:** `feat/cabecalho-rodape`
 **Seção ou área:** cabeçalho, rodapé e página 404
-**Status:** Execution
+**Status:** Walkthrough
 **Gate S2:** Livre
 
 ---
@@ -118,33 +118,57 @@ Antes do PR: QA no navegador pelo MCP do Chrome DevTools, depois o teste manual 
 
 ## Stage 6 — Code Execution
 
-*(Preenchido pelo exec.)*
-
 | # | Camada | Arquivo | Status |
 |---|---|---|---|
+| 1 | FDD | `docs/fdd/cabecalho-rodape.md`, `docs/fdd/README.md` | feito |
+| 2 | Mensagens | `messages/pt-BR.json`, `messages/en.json` | feito |
+| 3 | Nome | `src/components/brand-name.tsx`, `src/app/globals.css`, `src/app/[locale]/page.tsx`; `public/brand/` removida | feito |
+| 4 | Tema | `src/components/theme-script.tsx`, `src/components/theme-toggle.tsx`, `src/lib/theme.ts`, `src/lib/site.ts`, `src/app/globals.css` | feito |
+| 5 | Idioma | `src/components/locale-switcher.tsx`, `src/lib/fonts.ts` | feito |
+| 6 | Cabeçalho | `src/components/site-header.tsx`, `src/components/header-name.tsx` | feito |
+| 7 | Rodapé | `src/components/site-footer.tsx` | feito |
+| 8 | Composição | `src/app/[locale]/layout.tsx`, `src/app/[locale]/page.tsx` | feito |
+| 9 | 404 | `src/app/[locale]/not-found.tsx`, `src/app/[locale]/[...rest]/page.tsx` | feito |
+| 10 | Docs | FDD, PRD, ROADMAP, `DESIGN.md`, `CLAUDE.md` | feito |
 
 ### Desvios do plano
-- Nenhum | …
+- **Provider do `next-intl`:** o `Link` precisa de `NextIntlClientProvider`, e sem ele o build falhava. Entrou no layout com `messages={null}`, em commit próprio, para não enviar as mensagens ao navegador.
+- **`dynamicParams = false` removido:** o risco previsto no Stage 3 se confirmou, porque essa linha impedia `[...rest]`. O `hasLocale` do layout continua barrando idioma inválido.
+- **Seletor de idioma leva ao início:** o FDD dizia "a mesma página". O componente é de servidor e o site tem uma página só, então o link aponta para `/`. FDD ajustado.
+- **404 montada no navegador:** o HTML do servidor vem como casca de erro do Next.js, e a página aparece com JavaScript. Não encontrei na documentação do Next.js se esse é o comportamento esperado; o que vi é que o layout renderiza normalmente e a casca aparece só com `notFound()`. Sem JavaScript, a resposta é 404 com tela vazia. FDD ajustado com esse limite.
+- **Tema na 404:** como o script antes da pintura não roda lá, o `theme-toggle` aplica o tema salvo ao montar. Nessa página, o tema claro salvo pode aparecer depois de um instante.
+- **`src/lib/theme.ts`:** arquivo não previsto, com as cores do `theme-color`, usado pelo script, pelo botão e pelos metadados.
 
 ---
 
 ## Stage 7 — Tests
 
-*(Preenchido pelo exec.)*
+Não há suíte de testes automatizados nesta entrega. Conferido no servidor de produção local, com `curl` e pelo MCP do Chrome DevTools.
 
 | Critério de aceite | Como foi verificado |
 |---|---|
+| 390 px e computador, 44 px | 390 e 1440 px, sem transbordo. `PT` e `EN` com 44 x 44, tema com 58 x 44, nome com altura 44 e 96 px de largura. `/`, `/en` e `/xx` conferidos; escuro e claro principalmente em 390 px |
+| Trocar idioma, sem cookie | Clique em `PT` em `/en` terminou em `/`, com `lang="pt-BR"`. `/pt-BR` responde 307 para `/`. Nenhum `Set-Cookie` em cinco rotas, e `document.cookie` vazio |
+| Trocar tema | O clique mudou `data-theme`, `localStorage`, fundo e `theme-color`. Sobreviveu à troca para `/en`, com a primeira pintura já clara |
+| Nome no cabeçalho | Na primeira dobra, `visibility: hidden` e fora da lista de foco. Com a página aumentada só no navegador e rolada, ficou visível. Voltando ao topo, escondeu de novo |
+| Link e cursor do nome | Com foco, há uma animação `brand-cursor-blink` que termina em 4,98 s. `href` do link aponta para o início. O clique no link e o hover com mouse real não foram exercitados |
+| Movimento reduzido | Com `prefers-reduced-motion`, nenhuma animação em curso com o foco no nome, e transição `none` |
+| Sem JavaScript | Só pelo HTML do servidor: botão com `no-js:hidden`, nome `invisible`, links de idioma presentes. Não testado com JavaScript desligado no navegador |
+| 404 | `/xx`, `/en/xx` e `/a/b` respondem 404. No navegador, `/xx` e `/en/xx` mostram texto no idioma certo, cabeçalho, rodapé e link. Em `/xx`, o tema claro salvo foi aplicado. Sem JavaScript, tela vazia, limite registrado no FDD |
+| Teclado | Ordem na 404: nome, Português, English, tema, voltar. Na primeira dobra da página principal: Português, English, tema. Lida pela ordem no DOM, sem navegar com Tab de verdade. Contorno de 2 px medido com foco |
+| Red Hat Mono | `Red Hat Mono` carregada e aplicada nos seletores. Red Hat Display aplicada no título da 404 |
+
+Extras: nenhuma mensagem no HTML além das usadas, sem erro no console. O único registro é o próprio 404 do documento em `/xx`.
 
 ---
 
 ## Stage 8 — Verification
 
-*(Preenchido pelo exec.)*
-
-- **lint:** Pass | Fail
-- **typecheck:** Pass | Fail
-- **build:** Pass | Fail
-- **Navegador (390 px e computador, `/` e `/en`, escuro e claro):** Pass | Fail
+- **lint:** Pass
+- **typecheck:** Pass
+- **build:** Pass
+- **Navegador (390 px e computador, `/` e `/en`, escuro e claro):** Pass, com os limites do Stage 7
+- **CI e preview da Vercel:** pendentes, rodam com o push e o PR
 
 ---
 

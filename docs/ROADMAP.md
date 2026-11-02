@@ -7,7 +7,7 @@ Sem data fixa (PRD, D5). Todo o trabalho entra na `main` deste repositório, pub
 | Item | Critério de pronto | Plano |
 |---|---|---|
 | Base técnica | Next.js 16, Tailwind 4, Motion e `next-intl` rodando em `/` e `/en`. Tokens, fontes e ícones do kit no lugar. Hook de lint e typecheck, e CI com `gitleaks`, verdes em PR para `main` | `tasks/base-tecnica.md` |
-| Cabeçalho e rodapé | FDD escrito e implementado, com seletores de idioma e tema e página 404 | a criar |
+| Cabeçalho e rodapé | FDD escrito e implementado, com seletores de idioma e tema e página 404 | `tasks/cabecalho-rodape.md` |
 | Abertura | FDD `docs/fdd/abertura.md` aprovado e implementado, nos dois idiomas | a criar |
 | Projetos | FDD escrito e implementado, com os três casos da PRD, seção 6 | a criar |
 | Sobre | FDD escrito e implementado | a criar |

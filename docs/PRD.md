@@ -28,7 +28,7 @@ Seções previstas. Ordem e detalhe fecham no FDD de cada uma.
 | Item | Objetivo | FDD | Estado |
 |---|---|---|---|
 | Base técnica | Next.js, idiomas, tokens, ícones e CI prontos na `main` | não precisa, é só infraestrutura | feito |
-| Cabeçalho e rodapé | Seletores de idioma e tema, nome depois da abertura, rodapé e página 404 | `docs/fdd/cabecalho-rodape.md` | falta |
+| Cabeçalho e rodapé | Seletores de idioma e tema, nome depois da abertura, rodapé e página 404 | `docs/fdd/cabecalho-rodape.md` | feito |
 | Abertura | Apresentar o nome com a animação Reescrita e dizer quem é | `docs/fdd/abertura.md` | falta |
 | Projetos | Mostrar os três casos em destaque, com o que Lucas fez em cada um | `docs/fdd/projetos.md` | falta |
 | Sobre | Contar a trajetória de forma curta | `docs/fdd/sobre.md` | falta |
