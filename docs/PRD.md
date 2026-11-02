@@ -155,3 +155,8 @@ Cada rodada é uma conversa com o dono. Decisões numeradas (D1, D2...) para o a
 ### Rodada 4 (2026-11-02): base técnica
 
 - **D31.** O modo padrão é o escuro, e o texto corrido usa Red Hat Text. Fecha o modo padrão deixado em aberto na D25.
+
+### Rodada 5 (2026-11-02): cabeçalho e rodapé
+
+- **D32.** O rodapé tem só "Todos os direitos reservados" e o link da nota de privacidade. Os contatos ficam na seção Contato.
+- **D33.** O cabeçalho não tem menu. Depois que a abertura sai da tela, mostra o nome e os seletores.
