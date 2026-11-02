@@ -29,7 +29,7 @@ Seções previstas. Ordem e detalhe fecham no FDD de cada uma.
 |---|---|---|---|
 | Base técnica | Next.js, idiomas, tokens, ícones e CI prontos na `main` | não precisa, é só infraestrutura | feito |
 | Cabeçalho e rodapé | Seletores de idioma e tema, nome depois da abertura, rodapé e página 404 | `docs/fdd/cabecalho-rodape.md` | feito |
-| Abertura | Apresentar o nome com a animação Reescrita e dizer quem é | `docs/fdd/abertura.md` | falta |
+| Abertura | Apresentar o nome com a animação Reescrita e dizer quem é | `docs/fdd/abertura.md` | feito |
 | Projetos | Mostrar os três casos em destaque, com o que Lucas fez em cada um | `docs/fdd/projetos.md` | falta |
 | Sobre | Contar a trajetória de forma curta | `docs/fdd/sobre.md` | falta |
 | Contato | Levar a e-mail, LinkedIn, GitHub e WhatsApp | `docs/fdd/contato.md` | falta |
@@ -47,7 +47,6 @@ Casos em destaque (D3):
 
 | O quê | Quem manda | Para qual item |
 |---|---|---|
-| Frase de apresentação, em pt-BR e inglês | Lucas | Abertura |
 | O que Lucas fez em cada caso, com imagens | Lucas | Projetos |
 | Texto do Sobre | Lucas | Sobre |
 | Foto, se houver | Lucas | Sobre |
@@ -149,7 +148,7 @@ Cada rodada é uma conversa com o dono. Decisões numeradas (D1, D2...) para o a
 - **D26.** Cabeçalho, rodapé e página 404 entram no escopo, com FDD próprio.
 - **D27.** O foco só faz o cursor voltar a piscar onde o nome é link. Na abertura, o nome não recebe foco. Ajusta D16.
 - **D28.** Na abertura, a frase de apresentação começa com "Lucas Portela", e há duas chamadas, para Projetos e para Contato.
-- **D29.** A Reescrita roda só na primeira carga da sessão, com teto provisório de 3 s. Lucas fecha o tempo vendo o protótipo no navegador. Não repete ao recarregar nem ao trocar de idioma ou de tema.
+- **D29.** Tempo fechado na D38. A Reescrita roda só na primeira carga da sessão, com teto provisório de 3 s. Lucas fecha o tempo vendo o protótipo no navegador. Não repete ao recarregar nem ao trocar de idioma ou de tema.
 - **D30.** Na primeira dobra, o cabeçalho mostra só os seletores. O nome entra nele depois que a abertura sai da tela.
 
 ### Rodada 4 (2026-11-02): base técnica
@@ -167,3 +166,4 @@ Cada rodada é uma conversa com o dono. Decisões numeradas (D1, D2...) para o a
 - **D35.** As chamadas da abertura são "Ver projetos" e "Falar comigo".
 - **D36.** A frase de apresentação não cita o período do curso, para não envelhecer.
 - **D37.** A frase de apresentação é "Me chamo Lucas Portela e estudo Ciência da Computação. Atualmente estou aprendendo a desenvolver com IA." Fala de como Lucas aprende, por escolha do dono, e não é atribuição de autoria. Ajusta o início previsto na D28.
+- **D38.** Lucas aprovou no preview o tempo de 2,6 s da Reescrita e o layout da primeira dobra.

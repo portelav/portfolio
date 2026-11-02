@@ -3,7 +3,7 @@
 **Slug:** `abertura`
 **Branch:** `feat/abertura`
 **Seção ou área:** abertura, com a animação Reescrita
-**Status:** Execution
+**Status:** Walkthrough
 **Gate S2:** Livre
 
 ---
@@ -117,33 +117,55 @@ Antes do PR: QA no navegador pelo MCP do Chrome DevTools, com CPU e rede limitad
 
 ## Stage 6 — Code Execution
 
-*(Preenchido pelo exec.)*
-
 | # | Camada | Arquivo | Status |
 |---|---|---|---|
+| 1 | FDD | `docs/fdd/abertura.md`, `docs/PRD.md` | feito |
+| 2 | Mensagens | `messages/pt-BR.json`, `messages/en.json` | feito |
+| 3 | Letras | `src/lib/reescrita-glyphs.ts`, `src/components/brand-name.tsx` | feito |
+| 4 | Sequência | `src/lib/reescrita-timeline.ts`, `src/app/globals.css` | feito |
+| 5 | Nome animado | `src/components/reescrita-name.tsx` | feito |
+| 6 | Abertura | `src/components/abertura.tsx` | feito |
+| 7 | Página | `src/app/[locale]/page.tsx` | feito |
+| 8 | Preview | Lucas aprovou tempo e layout, sem mudanças (D38) | feito |
+| 9 | Docs | FDD, PRD, ROADMAP, `DESIGN.md`, `CLAUDE.md` | feito |
 
 ### Desvios do plano
-- Nenhum | …
+- **Caslon de cabeça para baixo:** a biblioteca que gera os contornos inverte o eixo vertical por padrão. O QA pegou no quadro congelado, e os vetores foram gerados de novo.
+- **Ajustes depois do preview:** o estilo da sequência saiu de dentro do `h1` e foi para o `head`, o piscar no hover deixou de valer no espaço vazio ao lado do nome, e `overflow-visible` saiu por não ser necessário. O visual não deve mudar, mas o preview que Lucas aprovou é anterior a esses commits.
 
 ---
 
 ## Stage 7 — Tests
 
-*(Preenchido pelo exec.)*
+Não há suíte de testes automatizados nesta entrega. Conferido no servidor de produção local, pelo MCP do Chrome DevTools e com `curl`.
 
 | Critério de aceite | Como foi verificado |
 |---|---|
+| Sequência em 390 px e no computador, em 2,6 s | Medida quadro a quadro em 390 px: última letra perto de 2,43 s e fim da sequência em 2,62 s. No computador, início e fim conferidos. CLS 0 |
+| "Lucas Portela" e duas chamadas na primeira dobra | Screenshot em 390 e 1440 px. Chamadas com 44 px e destino `#projetos` e `#contato`, que ainda não existem. O clique não foi exercitado |
+| Rolar e usar as chamadas durante a animação | Não exercitado durante a animação. A sequência é só CSS, sem nada que bloqueie |
+| Sem repetir | Recarregar não repete: 0 animações e sem marca. A troca de tema não recarrega. A troca de idioma usa a mesma `sessionStorage` da aba, sem teste dedicado |
+| Nome pronto não aparece antes da Caslon | Com CPU 6x e 4G lento, a primeira pintura já saiu com marca, 8 letras Caslon e 0 finais |
+| Quadro final igual ao kit | As 8 letras somadas são idênticas ao `d` de `nome-escuro.svg`, por script. A geometria de `nome-claro.svg` é a mesma |
+| Cursor | Depois da sequência, o piscar termina e a marca sai perto de 7,6 s. Com hover real do Chrome, uma animação que termina em 4,98 s, e depois aceso. Na abertura, o nome não entra na ordem de foco |
+| `prefers-reduced-motion` | Sem marca e 0 animações ao abrir. O hover nesse modo está protegido pelo CSS, sem teste dedicado |
+| JavaScript desligado | Só pelo HTML do servidor: sem `data-reescrita`, com as letras finais como estado base. Não testado com JavaScript desligado no navegador |
+| Leitor de tela | Árvore de acessibilidade do Chrome: `heading "portelav"`, uma vez. Leitor de tela real não testado |
+| LCP | 1,6 s com CPU 6x e 4G lento, no servidor local |
+| `/` e `/en` | Textos e idioma certos nos dois |
+| Sem baixar Plex nem Caslon | Só Red Hat Text e Red Hat Mono carregadas |
+
+Extras: Tab real na ordem PT, EN, tema e chamadas, com contorno de 2 px. Enter no botão de tema trocou o modo. Sem erro no console.
 
 ---
 
 ## Stage 8 — Verification
 
-*(Preenchido pelo exec.)*
-
-- **lint:** Pass | Fail
-- **typecheck:** Pass | Fail
-- **build:** Pass | Fail
-- **Navegador (390 px e computador, `/` e `/en`, escuro e claro):** Pass | Fail
+- **lint:** Pass
+- **typecheck:** Pass
+- **build:** Pass
+- **Navegador (390 px e computador, `/` e `/en`, escuro e claro):** Pass, com os limites do Stage 7
+- **CI e preview do último commit:** pendentes, rodam com o push e o PR
 
 ---
 

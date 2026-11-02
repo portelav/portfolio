@@ -1,6 +1,6 @@
 # FDD: Seção Abertura
 
-Status: aprovado
+Status: implementado
 PRD: seção 6, item Abertura
 
 ## Objetivo
@@ -25,19 +25,19 @@ Em poucos segundos, o visitante vê o nome `portelav` ser reescrito, sabe que el
 - A Reescrita roda só na primeira carga da sessão, marcada em `sessionStorage`. Recarregar ou trocar de idioma ou de tema não a repete: o visitante vê o quadro final (PRD, D29).
 - O HTML traz o quadro final. Um script curto, antes de o nome ser pintado, marca a página só quando a Reescrita vai rodar, e o CSS cuida da sequência. Assim ela não espera o JavaScript da página, e o visitante nunca vê o nome pronto voltar para o início.
 - As chamadas levam às seções Projetos e Contato. Até essas seções existirem, os links não têm destino. O lançamento exige que funcionem.
-- > TODO: layout final. Lucas decide no preview, junto do tempo, antes do PR.
+- Layout fechado por Lucas no preview (PRD, D38): à esquerda e centrado na altura da primeira dobra. Nome com a largura toda no celular e até 672 px no computador. Frase e chamadas abaixo dele.
 
 ## Movimento
 
-**Reescrita**, a história da troca do Direito pelo código. Teto provisório de 3 s (PRD, D29):
+**Reescrita**, a história da troca do Direito pelo código. Leva 2,6 s até o fim da digitação (PRD, D38):
 
 1. A palavra aparece em Libre Caslon Text e fica parada por 500 ms, sem cursor.
 2. O cursor âmbar surge no fim da palavra e, depois de 200 ms, apaga a palavra, a 40 ms por letra.
-3. Depois de 130 ms, o cursor digita a palavra de novo, em IBM Plex Mono Medium. Cada letra leva de 140 a 230 ms, como no protótipo, e a digitação soma no máximo 1,8 s.
+3. Depois de 130 ms, o cursor digita a palavra de novo, em IBM Plex Mono Medium. Cada letra leva de 140 a 230 ms, como no protótipo, com intervalos fixos.
 4. O cursor fica no fim e pisca. A partir daqui, ele nunca some.
 5. Depois de 5 s piscando, o cursor para aceso. Ele volta a piscar por mais 5 s ao passar o mouse. O foco só faz isso onde o nome é link, como no cabeçalho (PRD, D27).
 
-O teto e os tempos dos passos 1 e 2 são provisórios. Lucas fecha o tempo vendo o protótipo no navegador, no `/plan`.
+Lucas fechou esses tempos vendo a animação no preview (PRD, D38).
 
 Protótipo de origem: opção Reescrita de `C:\prog\identidade-visual\.superpowers\brainstorm\749-1793501271\content\virada-uma-fonte.html`. Ele leva cerca de 3,7 s, com 900 ms parado, 500 ms até apagar, 60 ms por letra ao apagar e 350 ms de pausa. O ritmo da digitação é mantido, e só o que vem antes dela foi encurtado.
 
@@ -65,7 +65,7 @@ Nunca anima: nada além da letra e do cursor. Sem desfoque, sem glitch, sem fade
 ## Desempenho
 
 - Sem deslocamento de layout: a caixa do nome é reservada com a largura final desde o início, e o quadro em Caslon cabe nela.
-- A Reescrita não carrega fonte: Caslon e Plex Mono vão em vetor, no próprio HTML. O SVG do kit é hoje um path único mais o bloco âmbar, então a divisão em 8 letras e a vetorização da Caslon entram na entrega.
+- A Reescrita não carrega fonte: Caslon e Plex Mono vão em vetor, no próprio HTML. As 8 letras finais somadas são exatamente o path do kit.
 - LCP abaixo de 2,5 s no 4G (PRD, seção 8).
 - A animação usa só `opacity` e `transform`. Trocar a visibilidade de cada letra não muda a medida da caixa.
 
@@ -76,7 +76,7 @@ Nunca anima: nada além da letra e do cursor. Sem desfoque, sem glitch, sem fade
 
 ## Critérios de aceite
 
-- [ ] Em 390 px e no computador, a sequência roda até o fim no tempo fechado no protótipo, sem deslocamento de layout medido.
+- [ ] Em 390 px e no computador, a sequência roda até o fim em 2,6 s, sem deslocamento de layout medido.
 - [ ] Na primeira dobra, em 390 px e no computador, aparecem "Lucas Portela" e as duas chamadas, e elas levam a Projetos e a Contato.
 - [ ] Dá para rolar e usar as chamadas durante a animação.
 - [ ] Recarregar na mesma sessão, ou trocar de idioma ou de tema, não repete a Reescrita.
