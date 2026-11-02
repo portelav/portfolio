@@ -3,7 +3,7 @@
 **Slug:** `base-tecnica`
 **Branch:** `chore/base-tecnica`
 **Seção ou área:** infraestrutura do site
-**Status:** Execution
+**Status:** Walkthrough
 **Gate S2:** Livre
 
 ---
@@ -143,33 +143,57 @@ Antes do PR: QA no navegador pelo MCP do Chrome DevTools, depois o teste manual 
 
 ## Stage 6 — Code Execution
 
-*(Preenchido pelo exec.)*
-
 | # | Camada | Arquivo | Status |
 |---|---|---|---|
+| 1 | Andaime | `package.json`, `package-lock.json`, `.nvmrc`, `tsconfig.json`, `next.config.ts`, `eslint.config.mjs`, `AGENTS.md` | feito |
+| 2 | Idiomas | `src/i18n/*`, `src/proxy.ts`, `src/global.ts`, `messages/pt-BR.json`, `messages/en.json` | feito |
+| 3 | Tema e fontes | `src/app/globals.css`, `src/lib/fonts.ts`, `src/components/theme-script.tsx` | feito |
+| 4 | Marca | `public/*`, `public/brand/*`, `src/lib/site.ts` | feito |
+| 5 | Página provisória | `src/app/[locale]/layout.tsx`, `src/app/[locale]/page.tsx`, `src/components/brand-name.tsx` | feito |
+| 6 | CI | `.github/workflows/ci.yml` | feito, roda no PR |
+| 7 | Hook | `.claude/hooks/check-on-stop.mjs`, `.claude/settings.json` | feito |
+| 8 | Design | `docs/design/DESIGN.md` | feito |
+| 9 | Docs | `CLAUDE.md`, `README.md`, `docs/PRD.md`, `docs/ROADMAP.md` | feito |
+| 10 | Vercel | Importar o repositório como projeto novo | falta, passo de Lucas |
 
 ### Desvios do plano
-- Nenhum | …
+- **Sem `postcss.config.mjs`:** o `create-next-app@16.4.4` liga o Tailwind pelo loader `@tailwindcss/turbopack`, em `next.config.ts`. Segui o gerador.
+- **`cacheComponents` e `partialPrefetching` fora:** o gerador liga os dois, mas o site é estático e não usa `use cache`.
+- **Dois commits de correção além dos itens:** o ponto do `matcher` em `src/proxy.ts` estava sem escape, e o proxy só rodava em `/`. O QA de rotas pegou o erro, porque `/pt-BR` não redirecionava. O outro commit passa o comando do hook como texto único, para tirar um aviso de depreciação do Node.
+- **D31 no PRD:** registrei as respostas de Lucas sobre modo padrão e fonte, que o plano só previa no `DESIGN.md`.
 
 ---
 
 ## Stage 7 — Tests
 
-*(Preenchido pelo exec.)*
+Não há suíte de testes automatizados nesta entrega. Os critérios foram conferidos no servidor de produção local, com `curl` e pelo MCP do Chrome DevTools.
 
 | Critério de aceite | Como foi verificado |
 |---|---|
+| 1. Idioma por rota | `curl`: `/` e `/en` respondem 200, com `lang` certo. `/pt-BR` responde 307 para `/` |
+| 2. Sem detecção de idioma | `curl` com `Accept-Language: en` em `/` devolve `lang="pt-BR"` |
+| 3. Nenhum cookie | `curl` em `/`, `/en`, `/pt-BR` e `/xx`: nenhum `Set-Cookie`. No navegador, `document.cookie` vazio |
+| 4. Mensagem faltando quebra | Removi `Home.status` de `en.json`: `tsc` falhou com TS2344. Arquivo restaurado |
+| 5. Tema sem piscada | Sem nada salvo, abre escuro, mesmo com o sistema em claro. Com `theme=light`, o atributo entra antes do `body`, e a primeira pintura já é clara. `theme=dark` também conferido. Sem erro de hidratação. O HTML do servidor não traz `data-theme`, então sem JavaScript vale o escuro. O navegador com JavaScript desligado não foi testado |
+| 6. Tokens e fontes | Cores computadas iguais aos tokens nos dois modos. Red Hat Text carregada. Todos os recursos da página vêm da própria origem |
+| 7. Ícones e metadado | Ícones, manifesto e nomes respondem 200. Os PNGs só têm os blocos `IHDR`, `IDAT` e `IEND`. O `favicon.ico` não foi inspecionado por dentro |
+| 8. Metadados | `noindex`, `hreflang` dos dois idiomas, `x-default`, título e descrição por idioma, conferidos no HTML |
+| 9. Layout e console | 390 px e 1440 px, sem rolagem horizontal e sem erro no console. Fica um aviso do Chrome, não erro, sobre dimensões de imagem com carga preguiçosa. CLS medido em 0 |
+| 10. Verificações e CI | `lint`, `typecheck` e `build` verdes no local, `gitleaks` limpo no histórico da branch e nos arquivos rastreados. O CI só roda ao abrir o PR: pendente |
+| 11. Preview e site antigo | Pendente: depende do projeto novo na Vercel, passo de Lucas |
+
+Extras: o hook passou nos três casos (sem mudança em código, com código válido e com erro de tipo, que devolve exit 2). `npm audit --omit=dev` sem vulnerabilidades. `/xx` e `/en/xx` respondem 404, com a página padrão do Next.js até o item Cabeçalho e rodapé.
 
 ---
 
 ## Stage 8 — Verification
 
-*(Preenchido pelo exec.)*
-
-- **lint:** Pass | Fail
-- **typecheck:** Pass | Fail
-- **build:** Pass | Fail
-- **Navegador (390 px e computador, `/` e `/en`, escuro e claro):** Pass | Fail
+- **lint:** Pass
+- **typecheck:** Pass
+- **build:** Pass
+- **Navegador (390 px e computador, `/` e `/en`, escuro e claro):** Pass
+- **`gitleaks`:** Pass no histórico da branch e nos arquivos rastreados. Os 8 achados da varredura da pasta inteira são `generic-api-key` em `.next/`, saída de build ignorada pelo git
+- **CI e preview da Vercel:** pendentes, dependem do PR e do projeto novo
 
 ---
 
