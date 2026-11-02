@@ -48,7 +48,7 @@ Regras do guia, sempre:
 
 > TODO: cinzas para texto secundário e bordas, se o layout pedir. Não são cores de marca: precisam de contraste verificado, e entram aqui antes de serem usados.
 
-> TODO: modo padrão, seguir o sistema ou começar no escuro. O seletor guarda a escolha em `localStorage`, nunca em cookie. Decidir na base técnica, junto do tratamento para evitar piscada de tema no carregamento.
+Modo padrão: escuro, também sem JavaScript (PRD, D31). O seletor guarda a escolha em `localStorage`, nunca em cookie. Um script curto aplica a escolha antes da primeira pintura, para o tema não piscar no carregamento.
 
 ### Contraste verificado
 
@@ -69,15 +69,28 @@ Por causa da última linha, texto pequeno em destaque no modo claro usa `--fg`, 
 |---|---|---|
 | Logo e quadro final da Reescrita | IBM Plex Mono Medium, em vetor | Definido pelo arquivo |
 | Primeiro quadro da Reescrita | Libre Caslon Text Regular, em vetor | Mesmo corpo do nome |
-| Títulos | Red Hat Display | > TODO: escala na base técnica |
-| Detalhes e dado real: datas, tags, links | Red Hat Mono | > TODO: escala na base técnica |
-| Texto corrido | > TODO: não definido. Decidir na base técnica, entre as Red Hat | > TODO |
+| Títulos | Red Hat Display | Ver escala abaixo |
+| Detalhes e dado real: datas, tags, links | Red Hat Mono | 14 px |
+| Texto corrido | Red Hat Text (PRD, D31) | 17 px |
 
-Fontes carregadas por `next/font`, servidas do próprio site. Nada abaixo de 14 px, valor proposto a confirmar com o layout.
+Fontes carregadas por `next/font`, servidas do próprio site. Nada abaixo de 14 px.
+
+| Token | Tamanho | Altura de linha |
+|---|---|---|
+| `text-sm` | 14 px | 1,5 |
+| `text-base` | 17 px | 1,6 |
+| `text-lg` | 20 px | 1,5 |
+| `text-xl` | 28 px | 1,3 |
+| `text-display` | 36 a 56 px, fluido | 1,1 |
 
 ## 5. Forma
 
-> TODO: raios, bordas e escala de espaçamento. Definir na base técnica. Vale o princípio 3: sem sombra ou borda que não separe nada.
+- **Raio:** 0, como o bloco âmbar do nome.
+- **Borda:** 1 px, só quando separa algo. Vale o princípio 3.
+- **Sombra:** nenhuma.
+- **Espaçamento:** base de 4 px, a escala padrão do Tailwind.
+- **Foco:** contorno de 2 px em `--accent`, com folga de 2 px. Passa de 3:1 nos dois modos.
+- **Toque:** botão e controle com no mínimo 44 px.
 
 ## 6. Movimento
 
