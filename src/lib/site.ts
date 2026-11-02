@@ -1,5 +1,7 @@
 import type { Metadata, Viewport } from "next";
 
+import { themeColors } from "./theme";
+
 export const siteUrl = "https://portelav.vercel.app";
 
 // Same files and values as web/head-snippet.html in the brand kit.
@@ -15,5 +17,5 @@ export const brandMetadata: Pick<Metadata, "icons" | "manifest"> = {
 };
 
 export const brandViewport: Viewport = {
-  themeColor: "#0b0b0c",
+  themeColor: themeColors.dark,
 };

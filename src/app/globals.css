@@ -1,6 +1,7 @@
 @import "tailwindcss";
 
 @custom-variant light (&:where([data-theme="light"], [data-theme="light"] *));
+@custom-variant no-js (html:not([data-js]) &);
 
 /* Brand tokens from docs/design/DESIGN.md. Dark is the default mode. */
 :root {
