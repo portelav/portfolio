@@ -72,7 +72,37 @@
   }
 }
 
+/*
+ * Reescrita. The base state is the final frame, so it is what shows without
+ * JavaScript, with reduced motion and after the sequence ends.
+ */
+.reescrita-serif {
+  opacity: 0;
+}
+
+@keyframes reescrita-shown {
+  from,
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes reescrita-hidden {
+  from,
+  to {
+    opacity: 0;
+  }
+}
+
 @media (prefers-reduced-motion: no-preference) {
+  html[data-reescrita] .reescrita-serif {
+    animation: reescrita-shown var(--reescrita-time) step-end;
+  }
+
+  html[data-reescrita] .reescrita-brand {
+    animation: reescrita-hidden var(--reescrita-time) step-end;
+  }
+
   .brand-link:focus-visible .brand-cursor {
     animation: brand-cursor-blink 1.06s steps(1) 4.7;
   }

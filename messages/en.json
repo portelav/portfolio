@@ -5,7 +5,9 @@
   },
   "Home": {
     "name": "portelav",
-    "status": "This site is being rebuilt."
+    "intro": "My name is Lucas Portela and I study Computer Science. Right now I'm learning to build software with AI.",
+    "seeProjects": "See projects",
+    "getInTouch": "Get in touch"
   },
   "Header": {
     "homeLabel": "portelav, back to top",

@@ -30,7 +30,7 @@ Onde está cada coisa:
 
 ## Estado atual
 
-Base técnica, cabeçalho, rodapé e página 404 prontos, com página provisória fora do índice dos buscadores. As demais seções ainda não foram construídas. No ar: https://portelav.vercel.app, ainda a versão antiga.
+Base técnica, cabeçalho, rodapé, página 404 e abertura prontos, fora do índice dos buscadores. As demais seções ainda não foram construídas, e as chamadas da abertura ainda não têm destino. No ar: https://portelav.vercel.app, ainda a versão antiga.
 
 ## Ambientes
 
