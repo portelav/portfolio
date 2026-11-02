@@ -3,7 +3,7 @@
 **Slug:** `abertura`
 **Branch:** `feat/abertura`
 **Seção ou área:** abertura, com a animação Reescrita
-**Status:** Walkthrough
+**Status:** Done (PR #3 mergeado em 2026-11-02)
 **Gate S2:** Livre
 
 ---
