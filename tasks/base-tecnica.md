@@ -161,6 +161,7 @@ Antes do PR: QA no navegador pelo MCP do Chrome DevTools, depois o teste manual 
 - **`cacheComponents` e `partialPrefetching` fora:** o gerador liga os dois, mas o site é estático e não usa `use cache`.
 - **Dois commits de correção além dos itens:** o ponto do `matcher` em `src/proxy.ts` estava sem escape, e o proxy só rodava em `/`. O QA de rotas pegou o erro, porque `/pt-BR` não redirecionava. O outro commit passa o comando do hook como texto único, para tirar um aviso de depreciação do Node.
 - **D31 no PRD:** registrei as respostas de Lucas sobre modo padrão e fonte, que o plano só previa no `DESIGN.md`.
+- **Projeto antigo na Vercel:** ao abrir o PR, o projeto que serve `portelav.vercel.app` também tentou um deploy deste repositório, e falhou, mesmo ligado só ao repositório antigo. A causa não foi identificada. Lucas desconectou esse projeto do Git em 2026-11-02, para o merge não correr o risco de trocar o site no ar. O deploy publicado continua lá.
 
 ---
 
