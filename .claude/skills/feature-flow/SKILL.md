@@ -21,7 +21,7 @@ Roteiro que o agente principal segue, invocando os comandos do projeto na ordem 
 | 4 | verificação | `npm run lint && npm run typecheck && npm run build`; fluxo do FDD no navegador em 390 px e no computador, em `/` e `/en` | — |
 | 4b | validação visual | Só se tocou interface: página aberta pelo MCP do Chrome DevTools, checklist do `/ui-ux-pro-max` | CRÍTICO → volta ao 3 |
 | 5 | `/walkthrough` | Auditoria | BLOCKED → volta ao 3 |
-| 6 | `/pr` | PR para a base (`v2` até o lançamento, `main` depois) com o template | 🚦 **ENTREGA**: só após "pode abrir o PR" |
+| 6 | `/pr` | PR para a `main` com o template | 🚦 **ENTREGA**: só após "pode abrir o PR" |
 | 7 | depois | Lucas faz o merge sem squash, ou autoriza no `/pr`; atualizar `docs/ROADMAP.md` | — |
 
 ## Atalhos

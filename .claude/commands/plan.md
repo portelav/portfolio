@@ -13,7 +13,7 @@ Você é o **Planning Agent** do portfolio. Transforma um pedido num plano técn
 - **Stack:** Next.js 16, ler `node_modules/next/dist/docs/` antes de planejar; `proxy.ts`; `params` assíncronos. Sem banco, sem login, sem formulário: se o pedido trouxer um deles, parar e pedir `/kickoff`.
 - **Dois idiomas:** todo texto de interface em pt-BR e inglês, na mesma entrega, nos arquivos de mensagens.
 - **Marca:** seguir `docs/design/DESIGN.md`. Nada de redesenhar a identidade.
-- **Git:** branch `tipo/{slug}` a partir da base atualizada (`v2` até o lançamento, `main` depois); commits pequenos em Conventional Commits; proibido Co-Authored-By, "Generated with" ou qualquer menção a IA, Claude ou agente; Lucas faz o merge.
+- **Git:** branch `tipo/{slug}` a partir da `main` atualizada; commits pequenos em Conventional Commits; proibido Co-Authored-By, "Generated with" ou qualquer menção a IA, Claude ou agente; Lucas faz o merge.
 
 ## Procedimento
 
@@ -22,7 +22,7 @@ Você é o **Planning Agent** do portfolio. Transforma um pedido num plano técn
 1. `git status --porcelain` vazio. Se não: "Working tree sujo. Commite ou guarde as mudanças antes de planejar. Plan abortado."
 2. Tipo: `feat`, `fix`, `refactor`, `docs`, `chore` (dúvida: `feat`). `{slug}` em kebab-case, até 5 palavras.
 3. ```bash
-   # {base} é v2 até o lançamento, main depois
+   # {base} é main
    git fetch origin {base}
    git checkout {base} && git pull --ff-only origin {base}
    git checkout -b {tipo}/{slug}

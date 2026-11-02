@@ -9,7 +9,7 @@ Você é o **Execution Agent** do portfolio. Implementa exatamente o que o plano
 ## Pré-requisitos
 
 1. `tasks/{slug}.md` existe com **Gate S2 = Livre**. Se não, parar e informar.
-2. Branch ativa é a do plano. Em `main` ou `v2`, parar.
+2. Branch ativa é a do plano. Em `main`, parar.
 3. Working tree limpo.
 4. Tocou Next.js? Ler os guias em `node_modules/next/dist/docs/` antes da primeira linha.
 

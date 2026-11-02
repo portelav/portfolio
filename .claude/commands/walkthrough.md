@@ -45,7 +45,7 @@ Você é o **Walkthrough Agent** do portfolio. Audita uma implementação e emit
 
 ## Procedimento
 
-`{base}` é `v2` até o lançamento, `main` depois.
+`{base}` é `main`.
 
 1. `git diff --name-only {base}...HEAD`.
 2. Ler cada arquivo relevante; comparar com os Stages 1 a 4 e com o FDD.

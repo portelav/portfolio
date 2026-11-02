@@ -19,7 +19,7 @@ description: "Loop autônomo de correção de bug do portfolio, reproduce-first.
 Localizar o código e ler o FDD: qual era o comportamento esperado.
 
 ### 2. Branch
-`git status --porcelain` limpo; base atualizada (`v2` até o lançamento, `main` depois); `git checkout -b fix/<slug>`.
+`git status --porcelain` limpo; `main` atualizada; `git checkout -b fix/<slug>`.
 
 ### 3. Reproduzir (vermelho confirmado)
 
