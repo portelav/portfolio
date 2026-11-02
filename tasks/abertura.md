@@ -171,4 +171,56 @@ Extras: Tab real na ordem PT, EN, tema e chamadas, com contorno de 2 px. Enter n
 
 ## Stage 9 — Walkthrough
 
-*(Preenchido pelo walkthrough.)*
+> Data: 2026-11-02
+
+### Resumo
+- **Veredito:** WARNINGS
+- **Arquivos analisados:** 16
+- **Findings:** 0 críticos, 6 avisos
+
+### Checklist
+| Item | Status | Observação |
+|---|---|---|
+| Escopo | OK | Só o previsto, com os desvios do Stage 6 |
+| Next.js 16 | OK | Nenhum `"use client"` novo. Sequência em CSS |
+| Segredo | OK | Nenhuma variável nova. `gitleaks` limpo na branch |
+| Produto | OK | Bate com D28 a D30 e D34 a D38 |
+| Regras de fora | OK | Nenhum cookie. Marca da sessão em `sessionStorage` |
+| Textos | Ressalva | Nos arquivos de mensagens, nos dois idiomas. Inglês sem revisão de Lucas |
+| Repositório público | OK | Sem dado de terceiro nem nota interna. Nenhuma mídia nova |
+| Tokens e marca | OK | Cores por token. Vetor igual ao do kit, sem símbolo junto |
+| 390 px e computador | Ressalva | Chrome em 390 e 1440 px. Safari e iPhone não testados |
+| Toque, foco e alternativo | OK | 44 px, contorno de 2 px com Tab real, nome lido uma vez |
+| Movimento | OK | Só `opacity` e `transform`. Cursor termina em 4,98 s, e movimento reduzido abre no quadro final |
+| Desempenho | OK | LCP de 1,6 s na rede lenta local, CLS 0, sem fonte da Reescrita |
+| Verificações | Ressalva | Verdes no local. CI só roda no PR |
+| Commits | OK | Conventional Commits, até 72 caracteres, sem atribuição |
+| `.env.example` | Não se aplica | Nenhuma variável nova |
+| Docs | OK | FDD, PRD, ROADMAP, `DESIGN.md` e `CLAUDE.md` |
+
+### Findings
+#### Critical
+- Nenhum.
+
+#### Warnings
+- As chamadas não têm destino até Projetos e Contato existirem — `src/components/abertura.tsx:22` — combinado com Lucas, e o lançamento exige.
+- A sequência não foi vista em Safari nem iPhone. Ela usa `transform` em elemento de SVG, ponto em que os navegadores podem diferir — `src/lib/reescrita-timeline.ts` — conferir no teste manual, de preferência no celular.
+- O preview aprovado por Lucas é anterior aos três últimos ajustes de código — `src/components/reescrita-name.tsx` — conferir de novo no preview do PR.
+- Não exercitados: clique nas chamadas, rolagem durante a animação, troca de idioma sem repetir, JavaScript desligado e leitor de tela real — `docs/fdd/abertura.md` — conferir no teste manual.
+- Quem chega à página inicial pelo link da 404 não vê a Reescrita naquela navegação, porque o script não roda em navegação interna. Ela vai direto ao quadro final — `src/components/reescrita-name.tsx` — sem prejuízo, e caso raro.
+- Motion segue instalado e sem uso — `package.json` — decidir na entrega de Projetos, com nota no ADR 0001. O inglês da frase e a grafia do curso também dependem de Lucas.
+
+#### Positive
+- O nome pronto nunca apareceu antes da Caslon, nem com CPU e rede limitadas.
+- As letras finais são iguais ao kit, ponto a ponto.
+- O quadro congelado pegou a Caslon invertida antes de Lucas ver.
+- A auditoria pegou o `style` dentro do `h1` e o hover no espaço vazio, ambos corrigidos.
+
+### Verificações executadas
+- `npm ci`, `npm run lint`, `npm run typecheck` e `npm run build`: verdes.
+- `git log --format=%B origin/main..HEAD | grep -i -E "co-authored|generated with|claude"`: vazio.
+- `gitleaks` na branch: limpo. `npm audit --omit=dev`: 0 vulnerabilidades.
+- `curl`: `/` e `/en` 200, `/xx` e `/en/xx` 404, `/pt-BR` 307, nenhum `Set-Cookie`.
+- Chrome: sequência medida quadro a quadro, CPU e rede limitadas, Tab, hover e árvore de acessibilidade.
+
+**Gate S9 — WARNINGS**
