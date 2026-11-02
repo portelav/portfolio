@@ -9,7 +9,7 @@ Regra: seção sem FDD não entra em desenvolvimento.
 
 | Seção | Status | Plano |
 |---|---|---|
-| [Abertura](abertura.md) | rascunho | a criar no `/plan` |
+| [Abertura](abertura.md) | aprovado | a criar no `/plan` |
 
 ## Template
 

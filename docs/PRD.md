@@ -149,5 +149,5 @@ Cada rodada é uma conversa com o dono. Decisões numeradas (D1, D2...) para o a
 - **D26.** Cabeçalho, rodapé e página 404 entram no escopo, com FDD próprio.
 - **D27.** O foco só faz o cursor voltar a piscar onde o nome é link. Na abertura, o nome não recebe foco. Ajusta D16.
 - **D28.** Na abertura, a frase de apresentação começa com "Lucas Portela", e há duas chamadas, para Projetos e para Contato.
-- **D29.** A Reescrita leva no máximo 3 s e roda só na primeira carga da sessão. Não repete ao recarregar nem ao trocar de idioma ou de tema.
+- **D29.** A Reescrita roda só na primeira carga da sessão, com teto provisório de 3 s. Lucas fecha o tempo vendo o protótipo no navegador. Não repete ao recarregar nem ao trocar de idioma ou de tema.
 - **D30.** Na primeira dobra, o cabeçalho mostra só os seletores. O nome entra nele depois que a abertura sai da tela.

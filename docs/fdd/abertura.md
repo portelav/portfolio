@@ -1,6 +1,6 @@
 # FDD: Seção Abertura
 
-Status: rascunho
+Status: aprovado
 PRD: seção 6, item Abertura
 
 ## Objetivo
@@ -30,7 +30,7 @@ Em poucos segundos, o visitante vê o nome `portelav` ser reescrito, sabe que el
 
 ## Movimento
 
-**Reescrita**, a história da troca do Direito pelo código. Leva no máximo 3 s (PRD, D29):
+**Reescrita**, a história da troca do Direito pelo código. Teto provisório de 3 s (PRD, D29):
 
 1. A palavra aparece em Libre Caslon Text e fica parada por 500 ms, sem cursor.
 2. O cursor âmbar surge no fim da palavra e, depois de 200 ms, apaga a palavra, a 40 ms por letra.
@@ -38,7 +38,7 @@ Em poucos segundos, o visitante vê o nome `portelav` ser reescrito, sabe que el
 4. O cursor fica no fim e pisca. A partir daqui, ele nunca some.
 5. Depois de 5 s piscando, o cursor para aceso. Ele volta a piscar por mais 5 s ao passar o mouse. O foco só faz isso onde o nome é link, como no cabeçalho (PRD, D27).
 
-Os tempos dos passos 1 e 2 são propostos e ajustam-se no protótipo do navegador, dentro dos 3 s.
+O teto e os tempos dos passos 1 e 2 são provisórios. Lucas fecha o tempo vendo o protótipo no navegador, no `/plan`.
 
 Protótipo de origem: opção Reescrita de `C:\prog\identidade-visual\.superpowers\brainstorm\749-1793501271\content\virada-uma-fonte.html`. Ele leva cerca de 3,7 s, com 900 ms parado, 500 ms até apagar, 60 ms por letra ao apagar e 350 ms de pausa. O ritmo da digitação é mantido, e só o que vem antes dela foi encurtado.
 
@@ -77,7 +77,7 @@ Nunca anima: nada além da letra e do cursor. Sem desfoque, sem glitch, sem fade
 
 ## Critérios de aceite
 
-- [ ] Em 390 px e no computador, a sequência roda até o fim em no máximo 3 s, sem deslocamento de layout medido.
+- [ ] Em 390 px e no computador, a sequência roda até o fim no tempo fechado no protótipo, sem deslocamento de layout medido.
 - [ ] Na primeira dobra, em 390 px e no computador, aparecem "Lucas Portela" e as duas chamadas, e elas levam a Projetos e a Contato.
 - [ ] Dá para rolar e usar as chamadas durante a animação.
 - [ ] Recarregar na mesma sessão, ou trocar de idioma ou de tema, não repete a Reescrita.

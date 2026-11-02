@@ -83,7 +83,7 @@ Fontes carregadas por `next/font`, servidas do próprio site. Nada abaixo de 14 
 
 | O quê | Gatilho | Duração e curva | Por quê |
 |---|---|---|---|
-| Reescrita | Primeira carga da sessão | No máximo 3 s, com cada letra de 140 a 230 ms, ver `docs/fdd/abertura.md` | Conta a troca do Direito pelo código |
+| Reescrita | Primeira carga da sessão | Teto provisório de 3 s, com cada letra de 140 a 230 ms, ver `docs/fdd/abertura.md` | Conta a troca do Direito pelo código |
 | Cursor do nome | Fim da digitação; hover; foco onde o nome é link | Ciclo de 1,06 s em `steps(1)`, por 5 s, e depois aceso | A marca é o instante da digitação |
 
 - Animação só de `transform` e `opacity`; nada de desfoque ou `mix-blend-mode` em elemento que se move.
