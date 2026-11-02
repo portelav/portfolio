@@ -2,7 +2,7 @@
 
 Site pessoal de Lucas Portela, estudante de Ciência da Computação na Afya UNIMA, em Maceió.
 
-**Estado:** em reconstrução do zero. Até o lançamento, https://portelav.vercel.app continua mostrando a versão antiga, que não vem deste repositório.
+**Estado:** em reconstrução do zero, com a base técnica pronta e as seções a construir. Até o lançamento, https://portelav.vercel.app continua mostrando a versão antiga, que não vem deste repositório.
 
 ## O que vem aí
 
@@ -18,6 +18,15 @@ Site pessoal de Lucas Portela, estudante de Ciência da Computação na Afya UNI
 - [next-intl](https://next-intl.dev)
 
 Por que cada uma: [`docs/adr/`](docs/adr/).
+
+## Rodar no local
+
+```bash
+npm ci
+npm run dev
+```
+
+Abre em `http://localhost:3000`. Antes de um PR: `npm run lint`, `npm run typecheck` e `npm run build`.
 
 ## Documentação
 

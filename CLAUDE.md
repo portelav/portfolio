@@ -30,13 +30,13 @@ Onde está cada coisa:
 
 ## Estado atual
 
-Só documentação e fluxo prontos. Ainda não há código: a entrega da base técnica cria a aplicação. No ar: https://portelav.vercel.app, ainda a versão antiga.
+Base técnica pronta, com página provisória fora do índice dos buscadores. As seções ainda não foram construídas. No ar: https://portelav.vercel.app, ainda a versão antiga.
 
 ## Ambientes
 
 | Ambiente | URL |
 |---|---|
-| Local | `http://localhost:3000` depois da base técnica |
+| Local | `http://localhost:3000` |
 | Preview | URL da Vercel de cada branch e de cada PR |
 | Produção (`main`) | URL do projeto novo na Vercel até o lançamento. Depois, https://portelav.vercel.app |
 
@@ -44,7 +44,7 @@ Só documentação e fluxo prontos. Ainda não há código: a entrega da base t�
 
 | Camada | Escolha | ADR |
 |---|---|---|
-| Framework | Next.js 16, React 19, TypeScript | 0001 |
+| Framework | Next.js 16, React 19, TypeScript 6.0 | 0001 |
 | Estilo | Tailwind CSS 4, tokens do `DESIGN.md` | 0001 |
 | Movimento | Motion | 0001 |
 | Idiomas | `next-intl`, pt-BR em `/` e inglês em `/en` | 0002 |
@@ -55,7 +55,8 @@ Sem banco, sem login e sem formulário. Se algum entrar, rodar `/kickoff` de nov
 Regras que decorrem da stack:
 
 - Next.js 16: ler `node_modules/next/dist/docs/` antes de escrever código. `proxy.ts` no lugar de middleware. `params`, `searchParams`, `cookies()` e `headers()` são assíncronos.
-- `AGENTS.md`, quando o Next.js gerar: manter e commitar.
+- `AGENTS.md`, gerado pelo Next.js: manter e commitar.
+- TypeScript fica na 6.0 enquanto o `typescript-eslint`, usado pelo `eslint-config-next`, não aceitar a 7.
 - Todo texto de interface vive nos arquivos de mensagens, em pt-BR e em inglês, na mesma entrega. Nenhum texto fixo em componente.
 - Animação só de `transform` e `opacity`. Nada de desfoque ou `mix-blend-mode` em elemento que se move. O que se mexe sozinho por mais de 5 s para ou tem pausa (WCAG 2.2.2).
 - Nenhum cookie não essencial. Cookie novo muda o PRD, porque pede consentimento.
@@ -80,7 +81,7 @@ Comandos em `.claude/commands/`, skills em `.claude/skills/`. Artefato-mestre de
 
 Skills de design usadas, instaladas no usuário (não no repositório): `taste-skill`, `emil-design-eng`, `animate`, `frontend-design`.
 
-Hooks em `.claude/settings.json`: validação de frontmatter ao abrir a sessão. Lint e typecheck ao fim do turno entram na base técnica, quando houver eslint.
+Hooks em `.claude/settings.json`: validação de frontmatter ao abrir a sessão, e lint e typecheck ao fim do turno quando o código mudou.
 
 QA automático no navegador pelo MCP do Chrome DevTools, sem pedir licença, avisando. Depois pedir o teste manual. Fechar no fim só o Chrome aberto pelo MCP.
 
@@ -108,7 +109,7 @@ QA automático no navegador pelo MCP do Chrome DevTools, sem pedir licença, avi
 
 Tudo que entra no git fica visível para sempre, inclusive no histórico e nos diffs de PR. Antes de cada commit:
 
-- **Segredo nunca.** Chave, token, senha e `.env` só na hospedagem ou em `.env.local`. O CI roda `gitleaks` e barra, a partir da base técnica.
+- **Segredo nunca.** Chave, token, senha e `.env` só na hospedagem ou em `.env.local`. O CI roda `gitleaks` e barra.
 - **Dado de terceiro nunca:** paciente, cliente, colega, telefone pessoal, CPF, endereço de casa. Paciente não aparece nem com consentimento. Imagem de cliente ou de colega, como um print de projeto, só entra com autorização de quem aparece.
 - **Exceção registrada:** o número de WhatsApp e o Gmail do próprio Lucas aparecem no site e no código por escolha própria (PRD, D9 e D24). Cada um mora em um arquivo só. Commit continua com o e-mail noreply.
 - **Documento interno fica em `private/`** (ignorado aqui): dúvida aberta, pendência de terceiro, estratégia, opinião sobre alguém, situação pessoal. O doc público registra só decisão tomada e regra.
@@ -129,7 +130,12 @@ Tudo que entra no git fica visível para sempre, inclusive no histórico e nos d
 
 ## Comandos
 
-Ainda não há aplicação. A partir da base técnica, antes de abrir PR, estes ficam verdes:
+```bash
+npm ci
+npm run dev
+```
+
+Antes de abrir PR, estes ficam verdes:
 
 ```bash
 npm run lint
@@ -139,14 +145,22 @@ npm run build
 
 ## Estrutura do código
 
-> TODO: descrever na entrega da base técnica. Hoje não há código.
+```text
+messages/            textos em pt-BR e inglês
+public/              ícones e manifesto do kit; nome em public/brand/
+src/app/[locale]/    layout raiz e páginas, só composição
+src/app/globals.css  tokens do DESIGN.md
+src/components/      componentes
+src/i18n/            rotas e carga de mensagens de next-intl
+src/lib/             fontes e metadados da marca
+src/proxy.ts         resolve o idioma pela URL
+```
 
 ## Kit
 
 Organizado pelo `/kickoff` do `claude-kit` em 2026-11-01 (kit 3ac1809).
 
-- **Adotado:** `CLAUDE.md`, PRD leve, ADRs, FDDs por seção, `DESIGN.md`, ROADMAP leve, `tasks/{slug}.md`, README, `/plan`, `/exec`, `/walkthrough`, `/pr`, `/commit`, `/feature-flow`, `/refine`, `/fix-loop`, `/cot`, `/tot`, `/ui`, `/ui-ux-pro-max`, subagentes dos comandos adotados, hook de frontmatter, MCP do Chrome DevTools, regras de repositório público.
-- **Entra na base técnica:** hook de lint e typecheck (entra quando houver eslint), CI com `gitleaks` (hoje falharia sem lint).
+- **Adotado:** `CLAUDE.md`, PRD leve, ADRs, FDDs por seção, `DESIGN.md`, ROADMAP leve, `tasks/{slug}.md`, README, `/plan`, `/exec`, `/walkthrough`, `/pr`, `/commit`, `/feature-flow`, `/refine`, `/fix-loop`, `/cot`, `/tot`, `/ui`, `/ui-ux-pro-max`, subagentes dos comandos adotados, hook de frontmatter, hook de lint e typecheck, CI com `gitleaks`, MCP do Chrome DevTools, regras de repositório público.
 - **Fora, e quando entra:** ADD (entra se houver banco, login ou formulário que grava); `security-threat-model` (formulário, login ou upload); `/db-architect`, `/index-generator`, testes de RLS e migração no merge (banco); `/council` (decisão de produto com trade-off real que os documentos não resolvem); `/good-morning` (equipe); bot de revisão de PR (equipe; o GitHub não deixa o autor aprovar o próprio PR); `docs/research/` (pesquisa grande); Docker (serviço local); camada de serviço (regra de negócio).
 
 Rodar `/kickoff` de novo revisa esta lista.

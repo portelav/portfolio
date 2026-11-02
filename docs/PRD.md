@@ -27,7 +27,7 @@ Seções previstas. Ordem e detalhe fecham no FDD de cada uma.
 
 | Item | Objetivo | FDD | Estado |
 |---|---|---|---|
-| Base técnica | Next.js, idiomas, tokens, ícones e CI prontos na `main` | não precisa, é só infraestrutura | falta |
+| Base técnica | Next.js, idiomas, tokens, ícones e CI prontos na `main` | não precisa, é só infraestrutura | feito |
 | Cabeçalho e rodapé | Seletores de idioma e tema, nome depois da abertura, rodapé e página 404 | `docs/fdd/cabecalho-rodape.md` | falta |
 | Abertura | Apresentar o nome com a animação Reescrita e dizer quem é | `docs/fdd/abertura.md` | falta |
 | Projetos | Mostrar os três casos em destaque, com o que Lucas fez em cada um | `docs/fdd/projetos.md` | falta |
@@ -151,3 +151,7 @@ Cada rodada é uma conversa com o dono. Decisões numeradas (D1, D2...) para o a
 - **D28.** Na abertura, a frase de apresentação começa com "Lucas Portela", e há duas chamadas, para Projetos e para Contato.
 - **D29.** A Reescrita roda só na primeira carga da sessão, com teto provisório de 3 s. Lucas fecha o tempo vendo o protótipo no navegador. Não repete ao recarregar nem ao trocar de idioma ou de tema.
 - **D30.** Na primeira dobra, o cabeçalho mostra só os seletores. O nome entra nele depois que a abertura sai da tela.
+
+### Rodada 4 (2026-11-02): base técnica
+
+- **D31.** O modo padrão é o escuro, e o texto corrido usa Red Hat Text. Fecha o modo padrão deixado em aberto na D25.
