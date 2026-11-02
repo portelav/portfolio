@@ -38,7 +38,7 @@ Base técnica pronta, com página provisória fora do índice dos buscadores. As
 |---|---|
 | Local | `http://localhost:3000` |
 | Preview | URL da Vercel de cada branch e de cada PR |
-| Produção (`main`) | URL do projeto novo na Vercel até o lançamento. Depois, https://portelav.vercel.app |
+| Produção (`main`) | https://portelav-site.vercel.app até o lançamento. Depois, https://portelav.vercel.app |
 
 ## Stack
 

@@ -3,7 +3,7 @@
 **Slug:** `base-tecnica`
 **Branch:** `chore/base-tecnica`
 **Seção ou área:** infraestrutura do site
-**Status:** Walkthrough
+**Status:** Done (PR #1 mergeado em 2026-11-02)
 **Gate S2:** Livre
 
 ---
