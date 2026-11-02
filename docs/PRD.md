@@ -27,7 +27,7 @@ Seções previstas. Ordem e detalhe fecham no FDD de cada uma.
 
 | Item | Objetivo | FDD | Estado |
 |---|---|---|---|
-| Base técnica | Next.js, idiomas, tokens, ícones e CI prontos na `v2` | não precisa, é só infraestrutura | falta |
+| Base técnica | Next.js, idiomas, tokens, ícones e CI prontos na `main` | não precisa, é só infraestrutura | falta |
 | Abertura | Apresentar o nome com a animação Reescrita e dizer quem é | `docs/fdd/abertura.md` | falta |
 | Projetos | Mostrar os três casos em destaque, com o que Lucas fez em cada um | `docs/fdd/projetos.md` | falta |
 | Sobre | Contar a trajetória de forma curta | `docs/fdd/sobre.md` | falta |
@@ -96,7 +96,7 @@ Graus de certeza:
 | Site com cara de template | Contradiz a marca e a proposta | Seguir "O que não fazer" do `DESIGN.md` |
 | Texto em dois idiomas sair de sincronia | Parte do site fica sem tradução | Toda entrega traz as duas línguas. Falta de mensagem quebra o build |
 | Número de WhatsApp público | Spam | Aceito pelo dono. O número mora em um arquivo só, para trocar ou tirar fácil |
-| Site pela metade substituir o atual | Má impressão | Reconstrução na `v2`, com preview, até o lançamento (D15) |
+| Site pela metade substituir o atual | Má impressão | Repositório e projeto próprios na Vercel. O endereço público só muda no lançamento (D21) |
 
 ## 10. Critérios de pronto
 
@@ -117,7 +117,7 @@ Cada rodada é uma conversa com o dono. Decisões numeradas (D1, D2...) para o a
 - **D1.** Objetivo: estágio e trabalhos de freela, com o mesmo peso.
 - **D2.** Posicionamento: estudante promissor e organizado, que constrói projetos reais. Não se apresenta como sênior.
 - **D3.** Casos em destaque: landing da Dra. Thaiane, DraftCS e Crewz.
-- **D4.** Mesmo repositório `portelav/portfolio`. A versão antiga fica guardada na tag `v1-academic`.
+- **D4.** Substituída por D20. Mesmo repositório `portelav/portfolio`. A versão antiga fica guardada na tag `v1-academic`.
 - **D5.** Sem data fixa de lançamento.
 - **D6.** Stack: Next.js 16, Tailwind e Motion (ADR 0001).
 - **D7.** Endereço: `portelav.vercel.app`. Domínio próprio depois.
@@ -128,8 +128,13 @@ Cada rodada é uma conversa com o dono. Decisões numeradas (D1, D2...) para o a
 - **D12.** Nenhuma atribuição de IA, em qualquer aspecto.
 - **D13.** Fluxo completo de agentes.
 - **D14.** Medição com Vercel Web Analytics (ADR 0003).
-- **D15.** Reconstrução na branch `v2`. Ela só entra na `main` no lançamento.
+- **D15.** Substituída por D21. Reconstrução na branch `v2`. Ela só entra na `main` no lançamento.
 - **D16.** O cursor do nome pisca e, depois de 5 s, para aceso. Volta a piscar ao passar o mouse ou focar. Atende à WCAG 2.2.2.
 - **D17.** Curso: Ciência da Computação, Afya UNIMA, 4º período, passando ao 5º em 2027.
 - **D18.** A identidade visual é a do kit de marca e não se redesenha neste projeto (`docs/design/DESIGN.md`).
 - **D19.** Medida de sucesso: o teste de 1 minuto da seção 5, proposto no kickoff.
+
+### Rodada 2 (2026-11-02): repositório
+
+- **D20.** Repositório novo `portelav/portfolio`, sem o histórico da versão antiga, que era acadêmica. A versão antiga fica em um repositório privado à parte. Substitui D4.
+- **D21.** Sem branch `v2`. A `main` do repositório novo é a reconstrução, em projeto próprio na Vercel. `portelav.vercel.app` passa para esse projeto no lançamento. Substitui D15.
