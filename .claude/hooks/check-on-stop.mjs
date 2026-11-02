@@ -17,7 +17,7 @@ const changed = execSync("git status --porcelain", { encoding: "utf8" })
 if (!changed) process.exit(0);
 
 for (const script of ["lint", "typecheck"]) {
-  const result = spawnSync("npm", ["run", "--silent", script], {
+  const result = spawnSync(`npm run --silent ${script}`, {
     encoding: "utf8",
     shell: true,
   });
