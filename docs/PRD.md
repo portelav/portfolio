@@ -28,6 +28,7 @@ Seções previstas. Ordem e detalhe fecham no FDD de cada uma.
 | Item | Objetivo | FDD | Estado |
 |---|---|---|---|
 | Base técnica | Next.js, idiomas, tokens, ícones e CI prontos na `main` | não precisa, é só infraestrutura | falta |
+| Cabeçalho e rodapé | Seletores de idioma e tema, nome depois da abertura, rodapé e página 404 | `docs/fdd/cabecalho-rodape.md` | falta |
 | Abertura | Apresentar o nome com a animação Reescrita e dizer quem é | `docs/fdd/abertura.md` | falta |
 | Projetos | Mostrar os três casos em destaque, com o que Lucas fez em cada um | `docs/fdd/projetos.md` | falta |
 | Sobre | Contar a trajetória de forma curta | `docs/fdd/sobre.md` | falta |
@@ -129,7 +130,7 @@ Cada rodada é uma conversa com o dono. Decisões numeradas (D1, D2...) para o a
 - **D13.** Fluxo completo de agentes.
 - **D14.** Medição com Vercel Web Analytics (ADR 0003).
 - **D15.** Substituída por D21. Reconstrução na branch `v2`. Ela só entra na `main` no lançamento.
-- **D16.** O cursor do nome pisca e, depois de 5 s, para aceso. Volta a piscar ao passar o mouse ou focar. Atende à WCAG 2.2.2.
+- **D16.** Ajustada por D27. O cursor do nome pisca e, depois de 5 s, para aceso. Volta a piscar ao passar o mouse ou focar. Atende à WCAG 2.2.2.
 - **D17.** Curso: Ciência da Computação, Afya UNIMA, 4º período, passando ao 5º em 2027.
 - **D18.** A identidade visual é a do kit de marca e não se redesenha neste projeto (`docs/design/DESIGN.md`).
 - **D19.** Medida de sucesso: o teste de 1 minuto da seção 5, proposto no kickoff.
@@ -139,8 +140,14 @@ Cada rodada é uma conversa com o dono. Decisões numeradas (D1, D2...) para o a
 - **D20.** Repositório novo `portelav/portfolio`, sem o histórico da versão antiga, que era acadêmica. A versão antiga fica em um repositório privado à parte. Substitui D4.
 - **D21.** Sem branch `v2`. A `main` do repositório novo é a reconstrução, em projeto próprio na Vercel. `portelav.vercel.app` passa para esse projeto no lançamento. Substitui D15.
 
-### Rodada 3 (2026-11-02): revisão do PRD
+### Rodada 3 (2026-11-02): revisão do PRD e do FDD da abertura
 
 - **D22.** A landing da Dra. Thaiane aparece como projeto real, sem ser chamada de cliente.
 - **D23.** A troca do Direito pela computação pode aparecer no site. É o motivo da Reescrita.
 - **D24.** O e-mail de contato no site é o Gmail do próprio Lucas, por escolha do dono. Mora em um arquivo só.
+- **D25.** O site tem modo escuro e claro, com seletor. O modo padrão fecha na base técnica.
+- **D26.** Cabeçalho, rodapé e página 404 entram no escopo, com FDD próprio.
+- **D27.** O foco só faz o cursor voltar a piscar onde o nome é link. Na abertura, o nome não recebe foco. Ajusta D16.
+- **D28.** Na abertura, a frase de apresentação começa com "Lucas Portela", e há duas chamadas, para Projetos e para Contato.
+- **D29.** A Reescrita leva no máximo 3 s e roda só na primeira carga da sessão. Não repete ao recarregar nem ao trocar de idioma ou de tema.
+- **D30.** Na primeira dobra, o cabeçalho mostra só os seletores. O nome entra nele depois que a abertura sai da tela.
