@@ -29,4 +29,3 @@ Sem data fixa (PRD, D5). Todo o trabalho entra na `main` deste repositório, pub
 | O quê | De quem | Desde |
 |---|---|---|
 | Frase de apresentação e textos das seções | Lucas | 2026-11-01 |
-| Link público do Crewz | Lucas | 2026-11-01 |

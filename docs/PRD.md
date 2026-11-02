@@ -41,7 +41,7 @@ Casos em destaque (D3):
 |---|---|---|---|
 | Landing da Dra. Thaiane Lessa | Projeto real, no ar | Repositório público | https://www.drathaianelessa.com.br |
 | DraftCS | Jogo web, feito em dupla | Repositório privado | https://draftcs.com |
-| Crewz | Rede social, feita em dupla | Repositório privado | > TODO: confirmar o link público |
+| Crewz | Rede social, feita em dupla | Repositório privado | https://crewz-ashy.vercel.app |
 
 ### Conteúdo pendente
 
