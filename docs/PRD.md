@@ -160,3 +160,9 @@ Cada rodada é uma conversa com o dono. Decisões numeradas (D1, D2...) para o a
 
 - **D32.** O rodapé tem só "Todos os direitos reservados" e o link da nota de privacidade. Os contatos ficam na seção Contato.
 - **D33.** O cabeçalho não tem menu. Depois que a abertura sai da tela, mostra o nome e os seletores.
+
+### Rodada 6 (2026-11-02): abertura
+
+- **D34.** A troca do Direito pela computação é contada no Sobre. A abertura tem só a frase curta de apresentação.
+- **D35.** As chamadas da abertura são "Ver projetos" e "Falar comigo".
+- **D36.** A frase de apresentação não cita o período do curso, para não envelhecer.
