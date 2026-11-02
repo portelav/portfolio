@@ -20,7 +20,7 @@ Referência: apresentações de produto da Apple, em modo escuro e claro.
 
 ### Marca
 
-Os originais ficam em `C:\prog\identidade-visual\marca\kit\`, com as regras em `guia-de-uso.md`. O que o site usa entra em `public/` na base técnica.
+Os originais ficam em `C:\prog\identidade-visual\marca\kit\`, com as regras em `guia-de-uso.md`. Os ícones ficam em `public/`, e o nome fica em SVG no próprio HTML, com o mesmo vetor do kit e as cores dos tokens.
 
 | Arquivo | Onde |
 |---|---|

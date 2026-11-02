@@ -28,7 +28,7 @@ Seções previstas. Ordem e detalhe fecham no FDD de cada uma.
 | Item | Objetivo | FDD | Estado |
 |---|---|---|---|
 | Base técnica | Next.js, idiomas, tokens, ícones e CI prontos na `main` | não precisa, é só infraestrutura | feito |
-| Cabeçalho e rodapé | Seletores de idioma e tema, nome depois da abertura, rodapé e página 404 | `docs/fdd/cabecalho-rodape.md` | falta |
+| Cabeçalho e rodapé | Seletores de idioma e tema, nome depois da abertura, rodapé e página 404 | `docs/fdd/cabecalho-rodape.md` | feito |
 | Abertura | Apresentar o nome com a animação Reescrita e dizer quem é | `docs/fdd/abertura.md` | falta |
 | Projetos | Mostrar os três casos em destaque, com o que Lucas fez em cada um | `docs/fdd/projetos.md` | falta |
 | Sobre | Contar a trajetória de forma curta | `docs/fdd/sobre.md` | falta |
@@ -155,3 +155,8 @@ Cada rodada é uma conversa com o dono. Decisões numeradas (D1, D2...) para o a
 ### Rodada 4 (2026-11-02): base técnica
 
 - **D31.** O modo padrão é o escuro, e o texto corrido usa Red Hat Text. Fecha o modo padrão deixado em aberto na D25.
+
+### Rodada 5 (2026-11-02): cabeçalho e rodapé
+
+- **D32.** O rodapé tem só "Todos os direitos reservados" e o link da nota de privacidade. Os contatos ficam na seção Contato.
+- **D33.** O cabeçalho não tem menu. Depois que a abertura sai da tela, mostra o nome e os seletores.

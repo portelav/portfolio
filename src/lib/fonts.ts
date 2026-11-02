@@ -17,7 +17,6 @@ const redHatMono = Red_Hat_Mono({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-red-hat-mono",
-  preload: false,
 });
 
 export const fontVariables = [

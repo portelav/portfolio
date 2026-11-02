@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
-import { hasLocale } from "next-intl";
+import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
 
+import { SiteFooter } from "@/components/site-footer";
+import { SiteHeader } from "@/components/site-header";
 import { ThemeScript } from "@/components/theme-script";
 import { getPathname } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
@@ -11,7 +13,6 @@ import { brandMetadata, brandViewport, siteUrl } from "@/lib/site";
 
 import "../globals.css";
 
-export const dynamicParams = false;
 export const viewport = brandViewport;
 
 export function generateStaticParams() {
@@ -63,7 +64,14 @@ export default async function LocaleLayout({
       <head>
         <ThemeScript />
       </head>
-      <body>{children}</body>
+      <body className="flex min-h-dvh flex-col">
+        {/* Client components get their texts as props, so no messages ship. */}
+        <NextIntlClientProvider messages={null}>
+          <SiteHeader />
+          {children}
+          <SiteFooter />
+        </NextIntlClientProvider>
+      </body>
     </html>
   );
 }
