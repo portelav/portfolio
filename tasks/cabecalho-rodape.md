@@ -3,8 +3,8 @@
 **Slug:** `cabecalho-rodape`
 **Branch:** `feat/cabecalho-rodape`
 **Seção ou área:** cabeçalho, rodapé e página 404
-**Status:** Planning
-**Gate S2:** Bloqueado
+**Status:** Execution
+**Gate S2:** Livre
 
 ---
 
@@ -33,9 +33,7 @@
 Os da seção "Critérios de aceite" de `docs/fdd/cabecalho-rodape.md`.
 
 ### Perguntas bloqueadoras
-1. **Aprovar o FDD:** `docs/fdd/cabecalho-rodape.md`, inclusive os textos propostos.
-2. **Seletor de tema:** texto com o modo de destino (`Claro`), ou ícone de sol e lua? Recomendação: texto, porque o `DESIGN.md` prefere texto simples, e assim nenhum ícone novo entra.
-3. **Link da nota de privacidade:** entrar só com a nota, na entrega de Contato, ou entrar agora, ainda sem destino? Recomendação: só com a nota, para não haver link quebrado.
+- Nenhuma. Respondidas por Lucas em 2026-11-02, "aprovado, por ora": FDD e textos aprovados, botão de tema em texto, e link da nota de privacidade só junto da nota. Podem mudar depois.
 
 ### Premissas
 - A abertura ainda não existe. A página provisória faz o papel dela, com a marca `data-abertura`, que a entrega da Abertura herda.
@@ -111,10 +109,10 @@ Antes do PR: QA no navegador pelo MCP do Chrome DevTools, depois o teste manual 
 
 - [x] Textos previstos em pt-BR e inglês
 - [x] FDD existe ou está no checklist
-- [ ] Decisão de produto coberta pelo PRD ou pergunta aberta: três perguntas abertas no Stage 1
+- [x] Decisão de produto coberta pelo PRD ou pergunta aberta: respondidas no Stage 1
 - [x] Checklist ≤ 10, SoT ≤ 4, decisão única, evidências ≤ 7
 
-**Gate S2:** Bloqueado
+**Gate S2:** Livre
 
 ---
 
