@@ -1,5 +1,7 @@
 "use client";
 
+import { useEffect } from "react";
+
 import { themeColors } from "@/lib/theme";
 
 type ThemeToggleProps = {
@@ -9,14 +11,18 @@ type ThemeToggleProps = {
   toDarkLabel: string;
 };
 
-function toggleTheme() {
-  const root = document.documentElement;
-  const next = root.dataset.theme === "light" ? "dark" : "light";
-
-  root.dataset.theme = next;
+function applyTheme(theme: keyof typeof themeColors) {
+  document.documentElement.dataset.theme = theme;
   document
     .querySelector('meta[name="theme-color"]')
-    ?.setAttribute("content", themeColors[next]);
+    ?.setAttribute("content", themeColors[theme]);
+}
+
+function toggleTheme() {
+  const next =
+    document.documentElement.dataset.theme === "light" ? "dark" : "light";
+
+  applyTheme(next);
 
   try {
     localStorage.setItem("theme", next);
@@ -33,6 +39,18 @@ export function ThemeToggle({
   toDark,
   toDarkLabel,
 }: ThemeToggleProps) {
+  // The 404 is rendered in the browser, so the pre-paint script never runs there.
+  useEffect(() => {
+    document.documentElement.dataset.js = "1";
+
+    try {
+      const saved = localStorage.getItem("theme");
+      if (saved === "light" || saved === "dark") applyTheme(saved);
+    } catch {
+      // Without storage, the default theme stays.
+    }
+  }, []);
+
   return (
     <button
       type="button"

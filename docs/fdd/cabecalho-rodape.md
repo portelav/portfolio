@@ -40,7 +40,7 @@ A nota de privacidade ainda não existe. O link dela entra no rodapé na entrega
 **Seletor de idioma**
 
 - Dois links, `PT` e `EN`. O idioma atual tem sublinhado e `aria-current`.
-- Leva para a mesma página, no outro idioma. Como o layout raiz muda, a página recarrega inteira.
+- Leva para o início, no outro idioma. O site tem uma página só, e na 404 isso é o que o visitante precisa. Como o layout raiz muda, a página recarrega inteira.
 
 **Seletor de tema**
 
@@ -57,6 +57,7 @@ A nota de privacidade ainda não existe. O link dela entra no rodapé na entrega
 
 - Vale para endereço desconhecido em `/` e em `/en`, com o idioma certo, responde com status 404 e usa o mesmo cabeçalho e rodapé.
 - Fora desse caso, um endereço com ponto, como `/foo.bar`, não passa pelo `proxy.ts` e fica com o 404 padrão do Next.js. Não muda nada para quem navega pelo site.
+- O Next.js monta essa página no navegador, então sem JavaScript ela responde 404 com a tela vazia. Com JavaScript, pode haver um instante de tela sem conteúdo antes de ela aparecer. Limite aceito, por ser um caso raro dentro de um caso raro.
 
 ## Movimento
 
@@ -102,12 +103,12 @@ Nunca anima: seletores, troca de tema, rodapé e página 404.
 ## Critérios de aceite
 
 - [ ] Em 390 px e no computador, em `/` e `/en`, escuro e claro, nada transborda e os controles têm 44 px.
-- [ ] Trocar o idioma leva à mesma página no outro idioma, sem criar cookie.
+- [ ] Trocar o idioma leva ao início no outro idioma, sem criar cookie.
 - [ ] Trocar o tema vale na hora, sobrevive ao recarregar e à troca de idioma, sem piscada, e muda o `theme-color`.
 - [ ] O nome aparece no cabeçalho só depois que a abertura sai da tela, e fora disso não recebe foco nem é lido.
 - [ ] O link do nome leva ao início. Com hover ou foco, o cursor pisca por menos de 5 s e para aceso.
 - [ ] Com `prefers-reduced-motion`, nada se move nem pisca.
 - [ ] Com JavaScript desligado, o seletor de idioma funciona, e o seletor de tema e o nome não aparecem.
-- [ ] Endereço desconhecido em `/` e em `/en` responde 404, com texto no idioma certo, cabeçalho, rodapé e link de volta.
+- [ ] Endereço desconhecido em `/` e em `/en` responde 404. Com JavaScript, mostra texto no idioma certo, cabeçalho, rodapé, link de volta e o tema salvo.
 - [ ] Teclado alcança todos os controles, na ordem certa, com foco visível.
 - [ ] Red Hat Mono renderiza nos seletores, vinda de `next/font`.

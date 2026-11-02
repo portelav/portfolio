@@ -13,7 +13,6 @@ import { brandMetadata, brandViewport, siteUrl } from "@/lib/site";
 
 import "../globals.css";
 
-export const dynamicParams = false;
 export const viewport = brandViewport;
 
 export function generateStaticParams() {
