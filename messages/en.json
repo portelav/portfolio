@@ -6,5 +6,26 @@
   "Home": {
     "name": "portelav",
     "status": "This site is being rebuilt."
+  },
+  "Header": {
+    "homeLabel": "portelav, back to top",
+    "themeToLight": "Light",
+    "themeToDark": "Dark",
+    "themeToLightLabel": "Switch to light mode",
+    "themeToDarkLabel": "Switch to dark mode"
+  },
+  "Language": {
+    "label": "Language",
+    "ptShort": "PT",
+    "ptName": "Português",
+    "enShort": "EN",
+    "enName": "English"
+  },
+  "Footer": {
+    "rights": "All rights reserved."
+  },
+  "NotFound": {
+    "title": "This page doesn't exist.",
+    "home": "Back to home"
   }
 }
