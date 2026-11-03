@@ -14,18 +14,18 @@ export function Tecnologias() {
   ];
 
   return (
-    <section className="page-frame grid gap-12 py-24 md:grid-cols-2 md:gap-16 md:py-32">
+    <section className="page-frame border-line grid gap-12 border-t py-16 md:grid-cols-2 md:gap-16 md:py-20">
       {groups.map((group) => (
         <div key={group.title}>
           <h2 className="reveal font-display text-xl">{group.title}</h2>
-          <ul className="mt-8 grid grid-cols-3 gap-x-4 gap-y-8 sm:grid-cols-4">
+          <ul className="mt-6 grid grid-cols-3 gap-x-4 gap-y-6 sm:grid-cols-4">
             {group.items.map((item, index) => (
               <li
                 key={item.name}
                 className="stack-item flex flex-col items-start gap-3"
                 style={{ "--i": index } as CSSProperties}
               >
-                <span className="tech-logo flex h-10 w-10 items-center justify-center">
+                <span className="tech-logo flex h-8 w-8 items-center justify-center">
                   {item.path ? (
                     <svg
                       viewBox={item.viewBox}
