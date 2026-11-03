@@ -106,7 +106,7 @@
   }
 }
 
-/* SPIKE: the first screen arrives as the name lands in the header. */
+/* The first screen arrives as the name lands in the header. */
 @media (prefers-reduced-motion: no-preference) {
   html {
     scroll-behavior: smooth;
@@ -139,7 +139,7 @@
   }
 }
 
-/* SPIKE: a project's video, over its screenshot. */
+/* A project's video, over its screenshot. */
 .project-video {
   position: absolute;
   inset: 0;
@@ -155,12 +155,12 @@
   opacity: 1;
 }
 
-/* SPIKE: the portrait in the about section. */
+/* The portrait in the about section. */
 .portrait-image {
   mask-image: radial-gradient(closest-side, #000 76%, transparent 100%);
 }
 
-/* SPIKE: preloader. Only shows while the page is marked. */
+/* Preloader. Only shows while the page is marked. */
 .preloader {
   display: none;
 }
@@ -186,7 +186,7 @@ html[data-reescrita] .header-name {
   width: clamp(13rem, 32vw, 30rem);
 }
 
-/* SPIKE: each technology arrives a little after the one before it. */
+/* Each technology arrives a little after the one before it. */
 @supports (animation-timeline: view()) {
   @media (prefers-reduced-motion: no-preference) {
     .stack-item {
@@ -246,7 +246,7 @@ html[data-reescrita] .header-name {
   }
 }
 
-/* SPIKE: technology logos lift a little on hover. */
+/* Technology logos lift a little on hover. */
 @media (prefers-reduced-motion: no-preference) and (hover: hover) {
   .tech-logo {
     transition: transform 200ms var(--ease-out-quint);

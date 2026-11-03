@@ -4,7 +4,7 @@ import { whatsappUrl } from "@/lib/contact";
 
 const steps = ["step1", "step2", "step3", "step4"] as const;
 
-// SPIKE. The one block written only for who wants to hire a site.
+// The one block written only for who wants to hire a site.
 export function QuerUmSite() {
   const t = useTranslations("Hire");
 

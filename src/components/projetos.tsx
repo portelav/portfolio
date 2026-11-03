@@ -17,7 +17,7 @@ const linkClassName =
 
 const labelClassName = "font-mono text-sm";
 
-// SPIKE. Cases stacked, each with its screen beside what it is and whose part
+// Cases stacked, each with its screen beside what it is and whose part
 // was what. The first one sits on the first screen, so it arrives with the opening.
 export function Projetos() {
   const t = useTranslations("Projects");

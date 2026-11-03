@@ -1,4 +1,4 @@
-// SPIKE. The only file with Lucas's own contact data (PRD, D9 and D24).
+// The only file with Lucas's own contact data (PRD, D9 and D24).
 export const whatsappUrl = "https://wa.me/5582996176726";
 
 export const channels = [

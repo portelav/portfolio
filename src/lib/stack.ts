@@ -1,4 +1,4 @@
-// SPIKE. Logos from Simple Icons (CC0, the marks belong to their owners). SQL has
+// Logos from Simple Icons (CC0, the marks belong to their owners). SQL has
 // no logo of its own, so it uses the Phosphor database icon (MIT). Java uses the
 // OpenJDK mark, as the old portfolio did.
 // Brand colors, except Next.js, Vercel and SQL, which follow the text color.

@@ -12,7 +12,7 @@ type ProjectVideoProps = {
 // A pause on one project holds them all, so moving down the page keeps it.
 let held = false;
 
-// SPIKE. Sits over the screenshot and only shows once it plays, so a missing
+// Sits over the screenshot and only shows once it plays, so a missing
 // file or reduced motion simply leaves the screenshot. Plays only while most
 // of it is on screen.
 export function ProjectVideo({

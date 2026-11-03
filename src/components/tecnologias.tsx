@@ -4,7 +4,7 @@ import { useTranslations } from "next-intl";
 
 import { languages, tools } from "@/lib/stack";
 
-// SPIKE. Logos in their own colors, with a light lift on hover.
+// Logos in their own colors, with a light lift on hover.
 export function Tecnologias() {
   const t = useTranslations("Stack");
 
