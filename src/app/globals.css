@@ -9,6 +9,7 @@
   --bg: #0b0b0c;
   --fg: #f2f2f0;
   --accent: #e3a33b;
+  --line: #444448;
 }
 
 [data-theme="light"] {
@@ -16,6 +17,7 @@
   --bg: #f3f2ee;
   --fg: #141413;
   --accent: #a8650a;
+  --line: #bdbcb6;
 }
 
 @theme inline {
@@ -24,6 +26,7 @@
   --color-bg: var(--bg);
   --color-fg: var(--fg);
   --color-accent: var(--accent);
+  --color-line: var(--line);
 
   --font-*: initial;
   --font-sans: var(--font-red-hat-text), sans-serif;

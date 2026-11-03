@@ -23,7 +23,7 @@ export function Projetos() {
               src={project.image}
               alt={t(`${project.id}.alt`)}
               sizes="(min-width: 768px) 60vw, 100vw"
-              className="h-auto w-full"
+              className="border-line h-auto w-full border"
             />
             <div className="flex flex-col items-start gap-4">
               <p className="text-lg">
