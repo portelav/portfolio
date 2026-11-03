@@ -4,6 +4,7 @@ import Image from "next/image";
 import { coauthorUrl, projectImageSize, projects } from "@/lib/projects";
 
 import { ProjectTrack } from "./project-track";
+import { ProjectVideo } from "./project-video";
 
 const linkClassName =
   "inline-flex min-h-11 items-center font-mono underline underline-offset-4 transition-opacity duration-150 hover:opacity-70";
@@ -23,13 +24,18 @@ export function Projetos() {
         >
           {projects.map((project) => (
             <li key={project.id} className="project-slide">
-              <div className="project-slide-image border-line border">
+              <div className="project-slide-image border-line relative border">
                 <Image
                   {...projectImageSize}
                   src={project.image}
                   alt={t(`${project.id}.alt`)}
                   sizes="(min-width: 768px) 60vw, 90vw"
                   className="h-auto w-full"
+                />
+                <ProjectVideo
+                  src={`/projetos/video/${project.id}.mp4`}
+                  pauseLabel={t("videoPause")}
+                  playLabel={t("videoPlay")}
                 />
               </div>
               <div className="project-slide-text mt-5 flex flex-col gap-2">

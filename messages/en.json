@@ -62,7 +62,9 @@
       "name": "Crewz"
     },
     "previous": "Previous project",
-    "next": "Next project"
+    "next": "Next project",
+    "videoPause": "Pause video",
+    "videoPlay": "Play video"
   },
   "Stack": {
     "languages": "Languages",

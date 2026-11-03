@@ -177,6 +177,21 @@
   }
 }
 
+/* SPIKE: a project's video, over its screenshot. */
+.project-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.5s var(--ease-out-quint);
+}
+
+.project-video.is-started {
+  opacity: 1;
+}
+
 /* SPIKE: preloader. Only shows while the page is marked. */
 .preloader {
   display: none;
