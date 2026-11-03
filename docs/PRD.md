@@ -30,7 +30,7 @@ Seções previstas. Ordem e detalhe fecham no FDD de cada uma.
 | Base técnica | Next.js, idiomas, tokens, ícones e CI prontos na `main` | não precisa, é só infraestrutura | feito |
 | Cabeçalho e rodapé | Seletores de idioma e tema, nome depois da abertura, rodapé e página 404 | `docs/fdd/cabecalho-rodape.md` | feito |
 | Abertura | Apresentar o nome com a animação Reescrita e dizer quem é | `docs/fdd/abertura.md` | feito |
-| Projetos | Mostrar os três casos em destaque, com o que Lucas fez em cada um | `docs/fdd/projetos.md` | falta |
+| Projetos | Mostrar os três casos em destaque, com a forma de participação em cada um | `docs/fdd/projetos.md` | falta |
 | Sobre | Contar a trajetória de forma curta | `docs/fdd/sobre.md` | falta |
 | Contato | Levar a e-mail, LinkedIn, GitHub e WhatsApp | `docs/fdd/contato.md` | falta |
 | Nota de privacidade | Dizer o que é medido e por quem, nos dois idiomas | no FDD de contato | falta |
@@ -47,7 +47,6 @@ Casos em destaque (D3):
 
 | O quê | Quem manda | Para qual item |
 |---|---|---|
-| O que Lucas fez em cada caso, com imagens | Lucas | Projetos |
 | Texto do Sobre | Lucas | Sobre |
 | Foto, se houver | Lucas | Sobre |
 | Links finais de contato | Lucas | Contato |
@@ -90,7 +89,7 @@ Graus de certeza:
 
 | Risco ou premissa | Impacto | O que fazer |
 |---|---|---|
-| Inflar a própria participação em projeto feito em dupla | Perde credibilidade com quem avalia | Cada caso diz o que Lucas fez, sem arredondar para cima |
+| Inflar a própria participação em projeto feito em dupla | Perde credibilidade com quem avalia | Cada caso diz se foi sozinho ou em dupla, e com quem, sem arredondar para cima. O detalhe fica para a conversa (D39) |
 | Caso publicado sem autorização | Problema para cliente ou colega | Caso só vai ao ar com autorização de quem aparece ou divide a autoria |
 | Print da landing com paciente ou dado sensível | Problema profissional para a Dra. Thaiane | Paciente nunca aparece. Imagem de pessoa só com autorização |
 | Site com cara de template | Contradiz a marca e a proposta | Seguir "O que não fazer" do `DESIGN.md` |
@@ -167,3 +166,9 @@ Cada rodada é uma conversa com o dono. Decisões numeradas (D1, D2...) para o a
 - **D36.** A frase de apresentação não cita o período do curso, para não envelhecer.
 - **D37.** A frase de apresentação é "Me chamo Lucas Portela e estudo Ciência da Computação. Atualmente estou aprendendo a desenvolver com IA." Fala de como Lucas aprende, por escolha do dono, e não é atribuição de autoria. Ajusta o início previsto na D28.
 - **D38.** Lucas aprovou no preview o tempo de 2,6 s da Reescrita e o layout da primeira dobra.
+
+### Rodada 7 (2026-11-02): projetos
+
+- **D39.** Os casos têm texto curto: a landing diz que foi feita sozinho, do desenho ao código, pensada primeiro para o celular. DraftCS e Crewz dizem só que foram feitos em dupla com o Vinicius.
+- **D40.** Ordem dos casos: landing, DraftCS e Crewz.
+- **D41.** O nome do Vinicius aparece nos casos, com link para o GitHub dele.
