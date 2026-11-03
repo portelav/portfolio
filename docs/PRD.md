@@ -30,7 +30,7 @@ Seções previstas. Ordem e detalhe fecham no FDD de cada uma.
 | Base técnica | Next.js, idiomas, tokens, ícones e CI prontos na `main` | não precisa, é só infraestrutura | feito |
 | Cabeçalho e rodapé | Seletores de idioma e tema, nome depois da abertura, rodapé e página 404 | `docs/fdd/cabecalho-rodape.md` | feito |
 | Abertura | Apresentar o nome com a animação Reescrita e dizer quem é | `docs/fdd/abertura.md` | feito |
-| Projetos | Mostrar os três casos em destaque, com a forma de participação em cada um | `docs/fdd/projetos.md` | falta |
+| Projetos | Mostrar os três casos em destaque, com a forma de participação em cada um | `docs/fdd/projetos.md` | feito |
 | Sobre | Contar a trajetória de forma curta | `docs/fdd/sobre.md` | falta |
 | Contato | Levar a e-mail, LinkedIn, GitHub e WhatsApp | `docs/fdd/contato.md` | falta |
 | Nota de privacidade | Dizer o que é medido e por quem, nos dois idiomas | no FDD de contato | falta |

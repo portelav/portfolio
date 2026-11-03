@@ -9,7 +9,7 @@ Sem data fixa (PRD, D5). Todo o trabalho entra na `main` deste repositório, pub
 | Base técnica | Next.js 16, Tailwind 4, Motion e `next-intl` rodando em `/` e `/en`. Tokens, fontes e ícones do kit no lugar. Hook de lint e typecheck, e CI com `gitleaks`, verdes em PR para `main` | `tasks/base-tecnica.md` |
 | Cabeçalho e rodapé | FDD escrito e implementado, com seletores de idioma e tema e página 404 | `tasks/cabecalho-rodape.md` |
 | Abertura | FDD `docs/fdd/abertura.md` aprovado e implementado, nos dois idiomas | `tasks/abertura.md` |
-| Projetos | FDD escrito e implementado, com os três casos da PRD, seção 6 | a criar |
+| Projetos | FDD escrito e implementado, com os três casos da PRD, seção 6 | `tasks/projetos.md` |
 | Sobre | FDD escrito e implementado | a criar |
 | Contato e nota de privacidade | FDD escrito e implementado, com e-mail, LinkedIn, GitHub e WhatsApp | a criar |
 | Lançamento | Critérios do PRD, seção 10, cumpridos. Web Analytics ligado. Prévia de link pronta. `noindex` retirado. Chamadas da abertura levando a seções existentes. Conferido no painel da Vercel como `portelav.vercel.app` passa de projeto, e o endereço apontando para o projeto novo | a criar |

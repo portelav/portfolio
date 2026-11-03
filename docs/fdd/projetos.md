@@ -1,6 +1,6 @@
 # FDD: Seção Projetos
 
-Status: aprovado
+Status: implementado
 PRD: seção 6, item Projetos; D3, D22, D39, D40 e D41
 
 ## Objetivo

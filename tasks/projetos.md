@@ -3,7 +3,7 @@
 **Slug:** `projetos`
 **Branch:** `feat/projetos`
 **Seção ou área:** seção Projetos
-**Status:** Execution
+**Status:** Walkthrough
 **Gate S2:** Livre
 
 ---
@@ -114,33 +114,50 @@ Antes do PR: QA no navegador pelo MCP do Chrome DevTools, depois o teste manual 
 
 ## Stage 6 — Code Execution
 
-*(Preenchido pelo exec.)*
-
 | # | Camada | Arquivo | Status |
 |---|---|---|---|
+| 1 | FDD | `docs/fdd/projetos.md`, `docs/fdd/README.md` | feito |
+| 2 | Mensagens | `messages/pt-BR.json`, `messages/en.json` | feito |
+| 3 | Mídia | `public/projetos/*.webp` | feito |
+| 4 | Dados | `src/lib/projects.ts` | feito |
+| 5 | Componente | `src/components/projetos.tsx` | feito |
+| 6 | Página | `src/app/[locale]/page.tsx` | feito |
+| 7 | Preview | Lucas pediu a borda nos prints e confirmou a página única (D42 e D43) | feito |
+| 8 | Docs | FDD, PRD, ROADMAP, `DESIGN.md`, `CLAUDE.md` | feito |
 
 ### Desvios do plano
-- Nenhum | …
+- **Link do nome com menos de 44 px:** o "Vinicius" fica dentro da frase, com 26 px, e a WCAG isenta links dentro de texto. FDD ajustado.
+- **Cabeçalho:** `src/components/header-name.tsx`, fora do plano, ganhou `rootMargin`. Sem isso, o nome não aparecia ao chegar à seção, porque a abertura seguia atrás do cabeçalho.
+- **Prints cortados:** saiu a barra de rolagem do navegador, e o tamanho passou a 1425 por 900.
+- **Cor nova `--line`:** não prevista, para a borda pedida por Lucas. Registrada no `DESIGN.md` com o contraste.
 
 ---
 
 ## Stage 7 — Tests
 
-*(Preenchido pelo exec.)*
+Não há suíte de testes automatizados nesta entrega. Conferido no servidor de produção local, pelo MCP do Chrome DevTools e com `curl`.
 
 | Critério de aceite | Como foi verificado |
 |---|---|
+| Casos em ordem, sem transbordo | 390 px em português, escuro e claro; 1440 px em inglês, escuro. Ordem landing, DraftCS e Crewz. As demais combinações não foram percorridas |
+| "Ver projetos" leva à seção | Clique em 390 px: título em 120 px do topo, abaixo do cabeçalho, que termina em 56 px |
+| Nome no cabeçalho | Depois do clique, visível. Voltando ao topo, escondido |
+| Links | Destinos responderam 200 por `curl`. Links de ação com 44 px. Cliques nos links externos não exercitados |
+| Imagens | Só o bloco `VP8`, sem metadado. A landing vem da cópia sem telefone, e o número não aparece no repositório nem no HTML. CLS 0 |
+| Leitor de tela | Árvore de acessibilidade do Chrome: nomes distintos por caso e texto alternativo nas três imagens. Leitor de tela real não testado |
+| Nenhuma animação nova | 0 animações depois da sequência da abertura |
+
+Extras: nenhum cookie, nenhum recurso de outra origem. O Chrome avisa sobre dimensões de imagem com carga preguiçosa, sem erro.
 
 ---
 
 ## Stage 8 — Verification
 
-*(Preenchido pelo exec.)*
-
-- **lint:** Pass | Fail
-- **typecheck:** Pass | Fail
-- **build:** Pass | Fail
-- **Navegador (390 px e computador, `/` e `/en`, escuro e claro):** Pass | Fail
+- **lint:** Pass
+- **typecheck:** Pass
+- **build:** Pass
+- **Navegador (390 px e computador, `/` e `/en`, escuro e claro):** Pass, com os limites do Stage 7
+- **CI e preview do último commit:** pendentes, rodam com o push e o PR
 
 ---
 
