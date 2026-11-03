@@ -4,7 +4,7 @@ import { useTranslations } from "next-intl";
 
 import { languages, tools } from "@/lib/stack";
 
-// SPIKE. Logos in one color, as the design system asks, with a light lift on hover.
+// SPIKE. Logos in their own colors, with a light lift on hover.
 export function Tecnologias() {
   const t = useTranslations("Stack");
 
@@ -31,7 +31,7 @@ export function Tecnologias() {
                       viewBox={item.viewBox}
                       aria-hidden="true"
                       className="h-full w-full"
-                      fill="currentColor"
+                      fill={item.color ?? "currentColor"}
                     >
                       <path d={item.path} />
                     </svg>

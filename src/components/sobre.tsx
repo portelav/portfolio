@@ -1,6 +1,7 @@
 import type { CSSProperties } from "react";
 
 import { useTranslations } from "next-intl";
+import Image from "next/image";
 
 // The name stays readable before any scroll.
 const LIT_FROM_START = 4;
@@ -21,8 +22,17 @@ export function Sobre() {
   return (
     <div id="sobre">
       <section className="words-runway">
-        <div className="words-stage page-frame flex items-center">
-          <h1 className="font-display text-display max-w-5xl">
+        <div className="words-stage page-frame grid content-center gap-8 md:grid-cols-[minmax(0,1fr)_auto] md:items-center md:gap-16">
+          <Image
+            src="/sobre/lucas.webp"
+            alt={t("photoAlt")}
+            width={640}
+            height={640}
+            sizes="(min-width: 768px) 360px, 200px"
+            preload
+            className="h-auto w-44 rounded-full md:order-last md:w-90"
+          />
+          <h1 className="font-display text-display max-w-4xl">
             {words.map((word, index) => (
               <span key={`${word}-${index}`}>
                 <span
