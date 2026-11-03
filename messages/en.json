@@ -29,5 +29,27 @@
   "NotFound": {
     "title": "This page doesn't exist.",
     "home": "Back to home"
+  },
+  "Projects": {
+    "title": "Projects",
+    "visitSite": "Visit site",
+    "seeCode": "See code",
+    "landing": {
+      "text": "<name>Landing page for Dra. Thaiane Lessa.</name> A site I built on my own, from design to code, mobile first.",
+      "detail": "Dra. Thaiane Lessa · CRO/AL-6418",
+      "alt": "First screen of the landing page: the headline “sorrir é sempre uma boa ideia” next to a photo of the dental office.",
+      "siteLabel": "Visit site of the landing page for Dra. Thaiane Lessa",
+      "codeLabel": "See code of the landing page for Dra. Thaiane Lessa"
+    },
+    "draftcs": {
+      "text": "<name>DraftCS.</name> A web game I built with <coauthor>Vinicius</coauthor>.",
+      "alt": "First screen of DraftCS: the call “Monte o time invencível” next to a team with a 13 to 0 result.",
+      "siteLabel": "Visit site of DraftCS"
+    },
+    "crewz": {
+      "text": "<name>Crewz.</name> A social network I built with <coauthor>Vinicius</coauthor>.",
+      "alt": "First screen of Crewz: the line “Encontre quem quer fazer o que você quer fazer” next to a mosaic of activity photos.",
+      "siteLabel": "Visit site of Crewz"
+    }
   }
 }
