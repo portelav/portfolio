@@ -101,14 +101,14 @@ Respondidas por Lucas em 2026-11-03, que aprovou o plano e seguiu as duas recome
 
 Até 10 itens, um commit cada, na ordem do `/exec`. Correção encontrada no item 5 ganha commit próprio.
 
-1. [ ] Docs: fechar os TODOs do `docs/fdd/contato.md` com o texto aprovado, status `aprovado`
-2. [ ] Mensagens e componente: bloco da nota com âncora `#privacidade`, composto na página depois de Contato
-3. [ ] Rodapé: link da nota, nos dois idiomas
+1. [x] Docs: fechar os TODOs do `docs/fdd/contato.md` com o texto aprovado, status `aprovado`
+2. [x] Mensagens e componente: bloco da nota com âncora `#privacidade`, composto na página depois de Contato
+3. [x] Rodapé: link da nota, nos dois idiomas
 4. [ ] Medição: `@vercel/analytics` e `Analytics` no layout. Ligar no painel da Vercel e conferir no preview que a visita chega e nenhum cookie é criado
-5. [ ] Conferência: percorrer os critérios dos sete FDDs no navegador, inclusive teclado, leitor de tela, sem JavaScript, movimento reduzido e deslocamento de layout. Registrar no Stage 7. Já conhecido: conferir se o título de `#site` para abaixo do cabeçalho
-6. [ ] Tecnologias: aplicar a resposta sobre o Motion, e fechar o TODO do FDD
-7. [ ] Limpeza: tirar marcas `SPIKE`, `cropX` e comentários de rascunho
-8. [ ] Desempenho: medir LCP no build de produção, com 4G simulado. Acima de 2,5 s, parar e levar os números a Lucas
+5. [x] Conferência: percorrer os critérios dos sete FDDs no navegador, inclusive teclado, leitor de tela, sem JavaScript, movimento reduzido e deslocamento de layout. Registrar no Stage 7. Já conhecido: conferir se o título de `#site` para abaixo do cabeçalho
+6. [x] Tecnologias: aplicar a resposta sobre o Motion, e fechar o TODO do FDD
+7. [x] Limpeza: tirar marcas `SPIKE`, `cropX` e comentários de rascunho
+8. [ ] Desempenho: medir LCP no build de produção, com 4G simulado. Acima de 2,5 s, parar e levar os números a Lucas. **Medido e acima: execução parada aqui, à espera de Lucas**
 9. [ ] Docs: status dos FDDs, PRD seção 6, ROADMAP e estado no `CLAUDE.md`
 10. [ ] Entrega: teste de Lucas em aparelho real, `/walkthrough` e `/pr`, com a confirmação dele antes de abrir o PR. Ao abrir, combinar o fechamento do PR #4 e o destino das branches `spike/site-inteiro`, `feat/projetos` e `proto/apresentacao`
 
@@ -127,33 +127,70 @@ Até 10 itens, um commit cada, na ordem do `/exec`. Correção encontrada no ite
 
 ## Stage 6 — Code Execution
 
-*(Preenchido pelo exec.)*
-
 | # | Camada | Arquivo | Status |
 |---|---|---|---|
+| 1 | Docs | `docs/fdd/contato.md`, `docs/fdd/README.md`, `docs/ROADMAP.md` | feito |
+| 2 | Mensagens e componente | `messages/*.json`, `src/components/privacidade.tsx`, `src/app/[locale]/page.tsx` | feito |
+| 3 | Rodapé | `src/components/site-footer.tsx` | feito |
+| 4 | Medição | `package.json`, `package-lock.json`, `src/app/[locale]/layout.tsx` | código feito; falta ligar no painel e conferir no preview |
+| 5 | Correção da conferência | `src/components/header-shell.tsx` | feito |
+| 6 | Tecnologias | `src/lib/stack.ts`, `docs/fdd/tecnologias.md`, `docs/adr/0004-movimento-em-css.md` | feito |
+| 7 | Limpeza | `src/`, 12 arquivos | feito |
+| 8 | Desempenho | sem código | medido, acima da meta, aguardando decisão |
 
 ### Desvios do plano
-- Nenhum | …
+- Os itens 6 e 7 vieram antes do 5, para a conferência valer sobre o código final.
+- O link do rodapé usa `/#privacidade`, com o `Link` de idioma, porque a página 404 usa o mesmo rodapé e não tem a âncora.
+- Antes do item 1, os vetos a "full stack" e "soluções" saíram do `DESIGN.md`, por pedido de Lucas (PRD, D59).
 
 ---
 
 ## Stage 7 — Tests
 
-*(Preenchido pelo exec.)*
+Medido em 2026-11-03, no build de produção local, com navegador sem interface. "Lento" é 4G simulado de 1,6 Mbps, com 150 ms de latência e CPU 4x mais lenta.
 
 | Critério de aceite | Como foi verificado |
 |---|---|
+| Matriz de 390 px e 1440 px, `/` e `/en`, escuro e claro | Script nas 8 combinações: sem transbordo, ordem certa das seções, primeiro caso na primeira tela e nenhum erro de console |
+| Preloader | Termina entre 3,84 e 3,87 s sem limite de rede. O nome pousa a até 0,1 px do lugar dele no cabeçalho |
+| Âncoras | `#site`, `#contato` e `#privacidade` deixam o título visível. O link direto com âncora não mostra preloader |
+| Teclado | Ordem certa de cabeçalho até o rodapé, com contorno de foco em todos. O cabeçalho escondido não voltava com foco: corrigido, e conferido com teclado |
+| Clique no cabeçalho | Depois de um clique com mouse, o cabeçalho continua saindo ao rolar |
+| Movimento reduzido | Sem preloader, nenhuma animação rodando, e vídeo parado com botão disponível |
+| Sem JavaScript | Conteúdo, nome, seletor de idioma e link da nota aparecem, conferido em captura |
+| Leitor de tela | Só pela árvore de acessibilidade: nome uma vez, `h1` certo e títulos em ordem. Falta teste com leitor real |
+| Vídeo | Toca um por vez. A pausa de um segura os outros ao rolar. Sem arquivo, fica o print e não aparece botão |
+| Cookies | Nenhum, em `/` e em `/en`, sem a medição da Vercel em produção real |
+| 404 | Status 404 nos dois idiomas, com o link da nota apontando para a página inicial |
+| Tema | Vale na hora, sobrevive ao recarregar e muda o `theme-color` |
+| Mídia | Prints e vídeos sem EXIF, XMP, ICC ou etiquetas de autoria. Vídeos sem áudio |
+| Links externos | Respondem 200. O LinkedIn bloqueia robôs, com 999: precisa de teste à mão |
+| Lighthouse | 100 em acessibilidade. Boas práticas 96 por causa do script da medição, que só existe na Vercel. SEO 66 por causa do `noindex` intencional |
+| Deslocamento de layout | 0 em `/`. Em `/en` no computador a 1350 px, 0,039, antes do fim do preloader e por baixo dele, então o visitante não vê |
+| Alvo de toque | Todos com `min-h-11` ou `h-11`. O script apontou 43,99 px em algumas execuções, por arredondamento da medição |
+
+### LCP, em 390 px
+
+| Rede | Página | FCP | LCP | Elemento |
+|---|---|---|---|---|
+| Sem limite | `/` e `/en` | cerca de 0,1 s | 4,85 s | `h1` |
+| Lento | `/` | cerca de 0,9 s | de 8,36 a 8,43 s | `h1` |
+| Lento | `/en` | cerca de 0,9 s | de 7,63 a 8,38 s | `h1` |
+
+No computador a 1350 px: 4,86 a 5,12 s sem limite, e 7,32 a 7,60 s no lento. A meta do PRD, seção 8, é 2,5 s.
+
+- O FCP é rápido porque o nome aparece logo. O LCP só conta depois que o preloader solta o conteúdo.
+- No lento, o tempo cresce além dos 3,8 s porque o relógio do voo só começa quando o JavaScript da página carrega. A rolagem fica presa até a saída de segurança, de 7 s.
 
 ---
 
 ## Stage 8 — Verification
 
-*(Preenchido pelo exec.)*
-
-- **lint:** Pass | Fail
-- **typecheck:** Pass | Fail
-- **build:** Pass | Fail
-- **Navegador (390 px e computador, `/` e `/en`, escuro e claro):** Pass | Fail
+- **lint:** Pass
+- **typecheck:** Pass
+- **build:** Pass
+- **Navegador (390 px e computador, `/` e `/en`, escuro e claro):** Pass, em emulação. Falta aparelho real
+- **Pendente:** decisão sobre o LCP, Web Analytics no painel da Vercel, itens 9 e 10
 
 ---
 
