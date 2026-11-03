@@ -64,7 +64,7 @@ Casos em destaque (D3):
 
 Valores propostos no kickoff, a ajustar se a medição real pedir.
 
-- Desempenho: LCP abaixo de 2,5 s no 4G, sem deslocamento de layout na animação do nome.
+- Desempenho: LCP abaixo de 2,5 s no 4G, com exceção aceita para a página inicial com preloader (D60), e sem deslocamento de layout na animação do nome.
 - Acessibilidade: WCAG 2.2 AA.
 - Dispositivos: celular primeiro, 390 px, e computador logo depois.
 - SEO e compartilhamento: metadados e prévia de link nos dois idiomas, `hreflang` entre eles.
@@ -96,7 +96,7 @@ Graus de certeza:
 | Texto em dois idiomas sair de sincronia | Parte do site fica sem tradução | Toda entrega traz as duas línguas. Falta de mensagem quebra o build |
 | Número de WhatsApp e e-mail públicos | Spam | Aceito pelo dono. Cada um mora em um arquivo só, para trocar ou tirar fácil |
 | Site pela metade substituir o atual | Má impressão | Repositório e projeto próprios na Vercel. O endereço público só muda no lançamento (D21) |
-| Preloader de cerca de 3,8 s em toda carga afastar quem tem pressa | Parte dos visitantes pode sair antes de ver o trabalho | Decisão mantida pelo dono (D46). Observar no teste de 1 minuto e medir o LCP antes do lançamento |
+| Preloader de cerca de 3,8 s em toda carga afastar quem tem pressa | Parte dos visitantes pode sair antes de ver o trabalho | Decisão mantida pelo dono (D46 e D60). Observar no teste de 1 minuto |
 
 ## 10. Critérios de pronto
 
@@ -196,3 +196,4 @@ Depois de comparar o rascunho com uma amostra de portfólios de outros devs, o d
 - **D57.** A nota de privacidade é um bloco curto no fim da própria página, com o link do rodapé levando até ele. Mantém a página única (D42), sem rota nova.
 - **D58.** Motion sai das dependências, porque nenhum componente o usa. O movimento fica em CSS e nas APIs do navegador (ADR 0004). Ajusta D6.
 - **D59.** "Full stack" e "soluções" deixam de ser palavras vetadas, por decisão do dono.
+- **D60.** O preloader fica em toda carga, e o dono aceita o LCP acima da meta da seção 8 na página inicial: cerca de 4,8 s sem limite de rede e de 5,6 a 6,7 s em 4G lento simulado. O tempo da sequência passa a contar desde o começo da própria animação, e não desde a carga do JavaScript. Com isso, a espera no 4G lento cai de até 7 s para cerca de 4,7 s. Ajusta a seção 8.

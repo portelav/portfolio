@@ -108,7 +108,7 @@ Até 10 itens, um commit cada, na ordem do `/exec`. Correção encontrada no ite
 5. [x] Conferência: percorrer os critérios dos sete FDDs no navegador, inclusive teclado, leitor de tela, sem JavaScript, movimento reduzido e deslocamento de layout. Registrar no Stage 7. Já conhecido: conferir se o título de `#site` para abaixo do cabeçalho
 6. [x] Tecnologias: aplicar a resposta sobre o Motion, e fechar o TODO do FDD
 7. [x] Limpeza: tirar marcas `SPIKE`, `cropX` e comentários de rascunho
-8. [ ] Desempenho: medir LCP no build de produção, com 4G simulado. Acima de 2,5 s, parar e levar os números a Lucas. **Medido e acima: execução parada aqui, à espera de Lucas**
+8. [x] Desempenho: medir LCP no build de produção, com 4G simulado. Acima de 2,5 s, parar e levar os números a Lucas. **Medido e acima. Lucas manteve o preloader e pediu para corrigir o tempo (PRD, D60)**
 9. [ ] Docs: status dos FDDs, PRD seção 6, ROADMAP e estado no `CLAUDE.md`
 10. [ ] Entrega: teste de Lucas em aparelho real, `/walkthrough` e `/pr`, com a confirmação dele antes de abrir o PR. Ao abrir, combinar o fechamento do PR #4 e o destino das branches `spike/site-inteiro`, `feat/projetos` e `proto/apresentacao`
 
@@ -136,7 +136,7 @@ Até 10 itens, um commit cada, na ordem do `/exec`. Correção encontrada no ite
 | 5 | Correção da conferência | `src/components/header-shell.tsx` | feito |
 | 6 | Tecnologias | `src/lib/stack.ts`, `docs/fdd/tecnologias.md`, `docs/adr/0004-movimento-em-css.md` | feito |
 | 7 | Limpeza | `src/`, 12 arquivos | feito |
-| 8 | Desempenho | sem código | medido, acima da meta, aguardando decisão |
+| 8 | Desempenho | `src/components/preloader.tsx`, `docs/PRD.md`, `docs/fdd/abertura.md` | feito, com exceção aceita por Lucas (PRD, D60) |
 
 ### Desvios do plano
 - Os itens 6 e 7 vieram antes do 5, para a conferência valer sobre o código final.
@@ -169,7 +169,7 @@ Medido em 2026-11-03, no build de produção local, com navegador sem interface.
 | Deslocamento de layout | 0 em `/`. Em `/en` no computador a 1350 px, 0,039, antes do fim do preloader e por baixo dele, então o visitante não vê |
 | Alvo de toque | Todos com `min-h-11` ou `h-11`. O script apontou 43,99 px em algumas execuções, por arredondamento da medição |
 
-### LCP, em 390 px
+### LCP, em 390 px, antes da correção
 
 | Rede | Página | FCP | LCP | Elemento |
 |---|---|---|---|---|
@@ -182,6 +182,24 @@ No computador a 1350 px: 4,86 a 5,12 s sem limite, e 7,32 a 7,60 s no lento. A m
 - O FCP é rápido porque o nome aparece logo. O LCP só conta depois que o preloader solta o conteúdo.
 - No lento, o tempo cresce além dos 3,8 s porque o relógio do voo só começa quando o JavaScript da página carrega. A rolagem fica presa até a saída de segurança, de 7 s.
 
+### Depois da correção (PRD, D60)
+
+O voo agora se guia pela própria animação da Reescrita, em vez de esperar 2,95 s a partir da carga do JavaScript. Três medições por linha.
+
+| Tela | Rede | Página | Fim do preloader | LCP |
+|---|---|---|---|---|
+| 390 px | Sem limite | `/` e `/en` | de 3,86 a 3,92 s | de 4,77 a 4,84 s |
+| 390 px | Lento | `/` | de 4,58 a 4,65 s | de 6,36 a 6,64 s |
+| 390 px | Lento | `/en` | de 4,64 a 4,68 s | de 5,57 a 5,61 s |
+| 1350 px | Sem limite | `/` e `/en` | de 3,86 a 3,90 s | de 4,78 a 5,07 s |
+| 1350 px | Lento | `/` e `/en` | de 4,59 a 4,74 s | de 5,89 a 6,72 s |
+
+- A sequência nunca é cortada: em todas as medições, o voo começa cerca de 350 ms depois do fim dela.
+- No lento, o elemento do LCP pode ser o `h1` ou o primeiro print, que já carrega com prioridade alta.
+- JavaScript atrasado 4,5 s: a Reescrita termina em 2,7 s, o nome voa em 4,63 s e a rolagem solta em 5,43 s.
+- JavaScript atrasado 9 s: a saída de segurança solta a página em 7,03 s, sem voo, com o nome no cabeçalho e a rolagem funcionando.
+- Deslocamento de layout igual ao de antes: 0 em `/`, e até 0,039 em `/en` a 1350 px, por baixo do preloader.
+
 ---
 
 ## Stage 8 — Verification
@@ -190,7 +208,7 @@ No computador a 1350 px: 4,86 a 5,12 s sem limite, e 7,32 a 7,60 s no lento. A m
 - **typecheck:** Pass
 - **build:** Pass
 - **Navegador (390 px e computador, `/` e `/en`, escuro e claro):** Pass, em emulação. Falta aparelho real
-- **Pendente:** decisão sobre o LCP, Web Analytics no painel da Vercel, itens 9 e 10
+- **Pendente:** Web Analytics no painel da Vercel e item 10
 
 ---
 

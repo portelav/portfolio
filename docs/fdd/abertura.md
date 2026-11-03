@@ -32,7 +32,7 @@ Depois de ver o nome `portelav` ser reescrito, o visitante sabe, na mesma tela, 
 ## Comportamento
 
 - O preloader cobre a tela em toda carga de `/` e `/en` sem âncora (PRD, D46). Quem chega por um link com âncora vai direto ao conteúdo.
-- Sequência: Reescrita de 2,6 s, pausa de 350 ms, e voo do nome até o cabeçalho em 800 ms, enquanto o véu some. São cerca de 3,8 s.
+- Sequência: Reescrita de 2,6 s, pausa de 350 ms, e voo do nome até o cabeçalho em 800 ms, enquanto o véu some. São cerca de 3,8 s, contados da primeira pintura do nome. Se o JavaScript chegar depois do fim da Reescrita, o nome voa na hora (PRD, D60).
 - A rolagem fica presa enquanto o preloader roda.
 - Um script curto no `<head>`, antes da primeira pintura, marca a página para o preloader. Se algo falhar, a marca sai sozinha em 7 s e a página aparece.
 - O HTML traz o estado final. Sem JavaScript, nada fica coberto.
@@ -77,9 +77,7 @@ Nunca anima: nada além das letras, do cursor, do voo e da chegada. Sem desfoque
 
 - Sem deslocamento de layout: o preloader é fixo, e o conteúdo já ocupa o lugar dele por baixo.
 - A Reescrita não carrega fonte: Caslon e Plex Mono vão em vetor, no próprio HTML.
-- LCP abaixo de 2,5 s no 4G (PRD, seção 8).
-
-> TODO: medir o LCP com o preloader no build de produção. Ele ainda não foi medido.
+- O LCP fica acima dos 2,5 s da seção 8 do PRD, porque o conteúdo só conta depois do preloader. Exceção aceita pelo dono, com os valores medidos (PRD, D60).
 
 ## Fora de escopo
 
@@ -97,5 +95,5 @@ Nunca anima: nada além das letras, do cursor, do voo e da chegada. Sem desfoque
 - [ ] Com `prefers-reduced-motion`, nenhuma animação roda, nem no hover.
 - [ ] Com JavaScript desligado, todo o conteúdo aparece.
 - [ ] Leitor de tela anuncia o nome uma vez e lê a frase como título principal.
-- [ ] LCP abaixo de 2,5 s no 4G, medido com Lighthouse.
+- [ ] LCP dentro dos valores aceitos na D60 do PRD, e o preloader termina em menos de 5 s no 4G lento simulado.
 - [ ] Funciona em `/` e em `/en`, escuro e claro, com os textos do idioma certo.
