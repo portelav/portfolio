@@ -7,11 +7,19 @@ Regra: seção sem FDD não entra em desenvolvimento.
 
 ## Índice
 
+Em ordem de página. O protótipo da direção de 2026-11-03 já roda na branch `proto/trabalho-primeiro`. Cada FDD só passa a implementado depois do plano e da auditoria.
+
 | Seção | Status | Plano |
 |---|---|---|
-| [Cabeçalho e rodapé](cabecalho-rodape.md) | implementado | `tasks/cabecalho-rodape.md` |
-| [Abertura](abertura.md) | implementado | `tasks/abertura.md` |
-| [Projetos](projetos.md) | implementado | `tasks/projetos.md` |
+| [Cabeçalho e rodapé](cabecalho-rodape.md) | aprovado | `tasks/trabalho-primeiro.md`, a criar |
+| [Abertura](abertura.md) | aprovado | `tasks/trabalho-primeiro.md`, a criar |
+| [Projetos](projetos.md) | aprovado | `tasks/trabalho-primeiro.md`, a criar |
+| [Sobre](sobre.md) | aprovado | `tasks/trabalho-primeiro.md`, a criar |
+| [Tecnologias](tecnologias.md) | aprovado | `tasks/trabalho-primeiro.md`, a criar |
+| [Quer um site?](quer-um-site.md) | aprovado | `tasks/trabalho-primeiro.md`, a criar |
+| [Contato e nota de privacidade](contato.md) | rascunho | `tasks/trabalho-primeiro.md`, a criar |
+
+Planos anteriores, já auditados, da versão que a direção nova substitui: `tasks/cabecalho-rodape.md`, `tasks/abertura.md` e `tasks/projetos.md`.
 
 ## Template
 
