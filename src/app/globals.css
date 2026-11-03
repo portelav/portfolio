@@ -103,57 +103,19 @@
       animation-range: entry 0% entry 30%;
     }
 
-    /* A project's window opens to the full screen while its stage is held. */
-    @media (min-width: 48rem) {
-      .project-runway {
-        height: 160svh;
-        view-timeline: --project-runway block;
-      }
-
-      .project-window {
-        animation: project-open linear both;
-        animation-timeline: --project-runway;
-        animation-range: contain 0% contain 60%;
-      }
-    }
-  }
-}
-
-@keyframes project-open {
-  from {
-    transform: scale(0.62);
-  }
-}
-
-/* The opening text rises once from under a mask, then stays still. */
-@keyframes rise {
-  from {
-    transform: translateY(110%);
-  }
-}
-
-@keyframes arrive {
-  from {
-    opacity: 0;
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .rise {
-    animation: rise 0.8s var(--ease-out-quint) 0.15s both;
-  }
-
-  .arrive {
-    animation: arrive 0.6s var(--ease-out-quint) 0.45s both;
   }
 }
 
 /* SPIKE: the first screen arrives as the name lands in the header. */
 @media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+
   .intro-in {
     transition:
-      opacity 0.9s var(--ease-out-quint),
-      transform 0.9s var(--ease-out-quint);
+      opacity 0.9s var(--ease-out-quint) var(--delay, 0ms),
+      transform 0.9s var(--ease-out-quint) var(--delay, 0ms);
   }
 
   html[data-reescrita] .intro-in {
@@ -192,65 +154,9 @@
   opacity: 1;
 }
 
-/* SPIKE: the opening. Its resting state is the end of the story, so without
- * scroll-driven animations, or under reduced motion, everything just shows. */
-/* The stage fills the first screen, behind the header. */
-#sobre {
-  margin-top: -3.5rem;
-}
-
-.words-stage {
-  position: relative;
-  display: grid;
-  align-content: end;
-  min-height: 100svh;
-  overflow: hidden;
-  padding-block: 2.5rem;
-}
-
-.words-text {
-  position: relative;
-  z-index: 1;
-}
-
-.portrait {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: 80vw;
-  transform-origin: top center;
-  transform: translate(-50%, 3.5rem) scale(0.85);
-}
-
+/* SPIKE: the portrait in the about section. */
 .portrait-image {
   mask-image: radial-gradient(closest-side, #000 76%, transparent 100%);
-}
-
-@media (min-width: 768px) {
-  .words-stage {
-    align-content: center;
-    padding-block: 0;
-  }
-
-  .portrait {
-    top: 50%;
-    width: min(56svh, 42vw);
-    transform-origin: center;
-    transform: translate(-50%, -50%) translate(26vw, 1.5rem) scale(0.8);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .portrait-arrive {
-    transition:
-      opacity 1.4s var(--ease-out-quint),
-      transform 1.4s var(--ease-out-quint);
-  }
-
-  html[data-reescrita] .portrait-arrive {
-    opacity: 0;
-    transform: scale(1.06);
-  }
 }
 
 /* SPIKE: preloader. Only shows while the page is marked. */
@@ -279,240 +185,14 @@ html[data-reescrita] .header-name {
   width: clamp(13rem, 32vw, 30rem);
 }
 
-/* SPIKE: sobre, tecnologias and projects. The base state is everything visible. */
-.words-stage,
-.wheel-stage {
-  min-height: 70svh;
-}
-
-.wheel-list {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-
-.wheel-item {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-}
-
-.project-track {
-  display: flex;
-  gap: 2rem;
-  overflow-x: auto;
-  padding-inline: max(1.5rem, calc((100vw - min(85vw, 44rem)) / 2));
-  scroll-snap-type: x mandatory;
-  scrollbar-width: none;
-}
-
-.project-slide {
-  flex: none;
-  width: min(85vw, 44rem);
-  scroll-snap-align: center;
-}
-
+/* SPIKE: each technology arrives a little after the one before it. */
 @supports (animation-timeline: view()) {
   @media (prefers-reduced-motion: no-preference) {
-    .words-runway {
-      height: 260svh;
-      view-timeline: --words block;
-    }
-
-    .words-stage {
-      position: sticky;
-      top: 0;
-      height: 100svh;
-      animation: words-leave linear both;
-      animation-timeline: --words;
-      animation-range: contain 82% contain 100%;
-    }
-
-    .portrait {
-      animation: portrait-open cubic-bezier(0.65, 0, 0.35, 1) both;
-      animation-timeline: --words;
-      animation-range: contain 0% contain 78%;
-    }
-
-    .word {
-      animation: word-lit linear both;
-      animation-timeline: --words;
-      animation-range: contain var(--from) contain var(--to);
-    }
-
-    .wheel-runway {
-      height: 230svh;
-      view-timeline: --wheel block;
-    }
-
-    .wheel-stage {
-      position: sticky;
-      top: 0;
-      height: 100svh;
-    }
-
-    .wheel-window {
-      --row: clamp(7rem, 16vh, 10rem);
-      height: calc(var(--row) * 3);
-      overflow: hidden;
-    }
-
-    .wheel-list {
-      gap: 0;
-      padding-top: var(--row);
-      animation: wheel-turn linear both;
-      animation-timeline: --wheel;
-      animation-range: contain 0% contain 100%;
-    }
-
-    .wheel-item {
-      height: var(--row);
-      justify-content: center;
-      animation: linear both;
-      animation-timeline: --wheel;
-      animation-range: contain 0% contain 100%;
-    }
-
-    .wheel-item-1 {
-      animation-name: wheel-on-1;
-    }
-
-    .wheel-item-2 {
-      animation-name: wheel-on-2;
-    }
-
-    .wheel-item-3 {
-      animation-name: wheel-on-3;
-    }
-
     .stack-item {
       animation: reveal linear both;
       animation-timeline: view();
       animation-range: entry calc(var(--i) * 4%) entry calc(30% + var(--i) * 4%);
     }
-
-    .project-slide-image,
-    .project-slide-text {
-      animation: linear both;
-      animation-timeline: view(inline);
-    }
-
-    .project-slide-image {
-      animation-name: slide-image;
-    }
-
-    .project-slide-text {
-      animation-name: slide-text;
-    }
-  }
-}
-
-@keyframes words-leave {
-  to {
-    opacity: 0;
-    transform: translateY(-2rem);
-  }
-}
-
-@keyframes portrait-open {
-  from {
-    transform: translate(-50%, -50%) translate(26vw, 1.5rem) scale(1);
-  }
-}
-
-@media (max-width: 767px) {
-  @keyframes portrait-open {
-    from {
-      transform: translate(-50%, 4.5rem) scale(1);
-    }
-  }
-}
-
-@keyframes word-lit {
-  from {
-    opacity: 0.28;
-  }
-}
-
-@keyframes wheel-turn {
-  0%,
-  30% {
-    transform: none;
-  }
-
-  45%,
-  65% {
-    transform: translateY(calc(var(--row) * -1));
-  }
-
-  80%,
-  100% {
-    transform: translateY(calc(var(--row) * -2));
-  }
-}
-
-@keyframes wheel-on-1 {
-  0%,
-  30% {
-    opacity: 1;
-  }
-
-  42%,
-  100% {
-    opacity: 0.2;
-  }
-}
-
-@keyframes wheel-on-2 {
-  0%,
-  33% {
-    opacity: 0.2;
-  }
-
-  45%,
-  65% {
-    opacity: 1;
-  }
-
-  77%,
-  100% {
-    opacity: 0.2;
-  }
-}
-
-@keyframes wheel-on-3 {
-  0%,
-  68% {
-    opacity: 0.2;
-  }
-
-  80%,
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes slide-image {
-  0%,
-  100% {
-    opacity: 0.5;
-  }
-
-  40%,
-  60% {
-    opacity: 1;
-  }
-}
-
-@keyframes slide-text {
-  0%,
-  100% {
-    opacity: 0.75;
-  }
-
-  40%,
-  60% {
-    opacity: 1;
   }
 }
 

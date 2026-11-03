@@ -8,12 +8,12 @@ type ProjectVideoProps = {
   playLabel: string;
 };
 
-// A pause on one project holds them all, so moving along the strip keeps it.
+// A pause on one project holds them all, so moving down the page keeps it.
 let held = false;
 
 // SPIKE. Sits over the screenshot and only shows once it plays, so a missing
-// file or reduced motion simply leaves the screenshot. Plays only on the
-// project in the middle of the strip.
+// file or reduced motion simply leaves the screenshot. Plays only while most
+// of it is on screen.
 export function ProjectVideo({ src, pauseLabel, playLabel }: ProjectVideoProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [ready, setReady] = useState(false);
@@ -48,7 +48,7 @@ export function ProjectVideo({ src, pauseLabel, playLabel }: ProjectVideoProps) 
           video.pause();
         }
       },
-      { rootMargin: "0px -20%", threshold: 0.6 },
+      { threshold: 0.6 },
     );
     observer.observe(video);
 

@@ -1,49 +1,61 @@
+import type { CSSProperties } from "react";
+
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 
 import { coauthorUrl, projectImageSize, projects } from "@/lib/projects";
 
-import { ProjectTrack } from "./project-track";
 import { ProjectVideo } from "./project-video";
 
 const linkClassName =
   "inline-flex min-h-11 items-center font-mono underline underline-offset-4 transition-opacity duration-150 hover:opacity-70";
 
-// SPIKE. A horizontal strip like the cases of the landing: the current project
-// sits lit in the middle and its neighbours stay dimmed.
+const labelClassName = "font-mono text-sm";
+
+// SPIKE. Cases stacked, each with its screen beside what it is and whose part
+// was what. The first one sits on the first screen, so it arrives with the opening.
 export function Projetos() {
   const t = useTranslations("Projects");
 
   return (
-    <section id="projetos" className="scroll-mt-14 py-24 md:py-32">
-      <h2 className="page-frame reveal font-display text-display">{t("title")}</h2>
-      <div className="reveal mt-12">
-        <ProjectTrack
-          previousLabel={t("previous")}
-          nextLabel={t("next")}
-        >
-          {projects.map((project) => (
-            <li key={project.id} className="project-slide">
-              <div className="project-slide-image border-line relative border">
-                <Image
-                  {...projectImageSize}
-                  src={project.image}
-                  alt={t(`${project.id}.alt`)}
-                  sizes="(min-width: 768px) 60vw, 90vw"
-                  className="h-auto w-full"
-                />
-                <ProjectVideo
-                  src={`/projetos/video/${project.id}.mp4`}
-                  pauseLabel={t("videoPause")}
-                  playLabel={t("videoPlay")}
-                />
-              </div>
-              <div className="project-slide-text mt-5 flex flex-col gap-2">
-                <h3 className="font-display text-lg">
+    <section id="projetos" className="page-frame scroll-mt-14 pb-16 md:pb-24">
+      <h2
+        className="intro-in font-display text-xl"
+        style={{ "--delay": "200ms" } as CSSProperties}
+      >
+        {t("title")}
+      </h2>
+      <ul className="mt-5 flex flex-col gap-16 md:gap-24">
+        {projects.map((project, index) => (
+          <li
+            key={project.id}
+            className={`grid gap-6 md:grid-cols-12 md:gap-10 ${index === 0 ? "intro-in" : "reveal"}`}
+            style={
+              index === 0 ? ({ "--delay": "240ms" } as CSSProperties) : undefined
+            }
+          >
+            <div className="border-line relative self-start border md:col-span-8">
+              <Image
+                {...projectImageSize}
+                src={project.image}
+                alt={t(`${project.id}.alt`)}
+                sizes="(min-width: 768px) 62vw, 92vw"
+                preload={index === 0}
+                className="h-auto w-full"
+              />
+              <ProjectVideo
+                src={`/projetos/video/${project.id}.mp4`}
+                pauseLabel={t("videoPause")}
+                playLabel={t("videoPlay")}
+              />
+            </div>
+            <div className="flex flex-col gap-5 md:col-span-4">
+              <div className="flex flex-col gap-1">
+                <h3 className="font-display text-xl">
                   {t(`${project.id}.name`)}
                 </h3>
-                <p>
-                  {t.rich(`${project.id}.text`, {
+                <p className={labelClassName}>
+                  {t.rich(`${project.id}.kind`, {
                     coauthor: (chunks) => (
                       <a
                         href={coauthorUrl}
@@ -54,32 +66,45 @@ export function Projetos() {
                     ),
                   })}
                 </p>
+              </div>
+              <p>{t(`${project.id}.what`)}</p>
+              <dl className="flex flex-col gap-4">
+                <div className="flex flex-col gap-1">
+                  <dt className={labelClassName}>{t("partLabel")}</dt>
+                  <dd>{t(`${project.id}.part`)}</dd>
+                </div>
                 {project.id === "landing" && (
-                  <p className="font-mono text-sm">{t("landing.detail")}</p>
+                  <div className="flex flex-col gap-1">
+                    <dt className={labelClassName}>{t("decisionLabel")}</dt>
+                    <dd>{t("landing.decision")}</dd>
+                  </div>
                 )}
-                <div className="flex flex-wrap gap-x-6">
+              </dl>
+              {project.id === "landing" && (
+                <p className={labelClassName}>{t("landing.detail")}</p>
+              )}
+              <div className="flex flex-wrap gap-x-6">
+                <a
+                  href={project.siteUrl}
+                  aria-label={t(`${project.id}.siteLabel`)}
+                  className={linkClassName}
+                >
+                  {t("visitSite")}
+                </a>
+                {project.id === "landing" && (
                   <a
-                    href={project.siteUrl}
-                    aria-label={t(`${project.id}.siteLabel`)}
+                    href={project.codeUrl}
+                    aria-label={t("landing.codeLabel")}
                     className={linkClassName}
                   >
-                    {t("visitSite")}
+                    {t("seeCode")}
                   </a>
-                  {project.id === "landing" && (
-                    <a
-                      href={project.codeUrl}
-                      aria-label={t("landing.codeLabel")}
-                      className={linkClassName}
-                    >
-                      {t("seeCode")}
-                    </a>
-                  )}
-                </div>
+                )}
               </div>
-            </li>
-          ))}
-        </ProjectTrack>
-      </div>
+            </div>
+          </li>
+        ))}
+      </ul>
     </section>
   );
 }

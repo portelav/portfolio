@@ -5,16 +5,10 @@
   },
   "Home": {
     "name": "portelav",
-    "intro": "Me chamo Lucas Portela e estudo Ciência da Computação. Saí do Direito porque não me via trabalhando nessa área. Atualmente estou aprendendo a desenvolver com IA.",
-    "seeProjects": "Ver projetos",
-    "getInTouch": "Falar comigo",
-    "pathBeforeLabel": "antes",
-    "pathBefore": "Direito",
-    "pathNowLabel": "agora",
-    "pathNow": "Ciência da Computação",
-    "pathNextLabel": "aprendendo",
-    "pathNext": "Desenvolver com IA",
-    "photoAlt": "Ilustração de Lucas Portela, sorrindo, de barba e camiseta preta."
+    "headline": "Me chamo Lucas Portela e faço <accent>sites de verdade</accent>.",
+    "lead": "Estudo Ciência da Computação em Maceió. Procuro estágio em desenvolvimento e faço sites para quem precisa de um.",
+    "wantSite": "Quero um site",
+    "internship": "Falar sobre estágio"
   },
   "Header": {
     "homeLabel": "portelav, voltar ao início",
@@ -42,29 +36,36 @@
     "visitSite": "Ver site",
     "seeCode": "Ver código",
     "landing": {
-      "text": "Landing que fiz sozinho, do desenho ao código, pensada primeiro para o celular.",
       "detail": "Dra. Thaiane Lessa · CRO/AL-6418",
       "alt": "Primeira tela da landing: o título “sorrir é sempre uma boa ideia” ao lado de uma foto do consultório.",
       "siteLabel": "Ver site da landing da Dra. Thaiane Lessa",
       "codeLabel": "Ver código da landing da Dra. Thaiane Lessa",
-      "name": "Dra. Thaiane Lessa"
+      "name": "Dra. Thaiane Lessa",
+      "kind": "Site · feito sozinho",
+      "what": "Página de uma cirurgiã-dentista em Maceió, que apresenta a profissional e leva o visitante ao WhatsApp.",
+      "part": "Tudo, do desenho ao código, pensado primeiro para o celular.",
+      "decision": "Sem paciente, sem antes e depois e sem promessa de resultado, por causa das regras de publicidade do CFO."
     },
     "draftcs": {
-      "text": "Jogo web que fiz em dupla com o <coauthor>Vinicius</coauthor>.",
       "alt": "Primeira tela do DraftCS: a chamada “Monte o time invencível” ao lado de um time com resultado de 13 a 0.",
       "siteLabel": "Ver site do DraftCS",
-      "name": "DraftCS"
+      "name": "DraftCS",
+      "kind": "Jogo web · em dupla com <coauthor>Vinicius</coauthor>",
+      "what": "Você sorteia um elenco real de um Major de Counter-Strike, escala cinco jogadores e simula a corrida pelo título.",
+      "part": "Curadoria dos dados de jogadores, elencos e países, a rolagem do simulador no celular e a área de compartilhar o resultado."
     },
     "crewz": {
-      "text": "Rede social que fiz em dupla com o <coauthor>Vinicius</coauthor>.",
       "alt": "Primeira tela do Crewz: a frase “Encontre quem quer fazer o que você quer fazer” ao lado de um mosaico de fotos de atividades.",
       "siteLabel": "Ver site do Crewz",
-      "name": "Crewz"
+      "name": "Crewz",
+      "kind": "Rede social · em dupla com <coauthor>Vinicius</coauthor>",
+      "what": "Rede social para encontrar quem quer fazer o que você quer fazer.",
+      "part": "Design system, redesenho visual, onboarding, perfil, mensagens diretas e busca."
     },
-    "previous": "Projeto anterior",
-    "next": "Próximo projeto",
     "videoPause": "Pausar vídeo",
-    "videoPlay": "Reproduzir vídeo"
+    "videoPlay": "Reproduzir vídeo",
+    "partLabel": "Minha parte",
+    "decisionLabel": "Uma decisão"
   },
   "Stack": {
     "languages": "Linguagens",
@@ -76,7 +77,23 @@
     "linkedin": "LinkedIn",
     "github": "GitHub",
     "whatsapp": "WhatsApp",
-    "lead": "Se quiser conversar sobre estágio ou um site, é por aqui.",
-    "pending": "Link a confirmar"
+    "lead": "Se quiser conversar sobre estágio ou um site, é por aqui."
+  },
+  "About": {
+    "title": "Sobre",
+    "text": "Comecei no Direito e saí porque não me via trabalhando nessa área. Hoje estudo Ciência da Computação na Afya UNIMA e estou aprendendo a desenvolver com IA.",
+    "repo": "O código deste site é público, com as decisões registradas no <link>repositório</link>.",
+    "photoAlt": "Ilustração de Lucas Portela, sorrindo, de barba e camiseta preta."
+  },
+  "Hire": {
+    "title": "Quer um site?",
+    "lead": "Faço a página do seu negócio do desenho ao código, pensada primeiro para o celular e com um caminho direto até o seu WhatsApp.",
+    "cta": "Falar no WhatsApp",
+    "stepsTitle": "Como funciona",
+    "step1": "Você me conta o que precisa.",
+    "step2": "Combinamos escopo e prazo por escrito.",
+    "step3": "Você acompanha por um link de prévia.",
+    "step4": "O site vai ao ar.",
+    "whatsappMessage": "Oi, Lucas. Quero um site."
   }
 }
