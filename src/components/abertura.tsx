@@ -8,15 +8,19 @@ export function Abertura() {
   return (
     <section
       data-abertura
-      className="page-frame flex min-h-[calc(100dvh-3.5rem)] flex-col justify-center gap-10 py-12 md:gap-14"
+      className="page-frame grid min-h-[78svh] content-center gap-10 py-12 md:grid-cols-[7fr_5fr] md:items-end md:gap-16"
     >
-      <ReescritaStart />
-      <h1 className="brand-link w-full">
-        <ReescritaName label={t("name")} className="h-auto w-full" />
-      </h1>
-      <div className="grid gap-8 md:grid-cols-[minmax(0,1fr)_auto] md:items-end md:gap-16">
-        <p className="font-display text-lg md:text-xl max-w-3xl">{t("intro")}</p>
-        <div className="flex flex-wrap items-center gap-x-8 gap-y-2">
+      <div>
+        <ReescritaStart />
+        <h1 className="brand-link w-full">
+          <ReescritaName label={t("name")} className="h-auto w-full" />
+        </h1>
+      </div>
+      <div className="flex flex-col items-start gap-8">
+        <div className="overflow-hidden">
+          <p className="rise font-display text-lg md:text-xl">{t("intro")}</p>
+        </div>
+        <div className="arrive flex flex-wrap items-center gap-x-8 gap-y-2">
           <a
             href="#projetos"
             className="bg-fg text-bg inline-flex min-h-12 items-center px-6 font-mono transition-[opacity,transform] duration-150 hover:opacity-85 active:scale-[0.98]"

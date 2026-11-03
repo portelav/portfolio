@@ -4,6 +4,7 @@ import { Link } from "@/i18n/navigation";
 
 import { BrandName } from "./brand-name";
 import { HeaderName } from "./header-name";
+import { HeaderShell } from "./header-shell";
 import { LocaleSwitcher } from "./locale-switcher";
 import { ThemeToggle } from "./theme-toggle";
 
@@ -11,7 +12,7 @@ export function SiteHeader() {
   const t = useTranslations("Header");
 
   return (
-    <header className="bg-bg sticky top-0 z-10">
+    <HeaderShell>
       <div className="page-frame flex h-14 items-center justify-between gap-4">
       <HeaderName>
         <Link
@@ -32,6 +33,6 @@ export function SiteHeader() {
         />
       </div>
       </div>
-    </header>
+    </HeaderShell>
   );
 }

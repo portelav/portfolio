@@ -12,35 +12,31 @@ export function Projetos() {
   const t = useTranslations("Projects");
 
   return (
-    <section id="projetos" className="page-frame scroll-mt-14 py-16 md:py-24">
-      <h2 className="font-display text-xl">{t("title")}</h2>
-      <ul className="mt-16 flex flex-col gap-28 md:mt-24 md:gap-44">
-        {projects.map((project, index) => (
-          <li key={project.id} className="flex flex-col gap-8 md:gap-10">
-            <h3
-              className={`reveal font-display text-huge tracking-tight ${
-                index % 2 === 1 ? "md:text-right" : ""
-              }`}
-            >
+    <section id="projetos" className="scroll-mt-14 pb-16 md:pb-24">
+      <h2 className="page-frame font-display text-xl">{t("title")}</h2>
+      <ul className="mt-12 flex flex-col gap-24 md:mt-16 md:gap-40">
+        {projects.map((project) => (
+          <li key={project.id}>
+            <h3 className="page-frame reveal font-display text-huge tracking-tight">
               {t(`${project.id}.name`)}
             </h3>
-            {/* On a phone the crop shows the headline of the site, big enough
-                to read, instead of a tiny full page. */}
-            <div className="reveal border-line aspect-[4/5] overflow-hidden border md:aspect-[2/1]">
-              <Image
-                {...projectImageSize}
-                src={project.image}
-                alt={t(`${project.id}.alt`)}
-                sizes="(min-width: 768px) 100vw, 200vw"
-                className="h-full w-full object-cover object-[var(--crop-x)_top] md:object-top"
-                style={{ "--crop-x": project.cropX } as CSSProperties}
-              />
+            {/* The window opens as the visitor scrolls, on the computer. On a
+                phone the crop shows the site's headline, big enough to read. */}
+            <div className="project-runway mt-8 md:mt-10">
+              <div className="flex justify-center overflow-hidden px-6 md:sticky md:top-0 md:h-svh md:items-center md:px-0">
+                <div className="project-window border-line aspect-[4/5] w-full overflow-hidden border md:aspect-auto md:h-full">
+                  <Image
+                    {...projectImageSize}
+                    src={project.image}
+                    alt={t(`${project.id}.alt`)}
+                    sizes="(min-width: 768px) 100vw, 200vw"
+                    className="h-full w-full object-cover object-[var(--crop-x)_top] md:object-top"
+                    style={{ "--crop-x": project.cropX } as CSSProperties}
+                  />
+                </div>
+              </div>
             </div>
-            <div
-              className={`flex flex-col gap-4 md:flex-row md:items-start md:justify-between md:gap-16 ${
-                index % 2 === 1 ? "md:flex-row-reverse" : ""
-              }`}
-            >
+            <div className="page-frame reveal mt-8 flex flex-col gap-4 md:mt-10 md:flex-row md:items-start md:justify-between md:gap-16">
               <div className="flex max-w-2xl flex-col gap-3">
                 <p className="text-lg">
                   {t.rich(`${project.id}.text`, {
