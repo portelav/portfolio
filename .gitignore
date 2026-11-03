@@ -16,5 +16,9 @@ next-env.d.ts
 # Internal notes, never public
 private/
 
-# Local spike media.
-/public/projetos/video/
+# Videos stay local until their use is cleared. DraftCS is cleared.
+/public/projetos/video/*
+!/public/projetos/video/draftcs.mp4
+!/public/projetos/video/celular/
+/public/projetos/video/celular/*
+!/public/projetos/video/celular/draftcs.mp4
