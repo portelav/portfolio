@@ -21,9 +21,13 @@ export function HeaderName({ children }: HeaderNameProps) {
       return;
     }
 
-    const observer = new IntersectionObserver(([entry]) => {
-      element.dataset.visible = String(!entry.isIntersecting);
-    });
+    // The opening counts as gone once only the part behind the header is left.
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        element.dataset.visible = String(!entry.isIntersecting);
+      },
+      { rootMargin: "-64px 0px 0px 0px" },
+    );
     observer.observe(opening);
 
     return () => observer.disconnect();
