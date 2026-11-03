@@ -3,8 +3,8 @@
 **Slug:** `projetos`
 **Branch:** `feat/projetos`
 **Seção ou área:** seção Projetos
-**Status:** Planning
-**Gate S2:** Bloqueado
+**Status:** Execution
+**Gate S2:** Livre
 
 ---
 
@@ -33,8 +33,7 @@
 Os da seção "Critérios de aceite" de `docs/fdd/projetos.md`.
 
 ### Perguntas bloqueadoras
-1. **Aprovar o FDD**, inclusive o layout e o inglês propostos. O layout final pode ser ajustado no preview.
-2. **Linha do CRO na landing:** o PRD pede nome e CRO como na landing, então incluí "Dra. Thaiane Lessa · CRO/AL-6418". Recomendação: manter, porque é a regra já registrada e o dado é público.
+- Nenhuma. Respondidas por Lucas em 2026-11-02: FDD, textos e inglês aprovados, e linha do CRO mantida. O layout final pode ser ajustado no preview.
 
 ### Premissas
 - A licença das fotos do print do Crewz está resolvida: `public/landing/CREDITS.md` daquele projeto registra as fotos do mosaico como Unsplash, com licença livre. O print não precisa de recorte.
@@ -106,10 +105,10 @@ Antes do PR: QA no navegador pelo MCP do Chrome DevTools, depois o teste manual 
 
 - [x] Textos previstos em pt-BR e inglês
 - [x] FDD existe ou está no checklist
-- [ ] Decisão de produto coberta pelo PRD ou pergunta aberta: duas perguntas abertas no Stage 1
+- [x] Decisão de produto coberta pelo PRD ou pergunta aberta: respondidas no Stage 1
 - [x] Checklist ≤ 10, SoT ≤ 4, decisão única, evidências ≤ 7
 
-**Gate S2:** Bloqueado
+**Gate S2:** Livre
 
 ---
 
