@@ -9,7 +9,6 @@ import {
 import {
   brandHiddenFor,
   cursorKeyframes,
-  markedFor,
   sequenceDuration,
   serifVisibleFor,
 } from "@/lib/reescrita-timeline";
@@ -19,26 +18,18 @@ type ReescritaNameProps = {
   className?: string;
 };
 
-// Runs before the name is painted, only once per session. CSS drives the
-// sequence from there, so it never waits for the page's JavaScript. Without
-// this mark the page simply shows the final frame.
-const script = `(function(){try{if(matchMedia("(prefers-reduced-motion: reduce)").matches||sessionStorage.getItem("reescrita"))return;sessionStorage.setItem("reescrita","1");var d=document.documentElement;d.dataset.reescrita="1";setTimeout(function(){delete d.dataset.reescrita},${markedFor})}catch(e){}})()`;
-
-const styles = `${cursorKeyframes()}@media (prefers-reduced-motion:no-preference){html[data-reescrita] .reescrita-cursor{animation:reescrita-cursor ${sequenceDuration}ms step-end,brand-cursor-blink 1.06s steps(1) 4.7 ${sequenceDuration}ms}}`;
+const styles = `${cursorKeyframes()}@media (prefers-reduced-motion:no-preference){html[data-reescrita] .reescrita-cursor{animation:reescrita-cursor ${sequenceDuration}ms step-end}}`;
 
 function timed(ms: number) {
   return { "--reescrita-time": `${ms}ms` } as CSSProperties;
 }
 
-// Goes right before the name. React moves the style to the head.
-export function ReescritaStart() {
+// React moves the style to the head.
+export function ReescritaStyles() {
   return (
-    <>
-      <style href="reescrita" precedence="default">
-        {styles}
-      </style>
-      <script dangerouslySetInnerHTML={{ __html: script }} />
-    </>
+    <style href="reescrita" precedence="default">
+      {styles}
+    </style>
   );
 }
 

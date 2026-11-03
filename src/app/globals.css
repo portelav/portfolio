@@ -148,6 +148,239 @@
   }
 }
 
+/* SPIKE: preloader. Only shows while the page is marked. */
+.preloader {
+  display: none;
+}
+
+html[data-reescrita] {
+  overflow: hidden;
+}
+
+html[data-reescrita] .preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+html[data-reescrita] .header-name {
+  opacity: 0;
+}
+
+.preloader-name {
+  width: clamp(16rem, 44vw, 40rem);
+}
+
+/* SPIKE: sobre, tecnologias and projects. The base state is everything visible. */
+.words-stage,
+.wheel-stage {
+  min-height: 70svh;
+}
+
+.wheel-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.wheel-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.project-track {
+  display: flex;
+  gap: 2rem;
+  overflow-x: auto;
+  padding-inline: max(1.5rem, calc((100vw - min(85vw, 44rem)) / 2));
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.project-slide {
+  flex: none;
+  width: min(85vw, 44rem);
+  scroll-snap-align: center;
+}
+
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .words-runway {
+      height: 190svh;
+      view-timeline: --words block;
+    }
+
+    .words-stage {
+      position: sticky;
+      top: 0;
+      height: 100svh;
+    }
+
+    .word {
+      animation: word-lit linear both;
+      animation-timeline: --words;
+      animation-range: contain var(--from) contain var(--to);
+    }
+
+    .wheel-runway {
+      height: 230svh;
+      view-timeline: --wheel block;
+    }
+
+    .wheel-stage {
+      position: sticky;
+      top: 0;
+      height: 100svh;
+    }
+
+    .wheel-window {
+      --row: clamp(7rem, 16vh, 10rem);
+      height: calc(var(--row) * 3);
+      overflow: hidden;
+    }
+
+    .wheel-list {
+      gap: 0;
+      padding-top: var(--row);
+      animation: wheel-turn linear both;
+      animation-timeline: --wheel;
+      animation-range: contain 0% contain 100%;
+    }
+
+    .wheel-item {
+      height: var(--row);
+      justify-content: center;
+      animation: linear both;
+      animation-timeline: --wheel;
+      animation-range: contain 0% contain 100%;
+    }
+
+    .wheel-item-1 {
+      animation-name: wheel-on-1;
+    }
+
+    .wheel-item-2 {
+      animation-name: wheel-on-2;
+    }
+
+    .wheel-item-3 {
+      animation-name: wheel-on-3;
+    }
+
+    .stack-item {
+      animation: reveal linear both;
+      animation-timeline: view();
+      animation-range: entry calc(var(--i) * 4%) entry calc(30% + var(--i) * 4%);
+    }
+
+    .project-slide-image,
+    .project-slide-text {
+      animation: linear both;
+      animation-timeline: view(inline);
+    }
+
+    .project-slide-image {
+      animation-name: slide-image;
+    }
+
+    .project-slide-text {
+      animation-name: slide-text;
+    }
+  }
+}
+
+@keyframes word-lit {
+  from {
+    opacity: 0.28;
+  }
+}
+
+@keyframes wheel-turn {
+  0%,
+  30% {
+    transform: none;
+  }
+
+  45%,
+  65% {
+    transform: translateY(calc(var(--row) * -1));
+  }
+
+  80%,
+  100% {
+    transform: translateY(calc(var(--row) * -2));
+  }
+}
+
+@keyframes wheel-on-1 {
+  0%,
+  30% {
+    opacity: 1;
+  }
+
+  42%,
+  100% {
+    opacity: 0.2;
+  }
+}
+
+@keyframes wheel-on-2 {
+  0%,
+  33% {
+    opacity: 0.2;
+  }
+
+  45%,
+  65% {
+    opacity: 1;
+  }
+
+  77%,
+  100% {
+    opacity: 0.2;
+  }
+}
+
+@keyframes wheel-on-3 {
+  0%,
+  68% {
+    opacity: 0.2;
+  }
+
+  80%,
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-image {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+
+  40%,
+  60% {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-text {
+  0%,
+  100% {
+    opacity: 0.75;
+  }
+
+  40%,
+  60% {
+    opacity: 1;
+  }
+}
+
 /* The name's cursor blinks on interaction and stops lit before 5 s (WCAG 2.2.2). */
 @keyframes brand-cursor-blink {
   50% {

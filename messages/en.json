@@ -7,7 +7,13 @@
     "name": "portelav",
     "intro": "My name is Lucas Portela and I study Computer Science. Right now I'm learning to build software with AI.",
     "seeProjects": "See projects",
-    "getInTouch": "Get in touch"
+    "getInTouch": "Get in touch",
+    "pathBeforeLabel": "before",
+    "pathBefore": "Law",
+    "pathNowLabel": "now",
+    "pathNow": "Computer Science",
+    "pathNextLabel": "learning",
+    "pathNext": "Building with AI"
   },
   "Header": {
     "homeLabel": "portelav, back to top",
@@ -53,6 +59,19 @@
       "alt": "First screen of Crewz: the line “Encontre quem quer fazer o que você quer fazer” next to a mosaic of activity photos.",
       "siteLabel": "Visit site of Crewz",
       "name": "Crewz"
-    }
+    },
+    "previous": "Previous project",
+    "next": "Next project"
+  },
+  "Stack": {
+    "languages": "Languages",
+    "tools": "Technologies"
+  },
+  "Contact": {
+    "title": "Contact",
+    "email": "Email",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "whatsapp": "WhatsApp"
   }
 }

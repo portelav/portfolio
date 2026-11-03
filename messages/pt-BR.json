@@ -7,7 +7,13 @@
     "name": "portelav",
     "intro": "Me chamo Lucas Portela e estudo Ciência da Computação. Atualmente estou aprendendo a desenvolver com IA.",
     "seeProjects": "Ver projetos",
-    "getInTouch": "Falar comigo"
+    "getInTouch": "Falar comigo",
+    "pathBeforeLabel": "antes",
+    "pathBefore": "Direito",
+    "pathNowLabel": "agora",
+    "pathNow": "Ciência da Computação",
+    "pathNextLabel": "aprendendo",
+    "pathNext": "Desenvolver com IA"
   },
   "Header": {
     "homeLabel": "portelav, voltar ao início",
@@ -53,6 +59,19 @@
       "alt": "Primeira tela do Crewz: a frase “Encontre quem quer fazer o que você quer fazer” ao lado de um mosaico de fotos de atividades.",
       "siteLabel": "Ver site do Crewz",
       "name": "Crewz"
-    }
+    },
+    "previous": "Projeto anterior",
+    "next": "Próximo projeto"
+  },
+  "Stack": {
+    "languages": "Linguagens",
+    "tools": "Tecnologias"
+  },
+  "Contact": {
+    "title": "Contato",
+    "email": "E-mail",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "whatsapp": "WhatsApp"
   }
 }
