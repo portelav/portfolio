@@ -15,6 +15,3 @@ next-env.d.ts
 
 # Internal notes, never public
 private/
-
-# Local spike media: third-party images, not cleared for the public repository.
-/public/triptico/
