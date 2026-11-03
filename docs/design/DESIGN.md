@@ -11,12 +11,13 @@ Referência visual. Regra de produto vem do PRD e do dono, não deste documento.
 
 ## 2. Personalidade
 
-- **Sóbrio:** fundo escuro de apresentação, muito espaço, poucos elementos por tela.
+- **Sóbrio:** fundo escuro, poucas cores, nenhum enfeite. O trabalho aparece cedo (PRD, D44).
+- **Direto:** quem chega sem contexto entende, sem rolar muito, o que Lucas faz e o que procura (PRD, D56).
 - **Honesto:** fala como estudante que constrói coisas reais. Mostra o que fez, sem aumentar.
 - **Técnico sem fantasia:** mono em dado real, nenhum terminal de mentira.
 - **Organizado:** hierarquia clara, ritmo previsível.
 
-Referência: apresentações de produto da Apple, em modo escuro e claro.
+Referência de acabamento: apresentações de produto da Apple, em modo escuro e claro. Vale para o cuidado, não para a quantidade de texto.
 
 ### Marca
 
@@ -44,8 +45,8 @@ Regras do guia, sempre:
 |---|---|---|---|
 | `--bg` | `#0b0b0c` | `#f3f2ee` | Fundo |
 | `--fg` | `#f2f2f0` | `#141413` | Texto e nome |
-| `--accent` | `#e3a33b` | `#a8650a` | Cursor e destaque |
-| `--line` | `#444448` | `#bdbcb6` | Borda dos prints de projeto. Não é cor de marca |
+| `--accent` | `#e3a33b` | `#a8650a` | Cursor, foco e destaque na frase de apresentação |
+| `--line` | `#444448` | `#bdbcb6` | Borda dos prints, do botão secundário e separadores. Não é cor de marca |
 
 > TODO: cinzas para texto secundário, se o layout pedir. Não são cores de marca: precisam de contraste verificado, e entram aqui antes de serem usados.
 
@@ -73,7 +74,8 @@ Por causa da última linha, texto pequeno em destaque no modo claro usa `--fg`, 
 | Logo e quadro final da Reescrita | IBM Plex Mono Medium, em vetor | Definido pelo arquivo |
 | Primeiro quadro da Reescrita | Libre Caslon Text Regular, em vetor | Mesmo corpo do nome |
 | Títulos | Red Hat Display | Ver escala abaixo |
-| Detalhes e dado real: datas, tags, links | Red Hat Mono | 14 px |
+| Detalhes e dado real: datas, tags, rótulos | Red Hat Mono | 14 px |
+| Botões e links de ação | Red Hat Mono | 17 px |
 | Texto corrido | Red Hat Text (PRD, D31) | 17 px |
 
 Fontes carregadas por `next/font`, servidas do próprio site. Nada abaixo de 14 px.
@@ -85,6 +87,7 @@ Fontes carregadas por `next/font`, servidas do próprio site. Nada abaixo de 14 
 | `text-lg` | 20 px | 1,5 |
 | `text-xl` | 28 px | 1,3 |
 | `text-display` | 36 a 56 px, fluido | 1,1 |
+| `text-huge` | 44 a 84 px, fluido. Só na frase de apresentação | 1 |
 
 ## 5. Forma
 
@@ -99,21 +102,33 @@ Fontes carregadas por `next/font`, servidas do próprio site. Nada abaixo de 14 
 
 | O quê | Gatilho | Duração e curva | Por quê |
 |---|---|---|---|
-| Reescrita | Primeira carga da sessão | 2,6 s, com cada letra de 140 a 230 ms, ver `docs/fdd/abertura.md` | Conta a troca do Direito pelo código |
-| Cursor do nome | Fim da digitação; hover; foco onde o nome é link | Ciclo de 1,06 s em `steps(1)`, por 5 s, e depois aceso | A marca é o instante da digitação |
+| Reescrita | Toda carga de `/` e `/en` sem âncora (PRD, D46) | 2,6 s, com cada letra de 140 a 230 ms, ver `docs/fdd/abertura.md` | Conta a troca do Direito pelo código |
+| Voo do nome | Fim da Reescrita, depois de 350 ms | 800 ms, `cubic-bezier(0.77, 0, 0.175, 1)` | Leva o nome até o lugar dele no cabeçalho |
+| Chegada da abertura | Fim do preloader | 900 ms em `--ease-out-quint`, com atrasos de 0 a 240 ms | Completa o voo do nome |
+| Cursor do nome | Hover; foco onde o nome é link | Ciclo de 1,06 s em `steps(1)`, por 5 s, e depois aceso | A marca é o instante da digitação |
+| Entrada de seção e caso | Rolagem, ao entrar na tela | Ligada à rolagem: sobe 1,5 rem e aparece | Dá ritmo sem prender a rolagem |
+| Vídeo do caso | Maior parte dele na tela | Laço de cerca de 9 s, com pausa | Mostra o site funcionando (PRD, D51) |
+| Cabeçalho | Rolar para baixo; rolar para cima; foco | 500 ms em `--ease-out-quint` | Dá espaço ao conteúdo sem perder o caminho de volta |
+| Logo de tecnologia | Hover | 200 ms: sobe 4 px e cresce 8% | Retorno de interação |
+| Linha de contato | Hover | 350 ms: anda 0,5 rem | Retorno de interação |
 
 - Animação só de `transform` e `opacity`; nada de desfoque ou `mix-blend-mode` em elemento que se move.
 - O que se mexe sozinho por mais de 5 s tem como pausar ou para sozinho (WCAG 2.2.2).
-- `prefers-reduced-motion`: respeitar. Abre no estado final, sem Reescrita e com cursor aceso. O guia da marca já define isso para o cursor, e o resto segue o padrão recomendado.
+- A rolagem é a do navegador, sem biblioteca que mude a velocidade (PRD, D56).
+- `prefers-reduced-motion`: respeitar. Abre no estado final, sem preloader, com cursor aceso e sem vídeo tocando sozinho. O guia da marca já define isso para o cursor, e o resto segue o padrão recomendado.
 
 ## 7. Componentes próprios
 
 | Componente | Onde | Estados |
 |---|---|---|
-| Nome com cursor | Abertura; cabeçalho, depois que a abertura sai da tela | Animando, piscando, aceso, movimento reduzido |
+| Nome com cursor | Preloader; cabeçalho | Animando, voando, aceso, piscando, movimento reduzido |
 | Seletor de idioma | Cabeçalho | pt-BR, en, foco |
 | Seletor de tema | Cabeçalho | Escuro, claro, foco |
-| Botão de WhatsApp | Contato | Padrão, foco, hover |
+| Botão principal, em `--fg` sobre `--bg` invertido | Abertura; Quer um site? | Padrão, foco, hover |
+| Botão secundário, com borda em `--line` | Abertura | Padrão, foco, hover |
+| Print com vídeo por cima, e botão de pausa | Projetos | Só print, tocando, pausado, movimento reduzido |
+| Linha de contato | Contato | Padrão, foco, hover |
+| Logo de tecnologia | Tecnologias | Padrão, hover |
 
 ## 8. Tom de voz
 
@@ -130,5 +145,5 @@ Fontes carregadas por `next/font`, servidas do próprio site. Nada abaixo de 14 
 - Terminal ou painel falso em `div`.
 - Travessão no texto da interface.
 - Rótulo em mono e caixa alta em cima de cada seção. Numeração de seção como "01 /". Pontinho de status decorativo.
-- Barras de habilidade, contadores de vaidade, ícones coloridos de tecnologia.
+- Barras de habilidade, contadores de vaidade.
 - Qualquer cor fora da paleta da marca sem passar por aqui antes.
