@@ -3,6 +3,7 @@ import { useTranslations } from "next-intl";
 import { Abertura } from "@/components/abertura";
 import { Contato } from "@/components/contato";
 import { Preloader } from "@/components/preloader";
+import { Privacidade } from "@/components/privacidade";
 import { Projetos } from "@/components/projetos";
 import { QuerUmSite } from "@/components/quer-um-site";
 import { ReescritaName, ReescritaStyles } from "@/components/reescrita-name";
@@ -25,6 +26,7 @@ export default function HomePage() {
         <Tecnologias />
         <QuerUmSite />
         <Contato />
+        <Privacidade />
       </main>
     </>
   );

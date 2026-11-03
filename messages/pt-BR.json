@@ -95,5 +95,9 @@
     "step3": "Você acompanha por um link de prévia.",
     "step4": "O site vai ao ar.",
     "whatsappMessage": "Oi, Lucas. Quero um site."
+  },
+  "Privacy": {
+    "title": "Privacidade",
+    "text": "Este site conta visitas e de onde elas vêm, para eu saber se ele está sendo visto. Quem faz essa contagem é a Vercel, com o Web Analytics, sem cookies. A sua escolha de tema fica só no seu navegador."
   }
 }

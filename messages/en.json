@@ -95,5 +95,9 @@
     "step3": "You follow along through a preview link.",
     "step4": "The site goes live.",
     "whatsappMessage": "Hi Lucas, I need a website."
+  },
+  "Privacy": {
+    "title": "Privacy",
+    "text": "This site counts visits and where they come from, so I know whether it's being seen. Vercel does the counting, through Web Analytics, without cookies. Your theme choice stays in your browser."
   }
 }
