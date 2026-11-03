@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 
 type ProjectVideoProps = {
   src: string;
+  phoneSrc: string;
   pauseLabel: string;
   playLabel: string;
 };
@@ -14,7 +15,12 @@ let held = false;
 // SPIKE. Sits over the screenshot and only shows once it plays, so a missing
 // file or reduced motion simply leaves the screenshot. Plays only while most
 // of it is on screen.
-export function ProjectVideo({ src, pauseLabel, playLabel }: ProjectVideoProps) {
+export function ProjectVideo({
+  src,
+  phoneSrc,
+  pauseLabel,
+  playLabel,
+}: ProjectVideoProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [ready, setReady] = useState(false);
   const [started, setStarted] = useState(false);
@@ -27,15 +33,15 @@ export function ProjectVideo({ src, pauseLabel, playLabel }: ProjectVideoProps) 
     if (matchMedia("(prefers-reduced-motion: reduce)").matches) held = true;
 
     const onCanPlay = () => setReady(true);
-    const onPlay = () => {
-      setStarted(true);
-      setPaused(false);
-    };
+    const onPlay = () => setPaused(false);
+    // "play" also fires with no file to show, so only real frames cover the print.
+    const onPlaying = () => setStarted(true);
     const onPause = () => setPaused(true);
     video.addEventListener("canplay", onCanPlay);
     // The file may have loaded before hydration, and that event is already gone.
     if (video.readyState >= 3) onCanPlay();
     video.addEventListener("play", onPlay);
+    video.addEventListener("playing", onPlaying);
     video.addEventListener("pause", onPause);
 
     const observer = new IntersectionObserver(
@@ -56,6 +62,7 @@ export function ProjectVideo({ src, pauseLabel, playLabel }: ProjectVideoProps) 
       observer.disconnect();
       video.removeEventListener("canplay", onCanPlay);
       video.removeEventListener("play", onPlay);
+      video.removeEventListener("playing", onPlaying);
       video.removeEventListener("pause", onPause);
     };
   }, []);
@@ -74,13 +81,15 @@ export function ProjectVideo({ src, pauseLabel, playLabel }: ProjectVideoProps) 
       <video
         ref={videoRef}
         className={`project-video ${started ? "is-started" : ""}`}
-        src={src}
         muted
         loop
         playsInline
         preload="metadata"
         aria-hidden="true"
-      />
+      >
+        <source media="(min-width: 768px)" src={src} type="video/mp4" />
+        <source src={phoneSrc} type="video/mp4" />
+      </video>
       {ready && (
         <button
           type="button"

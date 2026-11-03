@@ -74,14 +74,12 @@ export function Projetos() {
                   className="h-auto w-full"
                 />
               </picture>
-              {/* The recordings are of the computer version, so they stay there. */}
-              <div className="hidden md:contents">
-                <ProjectVideo
-                  src={`/projetos/video/${project.id}.mp4`}
-                  pauseLabel={t("videoPause")}
-                  playLabel={t("videoPlay")}
-                />
-              </div>
+              <ProjectVideo
+                src={`/projetos/video/${project.id}.mp4`}
+                phoneSrc={`/projetos/video/celular/${project.id}.mp4`}
+                pauseLabel={t("videoPause")}
+                playLabel={t("videoPlay")}
+              />
             </div>
             <div className="flex flex-col gap-5 md:col-span-4">
               <div className="flex flex-col gap-1">
