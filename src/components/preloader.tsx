@@ -7,8 +7,25 @@ import { sequenceDuration } from "@/lib/reescrita-timeline";
 const HOLD_AFTER_SEQUENCE = 350;
 const FLIGHT = 800;
 
+// How long the sequence still has to run, read from its own CSS animation. It
+// starts at the first paint, long before this code runs on a slow connection.
+function holdLeft(name: HTMLElement) {
+  const sequence = name
+    .querySelector(".reescrita-cursor")
+    ?.getAnimations()
+    .find(
+      (animation) =>
+        animation instanceof CSSAnimation &&
+        animation.animationName === "reescrita-cursor",
+    );
+  if (!sequence) return 0;
+
+  return sequenceDuration - Number(sequence.currentTime) + HOLD_AFTER_SEQUENCE;
+}
+
 // The name is rewritten on a clean screen, then flies to the header.
 // The flag is set in the head, before the first paint, on every page load.
+// If the sequence is already over when this code runs, the name flies at once.
 export function Preloader({ children }: { children: ReactNode }) {
   const name = useRef<HTMLDivElement>(null);
   const veil = useRef<HTMLDivElement>(null);
@@ -46,7 +63,7 @@ export function Preloader({ children }: { children: ReactNode }) {
       flight.onfinish = () => {
         delete root.dataset.reescrita;
       };
-    }, sequenceDuration + HOLD_AFTER_SEQUENCE);
+    }, name.current ? holdLeft(name.current) : 0);
 
     return () => clearTimeout(timer);
   }, []);
