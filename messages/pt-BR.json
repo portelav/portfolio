@@ -73,6 +73,8 @@
     "email": "E-mail",
     "linkedin": "LinkedIn",
     "github": "GitHub",
-    "whatsapp": "WhatsApp"
+    "whatsapp": "WhatsApp",
+    "lead": "Se quiser conversar sobre estágio ou um site, é por aqui.",
+    "pending": "Link a confirmar"
   }
 }

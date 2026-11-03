@@ -17,7 +17,7 @@ export function Tecnologias() {
     <section className="page-frame grid gap-12 py-24 md:grid-cols-2 md:gap-16 md:py-32">
       {groups.map((group) => (
         <div key={group.title}>
-          <h2 className="font-display text-xl">{group.title}</h2>
+          <h2 className="reveal font-display text-xl">{group.title}</h2>
           <ul className="mt-8 grid grid-cols-3 gap-x-4 gap-y-8 sm:grid-cols-4">
             {group.items.map((item, index) => (
               <li

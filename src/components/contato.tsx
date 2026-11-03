@@ -1,32 +1,36 @@
 import { useTranslations } from "next-intl";
 
-// SPIKE. Links are placeholders until Lucas sends the final ones, except GitHub.
-const channels = [
-  { key: "email", href: "#contato" },
-  { key: "linkedin", href: "#contato" },
-  { key: "github", href: "https://github.com/portelav" },
-  { key: "whatsapp", href: "#contato" },
-] as const;
+import { channels } from "@/lib/contact";
 
+// SPIKE. The title stays held while the channels pass beside it, as on the landing.
 export function Contato() {
   const t = useTranslations("Contact");
 
   return (
     <section
       id="contato"
-      className="page-frame grid scroll-mt-14 gap-12 py-24 md:grid-cols-[5fr_7fr] md:gap-16 md:py-32"
+      className="page-frame grid scroll-mt-14 gap-10 py-24 md:grid-cols-[5fr_7fr] md:gap-16 md:py-32"
     >
-      <h2 className="font-display text-display md:sticky md:top-24 md:self-start">
-        {t("title")}
-      </h2>
-      <ul className="flex flex-col gap-12 md:gap-32 md:py-16">
+      <div className="reveal md:sticky md:top-24 md:self-start">
+        <h2 className="font-display text-display">{t("title")}</h2>
+        <p className="mt-4 max-w-sm text-lg">{t("lead")}</p>
+      </div>
+      <ul className="border-line border-b">
         {channels.map((channel) => (
-          <li key={channel.key} className="reveal">
+          <li key={channel.key} className="reveal border-line border-t">
             <a
               href={channel.href}
-              className="font-display text-xl inline-flex min-h-11 items-center underline underline-offset-8 transition-opacity duration-150 hover:opacity-70"
+              className="contact-row flex items-center justify-between gap-6 py-8 md:py-12"
             >
-              {t(channel.key)}
+              <span className="flex min-w-0 flex-col gap-2">
+                <span className="font-mono text-sm">{t(channel.key)}</span>
+                <span className="font-display text-xl break-words">
+                  {channel.value ?? t("pending")}
+                </span>
+              </span>
+              <span aria-hidden="true" className="contact-arrow text-xl">
+                &rarr;
+              </span>
             </a>
           </li>
         ))}

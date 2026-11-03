@@ -15,8 +15,8 @@ export function Projetos() {
 
   return (
     <section id="projetos" className="scroll-mt-14 py-24 md:py-32">
-      <h2 className="page-frame font-display text-display">{t("title")}</h2>
-      <div className="mt-12">
+      <h2 className="page-frame reveal font-display text-display">{t("title")}</h2>
+      <div className="reveal mt-12">
         <ProjectTrack
           previousLabel={t("previous")}
           nextLabel={t("next")}

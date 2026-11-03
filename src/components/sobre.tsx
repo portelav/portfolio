@@ -25,9 +25,9 @@ export function Sobre() {
             height={640}
             sizes="(min-width: 768px) 360px, 200px"
             preload
-            className="h-auto w-44 rounded-full md:order-last md:w-90"
+            className="intro-in h-auto w-44 rounded-full md:order-last md:w-90"
           />
-          <h1 className="font-display text-display max-w-4xl">
+          <h1 className="intro-in font-display text-display max-w-4xl">
             {words.map((word, index) => (
               <span key={`${word}-${index}`}>
                 <span

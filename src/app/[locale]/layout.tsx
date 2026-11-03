@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
+import { SmoothScroll } from "@/components/smooth-scroll";
 import { ThemeScript } from "@/components/theme-script";
 import { getPathname } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
@@ -67,6 +68,7 @@ export default async function LocaleLayout({
       <body className="flex min-h-dvh flex-col">
         {/* Client components get their texts as props, so no messages ship. */}
         <NextIntlClientProvider messages={null}>
+          <SmoothScroll />
           <SiteHeader />
           {children}
           <SiteFooter />

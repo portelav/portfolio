@@ -148,6 +148,35 @@
   }
 }
 
+/* SPIKE: the first screen arrives as the name lands in the header. */
+@media (prefers-reduced-motion: no-preference) {
+  .intro-in {
+    transition:
+      opacity 0.9s var(--ease-out-quint),
+      transform 0.9s var(--ease-out-quint);
+  }
+
+  html[data-reescrita] .intro-in {
+    opacity: 0;
+    transform: translateY(1.5rem);
+  }
+
+  .contact-row,
+  .contact-arrow {
+    transition: transform 0.35s var(--ease-out-quint);
+  }
+
+  @media (hover: hover) {
+    .contact-row:hover {
+      transform: translateX(0.5rem);
+    }
+
+    .contact-row:hover .contact-arrow {
+      transform: translateX(0.5rem);
+    }
+  }
+}
+
 /* SPIKE: preloader. Only shows while the page is marked. */
 .preloader {
   display: none;
@@ -218,6 +247,9 @@ html[data-reescrita] .header-name {
       position: sticky;
       top: 0;
       height: 100svh;
+      animation: words-leave linear both;
+      animation-timeline: --words;
+      animation-range: contain 82% contain 100%;
     }
 
     .word {
@@ -290,6 +322,13 @@ html[data-reescrita] .header-name {
     .project-slide-text {
       animation-name: slide-text;
     }
+  }
+}
+
+@keyframes words-leave {
+  to {
+    opacity: 0;
+    transform: translateY(-2rem);
   }
 }
 
