@@ -3,7 +3,7 @@
 **Slug:** `trabalho-primeiro`
 **Branch:** `proto/trabalho-primeiro`
 **Seção ou área:** página inteira
-**Status:** Execution
+**Status:** Walkthrough
 **Gate S2:** Livre
 
 ---
@@ -208,11 +208,59 @@ O voo agora se guia pela própria animação da Reescrita, em vez de esperar 2,9
 - **lint:** Pass
 - **typecheck:** Pass
 - **build:** Pass
-- **Navegador (390 px e computador, `/` e `/en`, escuro e claro):** Pass, em emulação. Falta aparelho real
-- **Pendente:** Web Analytics no painel da Vercel e item 10
+- **Navegador (390 px e computador, `/` e `/en`, escuro e claro):** Pass, em emulação. Lucas testou em aparelho real em 2026-11-03 e aprovou
+- **Pendente:** confirmar o Web Analytics no painel da Vercel e no preview
 
 ---
 
 ## Stage 9 — Walkthrough
 
-*(Preenchido pelo walkthrough.)*
+> Data: 2026-11-03
+
+### Resumo
+- **Veredito:** WARNINGS
+- **Arquivos analisados:** 59 no diff com a `main`, com o código de `src/`, as mensagens e os docs lidos, e a mídia conferida por script
+- **Findings:** 0 críticos, 5 avisos
+
+### Checklist
+| Item | Status | Observação |
+|---|---|---|
+| Escopo | OK | A branch traz também o rascunho de `spike/site-inteiro` e `feat/projetos`, de que nasceu. As edições em `.claude/commands/` só tiram Motion, como o ADR 0004 |
+| Stack | OK | `await params`, `proxy.ts`, `"use client"` em quatro componentes com estado ou efeito, nenhuma variável pública |
+| Produto | Aviso | Comportamento bate com os FDDs e o PRD. LCP com exceção aceita (D60). Web Analytics sem confirmação |
+| Regras de fora do PRD | OK | Nenhum cookie medido, nenhum paciente, autorizações registradas em `private/` |
+| Textos | OK | 71 chaves nos dois idiomas, sem texto fixo em componente e sem travessão |
+| Repositório público | OK | WhatsApp e e-mail só em `src/lib/contact.ts`, nenhuma nota interna nos docs nem no histórico da branch, mídia sem metadado |
+| Interface | OK | Sem cor solta nem desfoque, toque de 44 px, foco, texto alternativo e matriz do Stage 7. Teste em aparelho real feito por Lucas |
+| Movimento | OK | Só `transform` e `opacity`, vídeo com pausa, movimento reduzido respeitado |
+| Desempenho | Aviso | Mídia otimizada e espaço reservado. LCP acima de 2,5 s na página inicial, por decisão de Lucas |
+| Higiene | Aviso | `lint`, `typecheck` e `build` verdes, sem atribuição nos commits. Um commit fora do padrão. `gitleaks` só roda ao abrir o PR |
+| Docs | OK | FDDs, PRD, ROADMAP e `CLAUDE.md` atualizados |
+
+### Findings
+#### Critical
+- Nenhum.
+
+#### Warnings
+- O Web Analytics não tem confirmação de que foi ligado. A nota de privacidade diz que o site conta visitas, o que só vale com ele ligado, e o script da medição não existe enquanto isso — `src/app/[locale]/layout.tsx:72` — Lucas liga no painel da Vercel, com um deploy depois. Conferir no preview que a visita chega, sem cookie. O merge não muda o endereço público, mas isto precisa fechar antes do lançamento.
+- O teste de Lucas em aparelho real não foi detalhado. Não está registrado se incluiu leitor de tela e iPhone, e os critérios dos FDDs seguem sem marcação, como em todos os FDDs do repositório — `docs/fdd/` — confirmar com Lucas antes do lançamento.
+- O LCP só foi medido no build local, em emulação, porque o preview pede login — `docs/PRD.md`, D60 — medir de novo no endereço de produção depois do merge.
+- O histórico tem 65 commits, com o caminho do rascunho, e um `Revert` gerado pelo Git fora do Conventional Commits, em `1c3b5d8`. A branch `proto/` também foge do padrão `tipo/nome`, como o plano registra — sem correção, porque o PR não usa squash e reescrever não compensa. O PR #4 traz parte dos mesmos commits e precisa ser fechado.
+- O `gitleaks` ainda não rodou nesta branch, porque o CI só dispara em PR e na `main` — `.github/workflows/ci.yml:3` — conferir o resultado ao abrir o PR.
+
+#### Positive
+- O preloader agora se guia pela própria animação, sem cortar a sequência, e a saída de segurança funciona com o JavaScript atrasado.
+- Contato e telefone moram em um arquivo só, e o print fica no lugar quando falta o vídeo.
+- Os dois defeitos do cabeçalho com teclado e mouse foram achados na conferência e corrigidos.
+
+### Verificações executadas
+- `npm run lint`: código de saída 0
+- `npm run typecheck`: código de saída 0
+- `npm run build`: código de saída 0
+- Atribuição nos commits (`git log --format=%B origin/main..HEAD`): nenhuma ocorrência. Os 65 commits usam o e-mail noreply
+- `private/` e `.env` no histórico da branch: nenhuma ocorrência
+- Mensagens: 71 chaves em pt-BR e 71 em inglês, sem diferença
+- Prints e retrato: arquivos WebP só com o trecho de imagem, sem EXIF, XMP ou ICC
+- Vídeos: sem áudio e sem etiquetas de autoria, data ou aparelho
+
+**Gate S9 — WARNINGS**
