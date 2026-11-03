@@ -119,7 +119,7 @@ Cada rodada é uma conversa com o dono. Decisões numeradas (D1, D2...) para o a
 - **D3.** Casos em destaque: landing da Dra. Thaiane, DraftCS e Crewz.
 - **D4.** Substituída por D20. Mesmo repositório `portelav/portfolio`. A versão antiga fica guardada na tag `v1-academic`.
 - **D5.** Sem data fixa de lançamento.
-- **D6.** Stack: Next.js 16, Tailwind e Motion (ADR 0001).
+- **D6.** Ajustada por D58. Stack: Next.js 16, Tailwind e Motion (ADR 0001).
 - **D7.** Endereço: `portelav.vercel.app`. Domínio próprio depois.
 - **D8.** Português e inglês desde o início (ADR 0002).
 - **D9.** Contato por e-mail, LinkedIn, GitHub e botão de WhatsApp. O número próprio fica público, por escolha do dono.
@@ -193,3 +193,5 @@ Depois de comparar o rascunho com uma amostra de portfólios de outros devs, o d
 - **D54.** Contato lista WhatsApp, e-mail, LinkedIn e GitHub, nessa ordem. Número e e-mail moram em um arquivo só. Ajusta a ordem da D9.
 - **D55.** O Sobre conta a saída do Direito em uma frase, com um retrato ilustrado em tamanho contido. Sem efeito preso à rolagem. Mantém D34.
 - **D56.** O site troca "muito espaço, poucos elementos por tela" por mais conteúdo em cada tela: quem chega sem contexto precisa entender o que Lucas faz. Sem biblioteca de rolagem suave.
+- **D57.** A nota de privacidade é um bloco curto no fim da própria página, com o link do rodapé levando até ele. Mantém a página única (D42), sem rota nova.
+- **D58.** Motion sai das dependências, porque nenhum componente o usa. O movimento fica em CSS e nas APIs do navegador (ADR 0004). Ajusta D6.

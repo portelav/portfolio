@@ -24,7 +24,7 @@ Textos nos arquivos de mensagens, em pt-BR e inglês. Valores propostos, a confi
 
 O nome de cada idioma fica sempre na própria língua, nos dois sites.
 
-A nota de privacidade ainda não existe. O link dela entra no rodapé na entrega de Contato e nota de privacidade, junto da nota, para o site nunca ter um link quebrado (PRD, D32).
+A nota de privacidade ainda não existe. O link dela entra no rodapé na entrega de Contato e nota de privacidade, junto da nota, para o site nunca ter um link quebrado (PRD, D32). Ele leva à âncora `#privacidade`, na própria página (PRD, D57).
 
 ## Comportamento
 

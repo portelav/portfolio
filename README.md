@@ -15,7 +15,6 @@ Site pessoal de Lucas Portela, estudante de Ciência da Computação na Afya UNI
 
 - [Next.js 16](https://nextjs.org) e React 19, publicado na Vercel
 - Tailwind CSS 4
-- [Motion](https://motion.dev)
 - [next-intl](https://next-intl.dev)
 
 Por que cada uma: [`docs/adr/`](docs/adr/).

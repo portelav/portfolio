@@ -13,6 +13,6 @@ Aplique Chain of Thought ao problema abaixo, seguindo o protocolo da skill `cot-
 
 **E então:** produza o output final (código, plano ou resposta).
 
-Contexto fixo do portfolio: site estático em Next.js 16, Tailwind 4, Motion e `next-intl`, sem banco, em dois idiomas, com regras em `CLAUDE.md`. Hipótese que depende de comportamento em runtime (dado, permissão, navegador) se confirma reproduzindo, não lendo código.
+Contexto fixo do portfolio: site estático em Next.js 16, Tailwind 4 e `next-intl`, sem banco, em dois idiomas, com regras em `CLAUDE.md`. Hipótese que depende de comportamento em runtime (dado, permissão, navegador) se confirma reproduzindo, não lendo código.
 
 **Problema:** $ARGUMENTS

@@ -24,3 +24,5 @@ Next.js 16 com App Router, React 19 e TypeScript, Tailwind CSS 4 para os tokens 
 - O código antigo sai por inteiro na entrega da base técnica. Ele continua acessível pela tag `v1-academic`.
 
 Nota (2026-11-02): o repositório foi recriado sem o código antigo, que ficou em um repositório privado à parte. Ver PRD, D20. A escolha de stack não muda.
+
+Nota (2026-11-03): Motion saiu das dependências. Ver ADR 0004. O resto da decisão continua valendo.

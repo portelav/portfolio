@@ -17,7 +17,9 @@ Quem avalia estágio vê, depois de ver os projetos, com que linguagens e tecnol
 - Cada item tem o logo nas cores originais e o nome em Red Hat Mono, 14 px. Dados em `src/lib/stack.ts`.
 - Marcas continuam de quem são (`CLAUDE.md`, Direitos).
 
-> TODO: logo do Motion, que ainda aparece sem desenho.
+- Motion entra como conteúdo, porque Lucas o usou na landing. Não é dependência deste site (ADR 0004).
+
+> TODO: logo do Motion, que ainda aparece sem desenho e não existe nos conjuntos de ícones usados.
 
 ## Comportamento
 

@@ -1,7 +1,7 @@
 # FDD: Seção Contato e nota de privacidade
 
 Status: rascunho
-PRD: seção 6, itens Contato e Nota de privacidade; D9, D10, D14, D24, D32 e D54; Regras de fora
+PRD: seção 6, itens Contato e Nota de privacidade; D9, D10, D14, D24, D32, D54 e D57; Regras de fora
 
 ## Objetivo
 
@@ -32,7 +32,7 @@ Número, e-mail e links moram em um arquivo só, `src/lib/contact.ts` (PRD, D9 e
 - Quem processa: a Vercel.
 - Que o site não usa cookie não essencial, e que tema é guardado só no navegador do visitante.
 
-> TODO: texto da nota, nos dois idiomas, e onde ela aparece. O rodapé tem o link (PRD, D32), e o site é uma página só (PRD, D42). Lucas decide no plano.
+> TODO: texto da nota, nos dois idiomas, para Lucas aprovar no plano.
 
 > TODO: ligar o Vercel Web Analytics, que ainda não está instalado, para a nota dizer a verdade (ADR 0003).
 
@@ -44,6 +44,8 @@ Número, e-mail e links moram em um arquivo só, `src/lib/contact.ts` (PRD, D9 e
 - Separadores de 1 px em `--line`.
 - Os links abrem na mesma aba.
 - O e-mail fica em texto selecionável.
+- A nota é um bloco curto depois de Contato, com a âncora `#privacidade`, em texto corrido e sem título grande (PRD, D57).
+- O rodapé tem o link da nota, depois do texto de direitos (PRD, D32).
 
 ## Movimento
 
@@ -82,6 +84,6 @@ Número, e-mail e links moram em um arquivo só, `src/lib/contact.ts` (PRD, D9 e
 - [ ] Em 390 px e no computador, em `/` e `/en`, escuro e claro, sem transbordo, e a lista respeita as margens da página.
 - [ ] "Falar sobre estágio" leva até a seção, com o título visível.
 - [ ] Os quatro canais abrem o destino certo, testados em aparelho real.
-- [ ] A nota de privacidade está no ar nos dois idiomas, com link no rodapé.
+- [ ] A nota de privacidade está no fim da página, nos dois idiomas, e o link do rodapé leva até ela com o texto visível.
 - [ ] O navegador não mostra nenhum cookie não essencial.
 - [ ] Leitor de tela lê rótulo e valor de cada canal, sem a seta.
