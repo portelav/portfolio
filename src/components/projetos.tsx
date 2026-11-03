@@ -1,9 +1,14 @@
 import type { CSSProperties } from "react";
 
 import { useTranslations } from "next-intl";
-import Image from "next/image";
+import { getImageProps } from "next/image";
 
-import { coauthorUrl, projectImageSize, projects } from "@/lib/projects";
+import {
+  coauthorUrl,
+  projectImageSize,
+  projectPhoneImageSize,
+  projects,
+} from "@/lib/projects";
 
 import { ProjectVideo } from "./project-video";
 
@@ -26,7 +31,25 @@ export function Projetos() {
         {t("title")}
       </h2>
       <ul className="mt-5 flex flex-col gap-16 md:gap-24">
-        {projects.map((project, index) => (
+        {projects.map((project, index) => {
+          const shared = {
+            alt: t(`${project.id}.alt`),
+            loading: index === 0 ? ("eager" as const) : undefined,
+          };
+          const { props: computer } = getImageProps({
+            ...shared,
+            ...projectImageSize,
+            src: project.image,
+            sizes: "62vw",
+          });
+          const { props: phone } = getImageProps({
+            ...shared,
+            ...projectPhoneImageSize,
+            src: project.phoneImage,
+            sizes: "92vw",
+          });
+
+          return (
           <li
             key={project.id}
             className={`grid gap-6 md:grid-cols-12 md:gap-10 ${index === 0 ? "intro-in" : "reveal"}`}
@@ -35,19 +58,30 @@ export function Projetos() {
             }
           >
             <div className="border-line relative self-start border md:col-span-8">
-              <Image
-                {...projectImageSize}
-                src={project.image}
-                alt={t(`${project.id}.alt`)}
-                sizes="(min-width: 768px) 62vw, 92vw"
-                preload={index === 0}
-                className="h-auto w-full"
-              />
-              <ProjectVideo
-                src={`/projetos/video/${project.id}.mp4`}
-                pauseLabel={t("videoPause")}
-                playLabel={t("videoPlay")}
-              />
+              {/* Each screen gets the print made for it: a computer's is unreadable on a phone. */}
+              <picture>
+                <source
+                  media="(min-width: 768px)"
+                  srcSet={computer.srcSet}
+                  sizes={computer.sizes}
+                  width={computer.width}
+                  height={computer.height}
+                />
+                <img
+                  {...phone}
+                  alt={shared.alt}
+                  fetchPriority={index === 0 ? "high" : undefined}
+                  className="h-auto w-full"
+                />
+              </picture>
+              {/* The recordings are of the computer version, so they stay there. */}
+              <div className="hidden md:contents">
+                <ProjectVideo
+                  src={`/projetos/video/${project.id}.mp4`}
+                  pauseLabel={t("videoPause")}
+                  playLabel={t("videoPlay")}
+                />
+              </div>
             </div>
             <div className="flex flex-col gap-5 md:col-span-4">
               <div className="flex flex-col gap-1">
@@ -103,7 +137,8 @@ export function Projetos() {
               </div>
             </div>
           </li>
-        ))}
+          );
+        })}
       </ul>
     </section>
   );
