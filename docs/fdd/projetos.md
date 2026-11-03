@@ -1,6 +1,6 @@
 # FDD: Seção Projetos
 
-Status: rascunho
+Status: aprovado
 PRD: seção 6, item Projetos; D3, D22, D39, D40 e D41
 
 ## Objetivo
@@ -45,7 +45,7 @@ Nada anima nesta seção. O conteúdo já está na página e aparece sem efeito 
 3. Nenhum print do DraftCS ou do Crewz mostra dado de outra pessoa.
 4. Mídia sem metadado, otimizada, com dimensões reservadas.
 5. Sem três cards iguais lado a lado (`DESIGN.md`, seção 9).
-6. Todo link tem 44 px de área de toque.
+6. Todo link de ação tem 44 px de área de toque. O link do nome, dentro da frase, fica como link de texto.
 
 ## Acessibilidade
 
@@ -71,7 +71,7 @@ Nada anima nesta seção. O conteúdo já está na página e aparece sem efeito 
 - [ ] Em 390 px e no computador, em `/` e `/en`, escuro e claro, os três casos aparecem na ordem, sem transbordo.
 - [ ] "Ver projetos" leva à seção, com o título visível abaixo do cabeçalho.
 - [ ] Depois que a abertura sai da tela, o nome aparece no cabeçalho.
-- [ ] Todos os links abrem o destino certo e têm 44 px.
+- [ ] Todos os links abrem o destino certo, e os de ação têm 44 px.
 - [ ] As imagens não têm metadado, nem o telefone, e não provocam deslocamento de layout.
 - [ ] Leitor de tela distingue os links de cada caso, e toda imagem tem texto alternativo.
 - [ ] Nenhuma animação nova.

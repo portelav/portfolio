@@ -11,7 +11,7 @@ Regra: seção sem FDD não entra em desenvolvimento.
 |---|---|---|
 | [Cabeçalho e rodapé](cabecalho-rodape.md) | implementado | `tasks/cabecalho-rodape.md` |
 | [Abertura](abertura.md) | implementado | `tasks/abertura.md` |
-| [Projetos](projetos.md) | rascunho | `tasks/projetos.md` |
+| [Projetos](projetos.md) | aprovado | `tasks/projetos.md` |
 
 ## Template
 
