@@ -429,3 +429,14 @@ html[data-reescrita] .header-name {
     }
   }
 }
+
+/* SPIKE: technology logos lift a little on hover. */
+@media (prefers-reduced-motion: no-preference) and (hover: hover) {
+  .tech-logo {
+    transition: transform 200ms var(--ease-out-quint);
+  }
+
+  .stack-item:hover .tech-logo {
+    transform: translateY(-4px) scale(1.08);
+  }
+}

@@ -4,7 +4,7 @@ import { useTranslations } from "next-intl";
 
 import { languages, tools } from "@/lib/stack";
 
-// SPIKE. Plain names as real data, arriving in sequence.
+// SPIKE. Logos in one color, as the design system asks, with a light lift on hover.
 export function Tecnologias() {
   const t = useTranslations("Stack");
 
@@ -18,14 +18,26 @@ export function Tecnologias() {
       {groups.map((group) => (
         <div key={group.title}>
           <h2 className="font-display text-xl">{group.title}</h2>
-          <ul className="mt-6 flex flex-col gap-2">
+          <ul className="mt-8 grid grid-cols-3 gap-x-4 gap-y-8 sm:grid-cols-4">
             {group.items.map((item, index) => (
               <li
-                key={item}
-                className="stack-item font-mono"
+                key={item.name}
+                className="stack-item flex flex-col items-start gap-3"
                 style={{ "--i": index } as CSSProperties}
               >
-                {item}
+                <span className="tech-logo flex h-10 w-10 items-center justify-center">
+                  {item.path ? (
+                    <svg
+                      viewBox={item.viewBox}
+                      aria-hidden="true"
+                      className="h-full w-full"
+                      fill="currentColor"
+                    >
+                      <path d={item.path} />
+                    </svg>
+                  ) : null}
+                </span>
+                <span className="font-mono text-sm">{item.name}</span>
               </li>
             ))}
           </ul>
