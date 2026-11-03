@@ -24,7 +24,6 @@ export function Sobre() {
             width={640}
             height={640}
             sizes="(min-width: 768px) 360px, 200px"
-            preload
             className="intro-in h-auto w-44 rounded-full md:order-last md:w-90"
           />
           <h1 className="intro-in font-display text-display max-w-4xl">

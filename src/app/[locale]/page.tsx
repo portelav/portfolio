@@ -6,6 +6,7 @@ import { Projetos } from "@/components/projetos";
 import { ReescritaName, ReescritaStyles } from "@/components/reescrita-name";
 import { Sobre } from "@/components/sobre";
 import { Tecnologias } from "@/components/tecnologias";
+import { Triptico } from "@/components/triptico";
 
 export default function HomePage() {
   const t = useTranslations("Home");
@@ -17,6 +18,7 @@ export default function HomePage() {
         <ReescritaName label={t("name")} className="h-auto w-full" />
       </Preloader>
       <main>
+        <Triptico />
         <Sobre />
         <Tecnologias />
         <Projetos />

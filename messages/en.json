@@ -14,7 +14,9 @@
     "pathNow": "Computer Science",
     "pathNextLabel": "learning",
     "pathNext": "Building with AI",
-    "photoAlt": "Illustration of Lucas Portela, smiling, with a beard and a black T-shirt."
+    "photoAlt": "Illustration of Lucas Portela, smiling, with a beard and a black T-shirt.",
+    "videoPause": "Pause video",
+    "videoPlay": "Play video"
   },
   "Header": {
     "homeLabel": "portelav, back to top",
