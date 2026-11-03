@@ -30,7 +30,7 @@ Onde está cada coisa:
 
 ## Estado atual
 
-Base técnica, cabeçalho, rodapé, página 404, abertura e projetos prontos, fora do índice dos buscadores. Sobre e Contato ainda não foram construídos, e a chamada "Falar comigo" ainda não tem destino. No ar: https://portelav.vercel.app, ainda a versão antiga.
+Direção "trabalho na primeira tela" aprovada (PRD, D44 a D56). O site inteiro roda como protótipo na branch `proto/trabalho-primeiro`, com os FDDs atualizados, mas ainda sem plano e auditoria, e fora do índice dos buscadores. Faltam a nota de privacidade, o Web Analytics, o currículo em PDF e a medição de LCP. Na `main` segue a versão anterior. No ar: https://portelav.vercel.app, ainda a versão antiga.
 
 ## Ambientes
 
@@ -147,12 +147,12 @@ npm run build
 
 ```text
 messages/            textos em pt-BR e inglês
-public/              ícones e manifesto do kit; prints em public/projetos/
+public/              ícones e manifesto do kit; prints e vídeos em public/projetos/, por tela
 src/app/[locale]/    layout raiz, páginas e 404, só composição
 src/app/globals.css  tokens do DESIGN.md
 src/components/      componentes
 src/i18n/            rotas e carga de mensagens de next-intl
-src/lib/             fontes, tema, metadados da marca e dados dos projetos
+src/lib/             fontes, tema, metadados da marca, contato e dados dos projetos e tecnologias
 src/proxy.ts         resolve o idioma pela URL
 ```
 
