@@ -45,8 +45,9 @@ Regras do guia, sempre:
 | `--bg` | `#0b0b0c` | `#f3f2ee` | Fundo |
 | `--fg` | `#f2f2f0` | `#141413` | Texto e nome |
 | `--accent` | `#e3a33b` | `#a8650a` | Cursor e destaque |
+| `--line` | `#444448` | `#bdbcb6` | Borda dos prints de projeto. Não é cor de marca |
 
-> TODO: cinzas para texto secundário e bordas, se o layout pedir. Não são cores de marca: precisam de contraste verificado, e entram aqui antes de serem usados.
+> TODO: cinzas para texto secundário, se o layout pedir. Não são cores de marca: precisam de contraste verificado, e entram aqui antes de serem usados.
 
 Modo padrão: escuro, também sem JavaScript (PRD, D31). O seletor guarda a escolha em `localStorage`, nunca em cookie. Um script curto aplica a escolha antes da primeira pintura, para o tema não piscar no carregamento.
 
@@ -60,6 +61,8 @@ Calculado em 2026-11-01 pela fórmula da WCAG.
 | `--accent` sobre `--bg`, escuro | 8,96:1 | AA e AAA |
 | `--fg` sobre `--bg`, claro | 16,46:1 | AA e AAA |
 | `--accent` sobre `--bg`, claro | 4,14:1 | Só bloco da marca, ícone e texto grande. Reprova em texto pequeno |
+| `--line` sobre `--bg`, escuro | 2,03:1 | Só borda decorativa. Nunca em texto ou em controle |
+| `--line` sobre `--bg`, claro | 1,70:1 | Só borda decorativa. Nunca em texto ou em controle |
 
 Por causa da última linha, texto pequeno em destaque no modo claro usa `--fg`, com outro sinal além da cor, como sublinhado.
 

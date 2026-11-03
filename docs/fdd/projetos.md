@@ -30,7 +30,7 @@ Título da seção: "Projetos"; em inglês, "Projects". Textos nos arquivos de m
 - Com a seção na página, a abertura passa a sair da tela, e o nome entra no cabeçalho (PRD, D30).
 - Os casos ficam um abaixo do outro, nunca lado a lado.
 - No celular, a imagem vem antes do texto. No computador, a imagem fica à esquerda, e o texto à direita.
-- Sem card, borda ou sombra. Se um print se confundir com o fundo, Lucas decide no preview.
+- Sem card nem sombra. Cada print tem uma borda de 1 px em `--line`, para não se confundir com o fundo (PRD, D43).
 - A imagem não é link. Os links são os de texto, porque leitor de tela e toque ficam mais claros assim.
 - Os links externos abrem na mesma aba.
 

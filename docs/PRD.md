@@ -172,3 +172,5 @@ Cada rodada é uma conversa com o dono. Decisões numeradas (D1, D2...) para o a
 - **D39.** Os casos têm texto curto: a landing diz que foi feita sozinho, do desenho ao código, pensada primeiro para o celular. DraftCS e Crewz dizem só que foram feitos em dupla com o Vinicius.
 - **D40.** Ordem dos casos: landing, DraftCS e Crewz.
 - **D41.** O nome do Vinicius aparece nos casos, com link para o GitHub dele.
+- **D42.** O site é uma página única com rolagem: abertura, projetos, sobre e contato.
+- **D43.** Os prints dos projetos têm borda fina de 1 px, para não se confundirem com o fundo.
