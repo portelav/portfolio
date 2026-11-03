@@ -25,7 +25,7 @@ export function Sobre() {
                 alt={t("photoAlt")}
                 width={1100}
                 height={1100}
-                sizes="(min-width: 768px) 100vh, 112vw"
+                sizes="(min-width: 768px) 56vh, 80vw"
                 preload
                 className="portrait-image h-auto w-full"
               />

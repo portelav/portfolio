@@ -217,9 +217,9 @@
   position: absolute;
   top: 0;
   left: 50%;
-  width: 112vw;
+  width: 80vw;
   transform-origin: top center;
-  transform: translate(-50%, 2.5rem) scale(0.62);
+  transform: translate(-50%, 3.5rem) scale(0.85);
 }
 
 .portrait-image {
@@ -234,9 +234,9 @@
 
   .portrait {
     top: 50%;
-    width: min(100svh, 100vw);
+    width: min(56svh, 42vw);
     transform-origin: center;
-    transform: translate(-50%, -50%) translate(22vw, 1.5rem) scale(0.78);
+    transform: translate(-50%, -50%) translate(26vw, 1.5rem) scale(0.8);
   }
 }
 
@@ -276,7 +276,7 @@ html[data-reescrita] .header-name {
 }
 
 .preloader-name {
-  width: clamp(16rem, 44vw, 40rem);
+  width: clamp(13rem, 32vw, 30rem);
 }
 
 /* SPIKE: sobre, tecnologias and projects. The base state is everything visible. */
@@ -416,14 +416,14 @@ html[data-reescrita] .header-name {
 
 @keyframes portrait-open {
   from {
-    transform: translate(-50%, -50%) translate(14vw, 1.5rem) scale(1);
+    transform: translate(-50%, -50%) translate(26vw, 1.5rem) scale(1);
   }
 }
 
 @media (max-width: 767px) {
   @keyframes portrait-open {
     from {
-      transform: translate(-50%, 3.5rem) scale(0.88);
+      transform: translate(-50%, 4.5rem) scale(1);
     }
   }
 }

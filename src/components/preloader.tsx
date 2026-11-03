@@ -8,7 +8,7 @@ const HOLD_AFTER_SEQUENCE = 350;
 const FLIGHT = 800;
 
 // SPIKE. The name is rewritten on a clean screen, then flies to the header.
-// The flag is set in the head, before the first paint, and only once a session.
+// The flag is set in the head, before the first paint, on every page load.
 export function Preloader({ children }: { children: ReactNode }) {
   const name = useRef<HTMLDivElement>(null);
   const veil = useRef<HTMLDivElement>(null);
