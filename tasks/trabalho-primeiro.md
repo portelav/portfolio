@@ -3,8 +3,8 @@
 **Slug:** `trabalho-primeiro`
 **Branch:** `proto/trabalho-primeiro`
 **Seção ou área:** página inteira
-**Status:** Planning
-**Gate S2:** Bloqueado
+**Status:** Execution
+**Gate S2:** Livre
 
 ---
 
@@ -40,11 +40,13 @@
 7. `lint`, `typecheck`, `build` e `gitleaks` verdes.
 
 ### Perguntas bloqueadoras
-1. **Texto da nota de privacidade** (PRD, D57), a aprovar. Proposta:
+Respondidas por Lucas em 2026-11-03, que aprovou o plano e seguiu as duas recomendações.
+
+1. **Texto da nota de privacidade** (PRD, D57). Aprovado como proposto:
    - pt-BR: "Este site conta visitas e de onde elas vêm, para eu saber se ele está sendo visto. Quem faz essa contagem é a Vercel, com o Web Analytics, sem cookies. A sua escolha de tema fica só no seu navegador."
    - Inglês: "This site counts visits and where they come from, so I know whether it's being seen. Vercel does the counting, through Web Analytics, without cookies. Your theme choice stays in your browser."
    - Título do bloco e do link do rodapé: "Privacidade"; em inglês, "Privacy".
-2. **Motion na seção Tecnologias:** não existe logo dele nos conjuntos usados, e o item aparece sem desenho. Recomendação: tirar da lista, para a grade não parecer quebrada. A outra saída é manter só o nome.
+2. **Motion na seção Tecnologias:** não existe logo dele nos conjuntos usados, e o item aparecia sem desenho. Decisão: sai da lista, para a grade não parecer quebrada.
 
 ### Premissas
 - O preloader de cerca de 3,8 s fica (PRD, D46).
@@ -116,10 +118,10 @@ Até 10 itens, um commit cada, na ordem do `/exec`. Correção encontrada no ite
 
 - [x] Textos previstos em pt-BR e inglês
 - [x] FDD existe ou está no checklist
-- [ ] Decisão de produto coberta pelo PRD ou pergunta aberta: duas perguntas abertas no Stage 1
+- [x] Decisão de produto coberta pelo PRD ou pergunta aberta: as duas perguntas do Stage 1 foram respondidas
 - [x] Checklist ≤ 10, SoT ≤ 4, decisão única, evidências ≤ 7
 
-**Gate S2:** Bloqueado, até Lucas responder às duas perguntas e aprovar o plano.
+**Gate S2:** Livre. Lucas aprovou o plano em 2026-11-03.
 
 ---
 

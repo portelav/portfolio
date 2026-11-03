@@ -29,4 +29,3 @@ Sem data fixa (PRD, D5). Todo o trabalho entra na `main` deste repositório, pub
 |---|---|---|
 | Currículo em PDF, nos dois idiomas | Lucas | 2026-11-03 |
 | Revisão do inglês | Lucas | 2026-11-03 |
-| Texto da nota de privacidade | Lucas | 2026-11-03 |

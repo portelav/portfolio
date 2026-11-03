@@ -1,6 +1,6 @@
 # FDD: Seção Contato e nota de privacidade
 
-Status: rascunho
+Status: aprovado
 PRD: seção 6, itens Contato e Nota de privacidade; D9, D10, D14, D24, D32, D54 e D57; Regras de fora
 
 ## Objetivo
@@ -32,9 +32,12 @@ Número, e-mail e links moram em um arquivo só, `src/lib/contact.ts` (PRD, D9 e
 - Quem processa: a Vercel.
 - Que o site não usa cookie não essencial, e que tema é guardado só no navegador do visitante.
 
-> TODO: texto da nota, nos dois idiomas, para Lucas aprovar no plano.
+Texto aprovado por Lucas em 2026-11-03:
 
-> TODO: ligar o Vercel Web Analytics, que ainda não está instalado, para a nota dizer a verdade (ADR 0003).
+| Lugar | pt-BR | Inglês |
+|---|---|---|
+| Título e link do rodapé | Privacidade | Privacy |
+| Nota | Este site conta visitas e de onde elas vêm, para eu saber se ele está sendo visto. Quem faz essa contagem é a Vercel, com o Web Analytics, sem cookies. A sua escolha de tema fica só no seu navegador. | This site counts visits and where they come from, so I know whether it's being seen. Vercel does the counting, through Web Analytics, without cookies. Your theme choice stays in your browser. |
 
 ## Comportamento
 
