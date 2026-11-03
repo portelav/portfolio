@@ -1,49 +1,58 @@
 # FDD: Seção Abertura
 
-Status: implementado
-PRD: seção 6, item Abertura
+Status: aprovado
+PRD: seção 6, item Abertura; D44, D46, D48 e D49
 
 ## Objetivo
 
-Em poucos segundos, o visitante vê o nome `portelav` ser reescrito, sabe que ele é de Lucas Portela e entende o que encontra no site.
+Depois de ver o nome `portelav` ser reescrito, o visitante sabe, na mesma tela, quem é Lucas Portela, o que ele faz e o que procura, e vê o começo do primeiro caso.
 
 ## Conteúdo
 
+**Preloader**
+
 - Nome `portelav`, com o cursor âmbar no fim.
 - A palavra primeiro em Libre Caslon Text, a letra de livro de Direito. Depois em IBM Plex Mono Medium, a da marca. As duas em vetor.
-- Frase de apresentação, em texto (PRD, D37): "Me chamo Lucas Portela e estudo Ciência da Computação. Atualmente estou aprendendo a desenvolver com IA." Em inglês: "My name is Lucas Portela and I study Computer Science. Right now I'm learning to build software with AI."
+
+**Primeira tela.** O texto em inglês é proposto, para revisão de Lucas.
+
+| Lugar | pt-BR | Inglês |
+|---|---|---|
+| Frase de apresentação | Me chamo Lucas Portela e já fiz alguns sites que estão no ar. | I'm Lucas Portela, and I've already built a few websites that are live. |
+| Trecho em destaque | sites que estão no ar | websites that are live |
+| Apoio | Estudo Ciência da Computação em Maceió. Procuro estágio em desenvolvimento e faço sites para quem precisa de um. | I study Computer Science in Maceió, Brazil. I'm looking for a development internship, and I build sites for people who need one. |
+| Chamada para quem quer um site | Quero um site | I need a site |
+| Chamada para quem avalia estágio | Falar sobre estágio | Talk about an internship |
+
 - A frase não cita o período, para não envelhecer (PRD, D36).
-- A troca do Direito pela computação é contada no Sobre, não aqui (PRD, D34).
-- Duas chamadas: "Ver projetos" e "Falar comigo"; em inglês, "See projects" e "Get in touch" (PRD, D35).
+- A troca do Direito pela computação é contada no Sobre (PRD, D34).
+
+> TODO: botão de currículo, quando existir o PDF nos dois idiomas. Até lá, sem link morto.
 
 ## Comportamento
 
-- O nome é o elemento principal da primeira dobra, em 390 px e no computador.
-- O seletor de idioma aparece desde o primeiro instante (ADR 0002).
-- Na primeira dobra, o cabeçalho mostra só os seletores. O nome entra nele depois que a abertura sai da tela (PRD, D30). O detalhe fica no FDD de Cabeçalho e rodapé.
-- A animação não prende o visitante: ele pode rolar e usar as chamadas enquanto ela roda.
-- A Reescrita roda só na primeira carga da sessão, marcada em `sessionStorage`. Recarregar ou trocar de idioma ou de tema não a repete: o visitante vê o quadro final (PRD, D29).
-- O HTML traz o quadro final. Um script curto, antes de o nome ser pintado, marca a página só quando a Reescrita vai rodar, e o CSS cuida da sequência. Assim ela não espera o JavaScript da página, e o visitante nunca vê o nome pronto voltar para o início.
-- As chamadas levam às seções Projetos e Contato. Até essas seções existirem, os links não têm destino. O lançamento exige que funcionem.
-- Layout fechado por Lucas no preview (PRD, D38): à esquerda e centrado na altura da primeira dobra. Nome com a largura toda no celular e até 672 px no computador. Frase e chamadas abaixo dele.
+- O preloader cobre a tela em toda carga de `/` e `/en` sem âncora (PRD, D46). Quem chega por um link com âncora vai direto ao conteúdo.
+- Sequência: Reescrita de 2,6 s, pausa de 350 ms, e voo do nome até o cabeçalho em 800 ms, enquanto o véu some. São cerca de 3,8 s.
+- A rolagem fica presa enquanto o preloader roda.
+- Um script curto no `<head>`, antes da primeira pintura, marca a página para o preloader. Se algo falhar, a marca sai sozinha em 7 s e a página aparece.
+- O HTML traz o estado final. Sem JavaScript, nada fica coberto.
+- Depois do preloader, a frase ocupa até duas linhas no computador, em `text-huge`. Abaixo, o apoio à esquerda e as chamadas à direita. No celular, tudo em uma coluna.
+- O primeiro caso começa logo abaixo, ainda na primeira tela (FDD de Projetos).
+- "Quero um site" leva a `#site`. "Falar sobre estágio" leva a `#contato`.
+- O destaque usa `--accent`, permitido por ser texto grande.
 
 ## Movimento
 
-**Reescrita**, a história da troca do Direito pelo código. Leva 2,6 s até o fim da digitação (PRD, D38):
+**Reescrita**, a história da troca do Direito pelo código (PRD, D38):
 
 1. A palavra aparece em Libre Caslon Text e fica parada por 500 ms, sem cursor.
 2. O cursor âmbar surge no fim da palavra e, depois de 200 ms, apaga a palavra, a 40 ms por letra.
-3. Depois de 130 ms, o cursor digita a palavra de novo, em IBM Plex Mono Medium. Cada letra leva de 140 a 230 ms, como no protótipo, com intervalos fixos.
-4. O cursor fica no fim e pisca. A partir daqui, ele nunca some.
-5. Depois de 5 s piscando, o cursor para aceso. Ele volta a piscar por mais 5 s ao passar o mouse. O foco só faz isso onde o nome é link, como no cabeçalho (PRD, D27).
+3. Depois de 130 ms, o cursor digita a palavra de novo, em IBM Plex Mono Medium. Cada letra leva de 140 a 230 ms, com intervalos fixos.
+4. O nome voa até o cabeçalho, em 800 ms, com `cubic-bezier(0.77, 0, 0.175, 1)`.
 
-Lucas fechou esses tempos vendo a animação no preview (PRD, D38).
+**Chegada da primeira tela**, quando o preloader sai: `opacity` e `transform`, 900 ms em `--ease-out-quint`, subindo 1,5 rem. Atrasos: frase 0 ms, apoio 80 ms, chamadas 160 ms, título de Projetos 200 ms e primeiro caso 240 ms.
 
-Protótipo de origem: opção Reescrita de `C:\prog\identidade-visual\.superpowers\brainstorm\749-1793501271\content\virada-uma-fonte.html`. Ele leva cerca de 3,7 s, com 900 ms parado, 500 ms até apagar, 60 ms por letra ao apagar e 350 ms de pausa. O ritmo da digitação é mantido, e só o que vem antes dela foi encurtado.
-
-Piscar: `steps(1)`, ciclo de 1,06 s, como no kit de marca. Em toque, sem hover, o cursor fica aceso depois dos 5 s.
-
-Nunca anima: nada além da letra e do cursor. Sem desfoque, sem glitch, sem fade do cursor.
+Nunca anima: nada além das letras, do cursor, do voo e da chegada. Sem desfoque, sem glitch.
 
 ## Regras
 
@@ -52,22 +61,25 @@ Nunca anima: nada além da letra e do cursor. Sem desfoque, sem glitch, sem fade
 3. Símbolo e nome nunca aparecem juntos.
 4. Em volta do nome, há um espaço livre de pelo menos a largura do bloco âmbar. O nome tem no mínimo 96 px de largura.
 5. Nenhum cursor pisca por mais de 5 s sem interação, em nenhum lugar do site.
-6. Os arquivos `nome-animado-*` do kit piscam sem parar, então não entram em página do site. O site usa o mesmo desenho em um componente que obedece à regra 5.
-7. Na abertura, o nome não recebe foco de teclado, porque não é link.
+6. Os arquivos `nome-animado-*` do kit piscam sem parar, então não entram em página do site.
+7. As chamadas têm no mínimo 44 px de altura.
 
 ## Acessibilidade
 
-- Leitor de tela lê o nome uma vez só, sem soletrar a digitação. Os vetores animados ficam ocultos com `aria-hidden`, e o nome vem de um texto alternativo.
-- Com `prefers-reduced-motion`, a página abre direto no quadro final, com cursor aceso e sem Reescrita. O cursor também não pisca no hover.
-- Sem JavaScript, o quadro final aparece igual.
-- Contraste: ver `docs/design/DESIGN.md`. O âmbar do modo claro só vale para o bloco e texto grande.
+- O preloader inteiro fica oculto com `aria-hidden`. Quem usa leitor de tela encontra o nome no cabeçalho, uma vez só.
+- A frase de apresentação é o `h1`.
+- Com `prefers-reduced-motion`, não há preloader nem chegada: a página abre direto no estado final.
+- Sem JavaScript, o conteúdo aparece igual.
+- Foco visível nas chamadas, como no `DESIGN.md`.
+- Contraste: botão principal em `--bg` sobre `--fg`, acima de 16:1 nos dois modos. O destaque em âmbar só em texto grande.
 
 ## Desempenho
 
-- Sem deslocamento de layout: a caixa do nome é reservada com a largura final desde o início, e o quadro em Caslon cabe nela.
-- A Reescrita não carrega fonte: Caslon e Plex Mono vão em vetor, no próprio HTML. As 8 letras finais somadas são exatamente o path do kit.
+- Sem deslocamento de layout: o preloader é fixo, e o conteúdo já ocupa o lugar dele por baixo.
+- A Reescrita não carrega fonte: Caslon e Plex Mono vão em vetor, no próprio HTML.
 - LCP abaixo de 2,5 s no 4G (PRD, seção 8).
-- A animação usa só `opacity` e `transform`. Trocar a visibilidade de cada letra não muda a medida da caixa.
+
+> TODO: medir o LCP com o preloader no build de produção. Ele ainda não foi medido.
 
 ## Fora de escopo
 
@@ -76,15 +88,14 @@ Nunca anima: nada além da letra e do cursor. Sem desfoque, sem glitch, sem fade
 
 ## Critérios de aceite
 
-- [ ] Em 390 px e no computador, a sequência roda até o fim em 2,6 s, sem deslocamento de layout medido.
-- [ ] Na primeira dobra, em 390 px e no computador, aparecem "Lucas Portela" e as duas chamadas, e elas levam a Projetos e a Contato.
-- [ ] Dá para rolar e usar as chamadas durante a animação.
-- [ ] Recarregar na mesma sessão, ou trocar de idioma ou de tema, não repete a Reescrita.
-- [ ] Com CPU e rede limitadas, o nome pronto não aparece antes do quadro em Caslon.
+- [ ] Em 390 px e no computador, o preloader roda até o fim em cerca de 3,8 s, sem deslocamento de layout medido.
+- [ ] O nome termina o voo exatamente no lugar dele no cabeçalho.
+- [ ] Na primeira tela, em 390 px e no computador, aparecem a frase, o apoio, as duas chamadas e o começo do primeiro caso.
+- [ ] "Quero um site" leva a `#site` e "Falar sobre estágio" leva a `#contato`, com o título visível.
+- [ ] Abrir com âncora na URL não mostra o preloader.
 - [ ] Quadro final comparado ao `nome-escuro.svg` e ao `nome-claro.svg`, sem diferença visível.
-- [ ] O cursor para aceso depois de 5 s e volta a piscar com hover. Na abertura, o nome não entra na ordem de foco.
 - [ ] Com `prefers-reduced-motion`, nenhuma animação roda, nem no hover.
-- [ ] Com JavaScript desligado, o nome aparece completo.
-- [ ] Leitor de tela anuncia o nome uma vez.
+- [ ] Com JavaScript desligado, todo o conteúdo aparece.
+- [ ] Leitor de tela anuncia o nome uma vez e lê a frase como título principal.
 - [ ] LCP abaixo de 2,5 s no 4G, medido com Lighthouse.
-- [ ] Abertura funciona em `/` e em `/en`, com os textos do idioma certo.
+- [ ] Funciona em `/` e em `/en`, escuro e claro, com os textos do idioma certo.
