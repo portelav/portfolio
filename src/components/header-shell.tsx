@@ -35,7 +35,7 @@ export function HeaderShell({ children }: { children: ReactNode }) {
   return (
     <header
       ref={header}
-      className="bg-bg ease-out-quint sticky top-0 z-10 transition-transform duration-500 focus-within:translate-y-0 data-[away=true]:-translate-y-full motion-reduce:transition-none"
+      className="bg-bg ease-out-quint sticky top-0 z-10 transition-transform duration-500 data-[away=true]:not-focus-within:-translate-y-full motion-reduce:transition-none"
     >
       {children}
     </header>
