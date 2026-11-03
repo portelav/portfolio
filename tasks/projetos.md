@@ -163,4 +163,55 @@ Extras: nenhum cookie, nenhum recurso de outra origem. O Chrome avisa sobre dime
 
 ## Stage 9 — Walkthrough
 
-*(Preenchido pelo walkthrough.)*
+> Data: 2026-11-02
+
+### Resumo
+- **Veredito:** WARNINGS
+- **Arquivos analisados:** 17
+- **Findings:** 0 críticos em aberto (1 encontrado e corrigido), 5 avisos
+
+### Checklist
+| Item | Status | Observação |
+|---|---|---|
+| Escopo | OK | Só o previsto, com os desvios do Stage 6 |
+| Next.js 16 | OK | Nenhum `"use client"` novo |
+| Segredo | OK | Nenhuma variável nova. `gitleaks` limpo na branch |
+| Produto | OK | Bate com D22 e D39 a D43 |
+| Regras de fora | OK | Sem antes e depois, sem paciente, CRO como na landing, nenhum cookie |
+| Textos | Ressalva | Nos arquivos de mensagens, nos dois idiomas, com o inglês aprovado por Lucas no FDD. A revisão final de inglês segue no PRD |
+| Repositório público | OK | Nome e GitHub do coautor por decisão de Lucas (D41). Imagens sem metadado, e a landing sem telefone |
+| Tokens e marca | OK | `--line` registrada no `DESIGN.md`. Sem três cards lado a lado |
+| 390 px e computador | Ressalva | Sem transbordo nas combinações vistas. Nem todas foram percorridas |
+| Toque, foco e alternativo | OK | Links de ação com 44 px e texto alternativo nas três imagens. O foco segue a regra base, sem Tab de verdade nesta seção |
+| Movimento | OK | Nada anima na seção |
+| Desempenho | OK | WebP entre 44 e 60 KB, carga preguiçosa, CLS 0 |
+| Verificações | Ressalva | Verdes no local. CI só roda no PR |
+| Commits | OK | Conventional Commits, até 72 caracteres, sem atribuição |
+| `.env.example` | Não se aplica | Nenhuma variável nova |
+| Docs | OK | FDD, PRD, ROADMAP, `DESIGN.md` e `CLAUDE.md` |
+
+### Findings
+#### Critical
+- Corrigido antes de qualquer envio: o Stage 7 citava o início do telefone da Dra. Thaiane — `tasks/projetos.md` — texto reescrito no commit local, que nunca foi enviado, e o histórico da branch não traz o trecho.
+
+#### Warnings
+- "Falar comigo" segue sem destino até a seção Contato — `src/components/abertura.tsx:25` — o lançamento exige.
+- O link do Crewz está fora dos buscadores e tem endereço provisório — `src/lib/projects.ts:18` — Lucas confirma com o coautor que é este o link a divulgar, e troca aqui se mudar.
+- Não exercitados: cliques nos links externos, Tab nesta seção, leitor de tela real, Safari e iPhone — `docs/fdd/projetos.md` — conferir no teste manual.
+- O preview que Lucas viu é anterior à borda e ao corte final no ar — `src/components/projetos.tsx:26` — conferir no preview do PR.
+- De perto, há um retângulo sutil onde estava o telefone no print da landing — `public/projetos/landing.webp` — Lucas decide no preview.
+
+#### Positive
+- A auditoria pegou o trecho do telefone antes de chegar ao repositório público.
+- O QA pegou o nome que não aparecia no cabeçalho e a barra de rolagem nos prints.
+- A licença das fotos do Crewz foi conferida em `public/landing/CREDITS.md` daquele projeto.
+- Os três destinos dos casos e o GitHub do coautor responderam 200.
+
+### Verificações executadas
+- `npm ci`, `npm run lint`, `npm run typecheck` e `npm run build`: verdes.
+- `git log --format=%B origin/main..HEAD | grep -i -E "co-authored|generated with|claude"`: vazio.
+- `gitleaks` na branch: limpo. `npm audit --omit=dev`: 0 vulnerabilidades.
+- Busca pelo telefone, por dado pessoal e por `private/` na árvore e no histórico da branch: nada.
+- Chrome em 390 e 1440 px: rolagem até a âncora, nome no cabeçalho, árvore de acessibilidade, CLS e borda nos dois modos.
+
+**Gate S9 — WARNINGS**
