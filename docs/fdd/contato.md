@@ -1,6 +1,6 @@
 # FDD: Seção Contato e nota de privacidade
 
-Status: aprovado
+Status: implementado
 PRD: seção 6, itens Contato e Nota de privacidade; D9, D10, D14, D24, D32, D54 e D57; Regras de fora
 
 ## Objetivo

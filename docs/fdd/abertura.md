@@ -1,6 +1,6 @@
 # FDD: Seção Abertura
 
-Status: aprovado
+Status: implementado
 PRD: seção 6, item Abertura; D44, D46, D48 e D49
 
 ## Objetivo

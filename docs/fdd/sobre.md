@@ -1,6 +1,6 @@
 # FDD: Seção Sobre
 
-Status: aprovado
+Status: implementado
 PRD: seção 6, item Sobre; D17, D23, D34 e D55
 
 ## Objetivo

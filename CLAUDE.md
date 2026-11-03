@@ -30,7 +30,7 @@ Onde está cada coisa:
 
 ## Estado atual
 
-Direção "trabalho na primeira tela" aprovada (PRD, D44 a D56). O site inteiro roda como protótipo na branch `proto/trabalho-primeiro`, com os FDDs atualizados, mas ainda sem plano e auditoria, e fora do índice dos buscadores. Faltam a nota de privacidade, o Web Analytics, o currículo em PDF e a medição de LCP. Na `main` segue a versão anterior. No ar: https://portelav.vercel.app, ainda a versão antiga.
+Direção "trabalho na primeira tela" aprovada (PRD, D44 a D56). O site inteiro está pronto na branch `proto/trabalho-primeiro` (`tasks/trabalho-primeiro.md`), fora do índice dos buscadores, à espera do teste em aparelho real, da auditoria e do merge. O LCP da página inicial tem exceção aceita (PRD, D60). Faltam ligar o Web Analytics no painel da Vercel e o currículo em PDF. Na `main` segue a versão anterior. No ar: https://portelav.vercel.app, ainda a versão antiga.
 
 ## Ambientes
 

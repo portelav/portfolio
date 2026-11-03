@@ -1,6 +1,6 @@
 # FDD: Seção Tecnologias
 
-Status: aprovado
+Status: implementado
 PRD: seção 6, item Tecnologias; D52
 
 ## Objetivo

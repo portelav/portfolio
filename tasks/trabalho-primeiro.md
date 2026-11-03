@@ -109,7 +109,7 @@ Até 10 itens, um commit cada, na ordem do `/exec`. Correção encontrada no ite
 6. [x] Tecnologias: aplicar a resposta sobre o Motion, e fechar o TODO do FDD
 7. [x] Limpeza: tirar marcas `SPIKE`, `cropX` e comentários de rascunho
 8. [x] Desempenho: medir LCP no build de produção, com 4G simulado. Acima de 2,5 s, parar e levar os números a Lucas. **Medido e acima. Lucas manteve o preloader e pediu para corrigir o tempo (PRD, D60)**
-9. [ ] Docs: status dos FDDs, PRD seção 6, ROADMAP e estado no `CLAUDE.md`
+9. [x] Docs: status dos FDDs, PRD seção 6, ROADMAP e estado no `CLAUDE.md`
 10. [ ] Entrega: teste de Lucas em aparelho real, `/walkthrough` e `/pr`, com a confirmação dele antes de abrir o PR. Ao abrir, combinar o fechamento do PR #4 e o destino das branches `spike/site-inteiro`, `feat/projetos` e `proto/apresentacao`
 
 ---
@@ -137,6 +137,7 @@ Até 10 itens, um commit cada, na ordem do `/exec`. Correção encontrada no ite
 | 6 | Tecnologias | `src/lib/stack.ts`, `docs/fdd/tecnologias.md`, `docs/adr/0004-movimento-em-css.md` | feito |
 | 7 | Limpeza | `src/`, 12 arquivos | feito |
 | 8 | Desempenho | `src/components/preloader.tsx`, `docs/PRD.md`, `docs/fdd/abertura.md` | feito, com exceção aceita por Lucas (PRD, D60) |
+| 9 | Docs | `docs/fdd/*.md`, `docs/PRD.md`, `docs/ROADMAP.md`, `CLAUDE.md` | feito |
 
 ### Desvios do plano
 - Os itens 6 e 7 vieram antes do 5, para a conferência valer sobre o código final.

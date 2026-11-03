@@ -1,6 +1,6 @@
 # FDD: Seção Quer um site?
 
-Status: aprovado
+Status: implementado
 PRD: seção 6, item Quer um site?; D1, D22 e D53
 
 ## Objetivo

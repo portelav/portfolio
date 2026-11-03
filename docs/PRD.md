@@ -23,19 +23,19 @@ Dois públicos com o mesmo peso (D1):
 
 ## 6. Escopo
 
-Seções na ordem da página (D45). Detalhe no FDD de cada uma. "Protótipo" quer dizer que já roda na branch `proto/trabalho-primeiro`, mas ainda sem plano e auditoria.
+Seções na ordem da página (D45). Detalhe no FDD de cada uma. "Na branch" quer dizer pronto em `proto/trabalho-primeiro`, à espera do teste em aparelho real, da auditoria e do merge.
 
 | Item | Objetivo | FDD | Estado |
 |---|---|---|---|
 | Base técnica | Next.js, idiomas, tokens, ícones e CI prontos na `main` | não precisa, é só infraestrutura | feito |
-| Cabeçalho e rodapé | Seletores de idioma e tema, nome depois do preloader, rodapé e página 404 | `docs/fdd/cabecalho-rodape.md` | protótipo |
-| Abertura | Reescrever o nome no preloader e dizer quem é, o que faz e o que procura | `docs/fdd/abertura.md` | protótipo |
-| Projetos | Mostrar os três casos em destaque, com a parte de Lucas em cada um | `docs/fdd/projetos.md` | protótipo |
-| Sobre | Contar a trajetória de forma curta | `docs/fdd/sobre.md` | protótipo |
-| Tecnologias | Listar linguagens e tecnologias que Lucas usa | `docs/fdd/tecnologias.md` | protótipo |
-| Quer um site? | Dizer a quem quer contratar um site o que recebe e como funciona | `docs/fdd/quer-um-site.md` | protótipo |
-| Contato | Levar a WhatsApp, e-mail, LinkedIn e GitHub | `docs/fdd/contato.md` | protótipo |
-| Nota de privacidade | Dizer o que é medido e por quem, nos dois idiomas | no FDD de contato | falta |
+| Cabeçalho e rodapé | Seletores de idioma e tema, nome depois do preloader, rodapé e página 404 | `docs/fdd/cabecalho-rodape.md` | na branch |
+| Abertura | Reescrever o nome no preloader e dizer quem é, o que faz e o que procura | `docs/fdd/abertura.md` | na branch |
+| Projetos | Mostrar os três casos em destaque, com a parte de Lucas em cada um | `docs/fdd/projetos.md` | na branch |
+| Sobre | Contar a trajetória de forma curta | `docs/fdd/sobre.md` | na branch |
+| Tecnologias | Listar linguagens e tecnologias que Lucas usa | `docs/fdd/tecnologias.md` | na branch |
+| Quer um site? | Dizer a quem quer contratar um site o que recebe e como funciona | `docs/fdd/quer-um-site.md` | na branch |
+| Contato | Levar a WhatsApp, e-mail, LinkedIn e GitHub | `docs/fdd/contato.md` | na branch |
+| Nota de privacidade | Dizer o que é medido e por quem, nos dois idiomas | no FDD de contato | na branch |
 
 Casos em destaque (D3):
 
