@@ -11,7 +11,8 @@ export function SiteHeader() {
   const t = useTranslations("Header");
 
   return (
-    <header className="bg-bg sticky top-0 z-10 flex h-14 items-center justify-between gap-4 px-6">
+    <header className="bg-bg sticky top-0 z-10">
+      <div className="page-frame flex h-14 items-center justify-between gap-4">
       <HeaderName>
         <Link
           href="/"
@@ -29,6 +30,7 @@ export function SiteHeader() {
           toDark={t("themeToDark")}
           toDarkLabel={t("themeToDarkLabel")}
         />
+      </div>
       </div>
     </header>
   );

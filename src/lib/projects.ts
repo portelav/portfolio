@@ -4,17 +4,20 @@ export const projects = [
   {
     id: "landing",
     image: "/projetos/landing.webp",
+    cropX: "0%",
     siteUrl: "https://www.drathaianelessa.com.br",
     codeUrl: "https://github.com/portelav/landing-drathaiane",
   },
   {
     id: "draftcs",
     image: "/projetos/draftcs.webp",
+    cropX: "0%",
     siteUrl: "https://draftcs.com",
   },
   {
     id: "crewz",
     image: "/projetos/crewz.webp",
+    cropX: "12%",
     siteUrl: "https://crewz-ashy.vercel.app",
   },
 ] as const;

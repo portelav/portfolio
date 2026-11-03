@@ -35,21 +35,24 @@
     "visitSite": "Ver site",
     "seeCode": "Ver código",
     "landing": {
-      "text": "<name>Landing da Dra. Thaiane Lessa.</name> Site que fiz sozinho, do desenho ao código, pensado primeiro para o celular.",
+      "text": "Landing que fiz sozinho, do desenho ao código, pensada primeiro para o celular.",
       "detail": "Dra. Thaiane Lessa · CRO/AL-6418",
       "alt": "Primeira tela da landing: o título “sorrir é sempre uma boa ideia” ao lado de uma foto do consultório.",
       "siteLabel": "Ver site da landing da Dra. Thaiane Lessa",
-      "codeLabel": "Ver código da landing da Dra. Thaiane Lessa"
+      "codeLabel": "Ver código da landing da Dra. Thaiane Lessa",
+      "name": "Dra. Thaiane Lessa"
     },
     "draftcs": {
-      "text": "<name>DraftCS.</name> Jogo web que fiz em dupla com o <coauthor>Vinicius</coauthor>.",
+      "text": "Jogo web que fiz em dupla com o <coauthor>Vinicius</coauthor>.",
       "alt": "Primeira tela do DraftCS: a chamada “Monte o time invencível” ao lado de um time com resultado de 13 a 0.",
-      "siteLabel": "Ver site do DraftCS"
+      "siteLabel": "Ver site do DraftCS",
+      "name": "DraftCS"
     },
     "crewz": {
-      "text": "<name>Crewz.</name> Rede social que fiz em dupla com o <coauthor>Vinicius</coauthor>.",
+      "text": "Rede social que fiz em dupla com o <coauthor>Vinicius</coauthor>.",
       "alt": "Primeira tela do Crewz: a frase “Encontre quem quer fazer o que você quer fazer” ao lado de um mosaico de fotos de atividades.",
-      "siteLabel": "Ver site do Crewz"
+      "siteLabel": "Ver site do Crewz",
+      "name": "Crewz"
     }
   }
 }

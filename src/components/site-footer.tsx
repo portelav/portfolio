@@ -4,7 +4,7 @@ export function SiteFooter() {
   const t = useTranslations("Footer");
 
   return (
-    <footer className="p-6 text-sm">
+    <footer className="page-frame py-8 text-sm">
       <p>{t("rights")}</p>
     </footer>
   );
