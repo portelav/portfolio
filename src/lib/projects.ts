@@ -19,6 +19,6 @@ export const projects = [
   },
 ] as const;
 
-export const projectImageSize = { width: 1440, height: 900 };
+export const projectImageSize = { width: 1425, height: 900 };
 
 export const coauthorUrl = "https://github.com/ViniciusLoureiro67/";
