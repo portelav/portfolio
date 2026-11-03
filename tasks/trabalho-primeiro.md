@@ -242,7 +242,7 @@ O voo agora se guia pela própria animação da Reescrita, em vez de esperar 2,9
 - Nenhum.
 
 #### Warnings
-- O Web Analytics não tem confirmação de que foi ligado. A nota de privacidade diz que o site conta visitas, o que só vale com ele ligado, e o script da medição não existe enquanto isso — `src/app/[locale]/layout.tsx:72` — Lucas liga no painel da Vercel, com um deploy depois. Conferir no preview que a visita chega, sem cookie. O merge não muda o endereço público, mas isto precisa fechar antes do lançamento.
+- O Web Analytics não tem confirmação de que foi ligado. A nota de privacidade diz que o site conta visitas, o que só vale com ele ligado, e o script da medição não existe enquanto isso — `src/app/[locale]/layout.tsx:75` — Lucas liga no painel da Vercel, com um deploy depois. Conferir no preview que a visita chega, sem cookie. O merge não muda o endereço público, mas isto precisa fechar antes do lançamento.
 - O teste de Lucas em aparelho real não foi detalhado. Não está registrado se incluiu leitor de tela e iPhone, e os critérios dos FDDs seguem sem marcação, como em todos os FDDs do repositório — `docs/fdd/` — confirmar com Lucas antes do lançamento.
 - O LCP só foi medido no build local, em emulação, porque o preview pede login — `docs/PRD.md`, D60 — medir de novo no endereço de produção depois do merge.
 - O histórico tem 65 commits, com o caminho do rascunho, e um `Revert` gerado pelo Git fora do Conventional Commits, em `1c3b5d8`. A branch `proto/` também foge do padrão `tipo/nome`, como o plano registra — sem correção, porque o PR não usa squash e reescrever não compensa. O PR #4 traz parte dos mesmos commits e precisa ser fechado.
@@ -250,7 +250,7 @@ O voo agora se guia pela própria animação da Reescrita, em vez de esperar 2,9
 
 #### Positive
 - O preloader agora se guia pela própria animação, sem cortar a sequência, e a saída de segurança funciona com o JavaScript atrasado.
-- Contato e telefone moram em um arquivo só, e o print fica no lugar quando falta o vídeo.
+- WhatsApp e e-mail moram em um arquivo só, e o print fica no lugar quando falta o vídeo.
 - Os dois defeitos do cabeçalho com teclado e mouse foram achados na conferência e corrigidos.
 
 ### Verificações executadas
