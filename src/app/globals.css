@@ -192,6 +192,67 @@
   opacity: 1;
 }
 
+/* SPIKE: the opening. Its resting state is the end of the story, so without
+ * scroll-driven animations, or under reduced motion, everything just shows. */
+/* The stage fills the first screen, behind the header. */
+#sobre {
+  margin-top: -3.5rem;
+}
+
+.words-stage {
+  position: relative;
+  display: grid;
+  align-content: end;
+  min-height: 100svh;
+  overflow: hidden;
+  padding-block: 2.5rem;
+}
+
+.words-text {
+  position: relative;
+  z-index: 1;
+}
+
+.portrait {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 112vw;
+  transform-origin: top center;
+  transform: translate(-50%, 2.5rem) scale(0.62);
+}
+
+.portrait-image {
+  mask-image: radial-gradient(closest-side, #000 76%, transparent 100%);
+}
+
+@media (min-width: 768px) {
+  .words-stage {
+    align-content: center;
+    padding-block: 0;
+  }
+
+  .portrait {
+    top: 50%;
+    width: min(100svh, 100vw);
+    transform-origin: center;
+    transform: translate(-50%, -50%) translate(22vw, 1.5rem) scale(0.78);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .portrait-arrive {
+    transition:
+      opacity 1.4s var(--ease-out-quint),
+      transform 1.4s var(--ease-out-quint);
+  }
+
+  html[data-reescrita] .portrait-arrive {
+    opacity: 0;
+    transform: scale(1.06);
+  }
+}
+
 /* SPIKE: preloader. Only shows while the page is marked. */
 .preloader {
   display: none;
@@ -254,7 +315,7 @@ html[data-reescrita] .header-name {
 @supports (animation-timeline: view()) {
   @media (prefers-reduced-motion: no-preference) {
     .words-runway {
-      height: 190svh;
+      height: 260svh;
       view-timeline: --words block;
     }
 
@@ -265,6 +326,12 @@ html[data-reescrita] .header-name {
       animation: words-leave linear both;
       animation-timeline: --words;
       animation-range: contain 82% contain 100%;
+    }
+
+    .portrait {
+      animation: portrait-open cubic-bezier(0.65, 0, 0.35, 1) both;
+      animation-timeline: --words;
+      animation-range: contain 0% contain 78%;
     }
 
     .word {
@@ -344,6 +411,20 @@ html[data-reescrita] .header-name {
   to {
     opacity: 0;
     transform: translateY(-2rem);
+  }
+}
+
+@keyframes portrait-open {
+  from {
+    transform: translate(-50%, -50%) translate(14vw, 1.5rem) scale(1);
+  }
+}
+
+@media (max-width: 767px) {
+  @keyframes portrait-open {
+    from {
+      transform: translate(-50%, 3.5rem) scale(0.88);
+    }
   }
 }
 

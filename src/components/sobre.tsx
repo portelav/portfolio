@@ -6,7 +6,7 @@ import Image from "next/image";
 // The name stays readable before any scroll.
 const LIT_FROM_START = 4;
 
-// SPIKE. Words light up with the scroll.
+// SPIKE. The portrait arrives large and steps aside as the words light up.
 // Without scroll-driven animations, or with reduced motion, all of it just shows.
 export function Sobre() {
   const t = useTranslations("Home");
@@ -17,17 +17,22 @@ export function Sobre() {
   return (
     <div id="sobre">
       <section className="words-runway">
-        <div className="words-stage page-frame grid content-center gap-8 md:grid-cols-[minmax(0,1fr)_auto] md:items-center md:gap-16">
-          <Image
-            src="/sobre/lucas.webp"
-            alt={t("photoAlt")}
-            width={640}
-            height={640}
-            sizes="(min-width: 768px) 360px, 200px"
-            preload
-            className="intro-in h-auto w-44 rounded-full md:order-last md:w-90"
-          />
-          <h1 className="intro-in font-display text-display max-w-4xl">
+        <div className="words-stage">
+          <div className="portrait">
+            <div className="portrait-arrive">
+              <Image
+                src="/sobre/lucas.webp"
+                alt={t("photoAlt")}
+                width={1100}
+                height={1100}
+                sizes="(min-width: 768px) 100vh, 112vw"
+                preload
+                className="portrait-image h-auto w-full"
+              />
+            </div>
+          </div>
+          <div className="page-frame words-text">
+          <h1 className="intro-in font-display text-display md:max-w-[46vw]">
             {words.map((word, index) => (
               <span key={`${word}-${index}`}>
                 <span
@@ -44,6 +49,7 @@ export function Sobre() {
               </span>
             ))}
           </h1>
+          </div>
         </div>
       </section>
     </div>
