@@ -195,3 +195,4 @@ Depois de comparar o rascunho com uma amostra de portfólios de outros devs, o d
 - **D56.** O site troca "muito espaço, poucos elementos por tela" por mais conteúdo em cada tela: quem chega sem contexto precisa entender o que Lucas faz. Sem biblioteca de rolagem suave.
 - **D57.** A nota de privacidade é um bloco curto no fim da própria página, com o link do rodapé levando até ele. Mantém a página única (D42), sem rota nova.
 - **D58.** Motion sai das dependências, porque nenhum componente o usa. O movimento fica em CSS e nas APIs do navegador (ADR 0004). Ajusta D6.
+- **D59.** "Full stack" deixa de ser palavra vetada, por decisão do dono.

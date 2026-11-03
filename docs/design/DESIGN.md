@@ -135,7 +135,7 @@ Fontes carregadas por `next/font`, servidas do próprio site. Nada abaixo de 14 
 - Primeira pessoa, simples e direta. Fala de estudante que faz coisas reais, sem pose de sênior.
 - Diz o que fez e o que aprendeu, com fato concreto: "fiz a animação do hero", nunca "soluções inovadoras".
 - Os dois idiomas têm o mesmo tom. O inglês é reescrito, não traduzido ao pé da letra.
-- Palavras vetadas: elevar, sem esforço, inovador, soluções, apaixonado, "full stack" como título, métrica vazia como "100% foco". Em inglês: elevate, seamless, passionate, cutting-edge.
+- Palavras vetadas: elevar, sem esforço, inovador, soluções, apaixonado, métrica vazia como "100% foco". Em inglês: elevate, seamless, passionate, cutting-edge.
 
 ## 9. O que não fazer
 
