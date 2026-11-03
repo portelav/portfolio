@@ -15,6 +15,3 @@ next-env.d.ts
 
 # Internal notes, never public
 private/
-
-# Stays local until everyone who appears in it has agreed.
-/public/projetos/video/celular/landing.mp4
