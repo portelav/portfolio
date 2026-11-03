@@ -12,14 +12,10 @@ Quem avalia estágio vê, depois de ver os projetos, com que linguagens e tecnol
 | Grupo | pt-BR | Inglês | Itens |
 |---|---|---|---|
 | Linguagens | Linguagens | Languages | TypeScript, JavaScript, Python, Java e SQL |
-| Tecnologias | Tecnologias | Technologies | Next.js, React, Tailwind CSS, Motion, Supabase e Vercel |
+| Tecnologias | Tecnologias | Technologies | Next.js, React, Tailwind CSS, Supabase e Vercel |
 
 - Cada item tem o logo nas cores originais e o nome em Red Hat Mono, 14 px. Dados em `src/lib/stack.ts`.
 - Marcas continuam de quem são (`CLAUDE.md`, Direitos).
-
-- Motion entra como conteúdo, porque Lucas o usou na landing. Não é dependência deste site (ADR 0004).
-
-> TODO: logo do Motion, que ainda aparece sem desenho e não existe nos conjuntos de ícones usados.
 
 ## Comportamento
 

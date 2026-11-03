@@ -21,4 +21,3 @@ O movimento do site fica em CSS e nas APIs do navegador. Motion sai das dependê
 - Menos uma dependência para manter. Como nenhum componente a importava, o site não muda.
 - Efeitos ligados à rolagem usam `animation-timeline`. Navegador sem suporte mostra o conteúdo sem efeito.
 - Se um movimento pedir física de mola ou gesto, Motion volta com ADR novo.
-- Motion continua na seção Tecnologias do site, porque Lucas o usou na landing da Dra. Thaiane. Isso é conteúdo, não dependência.
