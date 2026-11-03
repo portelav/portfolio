@@ -23,16 +23,18 @@ Dois públicos com o mesmo peso (D1):
 
 ## 6. Escopo
 
-Seções previstas. Ordem e detalhe fecham no FDD de cada uma.
+Seções na ordem da página (D45). Detalhe no FDD de cada uma. "Protótipo" quer dizer que já roda na branch `proto/trabalho-primeiro`, mas ainda sem plano e auditoria.
 
 | Item | Objetivo | FDD | Estado |
 |---|---|---|---|
 | Base técnica | Next.js, idiomas, tokens, ícones e CI prontos na `main` | não precisa, é só infraestrutura | feito |
-| Cabeçalho e rodapé | Seletores de idioma e tema, nome depois da abertura, rodapé e página 404 | `docs/fdd/cabecalho-rodape.md` | feito |
-| Abertura | Apresentar o nome com a animação Reescrita e dizer quem é | `docs/fdd/abertura.md` | feito |
-| Projetos | Mostrar os três casos em destaque, com a forma de participação em cada um | `docs/fdd/projetos.md` | feito |
-| Sobre | Contar a trajetória de forma curta | `docs/fdd/sobre.md` | falta |
-| Contato | Levar a e-mail, LinkedIn, GitHub e WhatsApp | `docs/fdd/contato.md` | falta |
+| Cabeçalho e rodapé | Seletores de idioma e tema, nome depois do preloader, rodapé e página 404 | `docs/fdd/cabecalho-rodape.md` | protótipo |
+| Abertura | Reescrever o nome no preloader e dizer quem é, o que faz e o que procura | `docs/fdd/abertura.md` | protótipo |
+| Projetos | Mostrar os três casos em destaque, com a parte de Lucas em cada um | `docs/fdd/projetos.md` | protótipo |
+| Sobre | Contar a trajetória de forma curta | `docs/fdd/sobre.md` | protótipo |
+| Tecnologias | Listar linguagens e tecnologias que Lucas usa | `docs/fdd/tecnologias.md` | protótipo |
+| Quer um site? | Dizer a quem quer contratar um site o que recebe e como funciona | `docs/fdd/quer-um-site.md` | protótipo |
+| Contato | Levar a WhatsApp, e-mail, LinkedIn e GitHub | `docs/fdd/contato.md` | protótipo |
 | Nota de privacidade | Dizer o que é medido e por quem, nos dois idiomas | no FDD de contato | falta |
 
 Casos em destaque (D3):
@@ -47,9 +49,7 @@ Casos em destaque (D3):
 
 | O quê | Quem manda | Para qual item |
 |---|---|---|
-| Texto do Sobre | Lucas | Sobre |
-| Foto, se houver | Lucas | Sobre |
-| Links finais de contato | Lucas | Contato |
+| Currículo em PDF, nos dois idiomas | Lucas | Abertura |
 | Revisão do inglês | Lucas | Todas |
 
 ## 7. Fora de escopo
@@ -96,6 +96,7 @@ Graus de certeza:
 | Texto em dois idiomas sair de sincronia | Parte do site fica sem tradução | Toda entrega traz as duas línguas. Falta de mensagem quebra o build |
 | Número de WhatsApp e e-mail públicos | Spam | Aceito pelo dono. Cada um mora em um arquivo só, para trocar ou tirar fácil |
 | Site pela metade substituir o atual | Má impressão | Repositório e projeto próprios na Vercel. O endereço público só muda no lançamento (D21) |
+| Preloader de cerca de 3,8 s em toda carga afastar quem tem pressa | Parte dos visitantes pode sair antes de ver o trabalho | Decisão mantida pelo dono (D46). Observar no teste de 1 minuto e medir o LCP antes do lançamento |
 
 ## 10. Critérios de pronto
 
@@ -147,8 +148,8 @@ Cada rodada é uma conversa com o dono. Decisões numeradas (D1, D2...) para o a
 - **D26.** Cabeçalho, rodapé e página 404 entram no escopo, com FDD próprio.
 - **D27.** O foco só faz o cursor voltar a piscar onde o nome é link. Na abertura, o nome não recebe foco. Ajusta D16.
 - **D28.** Na abertura, a frase de apresentação começa com "Lucas Portela", e há duas chamadas, para Projetos e para Contato.
-- **D29.** Tempo fechado na D38. A Reescrita roda só na primeira carga da sessão, com teto provisório de 3 s. Lucas fecha o tempo vendo o protótipo no navegador. Não repete ao recarregar nem ao trocar de idioma ou de tema.
-- **D30.** Na primeira dobra, o cabeçalho mostra só os seletores. O nome entra nele depois que a abertura sai da tela.
+- **D29.** Substituída por D46. Tempo fechado na D38. A Reescrita roda só na primeira carga da sessão, com teto provisório de 3 s. Lucas fecha o tempo vendo o protótipo no navegador. Não repete ao recarregar nem ao trocar de idioma ou de tema.
+- **D30.** Substituída por D47. Na primeira dobra, o cabeçalho mostra só os seletores. O nome entra nele depois que a abertura sai da tela.
 
 ### Rodada 4 (2026-11-02): base técnica
 
@@ -157,20 +158,38 @@ Cada rodada é uma conversa com o dono. Decisões numeradas (D1, D2...) para o a
 ### Rodada 5 (2026-11-02): cabeçalho e rodapé
 
 - **D32.** O rodapé tem só "Todos os direitos reservados" e o link da nota de privacidade. Os contatos ficam na seção Contato.
-- **D33.** O cabeçalho não tem menu. Depois que a abertura sai da tela, mostra o nome e os seletores.
+- **D33.** Ajustada por D47. O cabeçalho não tem menu. Depois que a abertura sai da tela, mostra o nome e os seletores.
 
 ### Rodada 6 (2026-11-02): abertura
 
 - **D34.** A troca do Direito pela computação é contada no Sobre. A abertura tem só a frase curta de apresentação.
-- **D35.** As chamadas da abertura são "Ver projetos" e "Falar comigo".
+- **D35.** Substituída por D49. As chamadas da abertura são "Ver projetos" e "Falar comigo".
 - **D36.** A frase de apresentação não cita o período do curso, para não envelhecer.
-- **D37.** A frase de apresentação é "Me chamo Lucas Portela e estudo Ciência da Computação. Atualmente estou aprendendo a desenvolver com IA." Fala de como Lucas aprende, por escolha do dono, e não é atribuição de autoria. Ajusta o início previsto na D28.
+- **D37.** Substituída por D48. A frase de apresentação é "Me chamo Lucas Portela e estudo Ciência da Computação. Atualmente estou aprendendo a desenvolver com IA." Fala de como Lucas aprende, por escolha do dono, e não é atribuição de autoria. Ajusta o início previsto na D28.
 - **D38.** Lucas aprovou no preview o tempo de 2,6 s da Reescrita e o layout da primeira dobra.
 
 ### Rodada 7 (2026-11-02): projetos
 
-- **D39.** Os casos têm texto curto: a landing diz que foi feita sozinho, do desenho ao código, pensada primeiro para o celular. DraftCS e Crewz dizem só que foram feitos em dupla com o Vinicius.
+- **D39.** Substituída por D50. Os casos têm texto curto: a landing diz que foi feita sozinho, do desenho ao código, pensada primeiro para o celular. DraftCS e Crewz dizem só que foram feitos em dupla com o Vinicius.
 - **D40.** Ordem dos casos: landing, DraftCS e Crewz.
 - **D41.** O nome do Vinicius aparece nos casos, com link para o GitHub dele.
-- **D42.** O site é uma página única com rolagem: abertura, projetos, sobre e contato.
+- **D42.** Ajustada por D45. O site é uma página única com rolagem: abertura, projetos, sobre e contato.
 - **D43.** Os prints dos projetos têm borda fina de 1 px, para não se confundirem com o fundo.
+
+### Rodada 8 (2026-11-03): direção "trabalho na primeira tela"
+
+Depois de comparar o rascunho com uma amostra de portfólios de outros devs, o dono escolheu esta direção. A marca não muda (D18). Mudam a ordem, o texto e a densidade.
+
+- **D44.** O trabalho aparece na primeira tela: quem é, o que faz, o que procura, as chamadas e o começo do primeiro caso, com o texto dele ao lado.
+- **D45.** Ordem da página: abertura, projetos, sobre, tecnologias, "Quer um site?" e contato. Ajusta D42.
+- **D46.** O preloader fica: a Reescrita roda em tela limpa em toda carga de `/` e `/en` sem âncora, e o nome voa até o cabeçalho, somando cerca de 3,8 s. A rolagem fica presa nesse tempo. Os tempos da Reescrita continuam os da D38. Substitui D29.
+- **D47.** O nome fica no cabeçalho desde o fim do preloader. O cabeçalho sai ao rolar para baixo e volta ao rolar para cima. Substitui D30 e ajusta D33.
+- **D48.** A frase de apresentação é "Me chamo Lucas Portela e já fiz alguns sites que estão no ar.", seguida de "Estudo Ciência da Computação em Maceió. Procuro estágio em desenvolvimento e faço sites para quem precisa de um." O aprendizado com IA passa para o Sobre, com o mesmo sentido da D37. Substitui D37.
+- **D49.** As chamadas da abertura são "Quero um site" e "Falar sobre estágio", uma para cada público (D1). Substitui D35.
+- **D50.** Cada caso diz a parte de Lucas no trabalho. Em dupla, com o nome do Vinicius ao lado (D41). Lucas confirmou o texto de cada caso. Substitui D39.
+- **D51.** Cada caso tem um vídeo do próprio site sobre o print, um tocando por vez e com pausa. Celular e computador têm print e vídeo próprios. Quem aparece autorizou.
+- **D52.** Tecnologias entra como seção própria, depois do Sobre, com os logos nas cores originais. O veto a ícones coloridos sai do `DESIGN.md`.
+- **D53.** O bloco "Quer um site?" tem oferta, quatro passos e um botão para o WhatsApp com mensagem pronta. Sem preço por enquanto. Os passos são compromisso de Lucas com quem contrata.
+- **D54.** Contato lista WhatsApp, e-mail, LinkedIn e GitHub, nessa ordem. Número e e-mail moram em um arquivo só. Ajusta a ordem da D9.
+- **D55.** O Sobre conta a saída do Direito em uma frase, com um retrato ilustrado em tamanho contido. Sem efeito preso à rolagem. Mantém D34.
+- **D56.** O site troca "muito espaço, poucos elementos por tela" por mais conteúdo em cada tela: quem chega sem contexto precisa entender o que Lucas faz. Sem biblioteca de rolagem suave.
