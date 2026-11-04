@@ -3,7 +3,7 @@
 **Slug:** `trabalho-primeiro`
 **Branch:** `proto/trabalho-primeiro`
 **Seção ou área:** página inteira
-**Status:** Walkthrough
+**Status:** Merged, PR #5
 **Gate S2:** Livre
 
 ---
@@ -104,13 +104,13 @@ Até 10 itens, um commit cada, na ordem do `/exec`. Correção encontrada no ite
 1. [x] Docs: fechar os TODOs do `docs/fdd/contato.md` com o texto aprovado, status `aprovado`
 2. [x] Mensagens e componente: bloco da nota com âncora `#privacidade`, composto na página depois de Contato
 3. [x] Rodapé: link da nota, nos dois idiomas
-4. [ ] Medição: `@vercel/analytics` e `Analytics` no layout. Ligar no painel da Vercel e conferir no preview que a visita chega e nenhum cookie é criado
+4. [ ] Medição: `@vercel/analytics` e `Analytics` no layout. Ligar no painel da Vercel e conferir que a visita chega e nenhum cookie é criado. **Ligado: o script responde em produção, sem cookie. Falta ver a visita no painel, porque o script não conta navegador automatizado**
 5. [x] Conferência: percorrer os critérios dos sete FDDs no navegador, inclusive teclado, leitor de tela, sem JavaScript, movimento reduzido e deslocamento de layout. Registrar no Stage 7. Já conhecido: conferir se o título de `#site` para abaixo do cabeçalho
 6. [x] Tecnologias: aplicar a resposta sobre o Motion, e fechar o TODO do FDD
 7. [x] Limpeza: tirar marcas `SPIKE`, `cropX` e comentários de rascunho
 8. [x] Desempenho: medir LCP no build de produção, com 4G simulado. Acima de 2,5 s, parar e levar os números a Lucas. **Medido e acima. Lucas manteve o preloader e pediu para corrigir o tempo (PRD, D60)**
 9. [x] Docs: status dos FDDs, PRD seção 6, ROADMAP e estado no `CLAUDE.md`
-10. [ ] Entrega: teste de Lucas em aparelho real, `/walkthrough` e `/pr`, com a confirmação dele antes de abrir o PR. Ao abrir, combinar o fechamento do PR #4 e o destino das branches `spike/site-inteiro`, `feat/projetos` e `proto/apresentacao`
+10. [ ] Entrega: teste de Lucas em aparelho real, `/walkthrough` e `/pr`, com a confirmação dele antes de abrir o PR. **Feito, com merge do PR #5 por Lucas. Falta só o fechamento abaixo.** Ao abrir, combinar o fechamento do PR #4 e o destino das branches `spike/site-inteiro`, `feat/projetos` e `proto/apresentacao`
 
 ---
 
@@ -200,6 +200,25 @@ O voo agora se guia pela própria animação da Reescrita, em vez de esperar 2,9
 - JavaScript atrasado 4,5 s: a Reescrita termina em 2,7 s, o nome voa em 4,63 s e a rolagem solta em 5,43 s.
 - JavaScript atrasado 9 s: a saída de segurança solta a página em 7,03 s, sem voo, com o nome no cabeçalho e a rolagem funcionando.
 - Deslocamento de layout igual ao de antes: 0 em `/`, e até 0,039 em `/en` a 1350 px, por baixo do preloader.
+
+### Em produção
+
+Medido em 2026-11-04, em `https://portelav-site.vercel.app`, com o envio de visitas bloqueado para não sujar a contagem. Três medições por linha. "Sem limite" aqui passa pela conexão real até a Vercel, com FCP de 0,40 a 0,85 s.
+
+| Tela | Rede | Página | Fim do preloader | LCP |
+|---|---|---|---|---|
+| 390 px | Sem limite | `/` | de 4,17 a 4,63 s | de 5,09 a 5,55 s |
+| 390 px | Sem limite | `/en` | de 4,24 a 4,75 s | de 5,16 a 5,75 s |
+| 390 px | Lento | `/` | de 4,67 a 4,76 s | de 7,34 a 7,37 s |
+| 390 px | Lento | `/en` | de 4,70 a 4,79 s | de 5,64 a 5,73 s |
+| 1350 px | Sem limite | `/` | de 4,22 a 4,38 s | de 5,42 a 5,58 s |
+| 1350 px | Sem limite | `/en` | de 4,18 a 4,32 s | de 5,10 a 5,26 s |
+| 1350 px | Lento | `/` | de 4,78 a 5,46 s | de 5,98 a 6,62 s |
+| 1350 px | Lento | `/en` | de 4,40 a 4,85 s | de 7,46 a 8,02 s |
+
+- Os valores ficam acima dos medidos no build local, registrados na D60 do PRD.
+- Duas medições no computador, no lento, passaram dos 5 s do critério do FDD de Abertura. No celular, todas ficaram abaixo.
+- Em `/` e em `/en`, nenhum cookie, e `noindex` continua na página.
 
 ---
 
