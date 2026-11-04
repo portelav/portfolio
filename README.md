@@ -2,19 +2,19 @@
 
 Site pessoal de Lucas Portela, estudante de Ciência da Computação na Afya UNIMA, em Maceió.
 
-**Estado:** em reconstrução do zero, com a base técnica pronta e as seções a construir. Até o lançamento, https://portelav.vercel.app continua mostrando a versão antiga, que não vem deste repositório.
+**Estado:** em reconstrução do zero, com as seções em protótipo, ainda sem lançamento. Até lá, https://portelav.vercel.app continua mostrando a versão antiga, que não vem deste repositório.
 
 ## O que vem aí
 
 - Abertura com o nome reescrito da letra de livro para a letra de código, contando a troca do Direito pela computação.
-- Projetos reais, com o que fiz em cada um.
+- Projetos reais logo na primeira tela, com vídeo e com o que fiz em cada um.
+- Um caminho direto para quem quer contratar um site e outro para quem avalia estágio.
 - Português e inglês, modo escuro e claro, celular primeiro.
 
 ## Stack da versão nova
 
 - [Next.js 16](https://nextjs.org) e React 19, publicado na Vercel
 - Tailwind CSS 4
-- [Motion](https://motion.dev)
 - [next-intl](https://next-intl.dev)
 
 Por que cada uma: [`docs/adr/`](docs/adr/).

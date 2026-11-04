@@ -5,9 +5,10 @@
   },
   "Home": {
     "name": "portelav",
-    "intro": "My name is Lucas Portela and I study Computer Science. Right now I'm learning to build software with AI.",
-    "seeProjects": "See projects",
-    "getInTouch": "Get in touch"
+    "headline": "I'm Lucas Portela, and I've already built a few <accent>websites that are live</accent>.",
+    "lead": "I study Computer Science in Maceió, Brazil. I'm looking for a development internship, and I build sites for people who need one.",
+    "wantSite": "I need a site",
+    "internship": "Talk about an internship"
   },
   "Header": {
     "homeLabel": "portelav, back to top",
@@ -29,5 +30,74 @@
   "NotFound": {
     "title": "This page doesn't exist.",
     "home": "Back to home"
+  },
+  "Projects": {
+    "title": "Projects",
+    "visitSite": "Visit site",
+    "seeCode": "See code",
+    "landing": {
+      "detail": "Dra. Thaiane Lessa · CRO/AL-6418",
+      "alt": "First screen of the landing page: the headline “sorrir é sempre uma boa ideia”.",
+      "siteLabel": "Visit site of the landing page for Dra. Thaiane Lessa",
+      "codeLabel": "See code of the landing page for Dra. Thaiane Lessa",
+      "name": "Dra. Thaiane Lessa",
+      "kind": "Site · built on my own",
+      "what": "A page for a dental surgeon in Maceió that introduces her and takes visitors to WhatsApp.",
+      "part": "All of it, from design to code, made for phones first.",
+      "decision": "No patients, no before and after and no promised results, because of the Brazilian dental council's advertising rules."
+    },
+    "draftcs": {
+      "alt": "First screen of DraftCS: the call “Monte o time invencível”.",
+      "siteLabel": "Visit site of DraftCS",
+      "name": "DraftCS",
+      "kind": "Web game · with <coauthor>Vinicius</coauthor>",
+      "what": "You draw a real Counter-Strike Major roster, pick five players and simulate the run for the title.",
+      "part": "Curating player, roster and country data, scrolling in the simulator on phones and the area for sharing a result."
+    },
+    "crewz": {
+      "alt": "First screen of Crewz: the line “Encontre quem quer fazer o que você quer fazer”.",
+      "siteLabel": "Visit site of Crewz",
+      "name": "Crewz",
+      "kind": "Social network · with <coauthor>Vinicius</coauthor>",
+      "what": "A social network for finding people who want to do what you want to do.",
+      "part": "Design system, visual redesign, onboarding, profile, direct messages and search."
+    },
+    "videoPause": "Pause video",
+    "videoPlay": "Play video",
+    "partLabel": "My part",
+    "decisionLabel": "One decision"
+  },
+  "Stack": {
+    "languages": "Languages",
+    "tools": "Technologies"
+  },
+  "Contact": {
+    "title": "Contact",
+    "email": "Email",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "whatsapp": "WhatsApp",
+    "lead": "If you want to talk about an internship or a site, this is the place."
+  },
+  "About": {
+    "title": "About",
+    "text": "I started in Law and left because I couldn't see myself working in it. Now I study Computer Science at Afya UNIMA and I'm learning to build software with AI.",
+    "repo": "This site's code is public, with its decisions on record in the <link>repository</link>.",
+    "photoAlt": "Illustration of Lucas Portela, smiling, with a beard and a black T-shirt."
+  },
+  "Hire": {
+    "title": "Need a site?",
+    "lead": "I build the page for your business from design to code, made for phones first, with a direct path to your WhatsApp.",
+    "cta": "Message me on WhatsApp",
+    "stepsTitle": "How it works",
+    "step1": "You tell me what you need.",
+    "step2": "We agree on scope and deadline in writing.",
+    "step3": "You follow along through a preview link.",
+    "step4": "The site goes live.",
+    "whatsappMessage": "Hi Lucas, I need a website."
+  },
+  "Privacy": {
+    "title": "Privacy",
+    "text": "This site counts visits and where they come from, so I know whether it's being seen. Vercel does the counting, through Web Analytics, without cookies. Your theme choice stays in your browser."
   }
 }

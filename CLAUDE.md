@@ -30,7 +30,7 @@ Onde está cada coisa:
 
 ## Estado atual
 
-Base técnica, cabeçalho, rodapé, página 404 e abertura prontos, fora do índice dos buscadores. As demais seções ainda não foram construídas, e as chamadas da abertura ainda não têm destino. No ar: https://portelav.vercel.app, ainda a versão antiga.
+Direção "trabalho na primeira tela" aprovada (PRD, D44 a D56). O site inteiro está pronto na branch `proto/trabalho-primeiro` (`tasks/trabalho-primeiro.md`), fora do índice dos buscadores, à espera do teste em aparelho real, da auditoria e do merge. O LCP da página inicial tem exceção aceita (PRD, D60). Faltam ligar o Web Analytics no painel da Vercel e o currículo em PDF. Na `main` segue a versão anterior. No ar: https://portelav.vercel.app, ainda a versão antiga.
 
 ## Ambientes
 
@@ -46,7 +46,7 @@ Base técnica, cabeçalho, rodapé, página 404 e abertura prontos, fora do índ
 |---|---|---|
 | Framework | Next.js 16, React 19, TypeScript 6.0 | 0001 |
 | Estilo | Tailwind CSS 4, tokens do `DESIGN.md` | 0001 |
-| Movimento | Motion | 0001 |
+| Movimento | CSS e APIs do navegador | 0004 |
 | Idiomas | `next-intl`, pt-BR em `/` e inglês em `/en` | 0002 |
 | Hospedagem e medição | Vercel e Vercel Web Analytics | 0003 |
 
@@ -147,12 +147,12 @@ npm run build
 
 ```text
 messages/            textos em pt-BR e inglês
-public/              ícones e manifesto do kit
+public/              ícones e manifesto do kit; prints e vídeos em public/projetos/, por tela
 src/app/[locale]/    layout raiz, páginas e 404, só composição
 src/app/globals.css  tokens do DESIGN.md
 src/components/      componentes
 src/i18n/            rotas e carga de mensagens de next-intl
-src/lib/             fontes, tema e metadados da marca
+src/lib/             fontes, tema, metadados da marca, contato e dados dos projetos e tecnologias
 src/proxy.ts         resolve o idioma pela URL
 ```
 

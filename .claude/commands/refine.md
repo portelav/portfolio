@@ -34,7 +34,7 @@ Lacuna crítica sem base na conversa: `AskUserQuestion`, até 4 perguntas, 2 a 4
 **Passo 3 — Prompt reescrito**, bloco único ` ```text `:
 
 ```text
-**Persona**: Aja como [papel] com experiência em Next.js 16, Tailwind 4, Motion e `next-intl`.
+**Persona**: Aja como [papel] com experiência em Next.js 16, Tailwind 4 e `next-intl`.
 
 **Contexto**:
 - PRD: seções [X], FDD: [existe | a escrever]

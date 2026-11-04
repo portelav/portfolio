@@ -5,9 +5,10 @@
   },
   "Home": {
     "name": "portelav",
-    "intro": "Me chamo Lucas Portela e estudo Ciência da Computação. Atualmente estou aprendendo a desenvolver com IA.",
-    "seeProjects": "Ver projetos",
-    "getInTouch": "Falar comigo"
+    "headline": "Me chamo Lucas Portela e já fiz alguns <accent>sites que estão no ar</accent>.",
+    "lead": "Estudo Ciência da Computação em Maceió. Procuro estágio em desenvolvimento e faço sites para quem precisa de um.",
+    "wantSite": "Quero um site",
+    "internship": "Falar sobre estágio"
   },
   "Header": {
     "homeLabel": "portelav, voltar ao início",
@@ -29,5 +30,74 @@
   "NotFound": {
     "title": "Essa página não existe.",
     "home": "Voltar ao início"
+  },
+  "Projects": {
+    "title": "Projetos",
+    "visitSite": "Ver site",
+    "seeCode": "Ver código",
+    "landing": {
+      "detail": "Dra. Thaiane Lessa · CRO/AL-6418",
+      "alt": "Primeira tela da landing: o título “sorrir é sempre uma boa ideia”.",
+      "siteLabel": "Ver site da landing da Dra. Thaiane Lessa",
+      "codeLabel": "Ver código da landing da Dra. Thaiane Lessa",
+      "name": "Dra. Thaiane Lessa",
+      "kind": "Site · feito sozinho",
+      "what": "Página de uma cirurgiã-dentista em Maceió, que apresenta a profissional e leva o visitante ao WhatsApp.",
+      "part": "Tudo, do desenho ao código, pensado primeiro para o celular.",
+      "decision": "Sem paciente, sem antes e depois e sem promessa de resultado, por causa das regras de publicidade do CFO."
+    },
+    "draftcs": {
+      "alt": "Primeira tela do DraftCS: a chamada “Monte o time invencível”.",
+      "siteLabel": "Ver site do DraftCS",
+      "name": "DraftCS",
+      "kind": "Jogo web · em dupla com <coauthor>Vinicius</coauthor>",
+      "what": "Você sorteia um elenco real de um Major de Counter-Strike, escala cinco jogadores e simula a corrida pelo título.",
+      "part": "Curadoria dos dados de jogadores, elencos e países, a rolagem do simulador no celular e a área de compartilhar o resultado."
+    },
+    "crewz": {
+      "alt": "Primeira tela do Crewz: a frase “Encontre quem quer fazer o que você quer fazer”.",
+      "siteLabel": "Ver site do Crewz",
+      "name": "Crewz",
+      "kind": "Rede social · em dupla com <coauthor>Vinicius</coauthor>",
+      "what": "Rede social para encontrar quem quer fazer o que você quer fazer.",
+      "part": "Design system, redesenho visual, onboarding, perfil, mensagens diretas e busca."
+    },
+    "videoPause": "Pausar vídeo",
+    "videoPlay": "Reproduzir vídeo",
+    "partLabel": "Minha parte",
+    "decisionLabel": "Uma decisão"
+  },
+  "Stack": {
+    "languages": "Linguagens",
+    "tools": "Tecnologias"
+  },
+  "Contact": {
+    "title": "Contato",
+    "email": "E-mail",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "whatsapp": "WhatsApp",
+    "lead": "Se quiser conversar sobre estágio ou um site, é por aqui."
+  },
+  "About": {
+    "title": "Sobre",
+    "text": "Comecei no Direito e saí porque não me via trabalhando nessa área. Hoje estudo Ciência da Computação na Afya UNIMA e estou aprendendo a desenvolver com IA.",
+    "repo": "O código deste site é público, com as decisões registradas no <link>repositório</link>.",
+    "photoAlt": "Ilustração de Lucas Portela, sorrindo, de barba e camiseta preta."
+  },
+  "Hire": {
+    "title": "Quer um site?",
+    "lead": "Faço a página do seu negócio do desenho ao código, pensada primeiro para o celular e com um caminho direto até o seu WhatsApp.",
+    "cta": "Falar no WhatsApp",
+    "stepsTitle": "Como funciona",
+    "step1": "Você me conta o que precisa.",
+    "step2": "Combinamos escopo e prazo por escrito.",
+    "step3": "Você acompanha por um link de prévia.",
+    "step4": "O site vai ao ar.",
+    "whatsappMessage": "Oi, Lucas. Quero um site."
+  },
+  "Privacy": {
+    "title": "Privacidade",
+    "text": "Este site conta visitas e de onde elas vêm, para eu saber se ele está sendo visto. Quem faz essa contagem é a Vercel, com o Web Analytics, sem cookies. A sua escolha de tema fica só no seu navegador."
   }
 }

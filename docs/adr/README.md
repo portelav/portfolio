@@ -7,9 +7,10 @@ ADR nunca é editado depois de aceito. Decisão mudou? ADR novo que substitui o 
 
 | Nº | Título | Status |
 |---|---|---|
-| [0001](0001-next-tailwind-motion.md) | Next.js 16, Tailwind 4 e Motion | aceito |
+| [0001](0001-next-tailwind-motion.md) | Next.js 16, Tailwind 4 e Motion | aceito, com Motion substituído pelo ADR 0004 |
 | [0002](0002-i18n-next-intl.md) | Dois idiomas com `next-intl` | aceito |
 | [0003](0003-vercel-analytics.md) | Vercel e Web Analytics | aceito |
+| [0004](0004-movimento-em-css.md) | Movimento em CSS, sem Motion | aceito |
 
 ## Template
 

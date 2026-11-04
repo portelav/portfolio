@@ -1,0 +1,69 @@
+# FDD: Seção Quer um site?
+
+Status: implementado
+PRD: seção 6, item Quer um site?; D1, D22 e D53
+
+## Objetivo
+
+Quem quer contratar um site entende o que recebe, como funciona e chega ao WhatsApp de Lucas com um toque.
+
+## Conteúdo
+
+O inglês é proposto, para revisão de Lucas.
+
+| Lugar | pt-BR | Inglês |
+|---|---|---|
+| Título | Quer um site? | Need a site? |
+| Oferta | Faço a página do seu negócio do desenho ao código, pensada primeiro para o celular e com um caminho direto até o seu WhatsApp. | I build the page for your business from design to code, made for phones first, with a direct path to your WhatsApp. |
+| Botão | Falar no WhatsApp | Message me on WhatsApp |
+| Mensagem pronta | Oi, Lucas. Quero um site. | Hi Lucas, I need a website. |
+| Título dos passos | Como funciona | How it works |
+| Passo 1 | Você me conta o que precisa. | You tell me what you need. |
+| Passo 2 | Combinamos escopo e prazo por escrito. | We agree on scope and deadline in writing. |
+| Passo 3 | Você acompanha por um link de prévia. | You follow along through a preview link. |
+| Passo 4 | O site vai ao ar. | The site goes live. |
+
+## Comportamento
+
+- Fica depois de Tecnologias e antes de Contato, com a âncora `#site`.
+- A chamada "Quero um site", da abertura, leva até aqui, com o título visível.
+- No computador, oferta e botão à esquerda, e passos à direita. No celular, uma coluna.
+- O botão abre o WhatsApp de Lucas, em `src/lib/contact.ts`, com a mensagem pronta no idioma da página, na mesma aba.
+- Um separador de 1 px em `--line` no topo da seção, e entre os passos.
+
+## Movimento
+
+A seção sobe 1,5 rem e aparece ao entrar na tela, ligada à rolagem. O botão muda de opacidade no hover, em 150 ms.
+
+## Regras
+
+1. Sem preço por enquanto (PRD, D53).
+2. Os passos são compromisso de Lucas: só entra o que ele cumpre.
+3. O texto não diz nem sugere que a landing da Dra. Thaiane foi trabalho para cliente (PRD, D22).
+4. Sem formulário (PRD, D10).
+5. Botão com no mínimo 44 px de altura.
+
+## Acessibilidade
+
+- Título em `h2`, e passos em `ol`, com a numeração visível oculta para leitor de tela, que já anuncia a ordem da lista.
+- Botão como link com texto claro.
+- Foco visível, como no `DESIGN.md`.
+- Com `prefers-reduced-motion`, tudo aparece sem efeito.
+
+## Desempenho
+
+- Sem mídia nem JavaScript novo.
+
+## Fora de escopo
+
+- Tabela de preços e pacotes.
+- Depoimentos.
+- Formulário de orçamento.
+
+## Critérios de aceite
+
+- [ ] Em 390 px e no computador, em `/` e `/en`, escuro e claro, sem transbordo.
+- [ ] "Quero um site" leva até a seção, com o título visível.
+- [ ] O botão abre o WhatsApp certo, com a mensagem pronta no idioma da página, testado em aparelho real.
+- [ ] O número aparece em um arquivo só no código.
+- [ ] Leitor de tela lê os passos como lista ordenada.

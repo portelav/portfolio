@@ -7,17 +7,16 @@ Sem data fixa (PRD, D5). Todo o trabalho entra na `main` deste repositório, pub
 | Item | Critério de pronto | Plano |
 |---|---|---|
 | Base técnica | Next.js 16, Tailwind 4, Motion e `next-intl` rodando em `/` e `/en`. Tokens, fontes e ícones do kit no lugar. Hook de lint e typecheck, e CI com `gitleaks`, verdes em PR para `main` | `tasks/base-tecnica.md` |
-| Cabeçalho e rodapé | FDD escrito e implementado, com seletores de idioma e tema e página 404 | `tasks/cabecalho-rodape.md` |
-| Abertura | FDD `docs/fdd/abertura.md` aprovado e implementado, nos dois idiomas | `tasks/abertura.md` |
-| Projetos | FDD escrito e implementado, com os três casos da PRD, seção 6 | a criar |
-| Sobre | FDD escrito e implementado | a criar |
-| Contato e nota de privacidade | FDD escrito e implementado, com e-mail, LinkedIn, GitHub e WhatsApp | a criar |
-| Lançamento | Critérios do PRD, seção 10, cumpridos. Web Analytics ligado. Prévia de link pronta. `noindex` retirado. Chamadas da abertura levando a seções existentes. Conferido no painel da Vercel como `portelav.vercel.app` passa de projeto, e o endereço apontando para o projeto novo | a criar |
+| Direção "trabalho na primeira tela" (PRD, D44 a D56) | A branch `proto/trabalho-primeiro` passa por teste em aparelho real e auditoria, com os FDDs de cabeçalho e rodapé, abertura, projetos, sobre, tecnologias e quer um site atendidos, e entra na `main` | `tasks/trabalho-primeiro.md` |
+| Contato e nota de privacidade | FDD `docs/fdd/contato.md` aprovado e implementado, com os quatro canais, nota nos dois idiomas e link no rodapé | `tasks/trabalho-primeiro.md` |
+| Lançamento | Critérios do PRD, seção 10, cumpridos. Web Analytics ligado. Prévia de link pronta. `noindex` retirado. Teste de 1 minuto feito. LCP medido. Conferido no painel da Vercel como `portelav.vercel.app` passa de projeto, e o endereço apontando para o projeto novo | a criar |
 
 ## Depois
 
 - Domínio próprio (PRD, D7).
 - Outros projetos além dos três casos em destaque.
+- Regravar os vídeos dos casos com mais capricho.
+- Página própria para um caso, se o teste com pessoas pedir mais detalhe. Revê PRD, D42.
 
 ## Talvez
 
@@ -28,4 +27,5 @@ Sem data fixa (PRD, D5). Todo o trabalho entra na `main` deste repositório, pub
 
 | O quê | De quem | Desde |
 |---|---|---|
-| Frase de apresentação e textos das seções | Lucas | 2026-11-01 |
+| Currículo em PDF, nos dois idiomas | Lucas | 2026-11-03 |
+| Revisão do inglês | Lucas | 2026-11-03 |
