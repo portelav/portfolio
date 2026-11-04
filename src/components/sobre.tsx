@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const repoUrl = "https://github.com/portelav/portfolio";
 
-// The move from Law in one sentence, beside a contained portrait.
+// One sentence beside a contained portrait.
 export function Sobre() {
   const t = useTranslations("About");
 

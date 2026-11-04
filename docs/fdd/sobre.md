@@ -1,11 +1,11 @@
 # FDD: Seção Sobre
 
 Status: implementado
-PRD: seção 6, item Sobre; D17, D23, D34 e D55
+PRD: seção 6, item Sobre; D17, D55 e D61
 
 ## Objetivo
 
-O visitante entende de onde Lucas veio e onde está agora, em uma frase.
+O visitante entende como Lucas trabalha, em uma frase.
 
 ## Conteúdo
 
@@ -14,13 +14,12 @@ O inglês é proposto, para revisão de Lucas.
 | Lugar | pt-BR | Inglês |
 |---|---|---|
 | Título | Sobre | About |
-| Frase | Comecei no Direito e saí porque não me via trabalhando nessa área. Hoje estudo Ciência da Computação na Afya UNIMA e estou aprendendo a desenvolver com IA. | I started in Law and left because I couldn't see myself working in it. Now I study Computer Science at Afya UNIMA and I'm learning to build software with AI. |
+| Frase | Curso Ciência da Computação e me importo com os pequenos detalhes: como o site fica no celular, o tempo de cada animação, o texto de cada botão. | I study Computer Science and I care about the small details: how a site feels on a phone, the timing of each animation, the words on each button. |
 | Repositório | O código deste site é público, com as decisões registradas no repositório. | This site's code is public, with its decisions on record in the repository. |
 | Texto alternativo | Ilustração de Lucas Portela, sorrindo, de barba e camiseta preta. | Illustration of Lucas Portela, smiling, with a beard and a black T-shirt. |
 
 - Retrato: `public/sobre/lucas.webp`, 1100 x 1100, com as bordas esfumadas por máscara.
 - "Repositório" é link para https://github.com/portelav/portfolio.
-- A frase fala de como Lucas aprende, por escolha do dono, e não é atribuição de autoria (PRD, D37 e D48).
 
 ## Comportamento
 
@@ -35,7 +34,7 @@ A seção sobe 1,5 rem e aparece ao entrar na tela, ligada à rolagem. Sem efeit
 
 ## Regras
 
-1. A história do Direito cabe em uma frase.
+1. O texto cabe em uma frase e não cita o nome da instituição (PRD, D61).
 2. A frase não cita o período do curso (PRD, D36).
 3. Retrato em tamanho contido, nunca como elemento principal da seção.
 4. Imagem sem metadado.
