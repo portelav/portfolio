@@ -102,7 +102,7 @@ Fontes carregadas por `next/font`, servidas do próprio site. Nada abaixo de 14 
 
 | O quê | Gatilho | Duração e curva | Por quê |
 |---|---|---|---|
-| Reescrita | Toda carga de `/` e `/en` sem âncora (PRD, D46) | 2,6 s, com cada letra de 140 a 230 ms, ver `docs/fdd/abertura.md` | Conta a troca do Direito pelo código |
+| Reescrita | Toda carga de `/` e `/en` sem âncora (PRD, D46) | 2,6 s, com cada letra de 140 a 230 ms, ver `docs/fdd/abertura.md` | Passa o nome da letra de livro para a letra de código |
 | Voo do nome | Fim da Reescrita, depois de 350 ms | 800 ms, `cubic-bezier(0.77, 0, 0.175, 1)` | Leva o nome até o lugar dele no cabeçalho |
 | Chegada da abertura | Fim do preloader | 900 ms em `--ease-out-quint`, com atrasos de 0 a 240 ms | Completa o voo do nome |
 | Cursor do nome | Hover; foco onde o nome é link | Ciclo de 1,06 s em `steps(1)`, por 5 s, e depois aceso | A marca é o instante da digitação |

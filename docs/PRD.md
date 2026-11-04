@@ -4,7 +4,7 @@ Documento vivo. O quê e por quê. Decisão de produto nova entra no registro da
 
 ## 1. Visão
 
-Site pessoal de Lucas Portela, estudante de Ciência da Computação na Afya UNIMA, em Maceió. Quem chega entende rápido quem é Lucas, vê projetos reais e sabe como entrar em contato.
+Site pessoal de Lucas Portela, estudante de Ciência da Computação em Maceió. Quem chega entende rápido quem é Lucas, vê projetos reais e sabe como entrar em contato.
 
 ## 3. Público
 
@@ -31,7 +31,7 @@ Seções na ordem da página (D45). Detalhe no FDD de cada uma. "Na `main`" quer
 | Cabeçalho e rodapé | Seletores de idioma e tema, nome depois do preloader, rodapé e página 404 | `docs/fdd/cabecalho-rodape.md` | na `main` |
 | Abertura | Reescrever o nome no preloader e dizer quem é, o que faz e o que procura | `docs/fdd/abertura.md` | na `main` |
 | Projetos | Mostrar os três casos em destaque, com a parte de Lucas em cada um | `docs/fdd/projetos.md` | na `main` |
-| Sobre | Contar a trajetória de forma curta | `docs/fdd/sobre.md` | na `main` |
+| Sobre | Dizer como Lucas trabalha, em uma frase | `docs/fdd/sobre.md` | na `main` |
 | Tecnologias | Listar linguagens e tecnologias que Lucas usa | `docs/fdd/tecnologias.md` | na `main` |
 | Quer um site? | Dizer a quem quer contratar um site o que recebe e como funciona | `docs/fdd/quer-um-site.md` | na `main` |
 | Contato | Levar a WhatsApp, e-mail, LinkedIn e GitHub | `docs/fdd/contato.md` | na `main` |
@@ -130,7 +130,7 @@ Cada rodada é uma conversa com o dono. Decisões numeradas (D1, D2...) para o a
 - **D14.** Medição com Vercel Web Analytics (ADR 0003).
 - **D15.** Substituída por D21. Reconstrução na branch `v2`. Ela só entra na `main` no lançamento.
 - **D16.** Ajustada por D27. O cursor do nome pisca e, depois de 5 s, para aceso. Volta a piscar ao passar o mouse ou focar. Atende à WCAG 2.2.2.
-- **D17.** Curso: Ciência da Computação, Afya UNIMA, 4º período, passando ao 5º em 2027.
+- **D17.** Curso: Ciência da Computação, 4º período, passando ao 5º em 2027.
 - **D18.** A identidade visual é a do kit de marca e não se redesenha neste projeto (`docs/design/DESIGN.md`).
 - **D19.** Medida de sucesso: o teste de 1 minuto da seção 5, proposto no kickoff.
 
@@ -142,7 +142,7 @@ Cada rodada é uma conversa com o dono. Decisões numeradas (D1, D2...) para o a
 ### Rodada 3 (2026-11-02): revisão do PRD e do FDD da abertura
 
 - **D22.** A landing da Dra. Thaiane aparece como projeto real, sem ser chamada de cliente.
-- **D23.** A troca do Direito pela computação pode aparecer no site. É o motivo da Reescrita.
+- **D23.** Substituída por D61. A troca do Direito pela computação pode aparecer no site. É o motivo da Reescrita.
 - **D24.** O e-mail de contato no site é o Gmail do próprio Lucas, por escolha do dono. Mora em um arquivo só.
 - **D25.** O site tem modo escuro e claro, com seletor. O modo padrão fecha na base técnica.
 - **D26.** Cabeçalho, rodapé e página 404 entram no escopo, com FDD próprio.
@@ -162,7 +162,7 @@ Cada rodada é uma conversa com o dono. Decisões numeradas (D1, D2...) para o a
 
 ### Rodada 6 (2026-11-02): abertura
 
-- **D34.** A troca do Direito pela computação é contada no Sobre. A abertura tem só a frase curta de apresentação.
+- **D34.** Substituída por D61. A troca do Direito pela computação é contada no Sobre. A abertura tem só a frase curta de apresentação.
 - **D35.** Substituída por D49. As chamadas da abertura são "Ver projetos" e "Falar comigo".
 - **D36.** A frase de apresentação não cita o período do curso, para não envelhecer.
 - **D37.** Substituída por D48. A frase de apresentação é "Me chamo Lucas Portela e estudo Ciência da Computação. Atualmente estou aprendendo a desenvolver com IA." Fala de como Lucas aprende, por escolha do dono, e não é atribuição de autoria. Ajusta o início previsto na D28.
@@ -184,16 +184,20 @@ Depois de comparar o rascunho com uma amostra de portfólios de outros devs, o d
 - **D45.** Ordem da página: abertura, projetos, sobre, tecnologias, "Quer um site?" e contato. Ajusta D42.
 - **D46.** O preloader fica: a Reescrita roda em tela limpa em toda carga de `/` e `/en` sem âncora, e o nome voa até o cabeçalho, somando cerca de 3,8 s. A rolagem fica presa nesse tempo. Os tempos da Reescrita continuam os da D38. Substitui D29.
 - **D47.** O nome fica no cabeçalho desde o fim do preloader. O cabeçalho sai ao rolar para baixo e volta ao rolar para cima. Substitui D30 e ajusta D33.
-- **D48.** A frase de apresentação é "Me chamo Lucas Portela e já fiz alguns sites que estão no ar.", seguida de "Estudo Ciência da Computação em Maceió. Procuro estágio em desenvolvimento e faço sites para quem precisa de um." O aprendizado com IA passa para o Sobre, com o mesmo sentido da D37. Substitui D37.
+- **D48.** Ajustada por D61. A frase de apresentação é "Me chamo Lucas Portela e já fiz alguns sites que estão no ar.", seguida de "Estudo Ciência da Computação em Maceió. Procuro estágio em desenvolvimento e faço sites para quem precisa de um." O aprendizado com IA passa para o Sobre, com o mesmo sentido da D37. Substitui D37.
 - **D49.** As chamadas da abertura são "Quero um site" e "Falar sobre estágio", uma para cada público (D1). Substitui D35.
 - **D50.** Cada caso diz a parte de Lucas no trabalho. Em dupla, com o nome do Vinicius ao lado (D41). Lucas confirmou o texto de cada caso. Substitui D39.
 - **D51.** Cada caso tem um vídeo do próprio site sobre o print, um tocando por vez e com pausa. Celular e computador têm print e vídeo próprios. Quem aparece autorizou.
 - **D52.** Tecnologias entra como seção própria, depois do Sobre, com os logos nas cores originais. O veto a ícones coloridos sai do `DESIGN.md`.
 - **D53.** O bloco "Quer um site?" tem oferta, quatro passos e um botão para o WhatsApp com mensagem pronta. Sem preço por enquanto. Os passos são compromisso de Lucas com quem contrata.
 - **D54.** Contato lista WhatsApp, e-mail, LinkedIn e GitHub, nessa ordem. Número e e-mail moram em um arquivo só. Ajusta a ordem da D9.
-- **D55.** O Sobre conta a saída do Direito em uma frase, com um retrato ilustrado em tamanho contido. Sem efeito preso à rolagem. Mantém D34.
+- **D55.** Ajustada por D61. O Sobre conta a saída do Direito em uma frase, com um retrato ilustrado em tamanho contido. Sem efeito preso à rolagem. Mantém D34.
 - **D56.** O site troca "muito espaço, poucos elementos por tela" por mais conteúdo em cada tela: quem chega sem contexto precisa entender o que Lucas faz. Sem biblioteca de rolagem suave.
 - **D57.** A nota de privacidade é um bloco curto no fim da própria página, com o link do rodapé levando até ele. Mantém a página única (D42), sem rota nova.
 - **D58.** Motion sai das dependências, porque nenhum componente o usa. O movimento fica em CSS e nas APIs do navegador (ADR 0004). Ajusta D6.
 - **D59.** "Full stack" e "soluções" deixam de ser palavras vetadas, por decisão do dono.
 - **D60.** O preloader fica em toda carga, e o dono aceita o LCP acima da meta da seção 8 na página inicial: cerca de 4,8 s sem limite de rede e de 5,6 a 6,7 s em 4G lento simulado. O tempo da sequência passa a contar desde o começo da própria animação, e não desde a carga do JavaScript. Com isso, a espera no 4G lento cai de até 7 s para cerca de 4,7 s. Ajusta a seção 8.
+
+### Rodada 9 (2026-11-04): auditoria de textos
+
+- **D61.** A frase do Sobre é "Curso Ciência da Computação e me importo com os pequenos detalhes: como o site fica no celular, o tempo de cada animação, o texto de cada botão." O site não cita a saída do Direito, o aprendizado com IA nem o nome da instituição, por decisão do dono. Substitui D23 e D34, e ajusta D48 e D55. Retrato e movimento da D55 continuam.

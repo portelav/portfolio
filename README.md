@@ -1,12 +1,12 @@
 # portfolio
 
-Site pessoal de Lucas Portela, estudante de Ciência da Computação na Afya UNIMA, em Maceió.
+Site pessoal de Lucas Portela, estudante de Ciência da Computação em Maceió.
 
 **Estado:** em reconstrução do zero, com as seções em protótipo, ainda sem lançamento. Até lá, https://portelav.vercel.app continua mostrando a versão antiga, que não vem deste repositório.
 
 ## O que vem aí
 
-- Abertura com o nome reescrito da letra de livro para a letra de código, contando a troca do Direito pela computação.
+- Abertura com o nome reescrito da letra de livro para a letra de código.
 - Projetos reais logo na primeira tela, com vídeo e com o que fiz em cada um.
 - Um caminho direto para quem quer contratar um site e outro para quem avalia estágio.
 - Português e inglês, modo escuro e claro, celular primeiro.

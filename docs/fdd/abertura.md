@@ -12,7 +12,7 @@ Depois de ver o nome `portelav` ser reescrito, o visitante sabe, na mesma tela, 
 **Preloader**
 
 - Nome `portelav`, com o cursor âmbar no fim.
-- A palavra primeiro em Libre Caslon Text, a letra de livro de Direito. Depois em IBM Plex Mono Medium, a da marca. As duas em vetor.
+- A palavra primeiro em Libre Caslon Text, a letra de livro. Depois em IBM Plex Mono Medium, a da marca. As duas em vetor.
 
 **Primeira tela.** O texto em inglês é proposto, para revisão de Lucas.
 
@@ -25,7 +25,6 @@ Depois de ver o nome `portelav` ser reescrito, o visitante sabe, na mesma tela, 
 | Chamada para quem avalia estágio | Falar sobre estágio | Talk about an internship |
 
 - A frase não cita o período, para não envelhecer (PRD, D36).
-- A troca do Direito pela computação é contada no Sobre (PRD, D34).
 
 > TODO: botão de currículo, quando existir o PDF nos dois idiomas. Até lá, sem link morto.
 
@@ -43,7 +42,7 @@ Depois de ver o nome `portelav` ser reescrito, o visitante sabe, na mesma tela, 
 
 ## Movimento
 
-**Reescrita**, a história da troca do Direito pelo código (PRD, D38):
+**Reescrita**, a passagem da letra de livro para a letra de código (PRD, D38):
 
 1. A palavra aparece em Libre Caslon Text e fica parada por 500 ms, sem cursor.
 2. O cursor âmbar surge no fim da palavra e, depois de 200 ms, apaga a palavra, a 40 ms por letra.
