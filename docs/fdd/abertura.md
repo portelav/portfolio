@@ -18,10 +18,10 @@ Depois de ver o nome `portelav` ser reescrito, o visitante sabe, na mesma tela, 
 
 | Lugar | pt-BR | Inglês |
 |---|---|---|
-| Frase de apresentação | Me chamo Lucas Portela e já fiz alguns sites que estão no ar. | I'm Lucas Portela, and I've already built a few websites that are live. |
+| Frase de apresentação | Me chamo Lucas Portela e já fiz alguns sites que estão no ar. | I'm Lucas Portela, and I've built a few websites that are live. |
 | Trecho em destaque | sites que estão no ar | websites that are live |
-| Apoio | Estudo Ciência da Computação em Maceió. Procuro estágio em desenvolvimento e faço sites para quem precisa de um. | I study Computer Science in Maceió, Brazil. I'm looking for a development internship, and I build sites for people who need one. |
-| Chamada para quem quer um site | Quero um site | I need a site |
+| Apoio | Estudo Ciência da Computação em Maceió. Procuro estágio em desenvolvimento e faço sites para quem precisa de um. | I study Computer Science in Maceió, Brazil. I'm looking for a development internship, and I build websites for people who need one. |
+| Chamada para quem quer um site | Quero um site | I need a website |
 | Chamada para quem avalia estágio | Falar sobre estágio | Talk about an internship |
 
 - A frase não cita o período, para não envelhecer (PRD, D36).

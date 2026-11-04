@@ -4,7 +4,7 @@ export const whatsappUrl = "https://wa.me/5582996176726";
 export const channels = [
   {
     key: "whatsapp",
-    value: "(82) 99617-6726",
+    value: "+55 82 99617-6726",
     href: whatsappUrl,
   },
   {

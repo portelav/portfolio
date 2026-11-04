@@ -1,7 +1,7 @@
 {
   "Metadata": {
     "title": "Lucas Portela",
-    "description": "Site pessoal de Lucas Portela, estudante de Ciência da Computação em Maceió."
+    "description": "Lucas Portela estuda Ciência da Computação em Maceió, procura estágio em desenvolvimento e faz sites para quem precisa de um."
   },
   "Home": {
     "name": "portelav",
@@ -37,14 +37,14 @@
     "seeCode": "Ver código",
     "landing": {
       "detail": "Dra. Thaiane Lessa · CRO/AL-6418",
-      "alt": "Primeira tela da landing: o título “sorrir é sempre uma boa ideia”.",
-      "siteLabel": "Ver site da landing da Dra. Thaiane Lessa",
-      "codeLabel": "Ver código da landing da Dra. Thaiane Lessa",
+      "alt": "Primeira tela do site da Dra. Thaiane Lessa: o título “sorrir é sempre uma boa ideia”.",
+      "siteLabel": "Ver o site da Dra. Thaiane Lessa",
+      "codeLabel": "Ver o código do site da Dra. Thaiane Lessa",
       "name": "Dra. Thaiane Lessa",
       "kind": "Site · feito sozinho",
       "what": "Página de uma cirurgiã-dentista em Maceió, que apresenta a profissional e leva o visitante ao WhatsApp.",
       "part": "Tudo, do desenho ao código, pensado primeiro para o celular.",
-      "decision": "Sem paciente, sem antes e depois e sem promessa de resultado, por causa das regras de publicidade do CFO."
+      "decision": "Sem paciente, sem antes e depois e sem promessa de resultado, por causa das regras de publicidade do Conselho Federal de Odontologia."
     },
     "draftcs": {
       "alt": "Primeira tela do DraftCS: a chamada “Monte o time invencível”.",
@@ -59,7 +59,7 @@
       "siteLabel": "Ver site do Crewz",
       "name": "Crewz",
       "kind": "Rede social · em dupla com <coauthor>Vinicius</coauthor>",
-      "what": "Rede social para encontrar quem quer fazer o que você quer fazer.",
+      "what": "Você acha grupos, eventos e pessoas pela atividade, como pedal, corrida ou clube do livro.",
       "part": "Design system, redesenho visual, onboarding, perfil, mensagens diretas e busca."
     },
     "videoPause": "Pausar vídeo",

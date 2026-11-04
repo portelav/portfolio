@@ -14,8 +14,8 @@ O inglês é proposto, para revisão de Lucas.
 | Lugar | pt-BR | Inglês |
 |---|---|---|
 | Título | Sobre | About |
-| Frase | Curso Ciência da Computação e me importo com os pequenos detalhes: como o site fica no celular, o tempo de cada animação, o texto de cada botão. | I study Computer Science and I care about the small details: how a site feels on a phone, the timing of each animation, the words on each button. |
-| Repositório | O código deste site é público, com as decisões registradas no repositório. | This site's code is public, with its decisions on record in the repository. |
+| Frase | Curso Ciência da Computação e me importo com os pequenos detalhes: como o site fica no celular, o tempo de cada animação, o texto de cada botão. | I study Computer Science and I care about the small details: how a website feels on a phone, the timing of each animation, the words on each button. |
+| Repositório | O código deste site é público, com as decisões registradas no repositório. | This website's code is public, with its decisions on record in the repository. |
 | Texto alternativo | Ilustração de Lucas Portela, sorrindo, de barba e camiseta preta. | Illustration of Lucas Portela, smiling, with a beard and a black T-shirt. |
 
 - Retrato: `public/sobre/lucas.webp`, 1100 x 1100, com as bordas esfumadas por máscara.

@@ -14,7 +14,7 @@ Quem quer falar com Lucas encontra todos os caminhos em um lugar só, e sabe o q
 | Lugar | pt-BR | Inglês |
 |---|---|---|
 | Título | Contato | Contact |
-| Apoio | Se quiser conversar sobre estágio ou um site, é por aqui. | If you want to talk about an internship or a site, this is the place. |
+| Apoio | Se quiser conversar sobre estágio ou um site, é por aqui. | If you want to talk about an internship or a website, reach me here. |
 
 | Ordem | Canal | Mostra | Leva a |
 |---|---|---|---|
@@ -37,7 +37,7 @@ Texto aprovado por Lucas em 2026-11-03:
 | Lugar | pt-BR | Inglês |
 |---|---|---|
 | Título e link do rodapé | Privacidade | Privacy |
-| Nota | Este site conta visitas e de onde elas vêm, para eu saber se ele está sendo visto. Quem faz essa contagem é a Vercel, com o Web Analytics, sem cookies. A sua escolha de tema fica só no seu navegador. | This site counts visits and where they come from, so I know whether it's being seen. Vercel does the counting, through Web Analytics, without cookies. Your theme choice stays in your browser. |
+| Nota | Este site conta visitas e de onde elas vêm, para eu saber se ele está sendo visto. Quem faz essa contagem é a Vercel, com o Web Analytics, sem cookies. A sua escolha de tema fica só no seu navegador. | This website counts visits and where they come from, so I know whether it's being seen. Vercel does the counting, through Web Analytics, without cookies. Your theme choice stays in your browser. |
 
 ## Comportamento
 

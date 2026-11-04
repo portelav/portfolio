@@ -15,11 +15,11 @@ Título da seção: "Projetos"; em inglês, "Projects". Rótulos: "Minha parte" 
 
 | Campo | pt-BR | Inglês |
 |---|---|---|
-| Tipo | Site · feito sozinho | Site · built on my own |
+| Tipo | Site · feito sozinho | Website · built on my own |
 | O que é | Página de uma cirurgiã-dentista em Maceió, que apresenta a profissional e leva o visitante ao WhatsApp. | A page for a dental surgeon in Maceió that introduces her and takes visitors to WhatsApp. |
 | Minha parte | Tudo, do desenho ao código, pensado primeiro para o celular. | All of it, from design to code, made for phones first. |
-| Uma decisão | Sem paciente, sem antes e depois e sem promessa de resultado, por causa das regras de publicidade do CFO. | No patients, no before and after and no promised results, because of the Brazilian dental council's advertising rules. |
-| Detalhe | Dra. Thaiane Lessa · CRO/AL-6418 | igual |
+| Uma decisão | Sem paciente, sem antes e depois e sem promessa de resultado, por causa das regras de publicidade do Conselho Federal de Odontologia. | No patients, no before-and-after photos and no promised results, because of the Brazilian dental council's advertising rules. |
+| Detalhe | Dra. Thaiane Lessa · CRO/AL-6418 | Dr. Thaiane Lessa · CRO/AL-6418 |
 
 **2. DraftCS**
 
@@ -27,17 +27,17 @@ Título da seção: "Projetos"; em inglês, "Projects". Rótulos: "Minha parte" 
 |---|---|---|
 | Tipo | Jogo web · em dupla com Vinicius | Web game · with Vinicius |
 | O que é | Você sorteia um elenco real de um Major de Counter-Strike, escala cinco jogadores e simula a corrida pelo título. | You draw a real Counter-Strike Major roster, pick five players and simulate the run for the title. |
-| Minha parte | Curadoria dos dados de jogadores, elencos e países, a rolagem do simulador no celular e a área de compartilhar o resultado. | Curating player, roster and country data, scrolling in the simulator on phones and the area for sharing a result. |
+| Minha parte | Curadoria dos dados de jogadores, elencos e países, a rolagem do simulador no celular e a área de compartilhar o resultado. | Curating player, roster and country data, the simulator's scrolling on phones, and the area for sharing results. |
 
 **3. Crewz**
 
 | Campo | pt-BR | Inglês |
 |---|---|---|
 | Tipo | Rede social · em dupla com Vinicius | Social network · with Vinicius |
-| O que é | Rede social para encontrar quem quer fazer o que você quer fazer. | A social network for finding people who want to do what you want to do. |
+| O que é | Você acha grupos, eventos e pessoas pela atividade, como pedal, corrida ou clube do livro. | You find groups, events and people by activity, like cycling, running or book clubs. |
 | Minha parte | Design system, redesenho visual, onboarding, perfil, mensagens diretas e busca. | Design system, visual redesign, onboarding, profile, direct messages and search. |
 
-- Links: "Ver site" em todos, e "Ver código" só na landing, porque os outros repositórios são privados. Em inglês, "Visit site" e "See code".
+- Links: "Ver site" em todos, e "Ver código" só na landing, porque os outros repositórios são privados. Em inglês, "Visit website" e "See code".
 - "Vinicius" é link para https://github.com/ViniciusLoureiro67/ (PRD, D41).
 
 **Mídia de cada caso**

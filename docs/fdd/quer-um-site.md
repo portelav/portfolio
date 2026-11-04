@@ -13,7 +13,7 @@ O inglês é proposto, para revisão de Lucas.
 
 | Lugar | pt-BR | Inglês |
 |---|---|---|
-| Título | Quer um site? | Need a site? |
+| Título | Quer um site? | Need a website? |
 | Oferta | Faço a página do seu negócio do desenho ao código, pensada primeiro para o celular e com um caminho direto até o seu WhatsApp. | I build the page for your business from design to code, made for phones first, with a direct path to your WhatsApp. |
 | Botão | Falar no WhatsApp | Message me on WhatsApp |
 | Mensagem pronta | Oi, Lucas. Quero um site. | Hi Lucas, I need a website. |
@@ -21,7 +21,7 @@ O inglês é proposto, para revisão de Lucas.
 | Passo 1 | Você me conta o que precisa. | You tell me what you need. |
 | Passo 2 | Combinamos escopo e prazo por escrito. | We agree on scope and deadline in writing. |
 | Passo 3 | Você acompanha por um link de prévia. | You follow along through a preview link. |
-| Passo 4 | O site vai ao ar. | The site goes live. |
+| Passo 4 | O site vai ao ar. | The website goes live. |
 
 ## Comportamento
 

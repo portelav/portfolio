@@ -1,17 +1,17 @@
 {
   "Metadata": {
     "title": "Lucas Portela",
-    "description": "Personal site of Lucas Portela, a Computer Science student in Maceió."
+    "description": "Lucas Portela studies Computer Science in Maceió, Brazil, is looking for a development internship, and builds websites for people who need one."
   },
   "Home": {
     "name": "portelav",
-    "headline": "I'm Lucas Portela, and I've already built a few <accent>websites that are live</accent>.",
-    "lead": "I study Computer Science in Maceió, Brazil. I'm looking for a development internship, and I build sites for people who need one.",
-    "wantSite": "I need a site",
+    "headline": "I'm Lucas Portela, and I've built a few <accent>websites that are live</accent>.",
+    "lead": "I study Computer Science in Maceió, Brazil. I'm looking for a development internship, and I build websites for people who need one.",
+    "wantSite": "I need a website",
     "internship": "Talk about an internship"
   },
   "Header": {
-    "homeLabel": "portelav, back to top",
+    "homeLabel": "portelav, back to home",
     "themeToLight": "Light",
     "themeToDark": "Dark",
     "themeToLightLabel": "Switch to light mode",
@@ -33,33 +33,33 @@
   },
   "Projects": {
     "title": "Projects",
-    "visitSite": "Visit site",
+    "visitSite": "Visit website",
     "seeCode": "See code",
     "landing": {
-      "detail": "Dra. Thaiane Lessa · CRO/AL-6418",
-      "alt": "First screen of the landing page: the headline “sorrir é sempre uma boa ideia”.",
-      "siteLabel": "Visit site of the landing page for Dra. Thaiane Lessa",
-      "codeLabel": "See code of the landing page for Dra. Thaiane Lessa",
-      "name": "Dra. Thaiane Lessa",
-      "kind": "Site · built on my own",
+      "detail": "Dr. Thaiane Lessa · CRO/AL-6418",
+      "alt": "First screen of Dr. Thaiane Lessa's website: the headline “sorrir é sempre uma boa ideia”.",
+      "siteLabel": "Visit Dr. Thaiane Lessa's website",
+      "codeLabel": "See the code for Dr. Thaiane Lessa's website",
+      "name": "Dr. Thaiane Lessa",
+      "kind": "Website · built on my own",
       "what": "A page for a dental surgeon in Maceió that introduces her and takes visitors to WhatsApp.",
       "part": "All of it, from design to code, made for phones first.",
-      "decision": "No patients, no before and after and no promised results, because of the Brazilian dental council's advertising rules."
+      "decision": "No patients, no before-and-after photos and no promised results, because of the Brazilian dental council's advertising rules."
     },
     "draftcs": {
       "alt": "First screen of DraftCS: the call “Monte o time invencível”.",
-      "siteLabel": "Visit site of DraftCS",
+      "siteLabel": "Visit the DraftCS website",
       "name": "DraftCS",
       "kind": "Web game · with <coauthor>Vinicius</coauthor>",
       "what": "You draw a real Counter-Strike Major roster, pick five players and simulate the run for the title.",
-      "part": "Curating player, roster and country data, scrolling in the simulator on phones and the area for sharing a result."
+      "part": "Curating player, roster and country data, the simulator's scrolling on phones, and the area for sharing results."
     },
     "crewz": {
       "alt": "First screen of Crewz: the line “Encontre quem quer fazer o que você quer fazer”.",
-      "siteLabel": "Visit site of Crewz",
+      "siteLabel": "Visit the Crewz website",
       "name": "Crewz",
       "kind": "Social network · with <coauthor>Vinicius</coauthor>",
-      "what": "A social network for finding people who want to do what you want to do.",
+      "what": "You find groups, events and people by activity, like cycling, running or book clubs.",
       "part": "Design system, visual redesign, onboarding, profile, direct messages and search."
     },
     "videoPause": "Pause video",
@@ -77,27 +77,27 @@
     "linkedin": "LinkedIn",
     "github": "GitHub",
     "whatsapp": "WhatsApp",
-    "lead": "If you want to talk about an internship or a site, this is the place."
+    "lead": "If you want to talk about an internship or a website, reach me here."
   },
   "About": {
     "title": "About",
-    "text": "I study Computer Science and I care about the small details: how a site feels on a phone, the timing of each animation, the words on each button.",
-    "repo": "This site's code is public, with its decisions on record in the <link>repository</link>.",
+    "text": "I study Computer Science and I care about the small details: how a website feels on a phone, the timing of each animation, the words on each button.",
+    "repo": "This website's code is public, with its decisions on record in the <link>repository</link>.",
     "photoAlt": "Illustration of Lucas Portela, smiling, with a beard and a black T-shirt."
   },
   "Hire": {
-    "title": "Need a site?",
+    "title": "Need a website?",
     "lead": "I build the page for your business from design to code, made for phones first, with a direct path to your WhatsApp.",
     "cta": "Message me on WhatsApp",
     "stepsTitle": "How it works",
     "step1": "You tell me what you need.",
     "step2": "We agree on scope and deadline in writing.",
     "step3": "You follow along through a preview link.",
-    "step4": "The site goes live.",
+    "step4": "The website goes live.",
     "whatsappMessage": "Hi Lucas, I need a website."
   },
   "Privacy": {
     "title": "Privacy",
-    "text": "This site counts visits and where they come from, so I know whether it's being seen. Vercel does the counting, through Web Analytics, without cookies. Your theme choice stays in your browser."
+    "text": "This website counts visits and where they come from, so I know whether it's being seen. Vercel does the counting, through Web Analytics, without cookies. Your theme choice stays in your browser."
   }
 }
