@@ -201,3 +201,4 @@ Depois de comparar o rascunho com uma amostra de portfólios de outros devs, o d
 ### Rodada 9 (2026-11-04): auditoria de textos
 
 - **D61.** A frase do Sobre é "Curso Ciência da Computação e me importo com os pequenos detalhes: como o site fica no celular, o tempo de cada animação, o texto de cada botão." O site não cita a saída do Direito, o aprendizado com IA nem o nome da instituição, por decisão do dono. Substitui D23 e D34, e ajusta D48 e D55. Retrato e movimento da D55 continuam.
+- **D62.** Textos revistos na auditoria, com aval do dono. O Crewz passa a dizer "Você acha grupos, eventos e pessoas pela atividade, como pedal, corrida ou clube do livro." O WhatsApp aparece com o código do país. No inglês, o termo é "website", e o caso da landing se chama "Dr. Thaiane Lessa". Ajusta D50.
