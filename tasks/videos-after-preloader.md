@@ -3,7 +3,7 @@
 **Slug:** `videos-after-preloader`
 **Branch:** `fix/videos-after-preloader`
 **Seção ou área:** Projetos
-**Status:** Execution
+**Status:** Done (PR #6 mergeado em 2026-11-05)
 **Gate S2:** Livre
 
 ---
@@ -60,4 +60,18 @@ Build de produção local, em 2026-11-05, com contexto limpo do navegador e 4G l
 - Trocar o `preload` antes de `load()` gera um pedido cancelado em cerca de 2 ms em cada vídeo, sem dado baixado.
 - O único erro no console é o 404 de `/_vercel/insights/script.js`, que só existe na Vercel.
 - `lint`, `typecheck` e `build` verdes.
-- Falta: teste em aparelho real, feito por Lucas, e nova medição em produção depois do merge.
+- Lucas aprovou na prévia, e o PR #6 entrou na `main` em 2026-11-05, junto com o Crewz por dentro do app e a escolha entre celular e computador.
+
+### Em produção, depois do merge
+
+Medido em 2026-11-05, em `https://portelav-site.vercel.app`, em 390 px e 4G lento simulado, com contexto limpo do navegador.
+
+| Página | Fim do JS | Primeiro vídeo pedido | LCP | Elemento |
+|---|---|---|---|---|
+| `/` | de 3,24 a 3,29 s | de 5,33 a 5,35 s | 6,26 s, nas três medições | título |
+| `/en` | 3,29 s | 5,34 s | 6,25 s | título |
+
+- O JavaScript termina cerca de 1,2 s antes do que media em produção antes da mudança, de 4,43 a 4,49 s.
+- Os vídeos do DraftCS e do Crewz não baixaram sem rolagem.
+- O LCP fica abaixo da faixa aceita na D63, de 6,5 a 6,8 s. Parte da queda vem da troca do elemento medido: o título passou a ser o maior na tela, porque o print do primeiro caso desceu.
+- `noindex` continua na página.

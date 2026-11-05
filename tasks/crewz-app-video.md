@@ -3,7 +3,7 @@
 **Slug:** `crewz-app-video`
 **Branch:** `feat/crewz-app-video-light`
 **Seção ou área:** Projetos
-**Status:** Execution
+**Status:** Done (PR #6 mergeado em 2026-11-05)
 **Gate S2:** Livre
 
 ---
