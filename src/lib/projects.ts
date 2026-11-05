@@ -1,5 +1,6 @@
 // Links and images of the featured cases, in display order. Texts live in the
-// message files, under Projects.<id>.
+// message files, under Projects.<id>. A case with no computer image is an app
+// with no computer layout: it shows its phone media on every screen.
 export const projects = [
   {
     id: "landing",
@@ -16,7 +17,6 @@ export const projects = [
   },
   {
     id: "crewz",
-    image: "/projetos/crewz.webp",
     phoneImage: "/projetos/celular/crewz.webp",
     siteUrl: "https://crewz-ashy.vercel.app",
   },
