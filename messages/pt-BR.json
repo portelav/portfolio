@@ -55,7 +55,7 @@
       "part": "Curadoria dos dados de jogadores, elencos e países, a rolagem do simulador no celular e a área de compartilhar o resultado."
     },
     "crewz": {
-      "alt": "Primeira tela do Crewz: a frase “Encontre quem quer fazer o que você quer fazer”.",
+      "alt": "Tela inicial do app Crewz, com eventos e grupos em destaque.",
       "siteLabel": "Ver site do Crewz",
       "name": "Crewz",
       "kind": "Rede social · em dupla com <coauthor>Vinicius</coauthor>",
@@ -64,6 +64,9 @@
     },
     "videoPause": "Pausar vídeo",
     "videoPlay": "Reproduzir vídeo",
+    "viewLabel": "Versão de {name}",
+    "viewPhone": "Celular",
+    "viewComputer": "Computador",
     "partLabel": "Minha parte",
     "decisionLabel": "Uma decisão"
   },

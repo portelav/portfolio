@@ -55,7 +55,7 @@
       "part": "Curating player, roster and country data, the simulator's scrolling on phones, and the area for sharing results."
     },
     "crewz": {
-      "alt": "First screen of Crewz: the line “Encontre quem quer fazer o que você quer fazer”.",
+      "alt": "Home screen of the Crewz app, with featured events and groups.",
       "siteLabel": "Visit the Crewz website",
       "name": "Crewz",
       "kind": "Social network · with <coauthor>Vinicius</coauthor>",
@@ -64,6 +64,9 @@
     },
     "videoPause": "Pause video",
     "videoPlay": "Play video",
+    "viewLabel": "Version of {name}",
+    "viewPhone": "Phone",
+    "viewComputer": "Computer",
     "partLabel": "My part",
     "decisionLabel": "One decision"
   },

@@ -127,6 +127,7 @@ Fontes carregadas por `next/font`, servidas do próprio site. Nada abaixo de 14 
 | Botão principal, em `--fg` sobre `--bg` invertido | Abertura; Quer um site? | Padrão, foco, hover |
 | Botão secundário, com borda em `--line` | Abertura | Padrão, foco, hover |
 | Print com vídeo por cima, e botão de pausa | Projetos | Só print, tocando, pausado, movimento reduzido |
+| Escolha entre celular e computador, em botões de texto | Projetos | Padrão, escolhido, foco, hover |
 | Linha de contato | Contato | Padrão, foco, hover |
 | Logo de tecnologia | Tecnologias | Padrão, hover |
 
