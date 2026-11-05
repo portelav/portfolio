@@ -104,7 +104,7 @@ Até 10 itens, um commit cada, na ordem do `/exec`. Correção encontrada no ite
 1. [x] Docs: fechar os TODOs do `docs/fdd/contato.md` com o texto aprovado, status `aprovado`
 2. [x] Mensagens e componente: bloco da nota com âncora `#privacidade`, composto na página depois de Contato
 3. [x] Rodapé: link da nota, nos dois idiomas
-4. [ ] Medição: `@vercel/analytics` e `Analytics` no layout. Ligar no painel da Vercel e conferir que a visita chega e nenhum cookie é criado. **Ligado: o script responde em produção, sem cookie. Falta ver a visita no painel, porque o script não conta navegador automatizado**
+4. [x] Medição: `@vercel/analytics` e `Analytics` no layout. Ligar no painel da Vercel e conferir que a visita chega e nenhum cookie é criado. **O script respondia em produção, sem cookie, mas o painel ainda não estava ativado. Lucas ativou em 2026-11-05, e a primeira visita apareceu no painel**
 5. [x] Conferência: percorrer os critérios dos sete FDDs no navegador, inclusive teclado, leitor de tela, sem JavaScript, movimento reduzido e deslocamento de layout. Registrar no Stage 7. Já conhecido: conferir se o título de `#site` para abaixo do cabeçalho
 6. [x] Tecnologias: aplicar a resposta sobre o Motion, e fechar o TODO do FDD
 7. [x] Limpeza: tirar marcas `SPIKE`, `cropX` e comentários de rascunho
