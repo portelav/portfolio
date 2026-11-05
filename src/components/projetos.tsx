@@ -3,7 +3,10 @@ import type { CSSProperties } from "react";
 import { useTranslations } from "next-intl";
 import { getImageProps } from "next/image";
 
+import { Link } from "@/i18n/navigation";
+
 import {
+  caseStudies,
   coauthorUrl,
   projectImageSize,
   projectPhoneImageSize,
@@ -115,6 +118,18 @@ export function Projetos() {
                 >
                   {t("visitSite")}
                 </a>
+                {project.id in caseStudies && (
+                  <Link
+                    href={{
+                      pathname: "/projetos/[id]",
+                      params: { id: project.id },
+                    }}
+                    aria-label={t("landing.caseLabel")}
+                    className={linkClassName}
+                  >
+                    {t("seeCase")}
+                  </Link>
+                )}
                 {project.id === "landing" && (
                   <a
                     href={project.codeUrl}

@@ -1,7 +1,8 @@
 import { useLocale, useTranslations } from "next-intl";
 
-import { Link } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
+
+import { LocaleLink } from "./locale-link";
 
 export function LocaleSwitcher() {
   const t = useTranslations("Language");
@@ -18,21 +19,14 @@ export function LocaleSwitcher() {
         const isCurrent = locale === currentLocale;
 
         return (
-          <Link
+          <LocaleLink
             key={locale}
-            href="/"
             locale={locale}
-            lang={locale}
-            hrefLang={locale}
-            aria-label={labels[locale].name}
-            aria-current={isCurrent ? "true" : undefined}
-            prefetch={false}
-            className={`inline-flex min-h-11 min-w-11 items-center justify-center font-mono text-sm ${
-              isCurrent ? "underline underline-offset-4" : ""
-            }`}
+            label={labels[locale].name}
+            current={isCurrent}
           >
             {labels[locale].short}
-          </Link>
+          </LocaleLink>
         );
       })}
     </nav>

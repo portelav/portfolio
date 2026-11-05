@@ -9,4 +9,12 @@ export const routing = defineRouting({
   localeCookie: false,
   // hreflang lives in the page metadata, not in a response header.
   alternateLinks: false,
+  // A case keeps its id in both languages, and the folder name in each one (PRD, D67).
+  pathnames: {
+    "/": "/",
+    "/projetos/[id]": {
+      "pt-BR": "/projetos/[id]",
+      en: "/projects/[id]",
+    },
+  },
 });
