@@ -12,9 +12,27 @@ type ProjectVideoProps = {
 // A pause on one project holds them all, so moving down the page keeps it.
 let held = false;
 
+// Runs once the preloader lets go, or at once on a load without it.
+function afterPreloader(run: () => void) {
+  const root = document.documentElement;
+  if (!root.dataset.reescrita) {
+    run();
+    return () => {};
+  }
+
+  const watcher = new MutationObserver(() => {
+    if (root.dataset.reescrita) return;
+    watcher.disconnect();
+    run();
+  });
+  watcher.observe(root, { attributeFilter: ["data-reescrita"] });
+  return () => watcher.disconnect();
+}
+
 // Sits over the screenshot and only shows once it plays, so a missing
 // file or reduced motion simply leaves the screenshot. Plays only while most
-// of it is on screen.
+// of it is on screen. Downloads nothing until the preloader is over and it is
+// close to the screen, so it never competes with the page's own code.
 export function ProjectVideo({
   src,
   phoneSrc,
@@ -44,6 +62,19 @@ export function ProjectVideo({
     video.addEventListener("playing", onPlaying);
     video.addEventListener("pause", onPause);
 
+    const loader = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) return;
+
+        loader.disconnect();
+        video.preload = "metadata";
+        // Without play(), only load() makes every browser fetch it, and the
+        // button needs that. Calling it during play() would abort the play.
+        if (video.paused) video.load();
+      },
+      { rootMargin: "100% 0px" },
+    );
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting && !held) {
@@ -56,9 +87,15 @@ export function ProjectVideo({
       },
       { threshold: 0.6 },
     );
-    observer.observe(video);
+
+    const stopWaiting = afterPreloader(() => {
+      loader.observe(video);
+      observer.observe(video);
+    });
 
     return () => {
+      stopWaiting();
+      loader.disconnect();
       observer.disconnect();
       video.removeEventListener("canplay", onCanPlay);
       video.removeEventListener("play", onPlay);
@@ -84,7 +121,7 @@ export function ProjectVideo({
         muted
         loop
         playsInline
-        preload="metadata"
+        preload="none"
         aria-hidden="true"
       >
         <source media="(min-width: 768px)" src={src} type="video/mp4" />
