@@ -87,7 +87,7 @@ export function ProjectMedia({
         />
       </div>
       {computer && (
-        <div role="group" aria-label={viewLabel} className="flex gap-6">
+        <div role="group" aria-label={viewLabel} className="flex gap-6 md:justify-center">
           {(
             [
               ["phone", viewPhone],
