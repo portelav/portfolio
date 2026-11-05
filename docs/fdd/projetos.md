@@ -57,6 +57,7 @@ Título da seção: "Projetos"; em inglês, "Projects". Rótulos: "Minha parte" 
 - O vídeo toca quando pelo menos 60% dele está na tela, e pausa ao sair.
 - O botão de pausa aparece quando o vídeo está pronto. Pausar um vídeo vale para os três, para ninguém precisar pausar de novo ao rolar.
 - No celular, o vídeo é mais alto que o print: ele se alinha ao topo, e a parte de baixo fica cortada.
+- O Crewz não tem layout de computador. A partir de 768 px, ele usa o print e o vídeo de celular, com a mesma altura dos outros casos, centrados na área da mídia (PRD, D65).
 - A mídia não é link. Os links são os de texto. Os links externos abrem na mesma aba.
 
 ## Movimento
