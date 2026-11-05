@@ -110,6 +110,7 @@ Fontes carregadas por `next/font`, servidas do próprio site. Nada abaixo de 14 
 | Vídeo do caso | Maior parte dele na tela | Laço de cerca de 9 s, com pausa | Mostra o site funcionando (PRD, D51) |
 | Cabeçalho | Rolar para baixo; rolar para cima; foco | 500 ms em `--ease-out-quint` | Dá espaço ao conteúdo sem perder o caminho de volta |
 | Logo de tecnologia | Hover | 200 ms: sobe 4 px e cresce 8% | Retorno de interação |
+| Ida e volta da página de caso | "Ver caso completo" e "Voltar aos projetos" | 400 ms em `--ease-out-quint`: a página desliza 60 px; a mídia do card cresce até a capa em 450 ms | Mostra que o visitante trocou de lugar (PRD, D69) |
 | Linha de contato | Hover | 350 ms: anda 0,5 rem | Retorno de interação |
 
 - Animação só de `transform` e `opacity`; nada de desfoque ou `mix-blend-mode` em elemento que se move.

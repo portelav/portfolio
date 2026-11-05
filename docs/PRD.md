@@ -214,3 +214,4 @@ Depois de comparar o rascunho com uma amostra de portfólios de outros devs, o d
 
 - **D67.** Cada projeto pode ter uma página de caso própria, aberta por "Ver caso completo", com pedido, público, regras, decisões, versões descartadas, resultado e aprendizado. A primeira é a da landing. O site deixa de ser só uma página, mas a página inicial continua sendo o caminho principal. Ajusta D42 e D45.
 - **D68.** O card da landing passa a dizer "Sem preço, sem promoção e sem promessa de resultado. Antes e depois só com autorização dos pacientes e com nome e CRO na imagem, por causa das regras do Conselho Federal de Odontologia.", porque o site da landing ganhou casos com antes e depois em 2026-10-28. Ajusta D50.
+- **D69.** A ida para a página de caso e a volta são animadas, para ficar claro que o visitante trocou de lugar: a página desliza, e a mídia do card cresce até a capa do caso. O topo do caso repete o card. Pedido do dono em 2026-11-05.

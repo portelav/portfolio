@@ -34,21 +34,28 @@ Imagens da landing, em `public/projetos/caso/landing/`, todas do topo da página
 | Outubro de 2026 | 780 x 1170 | 1350 x 900 |
 | No ar | 780 x 1170 | 1350 x 900 |
 
-Na seção de decisões, o vídeo de celular da landing que já está em Projetos.
+No topo, a mesma mídia do card de Projetos, com print e vídeo.
 
 ## Comportamento
 
 - Endereço próprio por caso: `/projetos/<id>` em português e `/en/projects/<id>` em inglês. Outro `id` dá a página 404.
 - No card do caso, em Projetos, o link "Ver caso completo", em inglês "See full case", ao lado de "Ver site".
 - No topo, "Voltar aos projetos" leva a `/#projetos`, no mesmo idioma.
-- Ordem: título, frase de abertura, links do site e do código, e as seções na ordem da tabela.
+- O topo repete o card do caso: o rótulo "Caso completo", em inglês "Full case", e o título no lugar do nome, a mídia do card, com os botões de versão, e a frase de abertura com os links do site e do código. Depois, as seções na ordem da tabela.
 - As versões aparecem em grade: no celular, duas por linha nos prints de celular e uma por linha nos de computador. No computador, quatro por linha nos de celular e duas nos de computador. Cada print tem legenda com a data.
 - O seletor de idioma leva ao mesmo caso no outro idioma.
 - Sem preloader.
 
 ## Movimento
 
-Nenhum movimento novo. O vídeo segue as regras de Projetos: toca com 60% na tela, tem pausa e não toca sozinho com `prefers-reduced-motion`.
+A troca de página deixa claro que o visitante foi para outro lugar (PRD, D69):
+
+| O quê | Gatilho | Como |
+|---|---|---|
+| Página | "Ver caso completo" e "Voltar aos projetos" | A página que sai vai 60 px para o lado e some; a que entra vem do outro lado. Ida para a esquerda, volta para a direita. 400 ms em `--ease-out-quint` |
+| Mídia do card | Os mesmos links | A mídia do card cresce até a capa do caso, e volta para o card na volta. 450 ms em `--ease-out-quint` |
+
+Usa a API de transição de vistas do navegador, pelo `ViewTransition` do React. Sem suporte, com `prefers-reduced-motion` ou pelo botão voltar do navegador, a troca é instantânea. O vídeo segue as regras de Projetos: toca com 60% na tela, tem pausa e não toca sozinho com `prefers-reduced-motion`.
 
 ## Regras
 

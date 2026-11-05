@@ -20,4 +20,5 @@ O movimento do site fica em CSS e nas APIs do navegador. Motion sai das dependê
 
 - Menos uma dependência para manter. Como nenhum componente a importava, o site não muda.
 - Efeitos ligados à rolagem usam `animation-timeline`. Navegador sem suporte mostra o conteúdo sem efeito.
+- A troca entre a página inicial e a página de caso usa a API de transição de vistas do navegador, pelo `ViewTransition` do React 19.3, com a animação em CSS. Navegador sem suporte troca de página sem efeito.
 - Se um movimento pedir física de mola ou gesto, Motion volta com ADR novo.
