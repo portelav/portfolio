@@ -206,3 +206,4 @@ Depois de comparar o rascunho com uma amostra de portfólios de outros devs, o d
 ### Rodada 10 (2026-11-05): LCP em produção
 
 - **D63.** Medido em produção em 2026-11-04, em 390 px e 4G lento simulado, o LCP da página inicial fica de 6,5 a 6,8 s na primeira visita e em cerca de 5,6 s com cache, sem diferença entre `/` e `/en`. O dono aceita esses valores. Cerca de 5 s vêm do preloader e da entrada do conteúdo, por decisão de produto. Ajusta D60.
+- **D64.** Os vídeos dos projetos só começam a baixar depois do preloader, e quando estão a até uma tela de distância. Isso libera a rede para o código da página e poupa os dados de quem não rola até eles. Em troca, o primeiro vídeo começa um pouco depois.
