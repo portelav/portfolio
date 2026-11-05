@@ -47,6 +47,17 @@
 4. **Animações:** quais você mais quer mostrar? Por exemplo, a entrada do topo, os serviços ou alguma transição.
 5. **Parte para dentistas:** entra no caso como "próximo passo", em uma frase, ou fica de fora?
 
+### Respostas de Lucas (2026-11-05)
+1. As seções se ligam: cada uma tira a dúvida que a anterior pode ter deixado.
+2. O vídeo do topo mostra a recepção, não a sala de atendimento.
+3. Não há prints das versões antigas. Eles serão montados a partir do histórico dos repositórios, e Lucas escolhe se entram.
+4. As animações a mostrar são o vídeo de abertura e as transições, principalmente no celular.
+5. A parte para dentistas entra como próximo passo.
+
+### Achado ao ler o projeto da landing
+- Desde 2026-10-28, o site da Dra. Thaiane mostra casos com antes e depois em Serviços, com consentimento dos pacientes e com nome e CRO na imagem (D44 do PRD da landing). O card do portfólio ainda diz "sem antes e depois". Lucas confirma o texto certo antes da correção.
+- As fotos de casos de Serviços não entram em print nem vídeo do portfólio, porque o portfólio não mostra paciente nem com consentimento.
+
 ### Premissas
 - O texto fala do pedido como "captar mais pacientes", sem chamar a Dra. Thaiane de cliente (D22), e sem citar a relação pessoal.
 - Sobre o prazo, o texto diz que não havia data e que a prioridade foi pôr o site no ar rápido. O motivo pessoal, de buscar emprego e clientes, só entra se Lucas pedir.
