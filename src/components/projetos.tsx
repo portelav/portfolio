@@ -55,11 +55,28 @@ export function Projetos() {
           return (
           <li
             key={project.id}
-            className={`grid gap-6 md:grid-cols-12 md:gap-10 ${index === 0 ? "intro-in" : "reveal"}`}
+            className={`grid gap-6 md:grid-cols-12 md:grid-rows-[auto_1fr] md:gap-x-10 md:gap-y-5 ${index === 0 ? "intro-in" : "reveal"}`}
             style={
               index === 0 ? ({ "--delay": "240ms" } as CSSProperties) : undefined
             }
           >
+            <div className="flex flex-col gap-1 md:col-span-4 md:col-start-9 md:row-start-1">
+              <h3 className="font-display text-xl">
+                {t(`${project.id}.name`)}
+              </h3>
+              <p className={labelClassName}>
+                {t.rich(`${project.id}.kind`, {
+                  coauthor: (chunks) => (
+                    <a
+                      href={coauthorUrl}
+                      className="underline underline-offset-4"
+                    >
+                      {chunks}
+                    </a>
+                  ),
+                })}
+              </p>
+            </div>
             <ProjectMedia
               computer={computer}
               phone={phone}
@@ -73,24 +90,7 @@ export function Projetos() {
               viewPhone={t("viewPhone")}
               viewComputer={t("viewComputer")}
             />
-            <div className="flex flex-col gap-5 md:col-span-4">
-              <div className="flex flex-col gap-1">
-                <h3 className="font-display text-xl">
-                  {t(`${project.id}.name`)}
-                </h3>
-                <p className={labelClassName}>
-                  {t.rich(`${project.id}.kind`, {
-                    coauthor: (chunks) => (
-                      <a
-                        href={coauthorUrl}
-                        className="underline underline-offset-4"
-                      >
-                        {chunks}
-                      </a>
-                    ),
-                  })}
-                </p>
-              </div>
+            <div className="flex flex-col gap-5 md:col-span-4 md:col-start-9 md:row-start-2">
               <p>{t(`${project.id}.what`)}</p>
               <dl className="flex flex-col gap-4">
                 <div className="flex flex-col gap-1">

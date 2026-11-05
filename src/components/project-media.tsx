@@ -57,7 +57,27 @@ export function ProjectMedia({
     screen === "computer" && computer ? computerVideo : phoneVideo;
 
   return (
-    <div className="flex flex-col gap-2 self-start md:col-span-8">
+    <div className="flex flex-col gap-2 self-start md:col-span-8 md:col-start-1 md:row-span-2 md:row-start-1">
+      {computer && (
+        <div role="group" aria-label={viewLabel} className="flex gap-6 md:order-last md:justify-center">
+          {(
+            [
+              ["phone", viewPhone],
+              ["computer", viewComputer],
+            ] as const
+          ).map(([screen, label]) => (
+            <button
+              key={screen}
+              type="button"
+              aria-pressed={shown === screen}
+              onClick={() => setChoice(screen)}
+              className="inline-flex min-h-11 items-center font-mono underline-offset-4 transition-opacity duration-150 hover:opacity-70 aria-pressed:underline"
+            >
+              {label}
+            </button>
+          ))}
+        </div>
+      )}
       <div
         className={`border-line relative border ${narrow ? "md:mx-auto md:w-[42.105%]" : ""}`}
       >
@@ -86,26 +106,6 @@ export function ProjectMedia({
           playLabel={playLabel}
         />
       </div>
-      {computer && (
-        <div role="group" aria-label={viewLabel} className="flex gap-6 md:justify-center">
-          {(
-            [
-              ["phone", viewPhone],
-              ["computer", viewComputer],
-            ] as const
-          ).map(([screen, label]) => (
-            <button
-              key={screen}
-              type="button"
-              aria-pressed={shown === screen}
-              onClick={() => setChoice(screen)}
-              className="inline-flex min-h-11 items-center font-mono underline-offset-4 transition-opacity duration-150 hover:opacity-70 aria-pressed:underline"
-            >
-              {label}
-            </button>
-          ))}
-        </div>
-      )}
     </div>
   );
 }
