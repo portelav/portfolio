@@ -1,6 +1,6 @@
 # FDD: Página de caso
 
-Status: aprovado
+Status: implementado
 PRD: D22, D61, D67 e D68
 
 ## Objetivo

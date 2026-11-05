@@ -3,8 +3,8 @@
 **Slug:** `case-study-landing`
 **Branch:** `feat/case-study-landing`
 **Seção ou área:** Projetos, página nova por caso
-**Status:** Planning
-**Gate S2:** Bloqueado
+**Status:** Execution
+**Gate S2:** Livre
 
 ---
 
@@ -110,14 +110,14 @@
 
 ## Stage 4 — Execution Planning
 
-1. [ ] `docs/fdd/caso.md`, `docs/fdd/projetos.md` (link), `docs/PRD.md` (D67), `docs/ROADMAP.md` e a linha na ADR 0002.
-2. [ ] Rascunho do texto do caso em pt-BR e inglês, a partir das respostas de Lucas, para ele aprovar antes de entrar no código.
-3. [ ] Imagens: telas finais e de 3 a 4 versões descartadas, escolhidas por Lucas, limpas de metadado.
-4. [ ] Mensagens em `messages/pt-BR.json` e `messages/en.json`.
-5. [ ] `routing.ts` com `pathnames`, e a rota `src/app/[locale]/projetos/[id]/page.tsx`, com metadados.
-6. [ ] Componente `CaseStudy` e o link "Ver caso completo" no card.
-7. [ ] Verificação em 390 px e 1350 px, `/` e `/en`, escuro e claro; `lint`, `typecheck` e `build`.
-8. [ ] Status do FDD, `CLAUDE.md` (estrutura do código) e Stages 6 a 8.
+1. [x] `docs/fdd/caso.md`, `docs/fdd/projetos.md` (link), `docs/PRD.md` (D67), `docs/ROADMAP.md` e a linha na ADR 0002.
+2. [x] Rascunho do texto do caso em pt-BR e inglês, a partir das respostas de Lucas, para ele aprovar antes de entrar no código.
+3. [x] Imagens: telas finais e de 3 a 4 versões descartadas, escolhidas por Lucas, limpas de metadado.
+4. [x] Mensagens em `messages/pt-BR.json` e `messages/en.json`.
+5. [x] `routing.ts` com `pathnames`, e a rota `src/app/[locale]/projetos/[id]/page.tsx`, com metadados.
+6. [x] Componente `CaseStudy` e o link "Ver caso completo" no card.
+7. [x] Verificação em 390 px e 1350 px, `/` e `/en`, escuro e claro; `lint`, `typecheck` e `build`.
+8. [x] Status do FDD, `CLAUDE.md` (estrutura do código) e Stages 6 a 8.
 
 ---
 
@@ -125,7 +125,54 @@
 
 - [x] Textos previstos em pt-BR e inglês
 - [x] FDD está no checklist
-- [ ] Decisão de produto coberta pelo PRD ou pergunta aberta: cinco perguntas abertas no Stage 1
+- [x] Decisão de produto coberta pelo PRD: D67 e D68
 - [x] Checklist ≤ 10, SoT ≤ 4, decisão única, evidências ≤ 7
 
-**Gate S2:** Bloqueado, até Lucas responder as perguntas do Stage 1.
+**Gate S2:** Livre. Lucas respondeu as perguntas e aprovou o card e as versões em 2026-11-05.
+
+---
+
+## Stage 6 — Code Execution
+
+| # | Camada | Arquivo | Status |
+|---|---|---|---|
+| 1 | Docs | `docs/fdd/caso.md`, `docs/fdd/projetos.md`, `docs/PRD.md`, `docs/ROADMAP.md`, ADR 0002 | feito |
+| 2 | Texto | Rascunho aprovado por Lucas na conversa, antes do código | feito |
+| 3 | Mídia | `public/projetos/caso/landing/`, oito WebP | feito |
+| 4 | Mensagens | `messages/pt-BR.json`, `messages/en.json` | feito |
+| 5 | Rota | `src/i18n/routing.ts`, `src/app/[locale]/projetos/[id]/page.tsx` | feito |
+| 6 | Componentes | `src/components/case-study.tsx`, `locale-link.tsx`, `locale-switcher.tsx`, `projetos.tsx`, `site-footer.tsx`, `src/lib/projects.ts` | feito |
+
+### Desvios do plano
+- As versões de maio vieram das pastas `thaiane` e `thaianeteste2`, de fora dos repositórios. Lucas escolheu as duas de maio e a de 10 de outubro.
+- Os prints antigos foram feitos com o vídeo parado na sala vazia, sem pessoa nem placa de clínica, e com o telefone do cabeçalho desfocado.
+- O card ganhou a correção do texto de antes e depois (D68), achada ao ler o projeto da landing.
+- O seletor de idioma virou um link de cliente, para continuar no mesmo caso ao trocar o idioma.
+
+---
+
+## Stage 7 — Tests
+
+| Critério de aceite | Como foi verificado |
+|---|---|
+| 1. Card leva ao caso no mesmo idioma | Clique em "See full case" em `/en`: abriu `/en/projects/landing`. Em `/`, o link aponta para `/projetos/landing` |
+| 2. Ordem das seções e volta | `h1` e nove `h2` na ordem do FDD, dois links "Voltar aos projetos" para `/#projetos` |
+| 3. Endereços e 404 | `/projetos/landing` e `/en/projects/landing` com 200. `/en/projetos/landing` e `/projects/landing` redirecionam para o endereço do idioma. `/projetos/outro` e `/en/projects/outro` dão 404. O seletor de idioma trocou de idioma sem sair do caso, nos dois sentidos |
+| 4. Sem preloader | Sem `data-reescrita` no caso; a volta para `/en#projetos` também não mostrou o preloader e parou na seção |
+| 5. Imagens | Nove imagens, todas carregadas e com texto alternativo; WebP sem EXIF nem XMP |
+| 6. Tela | 390 px escuro e 1350 px claro, em `/` e `/en`, sem transbordo. Links de ação com 44 px; o único menor é o link dentro do parágrafo do aprendizado |
+| 7. Metadados | Título e descrição próprios, `canonical` e `hreflang` do caso, `noindex, nofollow` |
+| 8. Verificações | `lint`, `typecheck` e `build` verdes |
+
+- O vídeo do caso toca com 60% na tela, depois do fim do carregamento, como em Projetos.
+- O único erro no console é o 404 de `/_vercel/insights/script.js`, que só existe na Vercel.
+- O servidor local precisa responder em `localhost`: preso só em `127.0.0.1`, a reescrita do `next-intl` para `localhost` voltava com 307.
+
+---
+
+## Stage 8 — Verification
+
+- **lint:** Pass
+- **typecheck:** Pass
+- **build:** Pass
+- **Navegador (390 px e computador, `/` e `/en`, escuro e claro):** Pass, em Chrome emulado. Falta o teste de Lucas em aparelho real.
