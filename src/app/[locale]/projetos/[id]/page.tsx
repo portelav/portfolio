@@ -4,6 +4,7 @@ import { getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
 
 import { CaseStudy } from "@/components/case-study";
+import { PageTransition } from "@/components/page-transition";
 import { getPathname } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
 import { caseIds, isCaseId } from "@/lib/projects";
@@ -54,8 +55,10 @@ export default async function CasePage({
   }
 
   return (
-    <main className="flex-1">
-      <CaseStudy id={id} />
-    </main>
+    <PageTransition>
+      <main className="flex-1">
+        <CaseStudy id={id} />
+      </main>
+    </PageTransition>
   );
 }

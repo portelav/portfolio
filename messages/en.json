@@ -73,6 +73,7 @@
     "seeCase": "See full case"
   },
   "CaseStudy": {
+    "kicker": "Full case",
     "back": "Back to projects",
     "request": "The request",
     "audience": "Who it is for",

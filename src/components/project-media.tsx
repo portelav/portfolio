@@ -1,6 +1,11 @@
 "use client";
 
-import { type ComponentProps, useState, useSyncExternalStore } from "react";
+import {
+  type ComponentProps,
+  useState,
+  useSyncExternalStore,
+  ViewTransition,
+} from "react";
 
 import { ProjectVideo } from "./project-video";
 
@@ -18,6 +23,8 @@ type ProjectMediaProps = {
   viewLabel: string;
   viewPhone: string;
   viewComputer: string;
+  // Same name on the card and on the case cover: the media moves between pages.
+  transitionName?: string;
 };
 
 const computerQuery = "(min-width: 768px)";
@@ -43,6 +50,7 @@ export function ProjectMedia({
   viewLabel,
   viewPhone,
   viewComputer,
+  transitionName,
 }: ProjectMediaProps) {
   const [choice, setChoice] = useState<Screen | null>(null);
   const onComputer = useSyncExternalStore(
@@ -59,7 +67,11 @@ export function ProjectMedia({
   return (
     <div className="flex flex-col gap-2 self-start md:col-span-8 md:col-start-1 md:row-span-2 md:row-start-1">
       {computer && (
-        <div role="group" aria-label={viewLabel} className="flex gap-6 md:order-last md:justify-center">
+        <div
+          role="group"
+          aria-label={viewLabel}
+          className="flex gap-6 md:order-last md:justify-center"
+        >
           {(
             [
               ["phone", viewPhone],
@@ -78,34 +90,36 @@ export function ProjectMedia({
           ))}
         </div>
       )}
-      <div
-        className={`border-line relative border ${narrow ? "md:mx-auto md:w-[42.105%]" : ""}`}
-      >
-        <picture key={`print-${choice}`}>
-          {computer && !choice && (
-            <source
-              media={computerQuery}
-              srcSet={computer.srcSet}
-              sizes={computer.sizes}
-              width={computer.width}
-              height={computer.height}
+      <ViewTransition name={transitionName} share="morph" default="none">
+        <div
+          className={`border-line relative border ${narrow ? "md:mx-auto md:w-[42.105%]" : ""}`}
+        >
+          <picture key={`print-${choice}`}>
+            {computer && !choice && (
+              <source
+                media={computerQuery}
+                srcSet={computer.srcSet}
+                sizes={computer.sizes}
+                width={computer.width}
+                height={computer.height}
+              />
+            )}
+            <img
+              {...(choice === "computer" && computer ? computer : phone)}
+              alt={alt}
+              fetchPriority={priority ? "high" : undefined}
+              className="h-auto w-full"
             />
-          )}
-          <img
-            {...(choice === "computer" && computer ? computer : phone)}
-            alt={alt}
-            fetchPriority={priority ? "high" : undefined}
-            className="h-auto w-full"
+          </picture>
+          <ProjectVideo
+            key={`video-${choice}`}
+            src={videoFor(choice ?? "computer")}
+            phoneSrc={videoFor(choice ?? "phone")}
+            pauseLabel={pauseLabel}
+            playLabel={playLabel}
           />
-        </picture>
-        <ProjectVideo
-          key={`video-${choice}`}
-          src={videoFor(choice ?? "computer")}
-          phoneSrc={videoFor(choice ?? "phone")}
-          pauseLabel={pauseLabel}
-          playLabel={playLabel}
-        />
-      </div>
+        </div>
+      </ViewTransition>
     </div>
   );
 }

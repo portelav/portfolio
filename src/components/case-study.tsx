@@ -1,18 +1,19 @@
 import type { ReactNode } from "react";
 
 import { useTranslations } from "next-intl";
-import Image from "next/image";
+import Image, { getImageProps } from "next/image";
 
 import { Link } from "@/i18n/navigation";
 import {
   caseComputerImageSize,
   caseStudies,
+  projectImageSize,
   projectPhoneImageSize,
   projects,
   type CaseId,
 } from "@/lib/projects";
 
-import { ProjectVideo } from "./project-video";
+import { ProjectMedia } from "./project-media";
 
 const linkClassName =
   "inline-flex min-h-11 items-center font-mono underline underline-offset-4 transition-opacity duration-150 hover:opacity-70";
@@ -31,7 +32,8 @@ function Part({ title, children }: { title: string; children: ReactNode }) {
   );
 }
 
-// The full story of one project, from the request to what was learned.
+// The full story of one project, from the request to what was learned. The top
+// repeats the project card, so the case reads as that card opened.
 export function CaseStudy({ id }: { id: CaseId }) {
   const t = useTranslations("CaseStudy");
   const projectsText = useTranslations("Projects");
@@ -39,8 +41,31 @@ export function CaseStudy({ id }: { id: CaseId }) {
   const study = caseStudies[id];
   if (!project) return null;
 
+  const alt = projectsText(`${id}.alt`);
+  const computer =
+    "image" in project
+      ? getImageProps({
+          alt,
+          ...projectImageSize,
+          src: project.image,
+          sizes: "(min-width: 768px) 62vw, 92vw",
+          loading: "eager",
+        }).props
+      : null;
+  const { props: phone } = getImageProps({
+    alt,
+    ...projectPhoneImageSize,
+    src: project.phoneImage,
+    sizes: "(min-width: 768px) 27vw, 92vw",
+    loading: "eager",
+  });
+
   const back = (
-    <Link href={{ pathname: "/", hash: "projetos" }} className={linkClassName}>
+    <Link
+      href={{ pathname: "/", hash: "projetos" }}
+      transitionTypes={["nav-back"]}
+      className={linkClassName}
+    >
       ← {t("back")}
     </Link>
   );
@@ -55,18 +80,39 @@ export function CaseStudy({ id }: { id: CaseId }) {
   return (
     <article className="page-frame pt-6 pb-16 md:pb-24">
       {back}
-      <header className="flex flex-col items-start gap-5 py-10 md:py-14">
-        <h1 className="font-display text-display">{t(`${id}.title`)}</h1>
-        <p className="max-w-2xl text-lg">{t(`${id}.lead`)}</p>
-        <div className="flex flex-wrap gap-x-6">
-          <a href={project.siteUrl} className={linkClassName}>
-            {projectsText("visitSite")}
-          </a>
-          {"codeUrl" in project && (
-            <a href={project.codeUrl} className={linkClassName}>
-              {projectsText("seeCode")}
+      <header className="grid gap-6 py-10 md:grid-cols-12 md:grid-rows-[auto_1fr] md:gap-x-10 md:gap-y-5 md:py-14">
+        <div className="flex flex-col gap-2 md:col-span-4 md:col-start-9 md:row-start-1">
+          <p className={labelClassName}>{t("kicker")}</p>
+          <h1 className="font-display text-display">{t(`${id}.title`)}</h1>
+        </div>
+        <ProjectMedia
+          computer={computer}
+          phone={phone}
+          alt={alt}
+          priority
+          computerVideo={`/projetos/video/${project.id}.mp4`}
+          phoneVideo={study.phoneVideo}
+          pauseLabel={projectsText("videoPause")}
+          playLabel={projectsText("videoPlay")}
+          viewLabel={projectsText("viewLabel", {
+            name: projectsText(`${id}.name`),
+          })}
+          viewPhone={projectsText("viewPhone")}
+          viewComputer={projectsText("viewComputer")}
+          transitionName={`case-media-${id}`}
+        />
+        <div className="flex flex-col gap-5 md:col-span-4 md:col-start-9 md:row-start-2">
+          <p className="text-lg">{t(`${id}.lead`)}</p>
+          <div className="flex flex-wrap gap-x-6">
+            <a href={project.siteUrl} className={linkClassName}>
+              {projectsText("visitSite")}
             </a>
-          )}
+            {"codeUrl" in project && (
+              <a href={project.codeUrl} className={linkClassName}>
+                {projectsText("seeCode")}
+              </a>
+            )}
+          </div>
         </div>
       </header>
 
@@ -88,21 +134,6 @@ export function CaseStudy({ id }: { id: CaseId }) {
             </div>
           ))}
         </dl>
-        <div className="border-line relative w-full max-w-xs border">
-          <Image
-            src={project.phoneImage}
-            alt={projectsText(`${id}.alt`)}
-            {...projectPhoneImageSize}
-            sizes="20rem"
-            className="h-auto w-full"
-          />
-          <ProjectVideo
-            src={study.phoneVideo}
-            phoneSrc={study.phoneVideo}
-            pauseLabel={projectsText("videoPause")}
-            playLabel={projectsText("videoPlay")}
-          />
-        </div>
       </Part>
 
       <section className="border-line flex flex-col gap-8 border-t py-10 md:py-14">

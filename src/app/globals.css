@@ -246,6 +246,66 @@ html[data-reescrita] .header-name {
   }
 }
 
+/* Moving between the home page and a case: the page slides, the media grows.
+   Only transform and opacity; without motion, the swap is instant. */
+::view-transition {
+  pointer-events: none;
+}
+
+@keyframes page-slide {
+  from {
+    transform: translateX(var(--slide-offset));
+  }
+}
+
+@keyframes page-fade {
+  from {
+    opacity: 0;
+  }
+}
+
+::view-transition-old(.nav-forward) {
+  --slide-offset: -60px;
+  animation:
+    150ms ease-in both page-fade reverse,
+    400ms var(--ease-out-quint) both page-slide reverse;
+}
+
+::view-transition-new(.nav-forward) {
+  --slide-offset: 60px;
+  animation:
+    210ms ease-out 150ms both page-fade,
+    400ms var(--ease-out-quint) both page-slide;
+}
+
+::view-transition-old(.nav-back) {
+  --slide-offset: 60px;
+  animation:
+    150ms ease-in both page-fade reverse,
+    400ms var(--ease-out-quint) both page-slide reverse;
+}
+
+::view-transition-new(.nav-back) {
+  --slide-offset: -60px;
+  animation:
+    210ms ease-out 150ms both page-fade,
+    400ms var(--ease-out-quint) both page-slide;
+}
+
+::view-transition-group(.morph) {
+  animation-duration: 450ms;
+  animation-timing-function: var(--ease-out-quint);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(*),
+  ::view-transition-new(*),
+  ::view-transition-group(*) {
+    animation-duration: 0s !important;
+    animation-delay: 0s !important;
+  }
+}
+
 /* Technology logos lift a little on hover. */
 @media (prefers-reduced-motion: no-preference) and (hover: hover) {
   .tech-logo {
