@@ -24,7 +24,7 @@
 ### Critérios de aceite (testáveis)
 1. O vídeo mostra início, busca por "pedal", grupo e perfil, em cerca de 10 s, sem áudio e sem metadado.
 2. Aparecem só as pessoas fictícias e as fotos de licença livre dos dados de demonstração. O grupo da altinha fica de fora.
-3. Dimensões iguais às do FDD: vídeos de 540 x 960 e 1280 x 808, prints de 780 x 1170 e 1425 x 900.
+3. Dimensões iguais às do FDD para celular: vídeo de 540 x 960 e print de 780 x 1170. No computador, a mesma mídia, do tamanho do app, centrada e com a altura dos outros casos.
 4. `lint`, `typecheck` e `build` verdes.
 
 ### Perguntas bloqueadoras
@@ -47,10 +47,9 @@ Build de produção local, em 2026-11-05.
 
 - Como foi gravado: Crewz em build de produção, Supabase local em projeto temporário, sem a nuvem, com o grupo da altinha apagado desse banco. Conta fictícia da Camila. Tema escuro.
 - O projeto temporário foi removido depois, e o banco local antigo do Crewz não foi tocado.
-- Vídeos: 434 KB no celular e 495 KB no computador, H.264, sem faixa de áudio. Prints sem EXIF nem XMP.
+- Vídeo de 434 KB, H.264, sem faixa de áudio. Print sem EXIF nem XMP.
 - Em 390 px, em `/`: toca o vídeo de celular com 60% na tela, e a parte de baixo fica cortada, como nos outros casos.
-- Em 1350 px, em `/en`: toca o vídeo de computador, com o texto alternativo em inglês. Sem transbordo nas duas telas.
-- No computador, o app fica em coluna estreita no centro, com margens vazias, porque é o layout real dele.
+- Em 1350 px: o caso usa a mídia de celular, do tamanho do app, a pedido de Lucas, que preferiu cortar as margens vazias do vídeo de computador.
 - Os quadros foram revistos por amostra, de cerca de 1 por segundo, e o roteiro só passa pelas quatro telas.
 - `lint`, `typecheck` e `build` verdes.
 - Falta: revisão de Lucas na prévia.

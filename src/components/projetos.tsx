@@ -36,17 +36,20 @@ export function Projetos() {
             alt: t(`${project.id}.alt`),
             loading: index === 0 ? ("eager" as const) : undefined,
           };
-          const { props: computer } = getImageProps({
-            ...shared,
-            ...projectImageSize,
-            src: project.image,
-            sizes: "62vw",
-          });
+          const computer =
+            "image" in project
+              ? getImageProps({
+                  ...shared,
+                  ...projectImageSize,
+                  src: project.image,
+                  sizes: "62vw",
+                }).props
+              : null;
           const { props: phone } = getImageProps({
             ...shared,
             ...projectPhoneImageSize,
             src: project.phoneImage,
-            sizes: "92vw",
+            sizes: computer ? "92vw" : "(min-width: 768px) 27vw, 92vw",
           });
 
           return (
@@ -57,16 +60,20 @@ export function Projetos() {
               index === 0 ? ({ "--delay": "240ms" } as CSSProperties) : undefined
             }
           >
-            <div className="border-line relative self-start border md:col-span-8">
+            <div
+              className={`border-line relative self-start border md:col-span-8 ${computer ? "" : "md:mx-auto md:w-[42.105%]"}`}
+            >
               {/* Each screen gets the print made for it: a computer's is unreadable on a phone. */}
               <picture>
-                <source
-                  media="(min-width: 768px)"
-                  srcSet={computer.srcSet}
-                  sizes={computer.sizes}
-                  width={computer.width}
-                  height={computer.height}
-                />
+                {computer && (
+                  <source
+                    media="(min-width: 768px)"
+                    srcSet={computer.srcSet}
+                    sizes={computer.sizes}
+                    width={computer.width}
+                    height={computer.height}
+                  />
+                )}
                 <img
                   {...phone}
                   alt={shared.alt}
@@ -75,7 +82,11 @@ export function Projetos() {
                 />
               </picture>
               <ProjectVideo
-                src={`/projetos/video/${project.id}.mp4`}
+                src={
+                  computer
+                    ? `/projetos/video/${project.id}.mp4`
+                    : `/projetos/video/celular/${project.id}.mp4`
+                }
                 phoneSrc={`/projetos/video/celular/${project.id}.mp4`}
                 pauseLabel={t("videoPause")}
                 playLabel={t("videoPlay")}
