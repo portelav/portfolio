@@ -76,9 +76,10 @@ Sem `animation-timeline`, os casos aparecem sem efeito. Nunca muda a velocidade 
 3. Print ou vídeo só entra com autorização de quem aparece, registrada em `private/`, e sem dado de outra pessoa.
 4. Mídia sem metadado, otimizada, com dimensões reservadas e sem áudio.
 5. Nada de telefone ou dado de contato de terceiro visível em print ou vídeo.
-6. A parte de Lucas nunca é arredondada para cima (PRD, seção 9).
-7. Sem três cards iguais lado a lado (`DESIGN.md`, seção 9).
-8. Todo link de ação tem 44 px de área de toque. O link do nome, dentro da linha, fica como link de texto.
+6. O print e o vídeo do Crewz mostram o app por dentro, gravados em ambiente local, só com as pessoas fictícias e as fotos de licença livre dos dados de demonstração (PRD, D65). O grupo da altinha e a conta do Handrey ficam de fora.
+7. A parte de Lucas nunca é arredondada para cima (PRD, seção 9).
+8. Sem três cards iguais lado a lado (`DESIGN.md`, seção 9).
+9. Todo link de ação tem 44 px de área de toque. O link do nome, dentro da linha, fica como link de texto.
 
 ## Acessibilidade
 
@@ -100,7 +101,7 @@ Sem `animation-timeline`, os casos aparecem sem efeito. Nunca muda a velocidade 
 
 - Página própria para cada caso.
 - Números de uso dos projetos, enquanto não houver dado confirmado.
-- Telas internas do Crewz e do DraftCS.
+- Telas internas do DraftCS.
 - Outros projetos além dos três (ROADMAP, Depois).
 
 ## Critérios de aceite
