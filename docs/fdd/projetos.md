@@ -58,6 +58,8 @@ Título da seção: "Projetos"; em inglês, "Projects". Rótulos: "Minha parte" 
 - O botão de pausa aparece quando o vídeo está pronto. Pausar um vídeo vale para os três, para ninguém precisar pausar de novo ao rolar.
 - No celular, o vídeo é mais alto que o print: ele se alinha ao topo, e a parte de baixo fica cortada.
 - O Crewz não tem layout de computador. A partir de 768 px, ele usa o print e o vídeo de celular, com a mesma altura dos outros casos, centrados na área da mídia (PRD, D65).
+- Na landing e no DraftCS, dois botões abaixo da mídia, "Celular" e "Computador", trocam o print e o vídeo, porque os dois layouts são diferentes (PRD, D66). Começa na versão da tela de quem visita, e a escolha vale só para aquele caso e só até recarregar a página.
+- A versão de celular, escolhida no computador, ocupa o mesmo lugar e o mesmo tamanho da mídia do Crewz. A versão de computador, escolhida no celular, ocupa a largura da tela e fica mais baixa.
 - A mídia não é link. Os links são os de texto. Os links externos abrem na mesma aba.
 
 ## Movimento
@@ -94,6 +96,7 @@ Sem `animation-timeline`, os casos aparecem sem efeito. Nunca muda a velocidade 
 ## Desempenho
 
 - Prints em WebP, em `<picture>`, cada tela baixa só o seu.
+- Print trocado ganha nome novo, como `crewz-app.webp`, porque o otimizador de imagens e o navegador guardam o arquivo pelo endereço.
 - O print do primeiro caso carrega com prioridade, porque está na primeira tela. Os outros carregam sob demanda.
 - Vídeos com `preload="metadata"`, entre 0,5 e 1 MB cada.
 - Largura e altura reservadas, sem deslocamento de layout.
@@ -111,6 +114,7 @@ Sem `animation-timeline`, os casos aparecem sem efeito. Nunca muda a velocidade 
 - [ ] O começo do primeiro caso aparece na primeira tela, com o texto dele ao lado no computador.
 - [ ] Celular carrega print e vídeo de celular, e computador os de computador.
 - [ ] Toca um vídeo por vez, e a pausa de um vale para os outros.
+- [ ] Na landing e no DraftCS, os dois botões trocam print e vídeo, em qualquer tela, sem transbordo. O Crewz não tem os botões.
 - [ ] Sem o arquivo de vídeo, o print fica visível e não aparece botão de pausa.
 - [ ] Todos os links abrem o destino certo, e os de ação têm 44 px.
 - [ ] Print e vídeo não têm metadado. Todos os quadros foram revistos.

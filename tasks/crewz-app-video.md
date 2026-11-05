@@ -18,14 +18,15 @@
 - O caso do Crewz mostra o app em uso, no lugar da landing.
 
 ### Escopo e não-escopo
-- **Dentro:** print e vídeo do Crewz nas duas telas, e o texto alternativo nos dois idiomas.
+- **Dentro:** print e vídeo do Crewz nas duas telas, o texto alternativo nos dois idiomas e a escolha entre celular e computador na landing e no DraftCS (PRD, D66).
 - **Fora:** vídeos da landing e do DraftCS, e o carregamento dos vídeos (PRD, D64).
 
 ### Critérios de aceite (testáveis)
 1. O vídeo mostra início, busca por "pedal", grupo e perfil, em cerca de 10 s, sem áudio e sem metadado.
 2. Aparecem só as pessoas fictícias e as fotos de licença livre dos dados de demonstração. O grupo da altinha fica de fora.
 3. Dimensões iguais às do FDD para celular: vídeo de 540 x 960 e print de 780 x 1170. No computador, a mesma mídia, do tamanho do app, centrada e com a altura dos outros casos.
-4. `lint`, `typecheck` e `build` verdes.
+4. Na landing e no DraftCS, dois botões trocam print e vídeo, em qualquer tela, sem transbordo. Começam na versão da tela.
+5. `lint`, `typecheck` e `build` verdes.
 
 ### Perguntas bloqueadoras
 - Nenhuma. Lucas aprovou o roteiro em 2026-11-05.
@@ -52,4 +53,7 @@ Build de produção local, em 2026-11-05.
 - Em 1350 px: o caso usa a mídia de celular, do tamanho do app, a pedido de Lucas, que preferiu cortar as margens vazias do vídeo de computador.
 - Os quadros foram revistos por amostra, de cerca de 1 por segundo, e o roteiro só passa pelas quatro telas.
 - `lint`, `typecheck` e `build` verdes.
-- Falta: revisão de Lucas na prévia.
+- Escolha entre celular e computador, em 1350 px na landing e em 390 px no DraftCS: troca print e vídeo, com um print e um vídeo por vez, toca depois da troca e não transborda. Deslocamento de layout 0 em `/` a 1350 px.
+- O teste achou chaves repetidas entre o print e o vídeo, que deixavam o print antigo na tela. Corrigido antes do commit.
+- O print do Crewz virou `crewz-app.webp`, porque o cache local de imagens ainda servia a landing no endereço antigo. Sem esse cuidado, o mesmo poderia ocorrer para quem já visitou o site.
+- Falta: revisão de Lucas na prévia e teste em aparelho real.

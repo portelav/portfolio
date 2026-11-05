@@ -64,6 +64,9 @@
     },
     "videoPause": "Pause video",
     "videoPlay": "Play video",
+    "viewLabel": "Version of {name}",
+    "viewPhone": "Phone",
+    "viewComputer": "Computer",
     "partLabel": "My part",
     "decisionLabel": "One decision"
   },
