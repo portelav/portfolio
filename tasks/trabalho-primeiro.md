@@ -220,6 +220,22 @@ Medido em 2026-11-04, em `https://portelav-site.vercel.app`, com o envio de visi
 - Duas medições no computador, no lento, passaram dos 5 s do critério do FDD de Abertura. No celular, todas ficaram abaixo.
 - Em `/` e em `/en`, nenhum cookie, e `noindex` continua na página.
 
+### Em produção, nova medição
+
+Medido em 2026-11-04, em `https://portelav-site.vercel.app`, em 390 px e 4G lento simulado. A primeira visita usa contexto limpo do navegador, sem cache. A tela de 1350 px não foi medida de novo.
+
+| Visita | Página | LCP |
+|---|---|---|
+| Primeira | `/` | 6,50, 6,54 e 6,82 s |
+| Primeira | `/en` | 6,51 s |
+| Com cache | `/` | de 5,59 a 5,63 s |
+| Com cache | `/en` | 5,56 e 5,60 s |
+
+- Os 7,34 s de `/` não se repetiram, e os dois idiomas empatam. Os 5,64 s de `/en` batem com a visita com cache, mas não há como provar como foram medidos.
+- Conta da primeira visita: primeira pintura em 1,5 s, Reescrita de 2,62 s, pausa de 0,35 s, voo de 0,8 s, entrada do conteúdo de cerca de 0,92 s e atraso do print de cerca de 0,25 s.
+- A imagem do LCP termina de baixar entre 1,2 e 2,1 s, então a rede não é o gargalo.
+- Valores aceitos por Lucas (PRD, D63).
+
 ---
 
 ## Stage 8 — Verification

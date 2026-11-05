@@ -64,7 +64,7 @@ Casos em destaque (D3):
 
 Valores propostos no kickoff, a ajustar se a medição real pedir.
 
-- Desempenho: LCP abaixo de 2,5 s no 4G, com exceção aceita para a página inicial com preloader (D60), e sem deslocamento de layout na animação do nome.
+- Desempenho: LCP abaixo de 2,5 s no 4G, com exceção aceita para a página inicial com preloader (D60 e D63), e sem deslocamento de layout na animação do nome.
 - Acessibilidade: WCAG 2.2 AA.
 - Dispositivos: celular primeiro, 390 px, e computador logo depois.
 - SEO e compartilhamento: metadados e prévia de link nos dois idiomas, `hreflang` entre eles.
@@ -196,9 +196,13 @@ Depois de comparar o rascunho com uma amostra de portfólios de outros devs, o d
 - **D57.** A nota de privacidade é um bloco curto no fim da própria página, com o link do rodapé levando até ele. Mantém a página única (D42), sem rota nova.
 - **D58.** Motion sai das dependências, porque nenhum componente o usa. O movimento fica em CSS e nas APIs do navegador (ADR 0004). Ajusta D6.
 - **D59.** "Full stack" e "soluções" deixam de ser palavras vetadas, por decisão do dono.
-- **D60.** O preloader fica em toda carga, e o dono aceita o LCP acima da meta da seção 8 na página inicial: cerca de 4,8 s sem limite de rede e de 5,6 a 6,7 s em 4G lento simulado. O tempo da sequência passa a contar desde o começo da própria animação, e não desde a carga do JavaScript. Com isso, a espera no 4G lento cai de até 7 s para cerca de 4,7 s. Ajusta a seção 8.
+- **D60.** O preloader fica em toda carga, e o dono aceita o LCP acima da meta da seção 8 na página inicial: cerca de 4,8 s sem limite de rede e de 5,6 a 6,7 s em 4G lento simulado. O tempo da sequência passa a contar desde o começo da própria animação, e não desde a carga do JavaScript. Com isso, a espera no 4G lento cai de até 7 s para cerca de 4,7 s. Ajusta a seção 8. Ajustada por D63.
 
 ### Rodada 9 (2026-11-04): auditoria de textos
 
 - **D61.** A frase do Sobre é "Curso Ciência da Computação e me importo com os pequenos detalhes: como o site fica no celular, o tempo de cada animação, o texto de cada botão." O site não cita a saída do Direito, o aprendizado com IA nem o nome da instituição, por decisão do dono. Substitui D23 e D34, e ajusta D48 e D55. Retrato e movimento da D55 continuam.
 - **D62.** Textos revistos na auditoria, com aval do dono. O Crewz passa a dizer "Você acha grupos, eventos e pessoas pela atividade, como pedal, corrida ou clube do livro." O WhatsApp aparece com o código do país. No inglês, o termo é "website", e o caso da landing se chama "Dr. Thaiane Lessa". Ajusta D50.
+
+### Rodada 10 (2026-11-05): LCP em produção
+
+- **D63.** Medido em produção em 2026-11-04, em 390 px e 4G lento simulado, o LCP da página inicial fica de 6,5 a 6,8 s na primeira visita e em cerca de 5,6 s com cache, sem diferença entre `/` e `/en`. O dono aceita esses valores. Cerca de 5 s vêm do preloader e da entrada do conteúdo, por decisão de produto. Ajusta D60.
