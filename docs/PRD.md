@@ -206,5 +206,5 @@ Depois de comparar o rascunho com uma amostra de portfólios de outros devs, o d
 ### Rodada 10 (2026-11-05): LCP em produção
 
 - **D63.** Medido em produção em 2026-11-04, em 390 px e 4G lento simulado, o LCP da página inicial fica de 6,5 a 6,8 s na primeira visita e em cerca de 5,6 s com cache, sem diferença entre `/` e `/en`. O dono aceita esses valores. Cerca de 5 s vêm do preloader e da entrada do conteúdo, por decisão de produto. Ajusta D60.
-- **D65.** O print e o vídeo do Crewz deixam de mostrar a landing e passam a mostrar o app por dentro, por decisão do dono, com aval do coautor. A gravação é local, só com dados de demonstração, para nenhuma conta real aparecer. No computador, a mídia fica do tamanho do app, sem as margens vazias.
+- **D65.** O print e o vídeo do Crewz deixam de mostrar a landing e passam a mostrar o app por dentro, no modo claro, por decisão do dono, com aval do coautor. A gravação é local, só com dados de demonstração, para nenhuma conta real aparecer. No computador, a mídia fica do tamanho do app, sem as margens vazias.
 - **D66.** Na landing e no DraftCS, o visitante escolhe entre a versão de celular e a de computador, por decisão do dono, porque os dois layouts mudam. O site começa na versão da tela de quem visita.

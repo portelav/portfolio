@@ -1,7 +1,7 @@
 # Print e vídeo do Crewz por dentro do app
 
 **Slug:** `crewz-app-video`
-**Branch:** `feat/crewz-app-video`
+**Branch:** `feat/crewz-app-video-light`
 **Seção ou área:** Projetos
 **Status:** Execution
 **Gate S2:** Livre
@@ -46,9 +46,9 @@
 
 Build de produção local, em 2026-11-05.
 
-- Como foi gravado: Crewz em build de produção, Supabase local em projeto temporário, sem a nuvem, com o grupo da altinha apagado desse banco. Conta fictícia da Camila. Tema escuro.
+- Como foi gravado: Crewz em build de produção, Supabase local em projeto temporário, sem a nuvem, com o grupo da altinha apagado desse banco. Conta fictícia da Camila. Gravado nos dois temas, e Lucas escolheu o claro.
 - O projeto temporário foi removido depois, e o banco local antigo do Crewz não foi tocado.
-- Vídeo de 434 KB, H.264, sem faixa de áudio. Print sem EXIF nem XMP.
+- Vídeo de 425 KB, H.264, sem faixa de áudio. Print sem EXIF nem XMP.
 - Em 390 px, em `/`: toca o vídeo de celular com 60% na tela, e a parte de baixo fica cortada, como nos outros casos.
 - Em 1350 px: o caso usa a mídia de celular, do tamanho do app, a pedido de Lucas, que preferiu cortar as margens vazias do vídeo de computador.
 - Os quadros foram revistos por amostra, de cerca de 1 por segundo, e o roteiro só passa pelas quatro telas.

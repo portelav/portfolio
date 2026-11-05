@@ -58,7 +58,7 @@ Título da seção: "Projetos"; em inglês, "Projects". Rótulos: "Minha parte" 
 - O botão de pausa aparece quando o vídeo está pronto. Pausar um vídeo vale para os três, para ninguém precisar pausar de novo ao rolar.
 - No celular, o vídeo é mais alto que o print: ele se alinha ao topo, e a parte de baixo fica cortada.
 - O Crewz não tem layout de computador. A partir de 768 px, ele usa o print e o vídeo de celular, com a mesma altura dos outros casos, centrados na área da mídia (PRD, D65).
-- Na landing e no DraftCS, dois botões abaixo da mídia, "Celular" e "Computador", trocam o print e o vídeo, porque os dois layouts são diferentes (PRD, D66). Começa na versão da tela de quem visita, e a escolha vale só para aquele caso e só até recarregar a página.
+- Na landing e no DraftCS, dois botões abaixo da mídia, centrados no computador, "Celular" e "Computador", trocam o print e o vídeo, porque os dois layouts são diferentes (PRD, D66). Começa na versão da tela de quem visita, e a escolha vale só para aquele caso e só até recarregar a página.
 - A versão de celular, escolhida no computador, ocupa o mesmo lugar e o mesmo tamanho da mídia do Crewz. A versão de computador, escolhida no celular, ocupa a largura da tela e fica mais baixa.
 - A mídia não é link. Os links são os de texto. Os links externos abrem na mesma aba.
 
@@ -79,7 +79,7 @@ Sem `animation-timeline`, os casos aparecem sem efeito. Nunca muda a velocidade 
 3. Print ou vídeo só entra com autorização de quem aparece, registrada em `private/`, e sem dado de outra pessoa.
 4. Mídia sem metadado, otimizada, com dimensões reservadas e sem áudio.
 5. Nada de telefone ou dado de contato de terceiro visível em print ou vídeo.
-6. O print e o vídeo do Crewz mostram o app por dentro, gravados em ambiente local, só com as pessoas fictícias e as fotos de licença livre dos dados de demonstração (PRD, D65). O grupo da altinha e a conta do Handrey ficam de fora.
+6. O print e o vídeo do Crewz mostram o app por dentro, no modo claro, gravados em ambiente local, só com as pessoas fictícias e as fotos de licença livre dos dados de demonstração (PRD, D65). O grupo da altinha e a conta do Handrey ficam de fora.
 7. A parte de Lucas nunca é arredondada para cima (PRD, seção 9).
 8. Sem três cards iguais lado a lado (`DESIGN.md`, seção 9).
 9. Todo link de ação tem 44 px de área de toque. O link do nome, dentro da linha, fica como link de texto.
