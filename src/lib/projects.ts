@@ -17,7 +17,7 @@ export const projects = [
   },
   {
     id: "crewz",
-    phoneImage: "/projetos/celular/crewz.webp",
+    phoneImage: "/projetos/celular/crewz-app.webp",
     siteUrl: "https://crewz-ashy.vercel.app",
   },
 ] as const;

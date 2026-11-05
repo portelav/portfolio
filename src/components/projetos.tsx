@@ -10,7 +10,7 @@ import {
   projects,
 } from "@/lib/projects";
 
-import { ProjectVideo } from "./project-video";
+import { ProjectMedia } from "./project-media";
 
 const linkClassName =
   "inline-flex min-h-11 items-center font-mono underline underline-offset-4 transition-opacity duration-150 hover:opacity-70";
@@ -42,14 +42,14 @@ export function Projetos() {
                   ...shared,
                   ...projectImageSize,
                   src: project.image,
-                  sizes: "62vw",
+                  sizes: "(min-width: 768px) 62vw, 92vw",
                 }).props
               : null;
           const { props: phone } = getImageProps({
             ...shared,
             ...projectPhoneImageSize,
             src: project.phoneImage,
-            sizes: computer ? "92vw" : "(min-width: 768px) 27vw, 92vw",
+            sizes: "(min-width: 768px) 27vw, 92vw",
           });
 
           return (
@@ -60,38 +60,19 @@ export function Projetos() {
               index === 0 ? ({ "--delay": "240ms" } as CSSProperties) : undefined
             }
           >
-            <div
-              className={`border-line relative self-start border md:col-span-8 ${computer ? "" : "md:mx-auto md:w-[42.105%]"}`}
-            >
-              {/* Each screen gets the print made for it: a computer's is unreadable on a phone. */}
-              <picture>
-                {computer && (
-                  <source
-                    media="(min-width: 768px)"
-                    srcSet={computer.srcSet}
-                    sizes={computer.sizes}
-                    width={computer.width}
-                    height={computer.height}
-                  />
-                )}
-                <img
-                  {...phone}
-                  alt={shared.alt}
-                  fetchPriority={index === 0 ? "high" : undefined}
-                  className="h-auto w-full"
-                />
-              </picture>
-              <ProjectVideo
-                src={
-                  computer
-                    ? `/projetos/video/${project.id}.mp4`
-                    : `/projetos/video/celular/${project.id}.mp4`
-                }
-                phoneSrc={`/projetos/video/celular/${project.id}.mp4`}
-                pauseLabel={t("videoPause")}
-                playLabel={t("videoPlay")}
-              />
-            </div>
+            <ProjectMedia
+              computer={computer}
+              phone={phone}
+              alt={shared.alt}
+              priority={index === 0}
+              computerVideo={`/projetos/video/${project.id}.mp4`}
+              phoneVideo={`/projetos/video/celular/${project.id}.mp4`}
+              pauseLabel={t("videoPause")}
+              playLabel={t("videoPlay")}
+              viewLabel={t("viewLabel", { name: t(`${project.id}.name`) })}
+              viewPhone={t("viewPhone")}
+              viewComputer={t("viewComputer")}
+            />
             <div className="flex flex-col gap-5 md:col-span-4">
               <div className="flex flex-col gap-1">
                 <h3 className="font-display text-xl">
