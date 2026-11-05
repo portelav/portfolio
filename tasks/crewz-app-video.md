@@ -56,4 +56,5 @@ Build de produção local, em 2026-11-05.
 - Escolha entre celular e computador, em 1350 px na landing e em 390 px no DraftCS: troca print e vídeo, com um print e um vídeo por vez, toca depois da troca e não transborda. Deslocamento de layout 0 em `/` a 1350 px.
 - O teste achou chaves repetidas entre o print e o vídeo, que deixavam o print antigo na tela. Corrigido antes do commit.
 - O print do Crewz virou `crewz-app.webp`, porque o cache local de imagens ainda servia a landing no endereço antigo. Sem esse cuidado, o mesmo poderia ocorrer para quem já visitou o site.
+- No celular, nome e tipo vêm antes dos botões e da mídia, a pedido de Lucas, para os botões não saírem do lugar ao trocar a versão.
 - Falta: revisão de Lucas na prévia e teste em aparelho real.
