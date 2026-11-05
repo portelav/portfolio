@@ -64,6 +64,9 @@
     },
     "videoPause": "Pausar vídeo",
     "videoPlay": "Reproduzir vídeo",
+    "viewLabel": "Versão de {name}",
+    "viewPhone": "Celular",
+    "viewComputer": "Computador",
     "partLabel": "Minha parte",
     "decisionLabel": "Uma decisão"
   },
