@@ -209,3 +209,8 @@ Depois de comparar o rascunho com uma amostra de portfólios de outros devs, o d
 - **D64.** Os vídeos dos projetos só começam a baixar depois do preloader, e quando estão a até uma tela de distância. Isso libera a rede para o código da página e poupa os dados de quem não rola até eles. Em troca, o primeiro vídeo começa um pouco depois.
 - **D65.** O print e o vídeo do Crewz deixam de mostrar a landing e passam a mostrar o app por dentro, no modo claro, por decisão do dono, com aval do coautor. A gravação é local, só com dados de demonstração, para nenhuma conta real aparecer. No computador, a mídia fica do tamanho do app, sem as margens vazias.
 - **D66.** Na landing e no DraftCS, o visitante escolhe entre a versão de celular e a de computador, por decisão do dono, porque os dois layouts mudam. O site começa na versão da tela de quem visita. No celular, nome, tipo e botões vêm antes da mídia, para os botões não saírem do lugar quando a altura dela muda.
+
+### Rodada 11 (2026-11-05): página de caso
+
+- **D67.** Cada projeto pode ter uma página de caso própria, aberta por "Ver caso completo", com pedido, público, regras, decisões, versões descartadas, resultado e aprendizado. A primeira é a da landing. O site deixa de ser só uma página, mas a página inicial continua sendo o caminho principal. Ajusta D42 e D45.
+- **D68.** O card da landing passa a dizer "Sem preço, sem promoção e sem promessa de resultado. Antes e depois só com autorização dos pacientes e com nome e CRO na imagem, por causa das regras do Conselho Federal de Odontologia.", porque o site da landing ganhou casos com antes e depois em 2026-10-28. Ajusta D50.
