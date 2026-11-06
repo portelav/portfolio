@@ -43,6 +43,10 @@ export function CaseStudy({ id }: { id: CaseId }) {
   // Each case has its own keys, which the typed messages cannot follow.
   type CaseKey = Parameters<typeof t>[0];
   const text = (key: string) => t(`${id}.${key}` as CaseKey);
+  // An app with no computer layout has only phone screens on its path.
+  const computerShots = study.shots.flatMap((shot) =>
+    shot.computer ? [{ key: shot.key, computer: shot.computer }] : [],
+  );
   if (!project) return null;
 
   const alt = projectsText(`${id}.alt`);
@@ -162,27 +166,29 @@ export function CaseStudy({ id }: { id: CaseId }) {
             ))}
           </ul>
         </div>
-        <div className="flex flex-col gap-4">
-          <h3 className={labelClassName}>{t("computer")}</h3>
-          <ul className="grid gap-6 md:grid-cols-2">
-            {study.shots.map((shot) => (
-              <li key={shot.key}>
-                <figure className="flex flex-col gap-2">
-                  <Image
-                    src={shot.computer}
-                    alt={text(`${shot.key}ComputerAlt`)}
-                    {...caseComputerImageSize}
-                    sizes="(min-width: 768px) 46vw, 92vw"
-                    className="border-line h-auto w-full border"
-                  />
-                  <figcaption className={labelClassName}>
-                    {text(shot.key)}
-                  </figcaption>
-                </figure>
-              </li>
-            ))}
-          </ul>
-        </div>
+        {computerShots.length > 0 && (
+          <div className="flex flex-col gap-4">
+            <h3 className={labelClassName}>{t("computer")}</h3>
+            <ul className="grid gap-6 md:grid-cols-2">
+              {computerShots.map((shot) => (
+                <li key={shot.key}>
+                  <figure className="flex flex-col gap-2">
+                    <Image
+                      src={shot.computer}
+                      alt={text(`${shot.key}ComputerAlt`)}
+                      {...caseComputerImageSize}
+                      sizes="(min-width: 768px) 46vw, 92vw"
+                      className="border-line h-auto w-full border"
+                    />
+                    <figcaption className={labelClassName}>
+                      {text(shot.key)}
+                    </figcaption>
+                  </figure>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
       </section>
 
       <Part title={t("result")}>

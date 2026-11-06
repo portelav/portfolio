@@ -28,7 +28,7 @@ export const projects = [
 // whether it has a next step.
 export type CaseStudyData = {
   decisions: readonly string[];
-  shots: readonly { key: string; phone: string; computer: string }[];
+  shots: readonly { key: string; phone: string; computer?: string }[];
   referenceUrl?: string;
   hasNext?: boolean;
 };
@@ -79,6 +79,23 @@ export const caseStudies = {
         phone: "/projetos/caso/draftcs/celular-no-ar.webp",
         computer: "/projetos/caso/draftcs/computador-no-ar.webp",
       },
+    ],
+  },
+  crewz: {
+    decisions: [
+      "activity",
+      "doors",
+      "anyActivity",
+      "match",
+      "levels",
+      "username",
+      "privacy",
+    ],
+    hasNext: true,
+    shots: [
+      { key: "september21", phone: "/projetos/caso/crewz/celular-21-set.webp" },
+      { key: "september25", phone: "/projetos/caso/crewz/celular-25-set.webp" },
+      { key: "live", phone: "/projetos/caso/crewz/celular-no-ar.webp" },
     ],
   },
 } as const satisfies Record<string, CaseStudyData>;
