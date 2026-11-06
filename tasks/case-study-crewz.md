@@ -3,7 +3,7 @@
 **Slug:** `case-study-crewz`
 **Branch:** `feat/case-study-crewz`
 **Seção ou área:** Página de caso e Projetos
-**Status:** Execution
+**Status:** Review
 **Gate S2:** Livre (Lucas aprovou os prints da aba Grupos em 2026-11-06)
 
 ---
@@ -81,10 +81,10 @@
 ## Stage 4 — Execution Planning
 
 1. [x] Prints do caminho no celular, na aba Grupos: 21/09 (`6b375054`), 25/09 (`2116b26a`) e no ar (`origin/main`), aprovados por Lucas.
-2. [ ] FDD `caso.md`: conteúdo do Crewz e versões só de celular.
-3. [ ] `projects.ts` e `case-study.tsx`: `computer` opcional.
-4. [ ] Mensagens `CaseStudy.crewz` em pt-BR e inglês, e o Crewz em `caseStudies`.
-5. [ ] Docs: ROADMAP, `CLAUDE.md`, status.
+2. [x] FDD `caso.md`: conteúdo do Crewz e versões só de celular.
+3. [x] `projects.ts` e `case-study.tsx`: `computer` opcional.
+4. [x] Mensagens `CaseStudy.crewz` em pt-BR e inglês, e o Crewz em `caseStudies`.
+5. [x] Docs: ROADMAP, `CLAUDE.md`, status.
 
 ---
 
@@ -96,3 +96,19 @@
 - [x] Checklist ≤ 10, SoT ≤ 4, decisão única, evidências ≤ 7
 
 **Gate S2:** Livre
+
+---
+
+## Stage 6 — Code Execution
+
+- Prints: Crewz em build de produção, três worktrees temporárias (`6b375054`, `2116b26a` e `origin/main`) contra um Supabase local em projeto próprio (`portfolio-prints`), com o seed de demonstração e sem o grupo da altinha, na conta fictícia da Camila, modo claro, 390 x 585 a 2x. O projeto temporário foi apagado (`supabase stop --no-backup`), o banco local antigo do Crewz não foi tocado, e o Docker foi fechado.
+- A tela inicial de 21/09 ainda era provisória, por isso o caminho usa a aba Grupos nas três versões, com aval de Lucas.
+- `shots[].computer` ficou opcional; o grupo "No computador" some quando nenhuma versão tem print de computador.
+- A faculdade e o número de commits ficam fora do texto.
+
+## Stage 7 — Tests
+
+- `lint`, `typecheck` e `build` verdes; `/projetos/crewz` e `/en/projects/crewz` geradas; `/projetos/outro` dá 404.
+- Landing e DraftCS com as mesmas seções de antes; o Crewz sem "No computador" e com "Próximo passo".
+- Crewz no computador, escuro: topo com a mídia do app e Projetos marcado no menu; caminho com os três prints.
+- Crewz em 390 px, `/en`, claro: sem transbordo do topo ao fim; título, `canonical` e `noindex` próprios.
