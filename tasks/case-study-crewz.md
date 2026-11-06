@@ -3,7 +3,7 @@
 **Slug:** `case-study-crewz`
 **Branch:** `feat/case-study-crewz`
 **Seção ou área:** Página de caso e Projetos
-**Status:** Review
+**Status:** Done (PR #11 mergeado em 2026-11-06)
 **Gate S2:** Livre (Lucas aprovou os prints da aba Grupos em 2026-11-06)
 
 ---
