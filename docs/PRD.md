@@ -200,7 +200,7 @@ Depois de comparar o rascunho com uma amostra de portfólios de outros devs, o d
 
 ### Rodada 9 (2026-11-04): auditoria de textos
 
-- **D61.** A frase do Sobre é "Curso Ciência da Computação e me importo com os pequenos detalhes: como o site fica no celular, o tempo de cada animação, o texto de cada botão." O site não cita a saída do Direito, o aprendizado com IA nem o nome da instituição, por decisão do dono. Substitui D23 e D34, e ajusta D48 e D55. Retrato e movimento da D55 continuam.
+- **D61.** A frase do Sobre é "Curso Ciência da Computação e me importo com os pequenos detalhes: como o site fica no celular, o tempo de cada animação, o texto de cada botão." O site não cita a saída do Direito, o aprendizado com IA nem o nome da instituição, por decisão do dono. Substitui D23 e D34, e ajusta D48 e D55. Retrato e movimento da D55 continuam. Ajustada por D76.
 - **D62.** Textos revistos na auditoria, com aval do dono. O Crewz passa a dizer "Você acha grupos, eventos e pessoas pela atividade, como pedal, corrida ou clube do livro." O WhatsApp aparece com o código do país. No inglês, o termo é "website", e o caso da landing se chama "Dr. Thaiane Lessa". Ajusta D50.
 
 ### Rodada 10 (2026-11-05): LCP em produção
@@ -224,3 +224,7 @@ Depois de comparar o rascunho com uma amostra de portfólios de outros devs, o d
 - **D73.** "Quer um site?" ganha um botão de e-mail ao lado do de WhatsApp, e Contato ganha o Instagram `@lucasportelav`, nos dois idiomas. Em `/en`, o e-mail vem primeiro, no bloco e em Contato, porque fora do Brasil o WhatsApp é menos usado. Em pt-BR, o WhatsApp segue primeiro. Os textos escondidos em inglês ficam como estão. Decisão do dono em 2026-11-05. Ajusta D53 e D54.
 - **D74.** No computador, o cabeçalho ganha ícones de WhatsApp, e-mail e Instagram, depois do menu e antes do idioma, como na landing da Dra. Thaiane, mas só o desenho, na cor do texto, sem quadrado em volta. A ordem segue a de Contato no idioma da página. No celular, os três ícones também ficam no cabeçalho: para caber, o tema vira sol ou lua, e o idioma mostra só o outro. Abaixo de 360 px, o Instagram sai do cabeçalho e fica só em Contato. Pedido do dono em 2026-11-06. Ajustada por D75.
 - **D75.** Os ícones de contato do cabeçalho ganham cor, como os logos de Tecnologias: WhatsApp no verde da marca, `#25D366` no modo escuro e o verde-escuro `#128C7E` no modo claro, porque o verde da marca some no fundo claro; Instagram no degradê da marca; e-mail em `--accent`, porque e-mail não tem cor de marca. Sol, lua e idioma seguem na cor do texto. Pedido do dono em 2026-11-06. Ajusta D74.
+
+### Rodada 13 (2026-11-06): método
+
+- **D76.** O site pode dizer que Lucas trabalha com AI-Driven Development, como método: ele escreve a documentação, com produto, regras e decisões, e agentes de IA escrevem o código a partir dela. O que a D61 tirou foi a ideia de "estou aprendendo com IA", não o método. Os casos contam o método e o papel de Lucas em cada projeto. Decisão do dono em 2026-11-06. Ajusta D61.
