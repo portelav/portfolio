@@ -135,6 +135,9 @@ export function CaseStudy({ id }: { id: CaseId }) {
           ))}
         </dl>
       </Part>
+      <Part title={t("method")}>
+        <p>{t(`${id}.method`)}</p>
+      </Part>
 
       <section className="border-line flex flex-col gap-8 border-t py-10 md:py-14">
         <div className="grid gap-4 md:grid-cols-12 md:gap-10">
