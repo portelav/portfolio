@@ -1,11 +1,11 @@
 # FDD: Seção Quer um site?
 
 Status: implementado
-PRD: seção 6, item Quer um site?; D1, D22 e D53
+PRD: seção 6, item Quer um site?; D1, D22, D53 e D73
 
 ## Objetivo
 
-Quem quer contratar um site entende o que recebe, como funciona e chega ao WhatsApp de Lucas com um toque.
+Quem quer contratar um site entende o que recebe, como funciona e chega ao WhatsApp ou ao e-mail de Lucas com um toque.
 
 ## Conteúdo
 
@@ -15,8 +15,10 @@ O inglês é proposto, para revisão de Lucas.
 |---|---|---|
 | Título | Quer um site? | Need a website? |
 | Oferta | Faço a página do seu negócio do desenho ao código, pensada primeiro para o celular e com um caminho direto até o seu WhatsApp. | I build the page for your business from design to code, made for phones first, with a direct path to your WhatsApp. |
-| Botão | Falar no WhatsApp | Message me on WhatsApp |
+| Botão de WhatsApp | Falar no WhatsApp | Message me on WhatsApp |
 | Mensagem pronta | Oi, Lucas. Quero um site. | Hi Lucas, I need a website. |
+| Botão de e-mail | Mandar e-mail | Send me an email |
+| Assunto do e-mail | Quero um site | I need a website |
 | Título dos passos | Como funciona | How it works |
 | Passo 1 | Você me conta o que precisa. | You tell me what you need. |
 | Passo 2 | Combinamos escopo e prazo por escrito. | We agree on scope and deadline in writing. |
@@ -28,7 +30,8 @@ O inglês é proposto, para revisão de Lucas.
 - Fica depois de Tecnologias e antes de Contato, com a âncora `#site`.
 - A chamada "Quero um site", da abertura, leva até aqui, com o título visível.
 - No computador, oferta e botão à esquerda, e passos à direita. No celular, uma coluna.
-- O botão abre o WhatsApp de Lucas, em `src/lib/contact.ts`, com a mensagem pronta no idioma da página, na mesma aba.
+- Dois botões: WhatsApp e e-mail, de Lucas, em `src/lib/contact.ts`, na mesma aba. O WhatsApp abre com a mensagem pronta, e o e-mail com o assunto pronto, no idioma da página.
+- O primeiro botão é cheio, em `--fg`, e o segundo tem só contorno de 1 px em `--fg`. Em pt-BR, o WhatsApp vem primeiro; em `/en`, o e-mail (PRD, D73).
 - Um separador de 1 px em `--line` no topo da seção, e entre os passos.
 
 ## Movimento
@@ -41,7 +44,7 @@ A seção sobe 1,5 rem e aparece ao entrar na tela, ligada à rolagem. O botão 
 2. Os passos são compromisso de Lucas: só entra o que ele cumpre.
 3. O texto não diz nem sugere que a landing da Dra. Thaiane foi trabalho para cliente (PRD, D22).
 4. Sem formulário (PRD, D10).
-5. Botão com no mínimo 44 px de altura.
+5. Botões com no mínimo 44 px de altura.
 
 ## Acessibilidade
 
@@ -64,6 +67,7 @@ A seção sobe 1,5 rem e aparece ao entrar na tela, ligada à rolagem. O botão 
 
 - [ ] Em 390 px e no computador, em `/` e `/en`, escuro e claro, sem transbordo.
 - [ ] "Quero um site" leva até a seção, com o título visível.
-- [ ] O botão abre o WhatsApp certo, com a mensagem pronta no idioma da página, testado em aparelho real.
+- [ ] Os botões abrem o WhatsApp e o e-mail certos, com mensagem e assunto no idioma da página, testados em aparelho real.
+- [ ] Em `/en`, o e-mail vem primeiro.
 - [ ] O número aparece em um arquivo só no código.
 - [ ] Leitor de tela lê os passos como lista ordenada.

@@ -189,8 +189,8 @@ Depois de comparar o rascunho com uma amostra de portfólios de outros devs, o d
 - **D50.** Cada caso diz a parte de Lucas no trabalho. Em dupla, com o nome do Vinicius ao lado (D41). Lucas confirmou o texto de cada caso. Substitui D39.
 - **D51.** Cada caso tem um vídeo do próprio site sobre o print, um tocando por vez e com pausa. Celular e computador têm print e vídeo próprios. Quem aparece autorizou.
 - **D52.** Tecnologias entra como seção própria, depois do Sobre, com os logos nas cores originais. O veto a ícones coloridos sai do `DESIGN.md`.
-- **D53.** O bloco "Quer um site?" tem oferta, quatro passos e um botão para o WhatsApp com mensagem pronta. Sem preço por enquanto. Os passos são compromisso de Lucas com quem contrata.
-- **D54.** Contato lista WhatsApp, e-mail, LinkedIn e GitHub, nessa ordem. Número e e-mail moram em um arquivo só. Ajusta a ordem da D9.
+- **D53.** Ajustada por D73. O bloco "Quer um site?" tem oferta, quatro passos e um botão para o WhatsApp com mensagem pronta. Sem preço por enquanto. Os passos são compromisso de Lucas com quem contrata.
+- **D54.** Ajustada por D73. Contato lista WhatsApp, e-mail, LinkedIn e GitHub, nessa ordem. Número e e-mail moram em um arquivo só. Ajusta a ordem da D9.
 - **D55.** Ajustada por D61. O Sobre conta a saída do Direito em uma frase, com um retrato ilustrado em tamanho contido. Sem efeito preso à rolagem. Mantém D34.
 - **D56.** O site troca "muito espaço, poucos elementos por tela" por mais conteúdo em cada tela: quem chega sem contexto precisa entender o que Lucas faz. Sem biblioteca de rolagem suave.
 - **D57.** A nota de privacidade é um bloco curto no fim da própria página, com o link do rodapé levando até ele. Mantém a página única (D42), sem rota nova.
@@ -218,3 +218,7 @@ Depois de comparar o rascunho com uma amostra de portfólios de outros devs, o d
 - **D70.** No computador, o cabeçalho ganha um menu com Projetos, Sobre e Contato, que levam às seções da página inicial. O item atual fica em destaque: na página inicial, o da seção que está na tela; na página de caso, Projetos. No modo escuro, a letra e uma linha embaixo dele ficam em `--accent`. No modo claro, só a linha, porque `--accent` reprova em texto pequeno. A linha desliza até o item novo quando ele muda. No celular, o site segue sem menu. Pedido do dono em 2026-11-05. Ajusta D33.
 - **D71.** A ida para a página de caso e a volta passam a empurrar a página inteira para o lado, como num app de celular, porque o deslize de 60 px passava despercebido. Pedido do dono em 2026-11-05. Ajusta D69.
 - **D72.** O retrato do Sobre perde o degradê nas bordas e fica num círculo de borda nítida, porque o degradê dava cara de imagem feita por IA. Pedido do dono em 2026-11-05. Ajusta D55.
+
+### Rodada 12 (2026-11-05): contato
+
+- **D73.** "Quer um site?" ganha um botão de e-mail ao lado do de WhatsApp, e Contato ganha o Instagram `@lucasportelav`, nos dois idiomas. Em `/en`, o e-mail vem primeiro, no bloco e em Contato, porque fora do Brasil o WhatsApp é menos usado. Em pt-BR, o WhatsApp segue primeiro. Os textos escondidos em inglês ficam como estão. Decisão do dono em 2026-11-05. Ajusta D53 e D54.
