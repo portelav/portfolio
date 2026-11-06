@@ -1,7 +1,7 @@
 # FDD: Página de caso
 
 Status: implementado
-PRD: D22, D61, D67, D68, D69, D70, D71, D76 e D77
+PRD: D22, D41, D50, D61, D67, D68, D69, D70, D71, D76 e D77
 
 ## Objetivo
 
@@ -9,7 +9,7 @@ Quem quer saber mais sobre um projeto lê, numa página própria, como ele foi f
 
 ## Conteúdo
 
-Primeiro caso: a landing da Dra. Thaiane Lessa. DraftCS e Crewz vêm depois, no mesmo formato.
+Casos: a landing da Dra. Thaiane Lessa e o DraftCS. O Crewz vem depois, no mesmo formato. Cada caso declara em `caseStudies` (`src/lib/projects.ts`) as próprias decisões, as versões do caminho e as seções opcionais: "Próximo passo", o link de referência no aprendizado e o vídeo de celular.
 
 Textos nos arquivos de mensagens, em `CaseStudy`: os títulos das seções em `CaseStudy`, e o conteúdo de cada caso em `CaseStudy.<id>`. A fonte é a conversa com Lucas em 2026-11-05 e a documentação do repositório da landing.
 
@@ -43,6 +43,30 @@ No topo, a mesma mídia do card de Projetos, com print e vídeo.
 |---|---|
 | Do mesmo jeito deste site, com AI-Driven Development. Escrevi a documentação: o público, as regras do Conselho, cada seção e cada decisão de movimento. Agentes de IA escreveram o código a partir dela, e eu revisei cada versão no celular antes de ir ao ar. | The same way as this website, with AI-Driven Development. I wrote the documentation: the audience, the Council's rules, every section and every motion decision. AI agents wrote the code from it, and I reviewed every version on a phone before it went live. |
 
+### DraftCS
+
+Fontes: as respostas de Lucas em 2026-11-06 e o repositório do DraftCS (`origin/main`, lido no mesmo dia). O inglês é proposto, para revisão de Lucas.
+
+- **O pedido:** ninguém encomendou. O 82-0, de basquete, e o 7a0, de futebol, viraram febre; era época de Major, e Lucas e o Vinicius fizeram o de Counter-Strike.
+- **Para quem:** quem gosta de CS e quer passar o tempo.
+- **As regras:** as APIs de dados de jogadores eram pagas, e a saída foram dados abertos do Kaggle e da Liquipedia, com crédito. Jogadores só por nome e números: sem foto e sem logo de time ou de campeonato.
+- **As decisões:** dados reais, curadoria das notas, velocidade e card de resultado, as quatro de que Lucas mais gosta.
+- **Como foi feito:** a documentação escrita pelos dois em chamada no Discord, com tela compartilhada, e o código escrito por agentes de IA. Explica por que os commits saíram quase todos pela conta do Vinicius.
+- **O caminho:** poucas versões; a estética saiu quase de primeira e foi polida. O nome mudou de 13-0 para draftcs.
+- **Resultado:** no ar desde 19 de junho de 2026, sem número de acesso, porque não há.
+- **Próximo passo:** fora deste caso, por decisão do dono em 2026-11-06.
+- **Fora do texto:** a página interna do banco de jogadores, por decisão do dono.
+
+Imagens em `public/projetos/caso/draftcs/`, todas da página inicial, feitas em 2026-11-06: as duas primeiras rodando localmente o histórico do repositório, sem conta e sem banco; a última em draftcs.com, sem login.
+
+| Versão | Commit | Celular | Computador |
+|---|---|---|---|
+| 13 de junho de 2026, como 13-0 | `8300015` | 780 x 1170 | 1350 x 900 |
+| 16 de junho de 2026, já draftcs | `fd8be64` | 780 x 1170 | 1350 x 900 |
+| No ar | draftcs.com | 780 x 1170 | 1350 x 900 |
+
+Os prints mostram nomes e países de jogadores profissionais, como o próprio jogo, como referência factual. Sem foto, sem logo de time e sem dado de pessoa comum.
+
 ## Comportamento
 
 - Endereço próprio por caso: `/projetos/<id>` em português e `/en/projects/<id>` em inglês. Outro `id` dá a página 404.
@@ -69,11 +93,12 @@ Usa a API de transição de vistas do navegador, pelo `ViewTransition` do React.
 
 1. Nenhuma foto de paciente, nem com consentimento. As fotos de casos da seção Serviços do site da landing nunca entram.
 2. Nenhum dado de contato de terceiro. Telefone em print fica desfocado.
-3. Nenhuma pessoa identificável além da própria Dra. Thaiane, que autorizou o uso da imagem.
+3. Na landing, nenhuma pessoa identificável além da própria Dra. Thaiane, que autorizou o uso da imagem.
 4. Nenhuma placa ou marca de outra empresa em destaque.
 5. A Dra. Thaiane é chamada pelo nome, nunca de cliente (PRD, D22).
 6. Só fatos: sem número inventado de visitas ou de pacientes.
 7. Mídia sem metadado.
+8. No DraftCS, jogadores e times aparecem só por nome e números, como no próprio jogo: nenhuma foto e nenhum logo. O Vinicius aparece com nome e link, com autorização (PRD, D41).
 
 ## Acessibilidade
 
@@ -88,7 +113,7 @@ Usa a API de transição de vistas do navegador, pelo `ViewTransition` do React.
 
 ## Fora de escopo
 
-- Casos do DraftCS e do Crewz.
+- Caso do Crewz.
 - Indexação nos buscadores, que segue desligada até o lançamento.
 
 ## Critérios de aceite
