@@ -2,6 +2,7 @@ import { useTranslations } from "next-intl";
 
 import { Abertura } from "@/components/abertura";
 import { Contato } from "@/components/contato";
+import { PageTransition } from "@/components/page-transition";
 import { Preloader } from "@/components/preloader";
 import { Privacidade } from "@/components/privacidade";
 import { Projetos } from "@/components/projetos";
@@ -19,15 +20,17 @@ export default function HomePage() {
       <Preloader>
         <ReescritaName label={t("name")} className="h-auto w-full" />
       </Preloader>
-      <main>
-        <Abertura />
-        <Projetos />
-        <Sobre />
-        <Tecnologias />
-        <QuerUmSite />
-        <Contato />
-        <Privacidade />
-      </main>
+      <PageTransition>
+        <main>
+          <Abertura />
+          <Projetos />
+          <Sobre />
+          <Tecnologias />
+          <QuerUmSite />
+          <Contato />
+          <Privacidade />
+        </main>
+      </PageTransition>
     </>
   );
 }

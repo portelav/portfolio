@@ -18,6 +18,7 @@ Em ordem de página. O protótipo da direção de 2026-11-03 já roda na branch 
 | [Tecnologias](tecnologias.md) | aprovado | `tasks/trabalho-primeiro.md`, a criar |
 | [Quer um site?](quer-um-site.md) | aprovado | `tasks/trabalho-primeiro.md`, a criar |
 | [Contato e nota de privacidade](contato.md) | aprovado | `tasks/trabalho-primeiro.md`, a criar |
+| [Página de caso](caso.md) | implementado | `tasks/case-study-landing.md` |
 
 Planos anteriores, já auditados, da versão que a direção nova substitui: `tasks/cabecalho-rodape.md`, `tasks/abertura.md` e `tasks/projetos.md`.
 

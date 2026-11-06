@@ -3,7 +3,10 @@ import type { CSSProperties } from "react";
 import { useTranslations } from "next-intl";
 import { getImageProps } from "next/image";
 
+import { Link } from "@/i18n/navigation";
+
 import {
+  caseStudies,
   coauthorUrl,
   projectImageSize,
   projectPhoneImageSize,
@@ -89,6 +92,9 @@ export function Projetos() {
               viewLabel={t("viewLabel", { name: t(`${project.id}.name`) })}
               viewPhone={t("viewPhone")}
               viewComputer={t("viewComputer")}
+              transitionName={
+                project.id in caseStudies ? `case-media-${project.id}` : undefined
+              }
             />
             <div className="flex flex-col gap-5 md:col-span-4 md:col-start-9 md:row-start-2">
               <p>{t(`${project.id}.what`)}</p>
@@ -115,6 +121,19 @@ export function Projetos() {
                 >
                   {t("visitSite")}
                 </a>
+                {project.id in caseStudies && (
+                  <Link
+                    href={{
+                      pathname: "/projetos/[id]",
+                      params: { id: project.id },
+                    }}
+                    transitionTypes={["nav-forward"]}
+                    aria-label={t("landing.caseLabel")}
+                    className={linkClassName}
+                  >
+                    {t("seeCase")}
+                  </Link>
+                )}
                 {project.id === "landing" && (
                   <a
                     href={project.codeUrl}

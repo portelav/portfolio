@@ -24,4 +24,5 @@ O idioma vem só da URL: `localeDetection: false` e `localeCookie: false`. A tro
 - Todo texto de interface vive nos arquivos de mensagens. Nenhum texto fixo em componente.
 - Toda entrega escreve as duas línguas. Mensagem faltando precisa quebrar a verificação, e isso entra na base técnica.
 - `next-intl` usa `proxy.ts` para as rotas. A documentação não cita Next.js 16 pelo nome, embora mostre `proxy.ts`. A base técnica confere na prática, e o `package.json` publicado aceita Next `^16.0.0`.
+- As rotas com nome traduzido usam `pathnames` do `next-intl`, como `/projetos/<id>` e `/en/projects/<id>` (PRD, D67).
 - Quem abre `/` sempre vê português, mesmo com navegador em inglês. O seletor precisa estar visível desde o primeiro instante.

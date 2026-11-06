@@ -11,7 +11,7 @@ export function SiteFooter() {
       <p>{t("rights")}</p>
       {/* The 404 page shares this footer, so the link names the home page. */}
       <Link
-        href="/#privacidade"
+        href={{ pathname: "/", hash: "privacidade" }}
         className="inline-flex min-h-11 items-center underline underline-offset-4 transition-opacity duration-150 hover:opacity-70"
       >
         {privacy("title")}

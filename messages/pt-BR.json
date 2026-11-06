@@ -15,7 +15,11 @@
     "themeToLight": "Claro",
     "themeToDark": "Escuro",
     "themeToLightLabel": "Mudar para o modo claro",
-    "themeToDarkLabel": "Mudar para o modo escuro"
+    "themeToDarkLabel": "Mudar para o modo escuro",
+    "navLabel": "Seções",
+    "navProjects": "Projetos",
+    "navAbout": "Sobre",
+    "navContact": "Contato"
   },
   "Language": {
     "label": "Idioma",
@@ -44,7 +48,8 @@
       "kind": "Site · feito sozinho",
       "what": "Página de uma cirurgiã-dentista em Maceió, que apresenta a profissional e leva o visitante ao WhatsApp.",
       "part": "Tudo, do desenho ao código, pensado primeiro para o celular.",
-      "decision": "Sem paciente, sem antes e depois e sem promessa de resultado, por causa das regras de publicidade do Conselho Federal de Odontologia."
+      "decision": "Sem preço, sem promoção e sem promessa de resultado. Antes e depois só com autorização dos pacientes e com nome e CRO na imagem, por causa das regras do Conselho Federal de Odontologia.",
+      "caseLabel": "Ver o caso completo do site da Dra. Thaiane Lessa"
     },
     "draftcs": {
       "alt": "Primeira tela do DraftCS: a chamada “Monte o time invencível”.",
@@ -68,7 +73,55 @@
     "viewPhone": "Celular",
     "viewComputer": "Computador",
     "partLabel": "Minha parte",
-    "decisionLabel": "Uma decisão"
+    "decisionLabel": "Uma decisão",
+    "seeCase": "Ver caso completo"
+  },
+  "CaseStudy": {
+    "kicker": "Caso completo",
+    "back": "Voltar aos projetos",
+    "request": "O pedido",
+    "audience": "Para quem",
+    "rules": "As regras",
+    "decisions": "As decisões",
+    "path": "O que ficou pelo caminho",
+    "result": "Resultado",
+    "next": "Próximo passo",
+    "learned": "O que aprendi",
+    "phone": "No celular",
+    "computer": "No computador",
+    "landing": {
+      "metaTitle": "Dra. Thaiane Lessa, caso completo · Lucas Portela",
+      "metaDescription": "Como foi feito o site da Dra. Thaiane Lessa, cirurgiã-dentista em Maceió: o pedido, as regras do Conselho, as decisões e as versões que ficaram pelo caminho.",
+      "title": "Dra. Thaiane Lessa",
+      "lead": "Site de uma cirurgiã-dentista em Maceió, feito sozinho, do desenho ao código. No ar desde outubro de 2026.",
+      "request": "A Dra. Thaiane queria um site para atrair mais pacientes. Não havia prazo fixo, mas a prioridade foi colocar o site no ar rápido.",
+      "audience": "Primeiro, pacientes: quem busca um tratamento estético, como facetas ou clareamento, e quem precisa resolver um problema e quer alguém cuidadoso. O site fala com os dois sem confundir. Depois, dentistas, porque ela também trabalha com marketing odontológico.",
+      "rules": "Publicidade de dentista segue as regras do Conselho Federal de Odontologia, e eu aprendi pesquisando e lendo as normas. Elas proíbem preço, promoção, promessa de resultado e imagem de procedimento. Antes e depois, só com autorização dos pacientes e com nome e CRO na imagem. Por isso o rodapé leva nome, profissão e CRO.",
+      "phoneFirstTitle": "Celular primeiro",
+      "phoneFirst": "A maior parte dos pacientes chega pelo celular. O site começou desenhado para o computador e, no fim de outubro, passou a ser pensado primeiro para o celular. O computador se adapta a partir dele.",
+      "sectionsTitle": "Uma seção completa a outra",
+      "sections": "O topo mostra o lugar e o nome. O Sobre diz quem ela é. Serviços mostra o que ela trata. O Contato explica como chegar e marcar. Cada seção tira a dúvida que a anterior pode ter deixado.",
+      "motionTitle": "Movimento",
+      "motion": "O monograma desenhado abre o site e voa até o cabeçalho. No celular, o vídeo fica preso na tela enquanto “seu sorriso, no seu tempo” atravessa os três painéis. Ela escolheu essa versão entre quatro protótipos.",
+      "whatsappTitle": "Contato pelo WhatsApp",
+      "whatsapp": "É por onde os pacientes já falam com o consultório, e é o caminho mais fácil para marcar.",
+      "path": "Foram muitas versões. As primeiras, de maio, pareciam um site qualquer feito com IA: título genérico, botões arredondados e selos. Até a versão no ar, o projeto passou por três repositórios e mais de 400 commits.",
+      "may1": "Maio de 2026",
+      "may2": "Maio de 2026, segunda tentativa",
+      "october": "Outubro de 2026",
+      "live": "No ar",
+      "may1PhoneAlt": "Primeira versão, de maio de 2026, no celular: título “Seu sorriso pode evoluir com naturalidade, critério e cuidado” e menu num cartão arredondado.",
+      "may1ComputerAlt": "Primeira versão, de maio de 2026, no computador: título grande à esquerda e um espaço reservado para foto à direita.",
+      "may2PhoneAlt": "Segunda versão, de maio de 2026, no celular: título em negrito sobre o sorriso harmônico e o botão “Agendar pelo WhatsApp”.",
+      "may2ComputerAlt": "Segunda versão, de maio de 2026, no computador: título grande à esquerda e foto da Dra. Thaiane à direita.",
+      "octoberPhoneAlt": "Versão de outubro de 2026, no celular: título “sorrir é sempre uma boa ideia”, com ícones coloridos do WhatsApp e do Instagram.",
+      "octoberComputerAlt": "Versão de outubro de 2026, no computador: título à esquerda e vídeo do consultório à direita.",
+      "livePhoneAlt": "Versão no ar, no celular: título “sorrir é sempre uma boa ideia”, com ícones em verde-escuro.",
+      "liveComputerAlt": "Versão no ar, no computador: título à esquerda e vídeo do consultório à direita.",
+      "result": "No ar desde o fim de outubro de 2026. No Lighthouse, em produção, teve nota 88 em desempenho no celular, 100 no computador e 100 em acessibilidade.",
+      "next": "Uma parte do site para dentistas, sobre o trabalho dela com marketing odontológico.",
+      "learned": "Comecei a partir de uma referência, o site da <link>Aventura Dental Arts</link>, premiado no Awwwards. O que mais aprendi foi ser original, e não copiar o que outros fizeram."
+    }
   },
   "Stack": {
     "languages": "Linguagens",

@@ -19,7 +19,7 @@ export function Sobre() {
           width={1100}
           height={1100}
           sizes="(min-width: 768px) 22vw, 14rem"
-          className="portrait-image h-auto w-full"
+          className="h-auto w-full rounded-full"
         />
       </div>
       <div className="flex flex-col gap-5 md:col-span-8 md:col-start-5">

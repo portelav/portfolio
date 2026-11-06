@@ -155,11 +155,6 @@
   opacity: 1;
 }
 
-/* The portrait in the about section. */
-.portrait-image {
-  mask-image: radial-gradient(closest-side, #000 76%, transparent 100%);
-}
-
 /* Preloader. Only shows while the page is marked. */
 .preloader {
   display: none;
@@ -243,6 +238,65 @@ html[data-reescrita] .header-name {
     .brand-link:hover .brand-cursor {
       animation: brand-cursor-blink 1.06s steps(1) 4.7;
     }
+  }
+}
+
+/* Moving between the home page and a case: the page slides, the media grows.
+   Only transform and opacity; without motion, the swap is instant. */
+::view-transition {
+  pointer-events: none;
+}
+
+/* Pages push each other off the screen, like an app on a phone: forward goes
+   left, back goes right. The header stays still. */
+@keyframes page-push {
+  from {
+    transform: translateX(var(--push-from, 0));
+  }
+  to {
+    transform: translateX(var(--push-to, 0));
+  }
+}
+
+::view-transition-old(.nav-forward),
+::view-transition-new(.nav-forward),
+::view-transition-old(.nav-back),
+::view-transition-new(.nav-back) {
+  animation: 500ms var(--ease-out-quint) both page-push;
+}
+
+::view-transition-old(.nav-forward) {
+  --push-to: -100%;
+}
+
+::view-transition-new(.nav-forward) {
+  --push-from: 100%;
+}
+
+::view-transition-old(.nav-back) {
+  --push-to: 100%;
+}
+
+::view-transition-new(.nav-back) {
+  --push-from: -100%;
+}
+
+/* The header stays still and above the pages while they slide. */
+::view-transition-group(site-header) {
+  z-index: 1;
+}
+
+::view-transition-group(.morph) {
+  animation-duration: 450ms;
+  animation-timing-function: var(--ease-out-quint);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(*),
+  ::view-transition-new(*),
+  ::view-transition-group(*) {
+    animation-duration: 0s !important;
+    animation-delay: 0s !important;
   }
 }
 

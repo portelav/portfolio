@@ -18,7 +18,7 @@ Título da seção: "Projetos"; em inglês, "Projects". Rótulos: "Minha parte" 
 | Tipo | Site · feito sozinho | Website · built on my own |
 | O que é | Página de uma cirurgiã-dentista em Maceió, que apresenta a profissional e leva o visitante ao WhatsApp. | A page for a dental surgeon in Maceió that introduces her and takes visitors to WhatsApp. |
 | Minha parte | Tudo, do desenho ao código, pensado primeiro para o celular. | All of it, from design to code, made for phones first. |
-| Uma decisão | Sem paciente, sem antes e depois e sem promessa de resultado, por causa das regras de publicidade do Conselho Federal de Odontologia. | No patients, no before-and-after photos and no promised results, because of the Brazilian dental council's advertising rules. |
+| Uma decisão | Sem preço, sem promoção e sem promessa de resultado. Antes e depois só com autorização dos pacientes e com nome e CRO na imagem, por causa das regras do Conselho Federal de Odontologia (PRD, D68). | No patients, no before-and-after photos and no promised results, because of the Brazilian dental council's advertising rules. |
 | Detalhe | Dra. Thaiane Lessa · CRO/AL-6418 | Dr. Thaiane Lessa · CRO/AL-6418 |
 
 **2. DraftCS**
@@ -37,6 +37,7 @@ Título da seção: "Projetos"; em inglês, "Projects". Rótulos: "Minha parte" 
 | O que é | Você acha grupos, eventos e pessoas pela atividade, como pedal, corrida ou clube do livro. | You find groups, events and people by activity, like cycling, running or book clubs. |
 | Minha parte | Design system, redesenho visual, onboarding, perfil, mensagens diretas e busca. | Design system, visual redesign, onboarding, profile, direct messages and search. |
 
+- "Ver caso completo", em inglês "See full case", nos casos que têm página de caso, hoje só a landing (`docs/fdd/caso.md`).
 - Links: "Ver site" em todos, e "Ver código" só na landing, porque os outros repositórios são privados. Em inglês, "Visit website" e "See code".
 - "Vinicius" é link para https://github.com/ViniciusLoureiro67/ (PRD, D41).
 

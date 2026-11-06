@@ -18,7 +18,7 @@ O inglês é proposto, para revisão de Lucas.
 | Repositório | O código deste site é público, com as decisões registradas no repositório. | This website's code is public, with its decisions on record in the repository. |
 | Texto alternativo | Ilustração de Lucas Portela, sorrindo, de barba e camiseta preta. | Illustration of Lucas Portela, smiling, with a beard and a black T-shirt. |
 
-- Retrato: `public/sobre/lucas.webp`, 1100 x 1100, com as bordas esfumadas por máscara.
+- Retrato: `public/sobre/lucas.webp`, 1100 x 1100, recortado em círculo de borda nítida, sem degradê.
 - "Repositório" é link para https://github.com/portelav/portfolio.
 
 ## Comportamento
