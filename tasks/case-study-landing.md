@@ -3,7 +3,7 @@
 **Slug:** `case-study-landing`
 **Branch:** `feat/case-study-landing`
 **Seção ou área:** Projetos, página nova por caso
-**Status:** Execution
+**Status:** Review
 **Gate S2:** Livre
 
 ---
@@ -142,12 +142,19 @@
 | 4 | Mensagens | `messages/pt-BR.json`, `messages/en.json` | feito |
 | 5 | Rota | `src/i18n/routing.ts`, `src/app/[locale]/projetos/[id]/page.tsx` | feito |
 | 6 | Componentes | `src/components/case-study.tsx`, `locale-link.tsx`, `locale-switcher.tsx`, `projetos.tsx`, `site-footer.tsx`, `src/lib/projects.ts` | feito |
+| 7 | Transição (D69, D71) | `page-transition.tsx`, `project-media.tsx`, `globals.css`, `header-shell.tsx` | feito |
+| 8 | Menu no computador (D70) | `site-nav.tsx`, `site-header.tsx`, mensagens `Header.nav*` | feito |
+| 9 | Retrato sem degradê (D72) | `sobre.tsx`, `globals.css` | feito |
 
 ### Desvios do plano
 - As versões de maio vieram das pastas `thaiane` e `thaianeteste2`, de fora dos repositórios. Lucas escolheu as duas de maio e a de 10 de outubro.
 - Os prints antigos foram feitos com o vídeo parado na sala vazia, sem pessoa nem placa de clínica, e com o telefone do cabeçalho desfocado.
 - O card ganhou a correção do texto de antes e depois (D68), achada ao ler o projeto da landing.
 - O seletor de idioma virou um link de cliente, para continuar no mesmo caso ao trocar o idioma.
+- Lucas achou que a troca de página não ficava clara. Entraram, a pedido dele, a página que empurra a outra (D71) e o menu no computador com o item atual em destaque (D70). A capa clara do caso ficou de fora.
+- O caso abria rolado 56 px, com a volta escondida sob o cabeçalho; o `main` do caso ganhou margem de rolagem.
+- O cabeçalho se escondia ao pular para uma seção; agora volta e fica 1,5 s depois de um link com âncora.
+- O retrato do Sobre perdeu o degradê das bordas (D72), pedido de Lucas na revisão.
 
 ---
 
@@ -166,6 +173,11 @@
 
 - O vídeo do caso toca com 60% na tela, depois do fim do carregamento, como em Projetos.
 - O único erro no console é o 404 de `/_vercel/insights/script.js`, que só existe na Vercel.
+| 9. Transição | Tipos `nav-forward` e `nav-back` nos dois sentidos; quadro do meio mostra a página que sai empurrada e o cabeçalho por cima, em 1350 px e 390 px. Com movimento reduzido, todas as durações são 0 |
+| 10. Menu | Em 1350 px, marca Projetos, Sobre (também em Tecnologias e "Quer um site?") e Contato conforme a rolagem; nada na abertura. No caso, marca Projetos, e os links voltam com `nav-back`. Letra em `--accent` no escuro e em `--fg` no claro, linha em `--accent` nos dois. Em 390 px, o menu não aparece. Em `/en`: Projects, About, Contact |
+| 11. Cabeçalho | Volta e fica depois de clicar no menu e na volta do caso; volta a sair ao rolar para baixo depois de 1,5 s |
+| 12. Caso no topo | Ao abrir o caso, `scrollY` 0 e a volta visível |
+
 - O servidor local precisa responder em `localhost`: preso só em `127.0.0.1`, a reescrita do `next-intl` para `localhost` voltava com 307.
 
 ---
@@ -176,3 +188,24 @@
 - **typecheck:** Pass
 - **build:** Pass
 - **Navegador (390 px e computador, `/` e `/en`, escuro e claro):** Pass, em Chrome emulado. Falta o teste de Lucas em aparelho real.
+
+---
+
+## Stage 9 — Walkthrough
+
+**Veredito:** WARNINGS
+
+| Item | Resultado |
+|---|---|
+| Escopo | Página de caso da landing, mais transição, menu e retrato pedidos por Lucas durante a revisão, todos registrados no PRD (D69 a D72) |
+| Docs primeiro | FDD do caso, FDD do cabeçalho, FDD do Sobre, `DESIGN.md` e PRD atualizados antes ou junto do código |
+| Textos | Todo texto novo nas mensagens, em pt-BR e inglês; paridade checada no `typecheck` |
+| Movimento | Só `transform` e `opacity`; movimento reduzido zera a troca de página e a linha do menu |
+| Cor | `--accent` em letra só no modo escuro (8,96:1); no claro, só a linha (3:1 para elemento gráfico) |
+| Repositório público | Sem segredo, sem paciente, telefone desfocado nos prints, mídia sem metadado |
+| Commits | Conventional Commits, sem atribuição |
+
+**Avisos:**
+- Falta o teste de Lucas em aparelho real, no preview.
+- O link PT do seletor, dentro do caso, aponta para `/pt-BR/projetos/landing` e redireciona para `/projetos/landing`. É o comportamento do `next-intl` ao trocar para o idioma padrão, sem efeito para quem navega.
+- O link dentro do parágrafo do aprendizado tem menos de 44 px de altura, como todo link em texto corrido.
