@@ -35,7 +35,7 @@ A nota de privacidade ainda não existe. O link dela entra no rodapé na entrega
 - Fica preso ao topo da tela, com o fundo `--bg`, sem borda e sem sombra.
 - No celular, sem menu (PRD, D33). No computador, o menu fica antes dos seletores (PRD, D70).
 - Mostra o nome à esquerda e os seletores à direita, desde o fim do preloader (PRD, D47). Durante o preloader, o nome do cabeçalho fica invisível, para o nome que voa pousar no lugar dele.
-- Sai ao rolar para baixo, depois de 80 px, e volta ao rolar para cima. Foco de teclado dentro dele sempre o traz de volta.
+- Sai ao rolar para baixo, depois de 80 px, e volta ao rolar para cima. Foco de teclado dentro dele sempre o traz de volta. Depois de um link para uma seção, volta e fica na tela por 1,5 s, para mostrar onde o visitante chegou.
 - O nome é link para o início da página, no idioma atual.
 - Sem JavaScript, o nome e o seletor de idioma funcionam, e o seletor de tema não aparece.
 
