@@ -1,7 +1,7 @@
 # FDD: Página de caso
 
 Status: implementado
-PRD: D22, D41, D50, D61, D67, D68, D69, D70, D71, D76 e D77
+PRD: D22, D41, D50, D61, D65, D67, D68, D69, D70, D71, D76 e D77
 
 ## Objetivo
 
@@ -9,7 +9,7 @@ Quem quer saber mais sobre um projeto lê, numa página própria, como ele foi f
 
 ## Conteúdo
 
-Casos: a landing da Dra. Thaiane Lessa e o DraftCS. O Crewz vem depois, no mesmo formato. Cada caso declara em `caseStudies` (`src/lib/projects.ts`) as próprias decisões, as versões do caminho e as seções opcionais: "Próximo passo", o link de referência no aprendizado e o vídeo de celular.
+Casos: a landing da Dra. Thaiane Lessa, o DraftCS e o Crewz. Cada caso declara em `caseStudies` (`src/lib/projects.ts`) as próprias decisões, as versões do caminho, cada uma com print de celular e, se houver, de computador, e as seções opcionais: "Próximo passo", o link de referência no aprendizado e o vídeo de celular.
 
 Textos nos arquivos de mensagens, em `CaseStudy`: os títulos das seções em `CaseStudy`, e o conteúdo de cada caso em `CaseStudy.<id>`. A fonte é a conversa com Lucas em 2026-11-05 e a documentação do repositório da landing.
 
@@ -67,6 +67,28 @@ Imagens em `public/projetos/caso/draftcs/`, todas da página inicial, feitas em 
 
 Os prints mostram nomes e países de jogadores profissionais, como o próprio jogo, como referência factual. Sem foto, sem logo de time e sem dado de pessoa comum.
 
+### Crewz
+
+Fontes: as respostas de Lucas em 2026-11-06 e o repositório do Crewz (`origin/main`, lido no mesmo dia). O inglês é proposto, para revisão de Lucas.
+
+- **O pedido:** ninguém encomendou. O Vinicius morou em Dubai, gostava de jiu-jítsu e de moto e não achava gente para fazer isso junto.
+- **Para quem:** quem quer achar gente com o mesmo gosto, de esporte, leitura ou jogo.
+- **As regras:** o Google exige política de privacidade pública para liberar o login a qualquer conta.
+- **As decisões:** sete, escolhidas por Lucas: a atividade antes do perfil, três portas, qualquer atividade, chamar e match, nível por atividade, `@usuário` e privacidade.
+- **Como foi feito:** AI-Driven Development nas partes dos dois, a partir do design system que Lucas fez antes do código.
+- **O caminho:** poucas versões, porque o design system veio antes; mudou o acabamento.
+- **Resultado:** no ar, sem usuários, sem divulgação.
+- **Próximo passo:** nome, domínio, monetização e divulgação.
+- **Fora do texto:** a faculdade, por decisão do dono, e o número de commits.
+
+O Crewz é app de celular (PRD, D65), então o caminho só tem prints de celular, e o grupo "No computador" não aparece. Imagens em `public/projetos/caso/crewz/`, todas da aba Grupos, feitas em 2026-11-06 com o Crewz local: banco Supabase temporário, só com os dados de demonstração, sem o grupo da altinha, na conta fictícia da Camila, no modo claro. O banco temporário foi apagado depois.
+
+| Versão | Commit | Celular |
+|---|---|---|
+| 21 de setembro de 2026 | `6b375054` | 780 x 1170 |
+| 25 de setembro de 2026 | `2116b26a` | 780 x 1170 |
+| No ar | `origin/main` | 780 x 1170 |
+
 ## Comportamento
 
 - Endereço próprio por caso: `/projetos/<id>` em português e `/en/projects/<id>` em inglês. Outro `id` dá a página 404.
@@ -99,6 +121,7 @@ Usa a API de transição de vistas do navegador, pelo `ViewTransition` do React.
 6. Só fatos: sem número inventado de visitas ou de pacientes.
 7. Mídia sem metadado.
 8. No DraftCS, jogadores e times aparecem só por nome e números, como no próprio jogo: nenhuma foto e nenhum logo. O Vinicius aparece com nome e link, com autorização (PRD, D41).
+9. No Crewz, só os dados de demonstração: pessoas fictícias e fotos de licença livre (PRD, D65).
 
 ## Acessibilidade
 
@@ -113,7 +136,6 @@ Usa a API de transição de vistas do navegador, pelo `ViewTransition` do React.
 
 ## Fora de escopo
 
-- Caso do Crewz.
 - Indexação nos buscadores, que segue desligada até o lançamento.
 
 ## Critérios de aceite

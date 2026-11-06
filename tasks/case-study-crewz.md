@@ -3,8 +3,8 @@
 **Slug:** `case-study-crewz`
 **Branch:** `feat/case-study-crewz`
 **Seção ou área:** Página de caso e Projetos
-**Status:** Planning
-**Gate S2:** Bloqueado até Lucas aprovar os prints do caminho
+**Status:** Execution
+**Gate S2:** Livre (Lucas aprovou os prints da aba Grupos em 2026-11-06)
 
 ---
 
@@ -31,7 +31,7 @@
 6. Em 390 px e 1350 px, escuro e claro, `/` e `/en`, sem transbordo; metadados próprios e `noindex`.
 
 ### Perguntas bloqueadoras
-- Aval de Lucas aos prints do caminho.
+- Nenhuma. Lucas aprovou os prints da aba Grupos (21/09, 25/09 e no ar) em 2026-11-06.
 
 ### Premissas
 - Respostas de Lucas em 2026-11-06: origem (Vinicius em Dubai, jiu-jítsu e moto, sem achar gente), público, privacidade exigida pelo Google, decisões 1, 2, 3, 4, 5, 6 e 8, poucas versões porque o design system de Lucas veio antes, no ar sem usuários e sem divulgação, aprendizado em dupla, próximo passo, AI-Driven Development nas partes dos dois.
@@ -80,7 +80,7 @@
 
 ## Stage 4 — Execution Planning
 
-1. [ ] Prints do caminho no celular, de três ou quatro marcos (design system, petróleo e creme, marca nova, no ar), mostrados a Lucas antes de entrar.
+1. [x] Prints do caminho no celular, na aba Grupos: 21/09 (`6b375054`), 25/09 (`2116b26a`) e no ar (`origin/main`), aprovados por Lucas.
 2. [ ] FDD `caso.md`: conteúdo do Crewz e versões só de celular.
 3. [ ] `projects.ts` e `case-study.tsx`: `computer` opcional.
 4. [ ] Mensagens `CaseStudy.crewz` em pt-BR e inglês, e o Crewz em `caseStudies`.
@@ -92,7 +92,7 @@
 
 - [x] Textos previstos em pt-BR e inglês
 - [x] FDD existe e está no checklist
-- [ ] Decisão de produto coberta: falta o aval dos prints
+- [x] Decisão de produto coberta: prints aprovados
 - [x] Checklist ≤ 10, SoT ≤ 4, decisão única, evidências ≤ 7
 
-**Gate S2:** Bloqueado até o aval dos prints.
+**Gate S2:** Livre
