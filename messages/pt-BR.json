@@ -133,7 +133,8 @@
     "linkedin": "LinkedIn",
     "github": "GitHub",
     "whatsapp": "WhatsApp",
-    "lead": "Se quiser conversar sobre estágio ou um site, é por aqui."
+    "lead": "Se quiser conversar sobre estágio ou um site, é por aqui.",
+    "instagram": "Instagram"
   },
   "About": {
     "title": "Sobre",
@@ -150,7 +151,9 @@
     "step2": "Combinamos escopo e prazo por escrito.",
     "step3": "Você acompanha por um link de prévia.",
     "step4": "O site vai ao ar.",
-    "whatsappMessage": "Oi, Lucas. Quero um site."
+    "whatsappMessage": "Oi, Lucas. Quero um site.",
+    "ctaEmail": "Mandar e-mail",
+    "emailSubject": "Quero um site"
   },
   "Privacy": {
     "title": "Privacidade",

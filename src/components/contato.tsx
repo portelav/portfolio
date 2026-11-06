@@ -1,10 +1,11 @@
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
-import { channels } from "@/lib/contact";
+import { channelsFor } from "@/lib/contact";
 
 // The title stays held while the channels pass beside it, as on the landing.
 export function Contato() {
   const t = useTranslations("Contact");
+  const channels = channelsFor(useLocale());
 
   return (
     <section

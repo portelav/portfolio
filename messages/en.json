@@ -133,7 +133,8 @@
     "linkedin": "LinkedIn",
     "github": "GitHub",
     "whatsapp": "WhatsApp",
-    "lead": "If you want to talk about an internship or a website, reach me here."
+    "lead": "If you want to talk about an internship or a website, reach me here.",
+    "instagram": "Instagram"
   },
   "About": {
     "title": "About",
@@ -150,7 +151,9 @@
     "step2": "We agree on scope and deadline in writing.",
     "step3": "You follow along through a preview link.",
     "step4": "The website goes live.",
-    "whatsappMessage": "Hi Lucas, I need a website."
+    "whatsappMessage": "Hi Lucas, I need a website.",
+    "ctaEmail": "Send me an email",
+    "emailSubject": "I need a website"
   },
   "Privacy": {
     "title": "Privacy",
