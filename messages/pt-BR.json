@@ -142,7 +142,7 @@
   "About": {
     "title": "Sobre",
     "text": "Curso Ciência da Computação e me importo com os pequenos detalhes: como o site fica no celular, o tempo de cada animação, o texto de cada botão.",
-    "methodTitle": "Trabalho com <accent>AI-Driven Development</accent>.",
+    "methodTitle": "Trabalho com <accent><keep>AI-Driven</keep> Development</accent>.",
     "methodStep1": "Escrevo a documentação: o que o produto faz, para quem, as regras e cada decisão.",
     "methodStep2": "Agentes de IA escrevem o código a partir dela.",
     "methodStep3": "Eu reviso, testo no celular e no computador e ajusto até ficar certo.",

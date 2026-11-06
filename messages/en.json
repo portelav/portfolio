@@ -142,7 +142,7 @@
   "About": {
     "title": "About",
     "text": "I study Computer Science and I care about the small details: how a website feels on a phone, the timing of each animation, the words on each button.",
-    "methodTitle": "I work with <accent>AI-Driven Development</accent>.",
+    "methodTitle": "I work with <accent><keep>AI-Driven</keep> Development</accent>.",
     "methodStep1": "I write the documentation: what the product does, who it's for, the rules and every decision.",
     "methodStep2": "AI agents write the code from it.",
     "methodStep3": "I review it, test it on phone and desktop, and adjust until it's right.",
