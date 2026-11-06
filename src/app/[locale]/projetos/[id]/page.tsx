@@ -56,7 +56,7 @@ export default async function CasePage({
 
   return (
     <PageTransition>
-      <main className="flex-1">
+      <main className="flex-1 scroll-mt-14">
         <CaseStudy id={id} />
       </main>
     </PageTransition>

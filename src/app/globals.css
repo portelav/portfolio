@@ -252,44 +252,43 @@ html[data-reescrita] .header-name {
   pointer-events: none;
 }
 
-@keyframes page-slide {
+/* Pages push each other off the screen, like an app on a phone: forward goes
+   left, back goes right. The header stays still. */
+@keyframes page-push {
   from {
-    transform: translateX(var(--slide-offset));
+    transform: translateX(var(--push-from, 0));
+  }
+  to {
+    transform: translateX(var(--push-to, 0));
   }
 }
 
-@keyframes page-fade {
-  from {
-    opacity: 0;
-  }
+::view-transition-old(.nav-forward),
+::view-transition-new(.nav-forward),
+::view-transition-old(.nav-back),
+::view-transition-new(.nav-back) {
+  animation: 500ms var(--ease-out-quint) both page-push;
 }
 
 ::view-transition-old(.nav-forward) {
-  --slide-offset: -60px;
-  animation:
-    150ms ease-in both page-fade reverse,
-    400ms var(--ease-out-quint) both page-slide reverse;
+  --push-to: -100%;
 }
 
 ::view-transition-new(.nav-forward) {
-  --slide-offset: 60px;
-  animation:
-    210ms ease-out 150ms both page-fade,
-    400ms var(--ease-out-quint) both page-slide;
+  --push-from: 100%;
 }
 
 ::view-transition-old(.nav-back) {
-  --slide-offset: 60px;
-  animation:
-    150ms ease-in both page-fade reverse,
-    400ms var(--ease-out-quint) both page-slide reverse;
+  --push-to: 100%;
 }
 
 ::view-transition-new(.nav-back) {
-  --slide-offset: -60px;
-  animation:
-    210ms ease-out 150ms both page-fade,
-    400ms var(--ease-out-quint) both page-slide;
+  --push-from: -100%;
+}
+
+/* The header stays still and above the pages while they slide. */
+::view-transition-group(site-header) {
+  z-index: 1;
 }
 
 ::view-transition-group(.morph) {
