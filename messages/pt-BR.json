@@ -15,7 +15,11 @@
     "themeToLight": "Claro",
     "themeToDark": "Escuro",
     "themeToLightLabel": "Mudar para o modo claro",
-    "themeToDarkLabel": "Mudar para o modo escuro"
+    "themeToDarkLabel": "Mudar para o modo escuro",
+    "navLabel": "Seções",
+    "navProjects": "Projetos",
+    "navAbout": "Sobre",
+    "navContact": "Contato"
   },
   "Language": {
     "label": "Idioma",

@@ -5,6 +5,7 @@ import { Link } from "@/i18n/navigation";
 import { BrandName } from "./brand-name";
 import { HeaderShell } from "./header-shell";
 import { LocaleSwitcher } from "./locale-switcher";
+import { SiteNav } from "./site-nav";
 import { ThemeToggle } from "./theme-toggle";
 
 export function SiteHeader() {
@@ -23,6 +24,14 @@ export function SiteHeader() {
           </Link>
         </div>
         <div className="flex items-center gap-2">
+          <SiteNav
+            label={t("navLabel")}
+            items={{
+              projetos: t("navProjects"),
+              sobre: t("navAbout"),
+              contato: t("navContact"),
+            }}
+          />
           <LocaleSwitcher />
           <ThemeToggle
             toLight={t("themeToLight")}

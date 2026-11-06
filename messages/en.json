@@ -15,7 +15,11 @@
     "themeToLight": "Light",
     "themeToDark": "Dark",
     "themeToLightLabel": "Switch to light mode",
-    "themeToDarkLabel": "Switch to dark mode"
+    "themeToDarkLabel": "Switch to dark mode",
+    "navLabel": "Sections",
+    "navProjects": "Projects",
+    "navAbout": "About",
+    "navContact": "Contact"
   },
   "Language": {
     "label": "Language",
