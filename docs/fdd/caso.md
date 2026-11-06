@@ -1,11 +1,11 @@
 # FDD: Página de caso
 
 Status: implementado
-PRD: D22, D61, D67, D68, D69, D70 e D71
+PRD: D22, D61, D67, D68, D69, D70, D71, D76 e D77
 
 ## Objetivo
 
-Quem quer saber mais sobre um projeto lê, numa página própria, como ele foi feito: o pedido, para quem, as regras que limitaram, as decisões, as versões descartadas, o resultado e o que Lucas aprendeu.
+Quem quer saber mais sobre um projeto lê, numa página própria, como ele foi feito: o pedido, para quem, as regras que limitaram, as decisões, o método, as versões descartadas, o resultado e o que Lucas aprendeu.
 
 ## Conteúdo
 
@@ -20,6 +20,7 @@ Textos nos arquivos de mensagens, em `CaseStudy`: os títulos das seções em `C
 | Para quem | Para quem | Who it is for |
 | As regras | As regras | The rules |
 | As decisões | As decisões | The decisions |
+| Como foi feito | Como foi feito | How it was made |
 | O caminho | O que ficou pelo caminho | What was left behind |
 | Resultado | Resultado | Result |
 | Próximo passo | Próximo passo | Next step |
@@ -35,6 +36,12 @@ Imagens da landing, em `public/projetos/caso/landing/`, todas do topo da página
 | No ar | 780 x 1170 | 1350 x 900 |
 
 No topo, a mesma mídia do card de Projetos, com print e vídeo.
+
+"Como foi feito" conta o AI-Driven Development naquele projeto (PRD, D76 e D77): o que Lucas documentou, o que os agentes escreveram e como ele revisou. Na landing:
+
+| pt-BR | Inglês |
+|---|---|
+| Do mesmo jeito deste site, com AI-Driven Development. Escrevi a documentação: o público, as regras do Conselho, cada seção e cada decisão de movimento. Agentes de IA escreveram o código a partir dela, e eu revisei cada versão no celular antes de ir ao ar. | The same way as this website, with AI-Driven Development. I wrote the documentation: the audience, the Council's rules, every section and every motion decision. AI agents wrote the code from it, and I reviewed every version on a phone before it went live. |
 
 ## Comportamento
 
