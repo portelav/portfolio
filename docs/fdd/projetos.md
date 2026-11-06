@@ -1,7 +1,7 @@
 # FDD: Seção Projetos
 
 Status: implementado
-PRD: seção 6, item Projetos; D3, D22, D40, D41, D43, D44, D50 e D51
+PRD: seção 6, item Projetos; D3, D22, D40, D41, D43, D44, D50, D51 e D77
 
 ## Objetivo
 
@@ -27,7 +27,7 @@ Título da seção: "Projetos"; em inglês, "Projects". Rótulos: "Minha parte" 
 |---|---|---|
 | Tipo | Jogo web · em dupla com Vinicius | Web game · with Vinicius |
 | O que é | Você sorteia um elenco real de um Major de Counter-Strike, escala cinco jogadores e simula a corrida pelo título. | You draw a real Counter-Strike Major roster, pick five players and simulate the run for the title. |
-| Minha parte | Curadoria dos dados de jogadores, elencos e países, a rolagem do simulador no celular e a área de compartilhar o resultado. | Curating player, roster and country data, the simulator's scrolling on phones, and the area for sharing results. |
+| Minha parte | A documentação, escrita com o Vinicius: as regras do jogo, o formato do Major e cada decisão. Também a curadoria dos dados de jogadores, elencos e países e o card de resultado. | The documentation, written with Vinicius: the game rules, the Major format and every decision. Also curating player, roster and country data, and the result card. |
 
 **3. Crewz**
 

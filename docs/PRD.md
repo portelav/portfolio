@@ -186,7 +186,7 @@ Depois de comparar o rascunho com uma amostra de portfólios de outros devs, o d
 - **D47.** O nome fica no cabeçalho desde o fim do preloader. O cabeçalho sai ao rolar para baixo e volta ao rolar para cima. Substitui D30 e ajusta D33.
 - **D48.** Ajustada por D61. A frase de apresentação é "Me chamo Lucas Portela e já fiz alguns sites que estão no ar.", seguida de "Estudo Ciência da Computação em Maceió. Procuro estágio em desenvolvimento e faço sites para quem precisa de um." O aprendizado com IA passa para o Sobre, com o mesmo sentido da D37. Substitui D37.
 - **D49.** As chamadas da abertura são "Quero um site" e "Falar sobre estágio", uma para cada público (D1). Substitui D35.
-- **D50.** Cada caso diz a parte de Lucas no trabalho. Em dupla, com o nome do Vinicius ao lado (D41). Lucas confirmou o texto de cada caso. Substitui D39.
+- **D50.** Cada caso diz a parte de Lucas no trabalho. Em dupla, com o nome do Vinicius ao lado (D41). Lucas confirmou o texto de cada caso. Substitui D39. Ajustada por D77.
 - **D51.** Cada caso tem um vídeo do próprio site sobre o print, um tocando por vez e com pausa. Celular e computador têm print e vídeo próprios. Quem aparece autorizou.
 - **D52.** Tecnologias entra como seção própria, depois do Sobre, com os logos nas cores originais. O veto a ícones coloridos sai do `DESIGN.md`.
 - **D53.** Ajustada por D73. O bloco "Quer um site?" tem oferta, quatro passos e um botão para o WhatsApp com mensagem pronta. Sem preço por enquanto. Os passos são compromisso de Lucas com quem contrata.
@@ -200,7 +200,7 @@ Depois de comparar o rascunho com uma amostra de portfólios de outros devs, o d
 
 ### Rodada 9 (2026-11-04): auditoria de textos
 
-- **D61.** A frase do Sobre é "Curso Ciência da Computação e me importo com os pequenos detalhes: como o site fica no celular, o tempo de cada animação, o texto de cada botão." O site não cita a saída do Direito, o aprendizado com IA nem o nome da instituição, por decisão do dono. Substitui D23 e D34, e ajusta D48 e D55. Retrato e movimento da D55 continuam. Ajustada por D76.
+- **D61.** A frase do Sobre é "Curso Ciência da Computação e me importo com os pequenos detalhes: como o site fica no celular, o tempo de cada animação, o texto de cada botão." O site não cita a saída do Direito, o aprendizado com IA nem o nome da instituição, por decisão do dono. Substitui D23 e D34, e ajusta D48 e D55. Retrato e movimento da D55 continuam. Ajustada por D76. Ajustada por D77.
 - **D62.** Textos revistos na auditoria, com aval do dono. O Crewz passa a dizer "Você acha grupos, eventos e pessoas pela atividade, como pedal, corrida ou clube do livro." O WhatsApp aparece com o código do país. No inglês, o termo é "website", e o caso da landing se chama "Dr. Thaiane Lessa". Ajusta D50.
 
 ### Rodada 10 (2026-11-05): LCP em produção
@@ -228,3 +228,4 @@ Depois de comparar o rascunho com uma amostra de portfólios de outros devs, o d
 ### Rodada 13 (2026-11-06): método
 
 - **D76.** O site pode dizer que Lucas trabalha com AI-Driven Development, como método: ele escreve a documentação, com produto, regras e decisões, e agentes de IA escrevem o código a partir dela. O que a D61 tirou foi a ideia de "estou aprendendo com IA", não o método. Os casos contam o método e o papel de Lucas em cada projeto. Decisão do dono em 2026-11-06. Ajusta D61.
+- **D77.** O Sobre ganha um bloco de método, com destaque: "Trabalho com AI-Driven Development", com o nome do método em `--accent`, três passos (a documentação que Lucas escreve, o código que os agentes escrevem a partir dela, e a revisão e o teste de Lucas) e o repositório deste site como prova. Cada página de caso ganha a seção "Como foi feito", com o método naquele projeto. No card do DraftCS, a parte de Lucas passa a ser a documentação, escrita com o Vinicius, a curadoria dos dados e o card de resultado. Decisão do dono em 2026-11-06. Ajusta D50 e D61.
