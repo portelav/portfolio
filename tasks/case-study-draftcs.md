@@ -3,7 +3,7 @@
 **Slug:** `case-study-draftcs`
 **Branch:** `feat/case-study-draftcs`
 **Seção ou área:** Página de caso e Projetos
-**Status:** Review
+**Status:** Done (PR #10 mergeado em 2026-11-06)
 **Gate S2:** Livre (dono respondeu em 2026-11-06)
 
 ---
