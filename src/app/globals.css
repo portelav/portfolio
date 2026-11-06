@@ -155,11 +155,6 @@
   opacity: 1;
 }
 
-/* The portrait in the about section. */
-.portrait-image {
-  mask-image: radial-gradient(closest-side, #000 76%, transparent 100%);
-}
-
 /* Preloader. Only shows while the page is marked. */
 .preloader {
   display: none;
