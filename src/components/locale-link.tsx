@@ -15,6 +15,7 @@ type LocaleLinkProps = {
 };
 
 // Switches the language without leaving the page: a case stays on the same case.
+// On phones, only the other language shows, to leave room for the contact icons.
 export function LocaleLink({
   locale,
   label,
@@ -35,8 +36,10 @@ export function LocaleLink({
       aria-label={label}
       aria-current={current ? "true" : undefined}
       prefetch={false}
-      className={`inline-flex min-h-11 min-w-11 items-center justify-center font-mono text-sm ${
-        current ? "underline underline-offset-4" : ""
+      className={`min-h-11 min-w-11 items-center justify-center font-mono text-sm ${
+        current
+          ? "hidden underline underline-offset-4 md:inline-flex"
+          : "inline-flex"
       }`}
     >
       {children}

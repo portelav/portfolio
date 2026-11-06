@@ -86,6 +86,13 @@
   }
 }
 
+/* On narrow phones, the header gives its icons a little more room. */
+@media (max-width: 24.3rem) {
+  header .page-frame {
+    padding-inline: 1rem;
+  }
+}
+
 /* Each project arrives as it enters the screen. Browsers without scroll-driven
  * animations, and reduced motion, simply show it. */
 @keyframes reveal {

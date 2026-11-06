@@ -24,7 +24,7 @@ export function SiteHeader() {
             <BrandName className="h-auto w-24" />
           </Link>
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center md:gap-2">
           <SiteNav
             label={t("navLabel")}
             items={{
@@ -33,7 +33,7 @@ export function SiteHeader() {
               contato: t("navContact"),
             }}
           />
-          <ContactIcons className="mr-2 hidden md:flex" />
+          <ContactIcons className="md:mr-2" />
           <LocaleSwitcher />
           <ThemeToggle
             toLight={t("themeToLight")}
