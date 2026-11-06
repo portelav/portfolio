@@ -23,6 +23,7 @@
 3. [x] `src/lib/contact.ts`: link de e-mail, canal do Instagram e ordem por idioma.
 4. [x] `quer-um-site.tsx` e `contato.tsx`.
 5. [x] Ícones de WhatsApp, e-mail e Instagram no cabeçalho (PRD, D74): `contact-icons.tsx`, e no celular tema em ícone e idioma só com o outro.
+6. [ ] Cores de marca nos ícones do cabeçalho (PRD, D75; `DESIGN.md`, seção 3).
 
 ## Stage 7 — Tests
 

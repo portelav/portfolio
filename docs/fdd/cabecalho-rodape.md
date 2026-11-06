@@ -1,7 +1,7 @@
 # FDD: Seção Cabeçalho e rodapé
 
 Status: implementado
-PRD: seção 6, item Cabeçalho e rodapé; D25, D26, D27, D32, D33, D47, D70 e D74
+PRD: seção 6, item Cabeçalho e rodapé; D25, D26, D27, D32, D33, D47, D70, D74 e D75
 
 ## Objetivo
 
@@ -50,7 +50,8 @@ A nota de privacidade ainda não existe. O link dela entra no rodapé na entrega
 **Ícones de contato**
 
 - WhatsApp, e-mail e Instagram, depois do menu e antes do idioma (PRD, D74), na ordem de Contato: em `/en`, o e-mail vem primeiro.
-- Só o desenho, de 20 px, em `--fg`, com área de toque de 44 px e o nome do canal como nome acessível e dica.
+- Só o desenho, de 20 px, com área de toque de 44 px e o nome do canal como nome acessível e dica.
+- Cada um na cor da marca (PRD, D75; `DESIGN.md`, seção 3): WhatsApp em `#25D366` no escuro e `#128C7E` no claro, Instagram no degradê da marca e e-mail em `--accent`.
 - WhatsApp e Instagram vêm do Simple Icons; o envelope é desenhado no próprio código, com traço parecido.
 - No celular também, depois do nome. Abaixo de 360 px, o Instagram sai do cabeçalho e fica só em Contato. Abaixo de 390 px, a margem lateral do cabeçalho cai para 1 rem.
 
