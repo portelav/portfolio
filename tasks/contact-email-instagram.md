@@ -3,7 +3,7 @@
 **Slug:** `contact-email-instagram`
 **Branch:** `feat/contact-email-instagram`
 **Seção ou área:** Quer um site? e Contato
-**Status:** Review
+**Status:** Done (PR #8)
 **Gate S2:** Livre (entrega pequena, decisão do dono em 2026-11-05)
 
 ---
