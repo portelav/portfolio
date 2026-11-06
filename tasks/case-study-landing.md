@@ -3,7 +3,7 @@
 **Slug:** `case-study-landing`
 **Branch:** `feat/case-study-landing`
 **Seção ou área:** Projetos, página nova por caso
-**Status:** Review
+**Status:** Done (PR #7)
 **Gate S2:** Livre
 
 ---
