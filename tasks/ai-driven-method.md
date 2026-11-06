@@ -3,7 +3,7 @@
 **Slug:** `ai-driven-method`
 **Branch:** `feat/ai-driven-method`
 **Seção ou área:** Sobre, Projetos e página de caso
-**Status:** Execution
+**Status:** Review
 **Gate S2:** Livre (texto e desenho aprovados pelo dono em 2026-11-06)
 
 ---
@@ -19,10 +19,13 @@
 ## Stage 4 — Execution Planning
 
 1. [x] PRD D76 e D77; FDDs do Sobre, da página de caso e de Projetos.
-2. [ ] Mensagens `About`, `CaseStudy.method`, `CaseStudy.landing.method` e `Projects.draftcs.part`, em pt-BR e inglês.
-3. [ ] `sobre.tsx`: bloco de método.
-4. [ ] `case-study.tsx`: seção "Como foi feito".
+2. [x] Mensagens `About`, `CaseStudy.method`, `CaseStudy.landing.method` e `Projects.draftcs.part`, em pt-BR e inglês.
+3. [x] `sobre.tsx`: bloco de método.
+4. [x] `case-study.tsx`: seção "Como foi feito".
 
 ## Stage 7 — Tests
 
-> TODO: lint, typecheck, build; Sobre e caso em 390 px e no computador, `/` e `/en`, escuro e claro.
+- `lint`, `typecheck` e `build` verdes.
+- Sobre no computador (escuro) e em 390 px (claro em `/`, escuro em `/en`): título do método com "AI-Driven" sem quebrar no hífen, três passos e link, sem transbordo.
+- Card do DraftCS em `/en` com a nova "Minha parte".
+- Caso da landing no computador: "Como foi feito" entre "As decisões" e "O que ficou pelo caminho".
