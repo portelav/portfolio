@@ -17,7 +17,7 @@ Sem data fixa (PRD, D5). Todo o trabalho entra na `main` deste repositório, pub
 - Domínio próprio (PRD, D7).
 - Outros projetos além dos três casos em destaque.
 - Regravar os vídeos dos casos com mais capricho.
-- Páginas de caso do DraftCS e do Crewz, no formato da landing (PRD, D67).
+- Página de caso do Crewz, no formato da landing (PRD, D67). A do DraftCS está feita (`tasks/case-study-draftcs.md`).
 
 ## Talvez
 

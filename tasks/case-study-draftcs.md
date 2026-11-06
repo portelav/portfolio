@@ -3,7 +3,7 @@
 **Slug:** `case-study-draftcs`
 **Branch:** `feat/case-study-draftcs`
 **Seção ou área:** Página de caso e Projetos
-**Status:** Execution
+**Status:** Review
 **Gate S2:** Livre (dono respondeu em 2026-11-06)
 
 ---
@@ -85,11 +85,11 @@
 
 ## Stage 4 — Execution Planning
 
-1. [ ] FDD `caso.md`: conteúdo do DraftCS (textos em pt-BR e inglês, versões e prints), formato com seções e versões por caso; PRD, se a resposta sobre "Próximo passo" pedir.
-2. [ ] `src/lib/projects.ts` e `case-study.tsx`: caso pelos dados (decisões, versões, seções opcionais), com a landing igual.
-3. [ ] Prints do caminho do DraftCS em `public/projetos/caso/draftcs/`, WebP sem metadado, revisados.
-4. [ ] Mensagens `CaseStudy.draftcs` em pt-BR e inglês, e o DraftCS em `caseStudies`.
-5. [ ] Docs: status do FDD, ROADMAP (caso do DraftCS feito), `CLAUDE.md` (estado atual).
+1. [x] FDD `caso.md`: conteúdo do DraftCS (textos em pt-BR e inglês, versões e prints), formato com seções e versões por caso; PRD, se a resposta sobre "Próximo passo" pedir.
+2. [x] `src/lib/projects.ts` e `case-study.tsx`: caso pelos dados (decisões, versões, seções opcionais), com a landing igual.
+3. [x] Prints do caminho do DraftCS em `public/projetos/caso/draftcs/`, WebP sem metadado, revisados.
+4. [x] Mensagens `CaseStudy.draftcs` em pt-BR e inglês, e o DraftCS em `caseStudies`.
+5. [x] Docs: status do FDD, ROADMAP (caso do DraftCS feito), `CLAUDE.md` (estado atual).
 
 ---
 
@@ -101,3 +101,19 @@
 - [x] Checklist ≤ 10, SoT ≤ 4, decisão única, evidências ≤ 7
 
 **Gate S2:** Livre
+
+---
+
+## Stage 6 — Code Execution
+
+- Prints: as duas primeiras versões rodando localmente o histórico do DraftCS (`8300015` e `fd8be64`, em worktrees temporárias, já removidas), a terceira em draftcs.com. A referência `design/draftcs.dc.html` abre sem o `support.js`, mas com partes do modelo sem preencher, por isso não entrou.
+- A barra de rolagem saiu nos prints de computador e foi cortada (1335 x 890, redimensionado para 1350 x 900).
+- `caseStudies` ganhou `decisions`, `referenceUrl` e `hasNext` por caso; o vídeo de celular segue o caminho do card de Projetos.
+- O site no ar mostra 553 jogadores; o texto diz "mais de 550".
+
+## Stage 7 — Tests
+
+- `lint`, `typecheck` e `build` verdes; `/projetos/draftcs` e `/en/projects/draftcs` geradas, `/projetos/crewz` dá 404.
+- Caso da landing com as mesmas seções e decisões de antes.
+- DraftCS no computador, escuro: topo com mídia, "Caso completo", Projetos marcado no menu; caminho com três versões no celular e no computador.
+- DraftCS em 390 px, `/en`, claro: sem transbordo; título, `canonical`, `hreflang` e `noindex` próprios.
