@@ -3,8 +3,8 @@
 **Slug:** `case-study-draftcs`
 **Branch:** `feat/case-study-draftcs`
 **Seção ou área:** Página de caso e Projetos
-**Status:** Planning
-**Gate S2:** Bloqueado (uma pergunta ao dono, abaixo)
+**Status:** Execution
+**Gate S2:** Livre (dono respondeu em 2026-11-06)
 
 ---
 
@@ -32,7 +32,7 @@
 7. Título, descrição, `canonical` e `hreflang` próprios, com `noindex` como o resto do site.
 
 ### Perguntas bloqueadoras
-- **"Próximo passo":** a landing tem essa seção (a parte para dentistas). O DraftCS tem um próximo passo, como o lançamento para fora do Brasil ou outro modo de jogo, ou a seção fica de fora nesse caso?
+- Nenhuma. "Próximo passo" fica fora do caso do DraftCS por enquanto (dono, 2026-11-06).
 
 ### Premissas
 - Fatos do repositório do DraftCS, lidos em 2026-11-06 (`origin/main`): primeiro commit em 2026-06-13, com o nome 13-0; rebrand para draftcs em 2026-06-16; no ar em draftcs.com em 2026-06-19; 20 Majors, 564 jogadores, rating por evento; dados do Kaggle e da Liquipedia (CC-BY-SA), com crédito em `/creditos`; três idiomas (inglês, português e russo); card de resultado em três formatos (feed, quadrado e story).
@@ -97,7 +97,7 @@
 
 - [x] Textos previstos em pt-BR e inglês
 - [x] FDD existe e está no checklist
-- [ ] Decisão de produto coberta pelo PRD ou pergunta aberta: "Próximo passo" do DraftCS
+- [x] Decisão de produto coberta: "Próximo passo" fora do DraftCS (dono, 2026-11-06)
 - [x] Checklist ≤ 10, SoT ≤ 4, decisão única, evidências ≤ 7
 
-**Gate S2:** Bloqueado até a resposta sobre "Próximo passo".
+**Gate S2:** Livre
