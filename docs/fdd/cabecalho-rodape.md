@@ -34,7 +34,7 @@ A nota de privacidade ainda não existe. O link dela entra no rodapé na entrega
 **Cabeçalho**
 
 - Fica preso ao topo da tela, com o fundo `--bg`, sem borda e sem sombra.
-- No celular, sem menu (PRD, D33). No computador, o menu fica antes dos seletores (PRD, D70).
+- No celular, sem menu (PRD, D33). No computador, o menu fica antes dos ícones de contato e dos seletores (PRD, D70 e D74).
 - Mostra o nome à esquerda e os seletores à direita, desde o fim do preloader (PRD, D47). Durante o preloader, o nome do cabeçalho fica invisível, para o nome que voa pousar no lugar dele.
 - Sai ao rolar para baixo, depois de 80 px, e volta ao rolar para cima. Foco de teclado dentro dele sempre o traz de volta. Depois de um link para uma seção, volta e fica na tela por 1,5 s, para mostrar onde o visitante chegou.
 - O nome é link para o início da página, no idioma atual.
@@ -47,21 +47,21 @@ A nota de privacidade ainda não existe. O link dela entra no rodapé na entrega
 - Na página inicial, o item atual é o da seção que está na tela. Sobre continua marcado em Tecnologias e em "Quer um site?". Na abertura, nenhum item fica marcado.
 - Na página de caso, Projetos fica marcado, e os três links voltam à página inicial com a animação de volta.
 
-**Ícones de contato, no computador**
+**Ícones de contato**
 
 - WhatsApp, e-mail e Instagram, depois do menu e antes do idioma (PRD, D74), na ordem de Contato: em `/en`, o e-mail vem primeiro.
 - Só o desenho, de 20 px, em `--fg`, com área de toque de 44 px e o nome do canal como nome acessível e dica.
 - WhatsApp e Instagram vêm do Simple Icons; o envelope é desenhado no próprio código, com traço parecido.
-- No celular, ainda em aberto.
+- No celular também, depois do nome. Abaixo de 360 px, o Instagram sai do cabeçalho e fica só em Contato. Abaixo de 390 px, a margem lateral do cabeçalho cai para 1 rem.
 
 **Seletor de idioma**
 
-- Dois links, `PT` e `EN`. O idioma atual tem sublinhado e `aria-current`.
+- Dois links, `PT` e `EN`. O idioma atual tem sublinhado e `aria-current`. No celular, só aparece o link do outro idioma (PRD, D74).
 - Leva para o início, no outro idioma. Na página de caso, leva ao mesmo caso no outro idioma (`docs/fdd/caso.md`). Na 404, o início é o que o visitante precisa. Como o layout raiz muda, a página recarrega inteira.
 
 **Seletor de tema**
 
-- Um botão que mostra o modo para o qual vai mudar.
+- Um botão que mostra o modo para o qual vai mudar: a palavra no computador, e um sol ou uma lua no celular (PRD, D74).
 - Troca na hora e guarda a escolha em `localStorage`, nunca em cookie.
 - Atualiza também o `theme-color` da barra do navegador, inclusive ao carregar com um tema salvo.
 
@@ -101,7 +101,7 @@ Nunca anima: seletores, troca de tema, rodapé e página 404.
 ## Acessibilidade
 
 - `header` e `footer` como marcos da página, com o conteúdo em `main`.
-- Ordem de foco: nome; menu e ícones de contato, no computador; idioma; tema; conteúdo; rodapé.
+- Ordem de foco: nome; menu, no computador; ícones de contato; idioma; tema; conteúdo; rodapé.
 - Foco visível em todos os controles, como no `DESIGN.md`.
 - Seletor de idioma em `nav`, com nome acessível, e cada link com o `lang` do idioma de destino.
 - Com `prefers-reduced-motion`, o cabeçalho sai e volta sem movimento, e o cursor não pisca.
