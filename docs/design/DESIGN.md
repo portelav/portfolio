@@ -67,6 +67,16 @@ Calculado em 2026-11-01 pela fórmula da WCAG.
 
 Por causa da última linha, texto pequeno em destaque no modo claro usa `--fg`, com outro sinal além da cor, como sublinhado.
 
+### Cores de marca de terceiros
+
+Os logos de Tecnologias e os ícones de contato do cabeçalho usam a cor de cada marca, não a paleta do site (PRD, D75). Valem só nesses desenhos, nunca em texto, fundo ou borda. Calculado em 2026-11-06:
+
+| Desenho | Escuro | Claro |
+|---|---|---|
+| WhatsApp | `#25D366`, 9,92:1 | `#128C7E`, 3,69:1. O `#25D366` daria 1,77:1 e reprova |
+| Instagram, degradê | `#285AEB` a `#FDF497`, de 3,52:1 a 17,39:1 | Do azul ao rosa, de 4,06:1 a 5,00:1. O canto amarelo some (1,01:1), e o desenho se lê pela parte rosa e roxa |
+| E-mail | `--accent`, 8,96:1 | `--accent`, 4,14:1 |
+
 ## 4. Tipografia
 
 | Papel | Fonte | Tamanho e peso |
@@ -113,6 +123,7 @@ Fontes carregadas por `next/font`, servidas do próprio site. Nada abaixo de 14 
 | Ida e volta da página de caso | "Ver caso completo", "Voltar aos projetos" e o menu | 500 ms em `--ease-out-quint`: a página que entra empurra a que sai para fora da tela; a mídia do card cresce até a capa em 450 ms | Mostra que o visitante trocou de lugar (PRD, D69 e D71) |
 | Item atual do menu | Seção na tela muda; troca de página | 350 ms em `--ease-out-quint`: a linha em `--accent` desliza até o item novo | Mostra onde o visitante está (PRD, D70) |
 | Linha de contato | Hover | 350 ms: anda 0,5 rem | Retorno de interação |
+| Ícone de contato no cabeçalho | Hover | 200 ms: cresce 15% | Retorno de interação (PRD, D74) |
 
 - Animação só de `transform` e `opacity`; nada de desfoque ou `mix-blend-mode` em elemento que se move.
 - O que se mexe sozinho por mais de 5 s tem como pausar ou para sozinho (WCAG 2.2.2).

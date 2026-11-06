@@ -86,6 +86,13 @@
   }
 }
 
+/* On narrow phones, the header gives its icons a little more room. */
+@media (max-width: 24.3rem) {
+  header .page-frame {
+    padding-inline: 1rem;
+  }
+}
+
 /* Each project arrives as it enters the screen. Browsers without scroll-driven
  * animations, and reduced motion, simply show it. */
 @keyframes reveal {
@@ -308,5 +315,16 @@ html[data-reescrita] .header-name {
 
   .stack-item:hover .tech-logo {
     transform: translateY(-4px) scale(1.08);
+  }
+}
+
+/* Contact icons in the header grow a little on hover. */
+@media (prefers-reduced-motion: no-preference) and (hover: hover) {
+  .contact-icon svg {
+    transition: transform 200ms var(--ease-out-quint);
+  }
+
+  .contact-icon:hover svg {
+    transform: scale(1.15);
   }
 }

@@ -1,7 +1,7 @@
 # FDD: Seção Contato e nota de privacidade
 
 Status: implementado
-PRD: seção 6, itens Contato e Nota de privacidade; D9, D10, D14, D24, D32, D54 e D57; Regras de fora
+PRD: seção 6, itens Contato e Nota de privacidade; D9, D10, D14, D24, D32, D54, D57 e D73; Regras de fora
 
 ## Objetivo
 
@@ -20,8 +20,11 @@ Quem quer falar com Lucas encontra todos os caminhos em um lugar só, e sabe o q
 |---|---|---|---|
 | 1 | WhatsApp | O número de Lucas | Conversa no WhatsApp |
 | 2 | E-mail | O endereço de Lucas | Novo e-mail |
-| 3 | LinkedIn | O perfil de Lucas | LinkedIn |
-| 4 | GitHub | `portelav` | https://github.com/portelav |
+| 3 | Instagram | `@lucasportelav` | Perfil no Instagram |
+| 4 | LinkedIn | O perfil de Lucas | LinkedIn |
+| 5 | GitHub | `portelav` | https://github.com/portelav |
+
+Em `/en`, o e-mail vem primeiro e o WhatsApp em segundo; o resto segue a mesma ordem (PRD, D73).
 
 Número, e-mail e links moram em um arquivo só, `src/lib/contact.ts` (PRD, D9 e D24). Não são repetidos em documento.
 
@@ -80,13 +83,13 @@ Texto aprovado por Lucas em 2026-11-03:
 ## Fora de escopo
 
 - Formulário e agendamento.
-- Instagram e outras redes.
+- Outras redes além do Instagram.
 
 ## Critérios de aceite
 
 - [ ] Em 390 px e no computador, em `/` e `/en`, escuro e claro, sem transbordo, e a lista respeita as margens da página.
 - [ ] "Falar sobre estágio" leva até a seção, com o título visível.
-- [ ] Os quatro canais abrem o destino certo, testados em aparelho real.
+- [ ] Os cinco canais abrem o destino certo, testados em aparelho real.
 - [ ] A nota de privacidade está no fim da página, nos dois idiomas, e o link do rodapé leva até ela com o texto visível.
 - [ ] O navegador não mostra nenhum cookie não essencial.
 - [ ] Leitor de tela lê rótulo e valor de cada canal, sem a seta.

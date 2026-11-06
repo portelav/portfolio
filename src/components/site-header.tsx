@@ -3,6 +3,7 @@ import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 
 import { BrandName } from "./brand-name";
+import { ContactIcons } from "./contact-icons";
 import { HeaderShell } from "./header-shell";
 import { LocaleSwitcher } from "./locale-switcher";
 import { SiteNav } from "./site-nav";
@@ -23,7 +24,7 @@ export function SiteHeader() {
             <BrandName className="h-auto w-24" />
           </Link>
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center md:gap-2">
           <SiteNav
             label={t("navLabel")}
             items={{
@@ -32,6 +33,7 @@ export function SiteHeader() {
               contato: t("navContact"),
             }}
           />
+          <ContactIcons className="md:mr-2" />
           <LocaleSwitcher />
           <ThemeToggle
             toLight={t("themeToLight")}
