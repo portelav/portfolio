@@ -1,7 +1,7 @@
 # FDD: Seção Cabeçalho e rodapé
 
 Status: implementado
-PRD: seção 6, item Cabeçalho e rodapé; D25, D26, D27, D32, D33, D47 e D70
+PRD: seção 6, item Cabeçalho e rodapé; D25, D26, D27, D32, D33, D47, D70 e D74
 
 ## Objetivo
 
@@ -20,6 +20,7 @@ Textos nos arquivos de mensagens, em pt-BR e inglês. Valores propostos, a confi
 | Nome, para leitor de tela | portelav, voltar ao início | portelav, back to home |
 | Menu, só no computador | Projetos, Sobre, Contato | Projects, About, Contact |
 | Menu, para leitor de tela | Seções | Sections |
+| Ícones de contato, para leitor de tela | Contatos; cada ícone com o nome do canal, como em Contato | Contact; each icon with the channel name, as in Contact |
 | Rodapé | Todos os direitos reservados. | All rights reserved. |
 | 404, título | Essa página não existe. | This page doesn't exist. |
 | 404, link | Voltar ao início | Back to home |
@@ -45,6 +46,13 @@ A nota de privacidade ainda não existe. O link dela entra no rodapé na entrega
 - O item atual tem `aria-current="location"` e uma linha de 2 px em `--accent` embaixo. No modo escuro, a letra também fica em `--accent`. No modo claro, a letra fica em `--fg`, porque `--accent` reprova em texto pequeno (`DESIGN.md`, seção 3).
 - Na página inicial, o item atual é o da seção que está na tela. Sobre continua marcado em Tecnologias e em "Quer um site?". Na abertura, nenhum item fica marcado.
 - Na página de caso, Projetos fica marcado, e os três links voltam à página inicial com a animação de volta.
+
+**Ícones de contato, no computador**
+
+- WhatsApp, e-mail e Instagram, depois do menu e antes do idioma (PRD, D74), na ordem de Contato: em `/en`, o e-mail vem primeiro.
+- Só o desenho, de 20 px, em `--fg`, com área de toque de 44 px e o nome do canal como nome acessível e dica.
+- WhatsApp e Instagram vêm do Simple Icons; o envelope é desenhado no próprio código, com traço parecido.
+- No celular, ainda em aberto.
 
 **Seletor de idioma**
 
@@ -75,6 +83,7 @@ A nota de privacidade ainda não existe. O link dela entra no rodapé na entrega
 | Cabeçalho sai e volta | Rolar para baixo; rolar para cima; foco | `transform`, 500 ms, `--ease-out-quint` | Dá espaço ao conteúdo sem perder o caminho de volta |
 | Cursor do nome | Hover ou foco no link do nome | `opacity` em `steps(1)`, ciclo de 1,06 s, parando antes de 5 s, e depois aceso | Retorno de interação (PRD, D16 e D27) |
 
+| Ícone de contato | Hover | `transform` do desenho, 200 ms, `--ease-out-quint`: cresce 15% | Retorno de interação |
 | Item atual do menu | Seção na tela muda; troca de página | `transform` da linha, 350 ms, `--ease-out-quint` | Mostra onde o visitante está (PRD, D70) |
 
 Nunca anima: seletores, troca de tema, rodapé e página 404.
@@ -92,7 +101,7 @@ Nunca anima: seletores, troca de tema, rodapé e página 404.
 ## Acessibilidade
 
 - `header` e `footer` como marcos da página, com o conteúdo em `main`.
-- Ordem de foco: nome; menu, no computador; idioma; tema; conteúdo; rodapé.
+- Ordem de foco: nome; menu e ícones de contato, no computador; idioma; tema; conteúdo; rodapé.
 - Foco visível em todos os controles, como no `DESIGN.md`.
 - Seletor de idioma em `nav`, com nome acessível, e cada link com o `lang` do idioma de destino.
 - Com `prefers-reduced-motion`, o cabeçalho sai e volta sem movimento, e o cursor não pisca.

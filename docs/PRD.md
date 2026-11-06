@@ -222,3 +222,4 @@ Depois de comparar o rascunho com uma amostra de portfólios de outros devs, o d
 ### Rodada 12 (2026-11-05): contato
 
 - **D73.** "Quer um site?" ganha um botão de e-mail ao lado do de WhatsApp, e Contato ganha o Instagram `@lucasportelav`, nos dois idiomas. Em `/en`, o e-mail vem primeiro, no bloco e em Contato, porque fora do Brasil o WhatsApp é menos usado. Em pt-BR, o WhatsApp segue primeiro. Os textos escondidos em inglês ficam como estão. Decisão do dono em 2026-11-05. Ajusta D53 e D54.
+- **D74.** No computador, o cabeçalho ganha ícones de WhatsApp, e-mail e Instagram, depois do menu e antes do idioma, como na landing da Dra. Thaiane, mas só o desenho, na cor do texto, sem quadrado em volta. A ordem segue a de Contato no idioma da página. No celular, ainda em aberto. Pedido do dono em 2026-11-06.

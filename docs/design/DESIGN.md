@@ -113,6 +113,7 @@ Fontes carregadas por `next/font`, servidas do próprio site. Nada abaixo de 14 
 | Ida e volta da página de caso | "Ver caso completo", "Voltar aos projetos" e o menu | 500 ms em `--ease-out-quint`: a página que entra empurra a que sai para fora da tela; a mídia do card cresce até a capa em 450 ms | Mostra que o visitante trocou de lugar (PRD, D69 e D71) |
 | Item atual do menu | Seção na tela muda; troca de página | 350 ms em `--ease-out-quint`: a linha em `--accent` desliza até o item novo | Mostra onde o visitante está (PRD, D70) |
 | Linha de contato | Hover | 350 ms: anda 0,5 rem | Retorno de interação |
+| Ícone de contato no cabeçalho | Hover | 200 ms: cresce 15% | Retorno de interação (PRD, D74) |
 
 - Animação só de `transform` e `opacity`; nada de desfoque ou `mix-blend-mode` em elemento que se move.
 - O que se mexe sozinho por mais de 5 s tem como pausar ou para sozinho (WCAG 2.2.2).
