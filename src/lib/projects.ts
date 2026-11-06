@@ -22,11 +22,22 @@ export const projects = [
   },
 ] as const;
 
-// Projects that have a full case page, with its screens from first to live.
+// Projects that have a full case page. Besides its texts, which live in the
+// message files under CaseStudy.<id>, each case lists the decisions it tells, in
+// order, the versions on its path, the link in what was learned, if any, and
+// whether it has a next step.
+export type CaseStudyData = {
+  decisions: readonly string[];
+  shots: readonly { key: string; phone: string; computer: string }[];
+  referenceUrl?: string;
+  hasNext?: boolean;
+};
+
 export const caseStudies = {
   landing: {
-    phoneVideo: "/projetos/video/celular/landing.mp4",
+    decisions: ["phoneFirst", "sections", "motion", "whatsapp"],
     referenceUrl: "https://www.awwwards.com/sites/aventura-dental-arts",
+    hasNext: true,
     shots: [
       {
         key: "may1",
@@ -50,7 +61,27 @@ export const caseStudies = {
       },
     ],
   },
-} as const;
+  draftcs: {
+    decisions: ["data", "curation", "speed", "card"],
+    shots: [
+      {
+        key: "thirteen",
+        phone: "/projetos/caso/draftcs/celular-13-0.webp",
+        computer: "/projetos/caso/draftcs/computador-13-0.webp",
+      },
+      {
+        key: "rebrand",
+        phone: "/projetos/caso/draftcs/celular-rebrand.webp",
+        computer: "/projetos/caso/draftcs/computador-rebrand.webp",
+      },
+      {
+        key: "live",
+        phone: "/projetos/caso/draftcs/celular-no-ar.webp",
+        computer: "/projetos/caso/draftcs/computador-no-ar.webp",
+      },
+    ],
+  },
+} as const satisfies Record<string, CaseStudyData>;
 
 export type CaseId = keyof typeof caseStudies;
 

@@ -7,6 +7,7 @@ import { Link } from "@/i18n/navigation";
 import {
   caseComputerImageSize,
   caseStudies,
+  type CaseStudyData,
   projectImageSize,
   projectPhoneImageSize,
   projects,
@@ -38,7 +39,10 @@ export function CaseStudy({ id }: { id: CaseId }) {
   const t = useTranslations("CaseStudy");
   const projectsText = useTranslations("Projects");
   const project = projects.find((item) => item.id === id);
-  const study = caseStudies[id];
+  const study: CaseStudyData = caseStudies[id];
+  // Each case has its own keys, which the typed messages cannot follow.
+  type CaseKey = Parameters<typeof t>[0];
+  const text = (key: string) => t(`${id}.${key}` as CaseKey);
   if (!project) return null;
 
   const alt = projectsText(`${id}.alt`);
@@ -70,20 +74,13 @@ export function CaseStudy({ id }: { id: CaseId }) {
     </Link>
   );
 
-  const decisions = [
-    ["phoneFirstTitle", "phoneFirst"],
-    ["sectionsTitle", "sections"],
-    ["motionTitle", "motion"],
-    ["whatsappTitle", "whatsapp"],
-  ] as const;
-
   return (
     <article className="page-frame pt-6 pb-16 md:pb-24">
       {back}
       <header className="grid gap-6 py-10 md:grid-cols-12 md:grid-rows-[auto_1fr] md:gap-x-10 md:gap-y-5 md:py-14">
         <div className="flex flex-col gap-2 md:col-span-4 md:col-start-9 md:row-start-1">
           <p className={labelClassName}>{t("kicker")}</p>
-          <h1 className="font-display text-display">{t(`${id}.title`)}</h1>
+          <h1 className="font-display text-display">{text("title")}</h1>
         </div>
         <ProjectMedia
           computer={computer}
@@ -91,7 +88,7 @@ export function CaseStudy({ id }: { id: CaseId }) {
           alt={alt}
           priority
           computerVideo={`/projetos/video/${project.id}.mp4`}
-          phoneVideo={study.phoneVideo}
+          phoneVideo={`/projetos/video/celular/${id}.mp4`}
           pauseLabel={projectsText("videoPause")}
           playLabel={projectsText("videoPlay")}
           viewLabel={projectsText("viewLabel", {
@@ -102,7 +99,7 @@ export function CaseStudy({ id }: { id: CaseId }) {
           transitionName={`case-media-${id}`}
         />
         <div className="flex flex-col gap-5 md:col-span-4 md:col-start-9 md:row-start-2">
-          <p className="text-lg">{t(`${id}.lead`)}</p>
+          <p className="text-lg">{text("lead")}</p>
           <div className="flex flex-wrap gap-x-6">
             <a href={project.siteUrl} className={linkClassName}>
               {projectsText("visitSite")}
@@ -117,32 +114,32 @@ export function CaseStudy({ id }: { id: CaseId }) {
       </header>
 
       <Part title={t("request")}>
-        <p>{t(`${id}.request`)}</p>
+        <p>{text("request")}</p>
       </Part>
       <Part title={t("audience")}>
-        <p>{t(`${id}.audience`)}</p>
+        <p>{text("audience")}</p>
       </Part>
       <Part title={t("rules")}>
-        <p>{t(`${id}.rules`)}</p>
+        <p>{text("rules")}</p>
       </Part>
       <Part title={t("decisions")}>
         <dl className="flex flex-col gap-6">
-          {decisions.map(([title, text]) => (
-            <div key={title} className="flex flex-col gap-1">
-              <dt className={labelClassName}>{t(`${id}.${title}`)}</dt>
-              <dd>{t(`${id}.${text}`)}</dd>
+          {study.decisions.map((decision) => (
+            <div key={decision} className="flex flex-col gap-1">
+              <dt className={labelClassName}>{text(`${decision}Title`)}</dt>
+              <dd>{text(decision)}</dd>
             </div>
           ))}
         </dl>
       </Part>
       <Part title={t("method")}>
-        <p>{t(`${id}.method`)}</p>
+        <p>{text("method")}</p>
       </Part>
 
       <section className="border-line flex flex-col gap-8 border-t py-10 md:py-14">
         <div className="grid gap-4 md:grid-cols-12 md:gap-10">
           <h2 className="font-display text-xl md:col-span-4">{t("path")}</h2>
-          <p className="max-w-2xl md:col-span-8">{t(`${id}.path`)}</p>
+          <p className="max-w-2xl md:col-span-8">{text("path")}</p>
         </div>
         <div className="flex flex-col gap-4">
           <h3 className={labelClassName}>{t("phone")}</h3>
@@ -152,13 +149,13 @@ export function CaseStudy({ id }: { id: CaseId }) {
                 <figure className="flex flex-col gap-2">
                   <Image
                     src={shot.phone}
-                    alt={t(`${id}.${shot.key}PhoneAlt`)}
+                    alt={text(`${shot.key}PhoneAlt`)}
                     {...projectPhoneImageSize}
                     sizes="(min-width: 768px) 22vw, 45vw"
                     className="border-line h-auto w-full border"
                   />
                   <figcaption className={labelClassName}>
-                    {t(`${id}.${shot.key}`)}
+                    {text(shot.key)}
                   </figcaption>
                 </figure>
               </li>
@@ -173,13 +170,13 @@ export function CaseStudy({ id }: { id: CaseId }) {
                 <figure className="flex flex-col gap-2">
                   <Image
                     src={shot.computer}
-                    alt={t(`${id}.${shot.key}ComputerAlt`)}
+                    alt={text(`${shot.key}ComputerAlt`)}
                     {...caseComputerImageSize}
                     sizes="(min-width: 768px) 46vw, 92vw"
                     className="border-line h-auto w-full border"
                   />
                   <figcaption className={labelClassName}>
-                    {t(`${id}.${shot.key}`)}
+                    {text(shot.key)}
                   </figcaption>
                 </figure>
               </li>
@@ -189,14 +186,16 @@ export function CaseStudy({ id }: { id: CaseId }) {
       </section>
 
       <Part title={t("result")}>
-        <p>{t(`${id}.result`)}</p>
+        <p>{text("result")}</p>
       </Part>
-      <Part title={t("next")}>
-        <p>{t(`${id}.next`)}</p>
-      </Part>
+      {study.hasNext && (
+        <Part title={t("next")}>
+          <p>{text("next")}</p>
+        </Part>
+      )}
       <Part title={t("learned")}>
         <p>
-          {t.rich(`${id}.learned`, {
+          {t.rich(`${id}.learned` as CaseKey, {
             link: (chunks) => (
               <a
                 href={study.referenceUrl}
