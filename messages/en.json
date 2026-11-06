@@ -19,7 +19,8 @@
     "navLabel": "Sections",
     "navProjects": "Projects",
     "navAbout": "About",
-    "navContact": "Contact"
+    "navContact": "Contact",
+    "contactLabel": "Contact"
   },
   "Language": {
     "label": "Language",

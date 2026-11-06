@@ -19,7 +19,8 @@
     "navLabel": "Seções",
     "navProjects": "Projetos",
     "navAbout": "Sobre",
-    "navContact": "Contato"
+    "navContact": "Contato",
+    "contactLabel": "Contatos"
   },
   "Language": {
     "label": "Idioma",

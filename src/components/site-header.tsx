@@ -3,6 +3,7 @@ import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 
 import { BrandName } from "./brand-name";
+import { ContactIcons } from "./contact-icons";
 import { HeaderShell } from "./header-shell";
 import { LocaleSwitcher } from "./locale-switcher";
 import { SiteNav } from "./site-nav";
@@ -32,6 +33,7 @@ export function SiteHeader() {
               contato: t("navContact"),
             }}
           />
+          <ContactIcons className="mr-2 hidden md:flex" />
           <LocaleSwitcher />
           <ThemeToggle
             toLight={t("themeToLight")}
