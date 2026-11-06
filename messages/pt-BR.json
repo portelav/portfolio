@@ -58,7 +58,7 @@
       "name": "DraftCS",
       "kind": "Jogo web · em dupla com <coauthor>Vinicius</coauthor>",
       "what": "Você sorteia um elenco real de um Major de Counter-Strike, escala cinco jogadores e simula a corrida pelo título.",
-      "part": "Curadoria dos dados de jogadores, elencos e países, a rolagem do simulador no celular e a área de compartilhar o resultado."
+      "part": "A documentação, escrita com o Vinicius: as regras do jogo, o formato do Major e cada decisão. Também a curadoria dos dados de jogadores, elencos e países e o card de resultado."
     },
     "crewz": {
       "alt": "Tela inicial do app Crewz, com eventos e grupos em destaque.",
@@ -84,6 +84,7 @@
     "audience": "Para quem",
     "rules": "As regras",
     "decisions": "As decisões",
+    "method": "Como foi feito",
     "path": "O que ficou pelo caminho",
     "result": "Resultado",
     "next": "Próximo passo",
@@ -106,6 +107,7 @@
       "motion": "O monograma desenhado abre o site e voa até o cabeçalho. No celular, o vídeo fica preso na tela enquanto “seu sorriso, no seu tempo” atravessa os três painéis. Ela escolheu essa versão entre quatro protótipos.",
       "whatsappTitle": "Contato pelo WhatsApp",
       "whatsapp": "É por onde os pacientes já falam com o consultório, e é o caminho mais fácil para marcar.",
+      "method": "Do mesmo jeito deste site, com AI-Driven Development. Escrevi a documentação: o público, as regras do Conselho, cada seção e cada decisão de movimento. Agentes de IA escreveram o código a partir dela, e eu revisei cada versão no celular antes de ir ao ar.",
       "path": "Foram muitas versões. As primeiras, de maio, pareciam um site qualquer feito com IA: título genérico, botões arredondados e selos. Até a versão no ar, o projeto passou por três repositórios e mais de 400 commits.",
       "may1": "Maio de 2026",
       "may2": "Maio de 2026, segunda tentativa",
@@ -140,7 +142,11 @@
   "About": {
     "title": "Sobre",
     "text": "Curso Ciência da Computação e me importo com os pequenos detalhes: como o site fica no celular, o tempo de cada animação, o texto de cada botão.",
-    "repo": "O código deste site é público, com as decisões registradas no <link>repositório</link>.",
+    "methodTitle": "Trabalho com <accent>AI-Driven Development</accent>.",
+    "methodStep1": "Escrevo a documentação: o que o produto faz, para quem, as regras e cada decisão.",
+    "methodStep2": "Agentes de IA escrevem o código a partir dela.",
+    "methodStep3": "Eu reviso, testo no celular e no computador e ajusto até ficar certo.",
+    "repo": "Este site foi feito assim: o código e as decisões estão no <link>repositório público</link>.",
     "photoAlt": "Ilustração de Lucas Portela, sorrindo, de barba e camiseta preta."
   },
   "Hire": {

@@ -58,7 +58,7 @@
       "name": "DraftCS",
       "kind": "Web game · with <coauthor>Vinicius</coauthor>",
       "what": "You draw a real Counter-Strike Major roster, pick five players and simulate the run for the title.",
-      "part": "Curating player, roster and country data, the simulator's scrolling on phones, and the area for sharing results."
+      "part": "The documentation, written with Vinicius: the game rules, the Major format and every decision. Also curating player, roster and country data, and the result card."
     },
     "crewz": {
       "alt": "Home screen of the Crewz app, with featured events and groups.",
@@ -84,6 +84,7 @@
     "audience": "Who it is for",
     "rules": "The rules",
     "decisions": "The decisions",
+    "method": "How it was made",
     "path": "What was left behind",
     "result": "Result",
     "next": "Next step",
@@ -106,6 +107,7 @@
       "motion": "A hand-drawn monogram opens the website and flies to the header. On phones, the video stays pinned while “seu sorriso, no seu tempo” (“your smile, at your own pace”) crosses the three panels. She chose this version out of four prototypes.",
       "whatsappTitle": "Contact through WhatsApp",
       "whatsapp": "It's where patients already talk to the practice, and it's the easiest way to book.",
+      "method": "The same way as this website, with AI-Driven Development. I wrote the documentation: the audience, the Council's rules, every section and every motion decision. AI agents wrote the code from it, and I reviewed every version on a phone before it went live.",
       "path": "There were many versions. The first ones, from May, looked like any AI-made website: a generic headline, rounded buttons and badges. Before the live version, the project went through three repositories and more than 400 commits.",
       "may1": "May 2026",
       "may2": "May 2026, second attempt",
@@ -140,7 +142,11 @@
   "About": {
     "title": "About",
     "text": "I study Computer Science and I care about the small details: how a website feels on a phone, the timing of each animation, the words on each button.",
-    "repo": "This website's code is public, with its decisions on record in the <link>repository</link>.",
+    "methodTitle": "I work with <accent>AI-Driven Development</accent>.",
+    "methodStep1": "I write the documentation: what the product does, who it's for, the rules and every decision.",
+    "methodStep2": "AI agents write the code from it.",
+    "methodStep3": "I review it, test it on phone and desktop, and adjust until it's right.",
+    "repo": "This website was built this way: the code and the decisions are in the <link>public repository</link>.",
     "photoAlt": "Illustration of Lucas Portela, smiling, with a beard and a black T-shirt."
   },
   "Hire": {
