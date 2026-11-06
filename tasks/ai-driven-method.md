@@ -3,7 +3,7 @@
 **Slug:** `ai-driven-method`
 **Branch:** `feat/ai-driven-method`
 **Seção ou área:** Sobre, Projetos e página de caso
-**Status:** Review
+**Status:** Done (PR #9 mergeado em 2026-11-06)
 **Gate S2:** Livre (texto e desenho aprovados pelo dono em 2026-11-06)
 
 ---
