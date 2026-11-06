@@ -1,7 +1,7 @@
 # FDD: Seção Cabeçalho e rodapé
 
 Status: implementado
-PRD: seção 6, item Cabeçalho e rodapé; D25, D26, D27, D32, D33 e D47
+PRD: seção 6, item Cabeçalho e rodapé; D25, D26, D27, D32, D33, D47 e D70
 
 ## Objetivo
 
@@ -18,6 +18,8 @@ Textos nos arquivos de mensagens, em pt-BR e inglês. Valores propostos, a confi
 | Tema, visível | `Claro` no modo escuro; `Escuro` no modo claro | `Light` no modo escuro; `Dark` no modo claro |
 | Tema, para leitor de tela | Mudar para o modo claro; Mudar para o modo escuro | Switch to light mode; Switch to dark mode |
 | Nome, para leitor de tela | portelav, voltar ao início | portelav, back to home |
+| Menu, só no computador | Projetos, Sobre, Contato | Projects, About, Contact |
+| Menu, para leitor de tela | Seções | Sections |
 | Rodapé | Todos os direitos reservados. | All rights reserved. |
 | 404, título | Essa página não existe. | This page doesn't exist. |
 | 404, link | Voltar ao início | Back to home |
@@ -31,16 +33,23 @@ A nota de privacidade ainda não existe. O link dela entra no rodapé na entrega
 **Cabeçalho**
 
 - Fica preso ao topo da tela, com o fundo `--bg`, sem borda e sem sombra.
-- Sem menu (PRD, D33).
+- No celular, sem menu (PRD, D33). No computador, o menu fica antes dos seletores (PRD, D70).
 - Mostra o nome à esquerda e os seletores à direita, desde o fim do preloader (PRD, D47). Durante o preloader, o nome do cabeçalho fica invisível, para o nome que voa pousar no lugar dele.
 - Sai ao rolar para baixo, depois de 80 px, e volta ao rolar para cima. Foco de teclado dentro dele sempre o traz de volta.
 - O nome é link para o início da página, no idioma atual.
 - Sem JavaScript, o nome e o seletor de idioma funcionam, e o seletor de tema não aparece.
 
+**Menu, no computador**
+
+- Três links: Projetos, Sobre e Contato, para `#projetos`, `#sobre` e `#contato` da página inicial, no idioma atual.
+- O item atual tem `aria-current="location"` e uma linha de 2 px em `--accent` embaixo. No modo escuro, a letra também fica em `--accent`. No modo claro, a letra fica em `--fg`, porque `--accent` reprova em texto pequeno (`DESIGN.md`, seção 3).
+- Na página inicial, o item atual é o da seção que está na tela. Sobre continua marcado em Tecnologias e em "Quer um site?". Na abertura, nenhum item fica marcado.
+- Na página de caso, Projetos fica marcado, e os três links voltam à página inicial com a animação de volta.
+
 **Seletor de idioma**
 
 - Dois links, `PT` e `EN`. O idioma atual tem sublinhado e `aria-current`.
-- Leva para o início, no outro idioma. O site tem uma página só, e na 404 isso é o que o visitante precisa. Como o layout raiz muda, a página recarrega inteira.
+- Leva para o início, no outro idioma. Na página de caso, leva ao mesmo caso no outro idioma (`docs/fdd/caso.md`). Na 404, o início é o que o visitante precisa. Como o layout raiz muda, a página recarrega inteira.
 
 **Seletor de tema**
 
@@ -66,6 +75,8 @@ A nota de privacidade ainda não existe. O link dela entra no rodapé na entrega
 | Cabeçalho sai e volta | Rolar para baixo; rolar para cima; foco | `transform`, 500 ms, `--ease-out-quint` | Dá espaço ao conteúdo sem perder o caminho de volta |
 | Cursor do nome | Hover ou foco no link do nome | `opacity` em `steps(1)`, ciclo de 1,06 s, parando antes de 5 s, e depois aceso | Retorno de interação (PRD, D16 e D27) |
 
+| Item atual do menu | Seção na tela muda; troca de página | `transform` da linha, 350 ms, `--ease-out-quint` | Mostra onde o visitante está (PRD, D70) |
+
 Nunca anima: seletores, troca de tema, rodapé e página 404.
 
 ## Regras
@@ -81,7 +92,7 @@ Nunca anima: seletores, troca de tema, rodapé e página 404.
 ## Acessibilidade
 
 - `header` e `footer` como marcos da página, com o conteúdo em `main`.
-- Ordem de foco: nome; idioma; tema; conteúdo; rodapé.
+- Ordem de foco: nome; menu, no computador; idioma; tema; conteúdo; rodapé.
 - Foco visível em todos os controles, como no `DESIGN.md`.
 - Seletor de idioma em `nav`, com nome acessível, e cada link com o `lang` do idioma de destino.
 - Com `prefers-reduced-motion`, o cabeçalho sai e volta sem movimento, e o cursor não pisca.
@@ -96,7 +107,7 @@ Nunca anima: seletores, troca de tema, rodapé e página 404.
 ## Fora de escopo
 
 - Link e texto da nota de privacidade: entrega de Contato e nota de privacidade.
-- Menu de navegação.
+- Menu no celular (PRD, D70).
 - Reescrita: FDD da abertura.
 - Guardar o idioma escolhido: o idioma vem só da URL (ADR 0002).
 
@@ -111,5 +122,6 @@ Nunca anima: seletores, troca de tema, rodapé e página 404.
 - [ ] Com `prefers-reduced-motion`, nada se move nem pisca.
 - [ ] Com JavaScript desligado, o nome e o seletor de idioma funcionam, e o seletor de tema não aparece.
 - [ ] Endereço desconhecido em `/` e em `/en` responde 404. Com JavaScript, mostra texto no idioma certo, cabeçalho, rodapé, link de volta e o tema salvo.
+- [ ] No computador, o menu leva às seções e marca a seção na tela; na página de caso, marca Projetos. No celular, o menu não aparece.
 - [ ] Teclado alcança todos os controles, na ordem certa, com foco visível.
 - [ ] Red Hat Mono renderiza nos seletores, vinda de `next/font`.

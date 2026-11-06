@@ -1,7 +1,7 @@
 # FDD: Página de caso
 
 Status: implementado
-PRD: D22, D61, D67 e D68
+PRD: D22, D61, D67, D68, D69, D70 e D71
 
 ## Objetivo
 
@@ -44,15 +44,16 @@ No topo, a mesma mídia do card de Projetos, com print e vídeo.
 - O topo repete o card do caso: o rótulo "Caso completo", em inglês "Full case", e o título no lugar do nome, a mídia do card, com os botões de versão, e a frase de abertura com os links do site e do código. Depois, as seções na ordem da tabela.
 - As versões aparecem em grade: no celular, duas por linha nos prints de celular e uma por linha nos de computador. No computador, quatro por linha nos de celular e duas nos de computador. Cada print tem legenda com a data.
 - O seletor de idioma leva ao mesmo caso no outro idioma.
+- No computador, o menu do cabeçalho marca Projetos (PRD, D70).
 - Sem preloader.
 
 ## Movimento
 
-A troca de página deixa claro que o visitante foi para outro lugar (PRD, D69):
+A troca de página deixa claro que o visitante foi para outro lugar (PRD, D69 e D71):
 
 | O quê | Gatilho | Como |
 |---|---|---|
-| Página | "Ver caso completo" e "Voltar aos projetos" | A página que sai vai 60 px para o lado e some; a que entra vem do outro lado. Ida para a esquerda, volta para a direita. 400 ms em `--ease-out-quint` |
+| Página | "Ver caso completo", "Voltar aos projetos" e o menu do cabeçalho | A página que sai é empurrada para fora da tela pela que entra, como num app de celular. Na ida, a página vai para a esquerda; na volta, para a direita. O cabeçalho fica parado. 500 ms em `--ease-out-quint` |
 | Mídia do card | Os mesmos links | A mídia do card cresce até a capa do caso, e volta para o card na volta. 450 ms em `--ease-out-quint` |
 
 Usa a API de transição de vistas do navegador, pelo `ViewTransition` do React. Sem suporte, com `prefers-reduced-motion` ou pelo botão voltar do navegador, a troca é instantânea. O vídeo segue as regras de Projetos: toca com 60% na tela, tem pausa e não toca sozinho com `prefers-reduced-motion`.
