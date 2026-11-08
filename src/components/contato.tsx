@@ -13,7 +13,7 @@ export function Contato() {
       className="page-frame grid scroll-mt-14 grid-cols-1 gap-10 py-24 md:grid-cols-[5fr_7fr] md:gap-16 md:py-32"
     >
       <div className="reveal md:sticky md:top-24 md:self-start">
-        <h2 className="font-display text-display">{t("title")}</h2>
+        <h1 className="font-display text-display">{t("title")}</h1>
         <p className="mt-4 max-w-sm text-lg">{t("lead")}</p>
       </div>
       <ul className="border-line border-b">
