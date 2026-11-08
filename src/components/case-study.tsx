@@ -70,7 +70,7 @@ export function CaseStudy({ id }: { id: CaseId }) {
 
   const back = (
     <Link
-      href={{ pathname: "/", hash: "projetos" }}
+      href="/projetos"
       transitionTypes={["nav-back"]}
       className={linkClassName}
     >
