@@ -1,7 +1,7 @@
 # FDD: Seção Quer um site?
 
-Status: implementado
-PRD: seção 6, item Quer um site?; D1, D22, D53 e D73
+Status: proposto (site em páginas, `tasks/site-pages.md`)
+PRD: seção 6, item Quer um site?; D1, D22, D53, D73, D78 e D79
 
 ## Objetivo
 
@@ -27,8 +27,9 @@ O inglês é proposto, para revisão de Lucas.
 
 ## Comportamento
 
-- Fica depois de Tecnologias e antes de Contato, com a âncora `#site`.
-- A chamada "Quero um site", da abertura, leva até aqui, com o título visível.
+- É a página Serviços (`/servicos`, `/en/services`). "Quer um site?" é o título da página, em `h1` (PRD, D78).
+- "Quero um site", da abertura, e "Ver serviços", da chamada final da inicial, levam até aqui (PRD, D79).
+- A linha de apoio passa a ser "Faço o site do seu negócio, do desenho ao código, pensado primeiro para o celular.", em inglês "I build your business website, from design to code, made for phones first." (`pagina-inicial.md`, Textos).
 - No computador, oferta e botão à esquerda, e passos à direita. No celular, uma coluna.
 - Dois botões: WhatsApp e e-mail, de Lucas, em `src/lib/contact.ts`, na mesma aba. O WhatsApp abre com a mensagem pronta, e o e-mail com o assunto pronto, no idioma da página.
 - O primeiro botão é cheio, em `--fg`, e o segundo tem só contorno de 1 px em `--fg`. Em pt-BR, o WhatsApp vem primeiro; em `/en`, o e-mail (PRD, D73).
@@ -66,7 +67,7 @@ A seção sobe 1,5 rem e aparece ao entrar na tela, ligada à rolagem. O botão 
 ## Critérios de aceite
 
 - [ ] Em 390 px e no computador, em `/` e `/en`, escuro e claro, sem transbordo.
-- [ ] "Quero um site" leva até a seção, com o título visível.
+- [ ] "Quero um site" e "Ver serviços" levam à página Serviços.
 - [ ] Os botões abrem o WhatsApp e o e-mail certos, com mensagem e assunto no idioma da página, testados em aparelho real.
 - [ ] Em `/en`, o e-mail vem primeiro.
 - [ ] O número aparece em um arquivo só no código.

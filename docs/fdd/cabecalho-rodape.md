@@ -1,7 +1,7 @@
 # FDD: Seção Cabeçalho e rodapé
 
-Status: implementado
-PRD: seção 6, item Cabeçalho e rodapé; D25, D26, D27, D32, D33, D47, D70, D74 e D75
+Status: proposto (site em páginas, `tasks/site-pages.md`)
+PRD: seção 6, item Cabeçalho e rodapé; D25, D26, D27, D32, D33, D47, D70, D74, D75, D78 e D80
 
 ## Objetivo
 
@@ -18,8 +18,9 @@ Textos nos arquivos de mensagens, em pt-BR e inglês. Valores propostos, a confi
 | Tema, visível | `Claro` no modo escuro; `Escuro` no modo claro | `Light` no modo escuro; `Dark` no modo claro |
 | Tema, para leitor de tela | Mudar para o modo claro; Mudar para o modo escuro | Switch to light mode; Switch to dark mode |
 | Nome, para leitor de tela | portelav, voltar ao início | portelav, back to home |
-| Menu, só no computador | Projetos, Sobre, Contato | Projects, About, Contact |
-| Menu, para leitor de tela | Seções | Sections |
+| Menu | Projetos, Sobre, Serviços, Contato | Projects, About, Services, Contact |
+| Menu, para leitor de tela | Páginas | Pages |
+| Botão do menu, no celular | Menu; ao abrir, Fechar | Menu; when open, Close |
 | Ícones de contato, para leitor de tela | Contatos; cada ícone com o nome do canal, como em Contato | Contact; each icon with the channel name, as in Contact |
 | Rodapé | Todos os direitos reservados. | All rights reserved. |
 | 404, título | Essa página não existe. | This page doesn't exist. |
@@ -27,14 +28,14 @@ Textos nos arquivos de mensagens, em pt-BR e inglês. Valores propostos, a confi
 
 O nome de cada idioma fica sempre na própria língua, nos dois sites.
 
-A nota de privacidade ainda não existe. O link dela entra no rodapé na entrega de Contato e nota de privacidade, junto da nota, para o site nunca ter um link quebrado (PRD, D32). Ele leva à âncora `#privacidade`, na própria página (PRD, D57).
+O link de privacidade do rodapé leva ao fim da página Contato, na âncora `#privacidade` (PRD, D57 e D78).
 
 ## Comportamento
 
 **Cabeçalho**
 
 - Fica preso ao topo da tela, com o fundo `--bg`, sem borda e sem sombra.
-- No celular, sem menu (PRD, D33). No computador, o menu fica antes dos ícones de contato e dos seletores (PRD, D70 e D74).
+- No computador, o menu fica antes dos ícones de contato e dos seletores (PRD, D70 e D74). No celular, o botão "Menu" fica no fim do cabeçalho, depois dos seletores (PRD, D80).
 - Mostra o nome à esquerda e os seletores à direita, desde o fim do preloader (PRD, D47). Durante o preloader, o nome do cabeçalho fica invisível, para o nome que voa pousar no lugar dele.
 - Sai ao rolar para baixo, depois de 80 px, e volta ao rolar para cima. Foco de teclado dentro dele sempre o traz de volta. Depois de um link para uma seção, volta e fica na tela por 1,5 s, para mostrar onde o visitante chegou.
 - O nome é link para o início da página, no idioma atual.
@@ -42,10 +43,17 @@ A nota de privacidade ainda não existe. O link dela entra no rodapé na entrega
 
 **Menu, no computador**
 
-- Três links: Projetos, Sobre e Contato, para `#projetos`, `#sobre` e `#contato` da página inicial, no idioma atual.
-- O item atual tem `aria-current="location"` e uma linha de 2 px em `--accent` embaixo. No modo escuro, a letra também fica em `--accent`. No modo claro, a letra fica em `--fg`, porque `--accent` reprova em texto pequeno (`DESIGN.md`, seção 3).
-- Na página inicial, o item atual é o da seção que está na tela. Sobre continua marcado em Tecnologias e em "Quer um site?". Na abertura, nenhum item fica marcado.
-- Na página de caso, Projetos fica marcado, e os três links voltam à página inicial com a animação de volta.
+- Quatro links: Projetos, Sobre, Serviços e Contato, para as páginas no idioma atual (PRD, D78).
+- O item atual tem `aria-current="page"` e uma linha de 2 px em `--accent` embaixo. No modo escuro, a letra também fica em `--accent`. No modo claro, a letra fica em `--fg`, porque `--accent` reprova em texto pequeno (`DESIGN.md`, seção 3).
+- O item atual é o da página aberta. Na página de caso, Projetos. Na inicial, nenhum.
+
+**Menu, no celular (PRD, D80)**
+
+- Abaixo de 768 px, o menu do computador some e o botão "Menu" aparece, com `aria-expanded` e `aria-controls`.
+- Ao tocar, um painel cobre a tela abaixo do cabeçalho, com fundo `--bg`, os quatro links em letra grande, um por linha, e o item atual marcado como no computador. O botão vira "Fechar".
+- Fecha ao tocar em "Fechar", com Esc, ao escolher uma página e ao passar para 768 px ou mais. O foco fica preso no painel enquanto ele está aberto e volta ao botão ao fechar.
+- Com o painel aberto, a página de trás não rola, e o cabeçalho não sai da tela.
+- Sem JavaScript, o botão não aparece, e os links de página ficam no rodapé.
 
 **Ícones de contato**
 
@@ -58,7 +66,7 @@ A nota de privacidade ainda não existe. O link dela entra no rodapé na entrega
 **Seletor de idioma**
 
 - Dois links, `PT` e `EN`. O idioma atual tem sublinhado e `aria-current`. No celular, só aparece o link do outro idioma (PRD, D74).
-- Leva para o início, no outro idioma. Na página de caso, leva ao mesmo caso no outro idioma (`docs/fdd/caso.md`). Na 404, o início é o que o visitante precisa. Como o layout raiz muda, a página recarrega inteira.
+- Leva para a mesma página, no outro idioma: a inicial, Projetos, Sobre, Serviços, Contato ou o mesmo caso (`docs/fdd/caso.md`). Na 404, o início é o que o visitante precisa. Como o layout raiz muda, a página recarrega inteira.
 
 **Seletor de tema**
 
@@ -68,8 +76,8 @@ A nota de privacidade ainda não existe. O link dela entra no rodapé na entrega
 
 **Rodapé**
 
-- Só o texto de direitos e, depois da entrega de Contato, o link da nota de privacidade (PRD, D32).
-- Os contatos ficam na seção Contato.
+- Os links das quatro páginas, o link da nota de privacidade e o texto de direitos (PRD, D32 e D78).
+- Os contatos ficam na página Contato.
 
 **Página 404**
 
@@ -85,7 +93,8 @@ A nota de privacidade ainda não existe. O link dela entra no rodapé na entrega
 | Cursor do nome | Hover ou foco no link do nome | `opacity` em `steps(1)`, ciclo de 1,06 s, parando antes de 5 s, e depois aceso | Retorno de interação (PRD, D16 e D27) |
 
 | Ícone de contato | Hover | `transform` do desenho, 200 ms, `--ease-out-quint`: cresce 15% | Retorno de interação |
-| Item atual do menu | Seção na tela muda; troca de página | `transform` da linha, 350 ms, `--ease-out-quint` | Mostra onde o visitante está (PRD, D70) |
+| Item atual do menu | Troca de página | `transform` da linha, 350 ms, `--ease-out-quint` | Mostra onde o visitante está (PRD, D70) |
+| Painel do menu no celular | Abrir; fechar | `opacity` e `transform` dos links, que sobem 0,5 rem, 250 ms, `--ease-out-quint` | Mostra que o menu abriu por cima da página |
 
 Nunca anima: seletores, troca de tema, rodapé e página 404.
 
@@ -116,8 +125,6 @@ Nunca anima: seletores, troca de tema, rodapé e página 404.
 
 ## Fora de escopo
 
-- Link e texto da nota de privacidade: entrega de Contato e nota de privacidade.
-- Menu no celular (PRD, D70).
 - Reescrita: FDD da abertura.
 - Guardar o idioma escolhido: o idioma vem só da URL (ADR 0002).
 
@@ -132,6 +139,8 @@ Nunca anima: seletores, troca de tema, rodapé e página 404.
 - [ ] Com `prefers-reduced-motion`, nada se move nem pisca.
 - [ ] Com JavaScript desligado, o nome e o seletor de idioma funcionam, e o seletor de tema não aparece.
 - [ ] Endereço desconhecido em `/` e em `/en` responde 404. Com JavaScript, mostra texto no idioma certo, cabeçalho, rodapé, link de volta e o tema salvo.
-- [ ] No computador, o menu leva às seções e marca a seção na tela; na página de caso, marca Projetos. No celular, o menu não aparece.
+- [ ] No computador, o menu leva às quatro páginas e marca a página aberta; na página de caso, marca Projetos.
+- [ ] No celular, "Menu" abre o painel, com foco preso, e fecha com "Fechar", Esc e ao escolher uma página, devolvendo o foco ao botão.
+- [ ] Trocar o idioma mantém a página.
 - [ ] Teclado alcança todos os controles, na ordem certa, com foco visível.
 - [ ] Red Hat Mono renderiza nos seletores, vinda de `next/font`.

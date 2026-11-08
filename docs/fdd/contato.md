@@ -1,7 +1,7 @@
 # FDD: Seção Contato e nota de privacidade
 
-Status: implementado
-PRD: seção 6, itens Contato e Nota de privacidade; D9, D10, D14, D24, D32, D54, D57 e D73; Regras de fora
+Status: proposto (site em páginas, `tasks/site-pages.md`)
+PRD: seção 6, itens Contato e Nota de privacidade; D9, D10, D14, D24, D32, D54, D57, D73 e D78; Regras de fora
 
 ## Objetivo
 
@@ -44,13 +44,13 @@ Texto aprovado por Lucas em 2026-11-03:
 
 ## Comportamento
 
-- Última seção, com a âncora `#contato`.
+- É a página Contato (`/contato`, `/en/contact`), com o título "Contato" em `h1` (PRD, D78). "Falar sobre estágio" e "Falar comigo" levam até aqui (PRD, D79).
 - No computador, título e apoio à esquerda, presos ao rolar, e canais à direita. No celular, uma coluna.
 - Cada canal é uma linha inteira clicável, com rótulo em Red Hat Mono, valor em Red Hat Display e uma seta decorativa.
 - Separadores de 1 px em `--line`.
 - Os links abrem na mesma aba.
 - O e-mail fica em texto selecionável.
-- A nota é um bloco curto depois de Contato, com a âncora `#privacidade`, em texto corrido e sem título grande (PRD, D57).
+- A nota é um bloco curto no fim da página Contato, com a âncora `#privacidade`, em texto corrido e sem título grande (PRD, D57).
 - O rodapé tem o link da nota, depois do texto de direitos (PRD, D32).
 
 ## Movimento
@@ -88,8 +88,8 @@ Texto aprovado por Lucas em 2026-11-03:
 ## Critérios de aceite
 
 - [ ] Em 390 px e no computador, em `/` e `/en`, escuro e claro, sem transbordo, e a lista respeita as margens da página.
-- [ ] "Falar sobre estágio" leva até a seção, com o título visível.
+- [ ] "Falar sobre estágio" e "Falar comigo" levam à página Contato.
 - [ ] Os cinco canais abrem o destino certo, testados em aparelho real.
-- [ ] A nota de privacidade está no fim da página, nos dois idiomas, e o link do rodapé leva até ela com o texto visível.
+- [ ] A nota de privacidade está no fim da página Contato, nos dois idiomas, e o link do rodapé leva até ela com o texto visível, de qualquer página.
 - [ ] O navegador não mostra nenhum cookie não essencial.
 - [ ] Leitor de tela lê rótulo e valor de cada canal, sem a seta.

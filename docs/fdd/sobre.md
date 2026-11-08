@@ -1,7 +1,7 @@
 # FDD: Seção Sobre
 
-Status: implementado
-PRD: seção 6, item Sobre; D17, D55, D61, D76 e D77
+Status: proposto (site em páginas, `tasks/site-pages.md`)
+PRD: seção 6, item Sobre; D17, D55, D61, D76, D77 e D78
 
 ## Objetivo
 
@@ -28,7 +28,8 @@ O inglês é proposto, para revisão de Lucas.
 
 ## Comportamento
 
-- Fica depois de Projetos.
+- Abre a página Sobre (`/sobre`, `/en/about`), com o título "Sobre" em `h1`. Tecnologias vem depois, na mesma página (PRD, D78).
+- O passo 1 do método passa a ser "Escrevo a documentação: o produto, o público, as regras e cada decisão.", em inglês "I write the documentation: the product, the audience, the rules and every decision." (`pagina-inicial.md`, Textos).
 - No computador, o retrato ocupa 3 de 12 colunas, à esquerda, e o texto fica à direita, centrado na altura.
 - No celular, o retrato vem antes do texto, com no máximo 14 rem de largura.
 - Um separador de 1 px em `--line` no topo da seção.

@@ -1,7 +1,7 @@
 # FDD: Seção Tecnologias
 
-Status: implementado
-PRD: seção 6, item Tecnologias; D52
+Status: proposto (site em páginas, `tasks/site-pages.md`)
+PRD: seção 6, item Tecnologias; D52 e D78
 
 ## Objetivo
 
@@ -19,7 +19,7 @@ Quem avalia estágio vê, depois de ver os projetos, com que linguagens e tecnol
 
 ## Comportamento
 
-- Fica depois do Sobre, nunca antes dos projetos (PRD, D45).
+- Fica na página Sobre, depois do Sobre e do método (PRD, D78).
 - Dois grupos lado a lado no computador, um abaixo do outro no celular.
 - Até 4 itens por linha no computador, e 3 no celular.
 - Um separador de 1 px em `--line` no topo da seção.

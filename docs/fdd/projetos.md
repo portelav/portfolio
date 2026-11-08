@@ -1,7 +1,7 @@
 # FDD: Seção Projetos
 
-Status: implementado
-PRD: seção 6, item Projetos; D3, D22, D40, D41, D43, D44, D50, D51 e D77
+Status: proposto (site em páginas, `tasks/site-pages.md`)
+PRD: seção 6, item Projetos; D3, D22, D40, D41, D43, D44, D50, D51, D77, D78 e D79
 
 ## Objetivo
 
@@ -18,7 +18,7 @@ Título da seção: "Projetos"; em inglês, "Projects". Rótulos: "Minha parte" 
 | Tipo | Site · feito sozinho | Website · built on my own |
 | O que é | Página de uma cirurgiã-dentista em Maceió, que apresenta a profissional e leva o visitante ao WhatsApp. | A page for a dental surgeon in Maceió that introduces her and takes visitors to WhatsApp. |
 | Minha parte | Tudo, do desenho ao código, pensado primeiro para o celular. | All of it, from design to code, made for phones first. |
-| Uma decisão | Sem preço, sem promoção e sem promessa de resultado. Antes e depois só com autorização dos pacientes e com nome e CRO na imagem, por causa das regras do Conselho Federal de Odontologia (PRD, D68). | No patients, no before-and-after photos and no promised results, because of the Brazilian dental council's advertising rules. |
+| Uma decisão | Proposto: Sem preço, sem promoção e sem promessa de resultado, pelas regras do Conselho Federal de Odontologia. O detalhe dos antes e depois fica no caso. Hoje: o texto da D68. | Proposed: No prices, no promotions and no promised results, under the Brazilian dental council's rules. The before-and-after details are in the case. |
 | Detalhe | Dra. Thaiane Lessa · CRO/AL-6418 | Dr. Thaiane Lessa · CRO/AL-6418 |
 
 **2. DraftCS**
@@ -50,7 +50,8 @@ Título da seção: "Projetos"; em inglês, "Projects". Rótulos: "Minha parte" 
 
 ## Comportamento
 
-- Fica logo abaixo da abertura, e o primeiro caso começa ainda na primeira tela (PRD, D44).
+- Os cards completos ficam na página Projetos (`/projetos`, `/en/projects`), com o título "Projetos" em `h1` (PRD, D78). Na página inicial, os três aparecem em versão curta (`pagina-inicial.md`).
+- Na página Projetos, o primeiro caso começa ainda na primeira tela.
 - Os casos ficam um abaixo do outro, nunca lado a lado, sem faixa lateral.
 - No computador, a mídia ocupa 8 de 12 colunas, à esquerda, e o texto fica à direita. No celular, a ordem é nome e tipo, botões de versão, mídia e o resto do texto.
 - Sem card nem sombra. Cada print tem uma borda de 1 px em `--line` (PRD, D43).
