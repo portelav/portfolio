@@ -1,6 +1,6 @@
 # FDD: Site em páginas e página inicial
 
-Status: aprovado
+Status: implementado
 PRD: seção 6, item Site em páginas; D46, D67, D71, D78, D79, D80 e D81
 
 ## Objetivo

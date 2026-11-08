@@ -1,6 +1,6 @@
 # FDD: Seção Quer um site?
 
-Status: aprovado (site em páginas, `tasks/site-pages.md`)
+Status: implementado
 PRD: seção 6, item Quer um site?; D1, D22, D53, D73, D78 e D79
 
 ## Objetivo

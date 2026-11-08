@@ -30,7 +30,7 @@ Onde está cada coisa:
 
 ## Estado atual
 
-Direção "trabalho na primeira tela" aprovada (PRD, D44 a D56). O site inteiro está na `main` (`tasks/trabalho-primeiro.md`), publicado em `portelav-site.vercel.app` e fora do índice dos buscadores. Os três projetos têm página de caso própria, e o cabeçalho tem menu no computador (PRD, D67 a D72). Contato tem e-mail e Instagram, e o cabeçalho tem ícones coloridos de WhatsApp, e-mail e Instagram (PRD, D73 a D75). O Sobre e os casos apresentam o método, AI-Driven Development (PRD, D76 e D77). O LCP da página inicial tem exceção aceita (PRD, D60 e D63). Falta o currículo em PDF, e o lançamento segue o `docs/ROADMAP.md`. No endereço público, https://portelav.vercel.app, ainda está a versão antiga.
+Direção "trabalho na primeira tela" aprovada (PRD, D44 a D56). O site inteiro está na `main` (`tasks/trabalho-primeiro.md`), publicado em `portelav-site.vercel.app` e fora do índice dos buscadores. Os três projetos têm página de caso própria, e o cabeçalho tem menu no computador (PRD, D67 a D72). Contato tem e-mail e Instagram, e o cabeçalho tem ícones coloridos de WhatsApp, e-mail e Instagram (PRD, D73 a D75). O Sobre e os casos apresentam o método, AI-Driven Development (PRD, D76 e D77). O LCP da página inicial tem exceção aceita (PRD, D60 e D63). O site está em páginas: a inicial curta, Projetos, Sobre, Serviços e Contato, com menu também no celular (PRD, D78 a D81). Os aparelhos 3D vêm na entrega seguinte (PRD, D82 a D86). Falta o currículo em PDF, e o lançamento segue o `docs/ROADMAP.md`. No endereço público, https://portelav.vercel.app, ainda está a versão antiga.
 
 ## Ambientes
 

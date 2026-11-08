@@ -1,6 +1,6 @@
 # FDD: Seção Contato e nota de privacidade
 
-Status: aprovado (site em páginas, `tasks/site-pages.md`)
+Status: implementado
 PRD: seção 6, itens Contato e Nota de privacidade; D9, D10, D14, D24, D32, D54, D57, D73 e D78; Regras de fora
 
 ## Objetivo

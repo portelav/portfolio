@@ -1,6 +1,6 @@
 # FDD: Seção Cabeçalho e rodapé
 
-Status: aprovado (site em páginas, `tasks/site-pages.md`)
+Status: implementado
 PRD: seção 6, item Cabeçalho e rodapé; D25, D26, D27, D32, D33, D47, D70, D74, D75, D78 e D80
 
 ## Objetivo

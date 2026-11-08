@@ -1,6 +1,6 @@
 # FDD: Seção Projetos
 
-Status: aprovado (site em páginas, `tasks/site-pages.md`)
+Status: implementado
 PRD: seção 6, item Projetos; D3, D22, D40, D41, D43, D44, D50, D51, D77, D78 e D79
 
 ## Objetivo

@@ -1,6 +1,6 @@
 # FDD: Seção Sobre
 
-Status: aprovado (site em páginas, `tasks/site-pages.md`)
+Status: implementado
 PRD: seção 6, item Sobre; D17, D55, D61, D76, D77 e D78
 
 ## Objetivo

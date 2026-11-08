@@ -1,6 +1,6 @@
 # FDD: Seção Tecnologias
 
-Status: aprovado (site em páginas, `tasks/site-pages.md`)
+Status: implementado
 PRD: seção 6, item Tecnologias; D52 e D78
 
 ## Objetivo
