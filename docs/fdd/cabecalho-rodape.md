@@ -61,7 +61,8 @@ O link de privacidade do rodapé leva ao fim da página Contato, na âncora `#pr
 - Só o desenho, de 20 px, com área de toque de 44 px e o nome do canal como nome acessível e dica.
 - Cada um na cor da marca (PRD, D75; `DESIGN.md`, seção 3): WhatsApp em `#25D366` no escuro e `#128C7E` no claro, Instagram no degradê da marca e e-mail em `--accent`.
 - WhatsApp e Instagram vêm do Simple Icons; o envelope é desenhado no próprio código, com traço parecido.
-- No celular também, depois do nome. Abaixo de 360 px, o Instagram sai do cabeçalho e fica só em Contato. Abaixo de 390 px, a margem lateral do cabeçalho cai para 1 rem.
+- No celular também, depois do nome. No celular, o Instagram sai do cabeçalho para dar lugar ao botão "Menu", e abaixo de 390 px fica só o primeiro canal; todos continuam em Contato. Abaixo de 390 px, a margem lateral do cabeçalho cai para 1 rem.
+- O botão "Menu" guarda a largura de "Fechar", para nada no cabeçalho se mexer ao abrir.
 
 **Seletor de idioma**
 

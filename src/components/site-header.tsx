@@ -7,6 +7,7 @@ import { BrandName } from "./brand-name";
 import { ContactIcons } from "./contact-icons";
 import { HeaderShell } from "./header-shell";
 import { LocaleSwitcher } from "./locale-switcher";
+import { MobileMenu } from "./mobile-menu";
 import { SiteNav } from "./site-nav";
 import { ThemeToggle } from "./theme-toggle";
 
@@ -38,6 +39,12 @@ export function SiteHeader() {
             toLightLabel={t("themeToLightLabel")}
             toDark={t("themeToDark")}
             toDarkLabel={t("themeToDarkLabel")}
+          />
+          <MobileMenu
+            label={page("label")}
+            open={page("menu")}
+            close={page("close")}
+            items={items}
           />
         </div>
       </div>
