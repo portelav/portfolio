@@ -3,7 +3,7 @@
 **Slug:** `site-pages`
 **Branch:** `feat/site-pages`
 **Seção ou área:** estrutura do site, cabeçalho, página inicial e as seções que viram páginas
-**Status:** Planning
+**Status:** Executed
 **Gate S2:** Livre
 
 ---
@@ -102,16 +102,16 @@
 
 Até 10 itens, um commit cada, na ordem do `/exec`. Antes de cada commit, explicar a Lucas o que a mudança faz.
 
-1. [ ] **PRD e `CLAUDE.md`:** rodada 14 com as decisões 1 a 9 do Stage 1, ajustando D42, D45, D64 e D70. No `CLAUDE.md`, a regra de movimento libera desfoque e `mix-blend-mode`, e a estrutura do código passa a citar as páginas.
-2. [ ] **FDDs:** reescrever `cabecalho-rodape.md` (menu do celular, links para páginas), `abertura.md` (destino das chamadas) e `projetos.md` (versão curta na inicial e card completo em Projetos). Ajustar `sobre.md` e `tecnologias.md` (página Sobre), `quer-um-site.md` (página Serviços), `contato.md` (página Contato, com a privacidade) e `caso.md` (volta para Projetos). Criar `docs/fdd/pagina-inicial.md`. Textos curtos propostos nos dois idiomas. **Parar aqui até Lucas aprovar os textos.**
-3. [ ] **Rotas:** páginas novas no `pathnames` de `src/i18n/routing.ts` e lista de navegação em `src/lib/`.
-4. [ ] **Mensagens:** textos curtos aprovados, títulos e descrições de cada página, rótulos do menu do celular, nos dois idiomas.
-5. [ ] **Páginas:** `projetos/page.tsx`, `sobre/page.tsx`, `servicos/page.tsx` e `contato/page.tsx` em `src/app/[locale]/`, só composição, com metadados.
-6. [ ] **Inicial:** abertura, projetos em versão curta (componente novo) e chamada final. Chamadas da abertura apontando para Serviços e Contato. Âncoras antigas levando à página certa.
-7. [ ] **Menu do computador:** `site-nav.tsx` com links de página e marcação pela rota.
-8. [ ] **Menu do celular:** botão e painel no cabeçalho, com os estados fechado e aberto.
-9. [ ] **Rodapé, caso e mapa do site:** links do rodapé, volta da página de caso para Projetos, mapa do site e `hreflang` das rotas novas.
-10. [ ] **Docs finais:** status dos FDDs, ROADMAP (estrutura feita; 3D em Agora, com `tasks/projects-3d-devices.md`) e `CLAUDE.md`, se a estrutura mudou além do item 1.
+1. [x] **PRD e `CLAUDE.md`:** rodada 14 com as decisões 1 a 9 do Stage 1, ajustando D42, D45, D64 e D70. No `CLAUDE.md`, a regra de movimento libera desfoque e `mix-blend-mode`, e a estrutura do código passa a citar as páginas.
+2. [x] **FDDs:** reescrever `cabecalho-rodape.md` (menu do celular, links para páginas), `abertura.md` (destino das chamadas) e `projetos.md` (versão curta na inicial e card completo em Projetos). Ajustar `sobre.md` e `tecnologias.md` (página Sobre), `quer-um-site.md` (página Serviços), `contato.md` (página Contato, com a privacidade) e `caso.md` (volta para Projetos). Criar `docs/fdd/pagina-inicial.md`. Textos curtos propostos nos dois idiomas. **Parar aqui até Lucas aprovar os textos.**
+3. [x] **Rotas:** páginas novas no `pathnames` de `src/i18n/routing.ts` e lista de navegação em `src/lib/`.
+4. [x] **Mensagens:** textos curtos aprovados, títulos e descrições de cada página, rótulos do menu do celular, nos dois idiomas.
+5. [x] **Páginas:** `projetos/page.tsx`, `sobre/page.tsx`, `servicos/page.tsx` e `contato/page.tsx` em `src/app/[locale]/`, só composição, com metadados.
+6. [x] **Inicial:** abertura, projetos em versão curta (componente novo) e chamada final. Chamadas da abertura apontando para Serviços e Contato. Âncoras antigas levando à página certa.
+7. [x] **Menu do computador:** `site-nav.tsx` com links de página e marcação pela rota.
+8. [x] **Menu do celular:** botão e painel no cabeçalho, com os estados fechado e aberto.
+9. [x] **Rodapé, caso e mapa do site:** links do rodapé, volta da página de caso para Projetos, mapa do site e `hreflang` das rotas novas.
+10. [x] **Docs finais:** status dos FDDs, ROADMAP (estrutura feita; 3D em Agora, com `tasks/projects-3d-devices.md`) e `CLAUDE.md`, se a estrutura mudou além do item 1.
 
 ---
 
@@ -128,33 +128,53 @@ Até 10 itens, um commit cada, na ordem do `/exec`. Antes de cada commit, explic
 
 ## Stage 6 — Code Execution
 
-*(Preenchido pelo exec.)*
-
 | # | Camada | Arquivo | Status |
 |---|---|---|---|
+| 1 | Docs | `docs/PRD.md` (rodada 14, D78 a D86), `CLAUDE.md` | Feito (`3d2aed0`) |
+| 2 | FDD | `docs/fdd/pagina-inicial.md` (novo), `cabecalho-rodape.md`, `abertura.md`, `projetos.md`, `sobre.md`, `tecnologias.md`, `quer-um-site.md`, `contato.md`, `caso.md` | Feito (`3f8b522`), textos aprovados por Lucas (`5934aba`) |
+| 3 | Rotas | `src/i18n/routing.ts`, `src/lib/pages.ts` (novo) | Feito (`60376c3`) |
+| 4 | Mensagens | `messages/pt-BR.json`, `messages/en.json` | Feito (`61e5185`) |
+| 5 | Páginas | `src/app/[locale]/{projetos,sobre,servicos,contato}/page.tsx` (novos), `src/i18n/page-metadata.ts` (novo); `h1` em `projetos.tsx`, `sobre.tsx`, `quer-um-site.tsx` e `contato.tsx` | Feito (`885cb51`) |
+| 6 | Inicial | `src/app/[locale]/page.tsx`, `src/components/home-projects.tsx`, `home-cta.tsx` e `old-anchors.tsx` (novos), `abertura.tsx` | Feito (`dcc6c05`) |
+| 7 | Menu do computador | `src/components/site-nav.tsx`, `site-header.tsx` | Feito (`39f294e`) |
+| 8 | Menu do celular | `src/components/mobile-menu.tsx` (novo), `site-header.tsx`, `contact-icons.tsx` | Feito (`04ddfda`) |
+| 9 | Rodapé, caso e idioma | `src/components/site-footer.tsx`, `case-study.tsx`, `locale-link.tsx`, `old-anchors.tsx` | Feito (`c4fba27`) |
+| 10 | Docs finais | FDDs em `implementado`, `docs/ROADMAP.md`, `CLAUDE.md` | Feito (`7a85247`) |
 
 ### Desvios do plano
-- Nenhum | …
+- **Instagram no cabeçalho do celular:** com o botão "Menu", o cabeçalho estourava 10 px em 390 px. O Instagram saiu do cabeçalho abaixo de 768 px, e abaixo de 390 px fica só o primeiro canal. Todos continuam em Contato. O botão guarda a largura de "Fechar", para nada se mexer ao abrir. FDD `cabecalho-rodape.md` atualizado no mesmo commit.
+- **Mapa do site:** o site não tem `sitemap.xml` hoje, e continua em `noindex` até o lançamento. Nenhum foi criado. As páginas novas têm `canonical` e `hreflang` nos metadados. O mapa do site fica para o lançamento.
+- **Lint:** `private/**` entrou nos ignorados do ESLint (`bb29b10`), porque o servidor dos rascunhos do 3D, fora do git, quebrava o `npm run lint` local.
+- **Âncora `#privacidade`:** o roteador do `next-intl` descarta o `hash`, então `old-anchors.tsx` monta o endereço com `getPathname` e usa o roteador do Next.js. A correção foi junto do item 9.
+- **Linha "Uma decisão" da landing:** o texto aprovado encurta a D68. A regra dos antes e depois autorizados continua na página do caso.
 
 ---
 
 ## Stage 7 — Tests
 
-*(Preenchido pelo exec.)*
+Sem testes automáticos no projeto. Verificação no navegador pelo MCP do Chrome DevTools, com o servidor de desenvolvimento.
 
 | Critério de aceite | Como foi verificado |
 |---|---|
+| 1. Oito rotas, 390 px e computador, sem transbordo, título e descrição próprios | `scrollWidth` igual à largura em 360, 390 e 1440 px. Título e descrição lidos em `/sobre`, `/en/about`, `/servicos` e no caso em inglês. O build gera as 18 páginas estáticas |
+| 2. Inicial com abertura, projetos curtos, chamada final, sem as outras seções | Print da página inteira em 390 px e da primeira tela em 1440 px |
+| 3. Preloader só na inicial | `data-reescrita` ausente nas páginas internas e ao chegar com âncora |
+| 4. Menu do computador marca a página; no caso, Projetos | `aria-current="page"` em Projects no caso `/en/projects/draftcs`, com a linha visível |
+| 5. Menu do celular: foco preso, Esc, fechar, escolher página, foco de volta, 44 px | Shift+Tab no botão foi ao último link e Tab voltou ao botão. Esc fechou e devolveu o foco ao botão. Escolher Services fechou e navegou. Rolagem da página travada com o painel aberto. Botão com 44 px de altura e 50 px de largura |
+| 6. "Quero um site" e "Falar sobre estágio" | Links levam a `/servicos` e `/contato`, e a chamada final também |
+| 7. Troca de idioma mantém a página | Em `/servicos`, o link vai a `/en/services`. No caso, vai ao mesmo caso |
+| 8. Endereços antigos com âncora | `/#site`, `/#sobre`, `/#projetos` e `/#contato` levaram às páginas. `/en#privacidade` levou a `/en/contact#privacidade` |
+| 9. Textos nas mensagens, lint, typecheck e build | Paridade das mensagens pelo typecheck. Os três verdes |
+| 10. Sem deslocamento de layout na troca de página | Altura do cabeçalho fixa, e o botão do menu não muda de largura. A medição de CLS em aparelho real fica para o teste de Lucas |
 
 ---
 
 ## Stage 8 — Verification
 
-*(Preenchido pelo exec.)*
-
-- **lint:** Pass | Fail
-- **typecheck:** Pass | Fail
-- **build:** Pass | Fail
-- **Navegador (390 px e computador, `/` e `/en`, escuro e claro):** Pass | Fail
+- **lint:** Pass
+- **typecheck:** Pass
+- **build:** Pass, com 18 páginas estáticas
+- **Navegador (390 px e computador, `/` e `/en`, escuro e claro):** Pass, em 360, 390 e 1440 px. O modo claro foi visto no menu em 360 px. Teste em aparelho real com Lucas pendente
 
 ---
 
