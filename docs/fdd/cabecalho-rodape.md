@@ -1,6 +1,6 @@
 # FDD: Seção Cabeçalho e rodapé
 
-Status: proposto (site em páginas, `tasks/site-pages.md`)
+Status: aprovado (site em páginas, `tasks/site-pages.md`)
 PRD: seção 6, item Cabeçalho e rodapé; D25, D26, D27, D32, D33, D47, D70, D74, D75, D78 e D80
 
 ## Objetivo
@@ -9,7 +9,7 @@ Em qualquer ponto do site, o visitante troca de idioma e de tema, volta ao iníc
 
 ## Conteúdo
 
-Textos nos arquivos de mensagens, em pt-BR e inglês. Valores propostos, a confirmar na aprovação deste FDD.
+Textos nos arquivos de mensagens, em pt-BR e inglês.
 
 | Lugar | pt-BR | Inglês |
 |---|---|---|

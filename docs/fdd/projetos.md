@@ -1,6 +1,6 @@
 # FDD: Seção Projetos
 
-Status: proposto (site em páginas, `tasks/site-pages.md`)
+Status: aprovado (site em páginas, `tasks/site-pages.md`)
 PRD: seção 6, item Projetos; D3, D22, D40, D41, D43, D44, D50, D51, D77, D78 e D79
 
 ## Objetivo
@@ -18,7 +18,7 @@ Título da seção: "Projetos"; em inglês, "Projects". Rótulos: "Minha parte" 
 | Tipo | Site · feito sozinho | Website · built on my own |
 | O que é | Página de uma cirurgiã-dentista em Maceió, que apresenta a profissional e leva o visitante ao WhatsApp. | A page for a dental surgeon in Maceió that introduces her and takes visitors to WhatsApp. |
 | Minha parte | Tudo, do desenho ao código, pensado primeiro para o celular. | All of it, from design to code, made for phones first. |
-| Uma decisão | Proposto: Sem preço, sem promoção e sem promessa de resultado, pelas regras do Conselho Federal de Odontologia. O detalhe dos antes e depois fica no caso. Hoje: o texto da D68. | Proposed: No prices, no promotions and no promised results, under the Brazilian dental council's rules. The before-and-after details are in the case. |
+| Uma decisão | Sem preço, sem promoção e sem promessa de resultado, pelas regras do Conselho Federal de Odontologia. O detalhe dos antes e depois fica no caso (PRD, D68, encurtado na D78). | No prices, no promotions and no promised results, under the Brazilian dental council's rules. The before-and-after details are in the case. |
 | Detalhe | Dra. Thaiane Lessa · CRO/AL-6418 | Dr. Thaiane Lessa · CRO/AL-6418 |
 
 **2. DraftCS**

@@ -1,6 +1,6 @@
 # FDD: Site em páginas e página inicial
 
-Status: proposto
+Status: aprovado
 PRD: seção 6, item Site em páginas; D46, D67, D71, D78, D79, D80 e D81
 
 ## Objetivo
@@ -20,7 +20,7 @@ Quem chega entende em segundos o que Lucas faz, vê os três projetos e acha cad
 
 ## Textos
 
-Propostos para aprovação de Lucas. Onde não há linha nova, o texto atual continua.
+Aprovados por Lucas em 2026-11-08. Onde não há linha nova, o texto atual continua.
 
 **Menu e páginas**
 

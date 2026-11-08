@@ -1,6 +1,6 @@
 # FDD: Seção Abertura
 
-Status: proposto (site em páginas, `tasks/site-pages.md`)
+Status: aprovado (site em páginas, `tasks/site-pages.md`)
 PRD: seção 6, item Abertura; D44, D46, D48, D49 e D79
 
 ## Objetivo
