@@ -1,6 +1,7 @@
 import { useTranslations } from "next-intl";
 
 import { Link } from "@/i18n/navigation";
+import { type PageKey, pages } from "@/lib/pages";
 
 import { BrandName } from "./brand-name";
 import { ContactIcons } from "./contact-icons";
@@ -11,6 +12,10 @@ import { ThemeToggle } from "./theme-toggle";
 
 export function SiteHeader() {
   const t = useTranslations("Header");
+  const page = useTranslations("Pages");
+  const items = Object.fromEntries(
+    pages.map(({ key }) => [key, page(`${key}.name`)]),
+  ) as Record<PageKey, string>;
 
   return (
     <HeaderShell>
@@ -25,14 +30,7 @@ export function SiteHeader() {
           </Link>
         </div>
         <div className="flex items-center md:gap-2">
-          <SiteNav
-            label={t("navLabel")}
-            items={{
-              projetos: t("navProjects"),
-              sobre: t("navAbout"),
-              contato: t("navContact"),
-            }}
-          />
+          <SiteNav label={page("label")} items={items} />
           <ContactIcons className="md:mr-2" />
           <LocaleSwitcher />
           <ThemeToggle

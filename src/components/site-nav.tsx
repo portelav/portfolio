@@ -1,73 +1,37 @@
 "use client";
 
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { useLayoutEffect, useRef } from "react";
 
-import { useParams } from "next/navigation";
-
-import { Link } from "@/i18n/navigation";
-
-const sections = ["projetos", "sobre", "contato"] as const;
-type Section = (typeof sections)[number];
+import { Link, usePathname } from "@/i18n/navigation";
+import { type PageHref, type PageKey, pages } from "@/lib/pages";
 
 type SiteNavProps = {
   label: string;
-  items: Record<Section, string>;
+  items: Record<PageKey, string>;
 };
 
-// The section whose top has passed this share of the screen is the current one.
-const readingLine = 0.4;
-
-// Finds the section the visitor is reading: the last one whose top has passed
-// the reading line. Above the projects, on the opening, none is current.
-function sectionOnScreen(): Section | null {
-  const line = window.innerHeight * readingLine;
-  const atBottom =
-    window.innerHeight + window.scrollY >=
-    document.documentElement.scrollHeight - 2;
-  if (atBottom && document.getElementById("contato")) return "contato";
-
-  let found: Section | null = null;
-  for (const id of sections) {
-    const element = document.getElementById(id);
-    if (element && element.getBoundingClientRect().top <= line) found = id;
-  }
-  return found;
+// The page the visitor is on: the page itself, or the page above it, as the
+// Projects page for a case. On the home page, none.
+export function currentPage(pathname: string): PageHref | null {
+  const page = pages.find(
+    ({ href }) => pathname === href || pathname.startsWith(`${href}/`),
+  );
+  return page ? page.href : null;
 }
 
-// The computer menu. It marks where the visitor is: the section on screen on
-// the home page, and the projects on a case. A line slides to the new item.
+// The computer menu. It links the pages and marks the one the visitor is on,
+// with a line that slides to the new item (PRD, D70 and D78).
 export function SiteNav({ label, items }: SiteNavProps) {
-  const params = useParams<{ id?: string }>();
-  const onCase = Boolean(params.id);
-  const [onScreen, setOnScreen] = useState<Section | null>(null);
-  const current = onCase ? "projetos" : onScreen;
+  const pathname = usePathname();
+  const current = currentPage(pathname);
+  const onCase = pathname.startsWith("/projetos/");
 
   const box = useRef<HTMLDivElement>(null);
   const bar = useRef<HTMLSpanElement>(null);
-  const links = useRef<Partial<Record<Section, HTMLAnchorElement | null>>>({});
+  const links = useRef<Partial<Record<PageHref, HTMLAnchorElement | null>>>(
+    {},
+  );
   const shown = useRef(false);
-
-  useEffect(() => {
-    if (onCase) return;
-
-    let queued = 0;
-    const update = () => {
-      queued = 0;
-      setOnScreen(sectionOnScreen());
-    };
-    const onScroll = () => {
-      if (!queued) queued = requestAnimationFrame(update);
-    };
-
-    update();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("resize", onScroll);
-    return () => {
-      window.removeEventListener("scroll", onScroll);
-      window.removeEventListener("resize", onScroll);
-      cancelAnimationFrame(queued);
-    };
-  }, [onCase]);
 
   useLayoutEffect(() => {
     const line = bar.current;
@@ -106,22 +70,24 @@ export function SiteNav({ label, items }: SiteNavProps) {
     <nav aria-label={label} className="mr-4 hidden md:block">
       <div ref={box} className="relative">
         <ul className="flex items-center gap-6">
-          {sections.map((id) => (
-            <li key={id}>
+          {pages.map(({ key, href }) => (
+            <li key={key}>
               <Link
                 ref={(element) => {
-                  links.current[id] = element;
+                  links.current[href] = element;
                 }}
-                href={{ pathname: "/", hash: id }}
-                transitionTypes={onCase ? ["nav-back"] : undefined}
-                aria-current={current === id ? "location" : undefined}
+                href={href}
+                transitionTypes={
+                  onCase && href === "/projetos" ? ["nav-back"] : undefined
+                }
+                aria-current={current === href ? "page" : undefined}
                 className={`inline-flex min-h-11 items-center font-mono text-sm transition-opacity duration-150 ${
-                  current === id
+                  current === href
                     ? "text-accent light:text-fg"
                     : "hover:opacity-70"
                 }`}
               >
-                {items[id]}
+                {items[key]}
               </Link>
             </li>
           ))}

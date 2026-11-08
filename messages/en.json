@@ -30,10 +30,6 @@
     "themeToDark": "Dark",
     "themeToLightLabel": "Switch to light mode",
     "themeToDarkLabel": "Switch to dark mode",
-    "navLabel": "Sections",
-    "navProjects": "Projects",
-    "navAbout": "About",
-    "navContact": "Contact",
     "contactLabel": "Contact"
   },
   "Pages": {
