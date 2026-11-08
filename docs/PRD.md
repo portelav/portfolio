@@ -23,7 +23,7 @@ Dois públicos com o mesmo peso (D1):
 
 ## 6. Escopo
 
-Seções na ordem da página (D45). Detalhe no FDD de cada uma. "Na `main`" quer dizer publicado em `portelav-site.vercel.app`, ainda fora do endereço público e do índice dos buscadores.
+Páginas e seções (D78). Detalhe no FDD de cada uma. "Na `main`" quer dizer publicado em `portelav-site.vercel.app`, ainda fora do endereço público e do índice dos buscadores.
 
 | Item | Objetivo | FDD | Estado |
 |---|---|---|---|
@@ -36,6 +36,8 @@ Seções na ordem da página (D45). Detalhe no FDD de cada uma. "Na `main`" quer
 | Quer um site? | Dizer a quem quer contratar um site o que recebe e como funciona | `docs/fdd/quer-um-site.md` | na `main` |
 | Contato | Levar a WhatsApp, e-mail, LinkedIn e GitHub | `docs/fdd/contato.md` | na `main` |
 | Nota de privacidade | Dizer o que é medido e por quem, nos dois idiomas | no FDD de contato | na `main` |
+| Site em páginas (D78 a D81) | Inicial curta e páginas Projetos, Sobre, Serviços e Contato, com menu no celular | `docs/fdd/pagina-inicial.md` e os FDDs de cada seção | em andamento (`tasks/site-pages.md`) |
+| Aparelhos 3D (D82 a D86) | Notebook e celular em 3D, guiados pela rolagem, com o vídeo de cada projeto, na inicial e em Projetos | a escrever | próxima entrega |
 
 Casos em destaque (D3):
 
@@ -173,7 +175,7 @@ Cada rodada é uma conversa com o dono. Decisões numeradas (D1, D2...) para o a
 - **D39.** Substituída por D50. Os casos têm texto curto: a landing diz que foi feita sozinho, do desenho ao código, pensada primeiro para o celular. DraftCS e Crewz dizem só que foram feitos em dupla com o Vinicius.
 - **D40.** Ordem dos casos: landing, DraftCS e Crewz.
 - **D41.** O nome do Vinicius aparece nos casos, com link para o GitHub dele.
-- **D42.** Ajustada por D45. O site é uma página única com rolagem: abertura, projetos, sobre e contato.
+- **D42.** Ajustada por D45 e D78. O site é uma página única com rolagem: abertura, projetos, sobre e contato.
 - **D43.** Os prints dos projetos têm borda fina de 1 px, para não se confundirem com o fundo.
 
 ### Rodada 8 (2026-11-03): direção "trabalho na primeira tela"
@@ -181,7 +183,7 @@ Cada rodada é uma conversa com o dono. Decisões numeradas (D1, D2...) para o a
 Depois de comparar o rascunho com uma amostra de portfólios de outros devs, o dono escolheu esta direção. A marca não muda (D18). Mudam a ordem, o texto e a densidade.
 
 - **D44.** O trabalho aparece na primeira tela: quem é, o que faz, o que procura, as chamadas e o começo do primeiro caso, com o texto dele ao lado.
-- **D45.** Ordem da página: abertura, projetos, sobre, tecnologias, "Quer um site?" e contato. Ajusta D42.
+- **D45.** Ajustada por D78. Ordem da página: abertura, projetos, sobre, tecnologias, "Quer um site?" e contato. Ajusta D42.
 - **D46.** O preloader fica: a Reescrita roda em tela limpa em toda carga de `/` e `/en` sem âncora, e o nome voa até o cabeçalho, somando cerca de 3,8 s. A rolagem fica presa nesse tempo. Os tempos da Reescrita continuam os da D38. Substitui D29.
 - **D47.** O nome fica no cabeçalho desde o fim do preloader. O cabeçalho sai ao rolar para baixo e volta ao rolar para cima. Substitui D30 e ajusta D33.
 - **D48.** Ajustada por D61. A frase de apresentação é "Me chamo Lucas Portela e já fiz alguns sites que estão no ar.", seguida de "Estudo Ciência da Computação em Maceió. Procuro estágio em desenvolvimento e faço sites para quem precisa de um." O aprendizado com IA passa para o Sobre, com o mesmo sentido da D37. Substitui D37.
@@ -206,7 +208,7 @@ Depois de comparar o rascunho com uma amostra de portfólios de outros devs, o d
 ### Rodada 10 (2026-11-05): LCP em produção
 
 - **D63.** Medido em produção em 2026-11-04, em 390 px e 4G lento simulado, o LCP da página inicial fica de 6,5 a 6,8 s na primeira visita e em cerca de 5,6 s com cache, sem diferença entre `/` e `/en`. O dono aceita esses valores. Cerca de 5 s vêm do preloader e da entrada do conteúdo, por decisão de produto. Ajusta D60.
-- **D64.** Os vídeos dos projetos só começam a baixar depois do preloader, e quando estão a até uma tela de distância. Isso libera a rede para o código da página e poupa os dados de quem não rola até eles. Em troca, o primeiro vídeo começa um pouco depois.
+- **D64.** Ajustada por D86. Os vídeos dos projetos só começam a baixar depois do preloader, e quando estão a até uma tela de distância. Isso libera a rede para o código da página e poupa os dados de quem não rola até eles. Em troca, o primeiro vídeo começa um pouco depois.
 - **D65.** O print e o vídeo do Crewz deixam de mostrar a landing e passam a mostrar o app por dentro, no modo claro, por decisão do dono, com aval do coautor. A gravação é local, só com dados de demonstração, para nenhuma conta real aparecer. No computador, a mídia fica do tamanho do app, sem as margens vazias.
 - **D66.** Na landing e no DraftCS, o visitante escolhe entre a versão de celular e a de computador, por decisão do dono, porque os dois layouts mudam. O site começa na versão da tela de quem visita. No celular, nome, tipo e botões vêm antes da mídia, para os botões não saírem do lugar quando a altura dela muda.
 
@@ -215,7 +217,7 @@ Depois de comparar o rascunho com uma amostra de portfólios de outros devs, o d
 - **D67.** Cada projeto pode ter uma página de caso própria, aberta por "Ver caso completo", com pedido, público, regras, decisões, versões descartadas, resultado e aprendizado. A primeira é a da landing. O site deixa de ser só uma página, mas a página inicial continua sendo o caminho principal. Ajusta D42 e D45.
 - **D68.** O card da landing passa a dizer "Sem preço, sem promoção e sem promessa de resultado. Antes e depois só com autorização dos pacientes e com nome e CRO na imagem, por causa das regras do Conselho Federal de Odontologia.", porque o site da landing ganhou casos com antes e depois em 2026-10-28. Ajusta D50.
 - **D69.** Ajustada por D71. A ida para a página de caso e a volta são animadas, para ficar claro que o visitante trocou de lugar: a página desliza, e a mídia do card cresce até a capa do caso. O topo do caso repete o card. Pedido do dono em 2026-11-05.
-- **D70.** No computador, o cabeçalho ganha um menu com Projetos, Sobre e Contato, que levam às seções da página inicial. O item atual fica em destaque: na página inicial, o da seção que está na tela; na página de caso, Projetos. No modo escuro, a letra e uma linha embaixo dele ficam em `--accent`. No modo claro, só a linha, porque `--accent` reprova em texto pequeno. A linha desliza até o item novo quando ele muda. No celular, o site segue sem menu. Pedido do dono em 2026-11-05. Ajusta D33.
+- **D70.** Ajustada por D80. No computador, o cabeçalho ganha um menu com Projetos, Sobre e Contato, que levam às seções da página inicial. O item atual fica em destaque: na página inicial, o da seção que está na tela; na página de caso, Projetos. No modo escuro, a letra e uma linha embaixo dele ficam em `--accent`. No modo claro, só a linha, porque `--accent` reprova em texto pequeno. A linha desliza até o item novo quando ele muda. No celular, o site segue sem menu. Pedido do dono em 2026-11-05. Ajusta D33.
 - **D71.** A ida para a página de caso e a volta passam a empurrar a página inteira para o lado, como num app de celular, porque o deslize de 60 px passava despercebido. Pedido do dono em 2026-11-05. Ajusta D69.
 - **D72.** O retrato do Sobre perde o degradê nas bordas e fica num círculo de borda nítida, porque o degradê dava cara de imagem feita por IA. Pedido do dono em 2026-11-05. Ajusta D55.
 
@@ -229,3 +231,15 @@ Depois de comparar o rascunho com uma amostra de portfólios de outros devs, o d
 
 - **D76.** O site pode dizer que Lucas trabalha com AI-Driven Development, como método: ele escreve a documentação, com produto, regras e decisões, e agentes de IA escrevem o código a partir dela. O que a D61 tirou foi a ideia de "estou aprendendo com IA", não o método. Os casos contam o método e o papel de Lucas em cada projeto. Decisão do dono em 2026-11-06. Ajusta D61.
 - **D77.** O Sobre ganha um bloco de método, com destaque: "Trabalho com AI-Driven Development", com o nome do método em `--accent`, três passos (a documentação que Lucas escreve, o código que os agentes escrevem a partir dela, e a revisão e o teste de Lucas) e o repositório deste site como prova. Cada página de caso ganha a seção "Como foi feito", com o método naquele projeto. No card do DraftCS, a parte de Lucas passa a ser a documentação, escrita com o Vinicius, a curadoria dos dados e o card de resultado. Decisão do dono em 2026-11-06. Ajusta D50 e D61.
+
+### Rodada 14 (2026-11-08): site em páginas e aparelhos 3D
+
+- **D78.** O site deixa de ser uma página só. Ganha as páginas Projetos, Sobre, Serviços e Contato, em `/projetos`, `/sobre`, `/servicos` e `/contato`, e em inglês `/en/projects`, `/en/about`, `/en/services` e `/en/contact`. Os textos ficam mais curtos, propostos no FDD e aprovados pelo dono antes do código. Sobre reúne o Sobre, o método e Tecnologias. Serviços é o "Quer um site?". Contato traz os canais e a nota de privacidade. Decisão do dono em 2026-11-08. Ajusta D42 e D45.
+- **D79.** A página inicial fica com a abertura, os três projetos em versão curta, cada um levando ao caso, e uma chamada final para Serviços e Contato. Sobre e Tecnologias saem da inicial. O preloader continua só nela (D46). "Quero um site" leva a Serviços, e "Falar sobre estágio" leva a Contato. Decisão do dono em 2026-11-08.
+- **D80.** No celular, um botão "Menu" no cabeçalho abre a lista de páginas por cima do site. No computador, o menu passa a levar às páginas e marca a atual. Decisão do dono em 2026-11-08. Ajusta D70.
+- **D81.** Endereços antigos com âncora, como `/#contato`, continuam funcionando e levam à página nova.
+- **D82.** Os aparelhos 3D, um notebook e um celular guiados pela rolagem, com o vídeo de cada projeto nas telas, entram na página inicial, em versão curta, e na página Projetos, completos. A direção foi testada pelo dono em demos de 2026-11-07 e 2026-11-08. Entrega seguinte à D78.
+- **D83.** Bibliotecas 3D, como Three.js, ficam liberadas, para o site e para estudo. O ADR que revisa o 0004 vem com a entrega do 3D. Decisão do dono em 2026-11-07.
+- **D84.** Desfoque e `mix-blend-mode` em elemento que se move ficam liberados. Decisão do dono em 2026-11-07.
+- **D85.** O nome em 3D e o fundo em shader foram testados e rejeitados pelo dono em 2026-11-07.
+- **D86.** Os vídeos dos projetos passam a 1080×1920 no celular e 1920×1200 no computador, em todas as telas, cerca de 1,2 MB cada. Continuam baixando só depois do preloader e perto de entrar na tela. O vídeo do Crewz segue mostrando o app por dentro (D65), regravado na nova resolução. Decisão do dono em 2026-11-08. Ajusta o limite de peso da D64. Entra com a entrega do 3D.

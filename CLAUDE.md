@@ -58,7 +58,7 @@ Regras que decorrem da stack:
 - `AGENTS.md`, gerado pelo Next.js: manter e commitar.
 - TypeScript fica na 6.0 enquanto o `typescript-eslint`, usado pelo `eslint-config-next`, não aceitar a 7.
 - Todo texto de interface vive nos arquivos de mensagens, em pt-BR e em inglês, na mesma entrega. Nenhum texto fixo em componente.
-- Animação só de `transform` e `opacity`. Nada de desfoque ou `mix-blend-mode` em elemento que se move. O que se mexe sozinho por mais de 5 s para ou tem pausa (WCAG 2.2.2).
+- Animação preferencialmente de `transform` e `opacity`. Desfoque e `mix-blend-mode` em elemento que se move são permitidos (PRD, D84), medindo a fluidez no celular. O que se mexe sozinho por mais de 5 s para ou tem pausa (WCAG 2.2.2).
 - Nenhum cookie não essencial. Cookie novo muda o PRD, porque pede consentimento.
 
 ## Fluxo com agentes
@@ -148,7 +148,7 @@ npm run build
 ```text
 messages/            textos em pt-BR e inglês
 public/              ícones e manifesto do kit; prints e vídeos em public/projetos/, por tela
-src/app/[locale]/    layout raiz, páginas e 404, só composição
+src/app/[locale]/    layout raiz, inicial, páginas Projetos, Sobre, Serviços e Contato, casos e 404, só composição
 src/app/globals.css  tokens do DESIGN.md
 src/components/      componentes
 src/i18n/            rotas e carga de mensagens de next-intl
