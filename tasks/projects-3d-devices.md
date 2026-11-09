@@ -104,7 +104,7 @@ Até 10 itens, um commit cada, na ordem do `/exec`. Antes de cada commit, explic
 2. [x] **ADR e PRD:** `docs/adr/0005-threejs-aparelhos.md`, que revisa o 0004. PRD com as decisões 1 a 4 do Stage 1 e o desenho escolhido. `CLAUDE.md` com o Three.js na tabela da stack.
 3. [x] **FDD:** `docs/fdd/aparelhos-3d.md` novo (layout, estados, rolagem, pausa, reserva parada, textos); ajustes em `projetos.md` e `pagina-inicial.md`. **Parar até Lucas aprovar textos novos, se houver.** Três textos aprovados em 2026-11-09.
 4. [x] **Dependência:** `three` e `@types/three`, versão fixa publicada há pelo menos duas semanas.
-5. [ ] **Mensagens:** textos novos do FDD nos dois idiomas, se houver.
+5. [x] **Mensagens:** textos novos do FDD nos dois idiomas, se houver.
 6. [ ] **Cena:** módulo em `src/lib/` portado da demo, com montagem, linha do tempo, troca de vídeo, pausa, tema e limpeza.
 7. [ ] **Componente:** seção com palco, passos, prints de reserva, botão de pausa e carga da cena depois do preloader e perto da tela.
 8. [ ] **Páginas:** inicial com a versão curta no lugar de `home-projects.tsx`; Projetos com a versão completa no lugar dos cartões de mídia. Remover o que ficar sem uso.

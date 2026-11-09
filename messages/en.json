@@ -111,6 +111,11 @@
     "decisionLabel": "One decision",
     "seeCase": "See full case"
   },
+  "Devices": {
+    "motionPause": "Pause motion",
+    "motionResume": "Resume motion",
+    "phoneOnly": "Phone only: it's an app"
+  },
   "CaseStudy": {
     "kicker": "Full case",
     "back": "Back to projects",

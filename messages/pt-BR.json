@@ -111,6 +111,11 @@
     "decisionLabel": "Uma decisão",
     "seeCase": "Ver caso completo"
   },
+  "Devices": {
+    "motionPause": "Pausar movimento",
+    "motionResume": "Retomar movimento",
+    "phoneOnly": "Só no celular: é um app"
+  },
   "CaseStudy": {
     "kicker": "Caso completo",
     "back": "Voltar aos projetos",
