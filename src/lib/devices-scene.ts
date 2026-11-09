@@ -24,8 +24,8 @@ import {
   Shape,
   ShapeGeometry,
   SRGBColorSpace,
-  Texture,
   Vector3,
+  VideoTexture,
   WebGLRenderer,
   type BufferGeometry,
   type Material,
@@ -44,9 +44,10 @@ export type DevicesSceneOptions = {
   view: HTMLElement;
   // The whole section: its position on the page is the scroll timeline.
   section: HTMLElement;
-  // The project cards, in order, without the title step. The first one sets
-  // where on screen a swap happens.
-  firstCard: HTMLElement;
+  // The four text steps (title and three projects) and the text block in
+  // each: the title, then each card. Together they set the timeline.
+  steps: HTMLElement[];
+  cards: HTMLElement[];
   media: readonly DeviceMedia[];
   paused: boolean;
   // Called once the first frame is on screen, so the stage can fade it in.
@@ -60,7 +61,7 @@ export type DevicesScene = {
 
 type Screen = {
   video: HTMLVideoElement;
-  texture: Texture;
+  texture: VideoTexture;
   aspect: number;
   fresh: boolean;
   tick: () => void;
@@ -125,7 +126,9 @@ function videoScreen(aspect: number): Screen {
   video.setAttribute("playsinline", "");
   video.preload = "auto";
 
-  const texture = new Texture(video);
+  // A VideoTexture, not a plain Texture: Three.js sizes a plain one from the
+  // element's width attribute, which a video does not have, and it stays black.
+  const texture = new VideoTexture(video);
   texture.colorSpace = SRGBColorSpace;
   texture.generateMipmaps = false;
   texture.minFilter = LinearFilter;
@@ -175,7 +178,10 @@ function videoScreen(aspect: number): Screen {
     },
   };
 
+  // Only a decoded frame goes to the GPU: uploading a video with no size yet
+  // leaves the texture without storage, and it stays black.
   function show() {
+    if (video.readyState < 2 || !video.videoWidth) return;
     texture.needsUpdate = true;
     screen.fresh = true;
   }
@@ -230,7 +236,8 @@ function blobTexture() {
 export function mountDevicesScene({
   view,
   section,
-  firstCard,
+  steps,
+  cards,
   media,
   paused: startPaused,
   onReady,
@@ -378,7 +385,8 @@ export function mountDevicesScene({
   let keyIndex = 0;
   for (let r = 0; r < rows; r++) {
     for (let c = 0; c < cols; c++) {
-      const x = -((cols - 1) * (keyWidth + keyGap)) / 2 + c * (keyWidth + keyGap);
+      const x =
+        -((cols - 1) * (keyWidth + keyGap)) / 2 + c * (keyWidth + keyGap);
       const z =
         -0.42 -
         ((rows - 1) * (keyWidth * 0.92 + keyGap)) / 2 +
@@ -444,7 +452,9 @@ export function mountDevicesScene({
   const phoneInner = new Group();
   phoneInner.position.y = PH / 2;
   phone.add(phoneInner);
-  phoneInner.add(new Mesh(new RoundedBoxGeometry(PW, PH, PD, 8, 0.11), titanium));
+  phoneInner.add(
+    new Mesh(new RoundedBoxGeometry(PW, PH, PD, 8, 0.11), titanium),
+  );
   const front = new Mesh(roundedRect(PW - 0.024, PH - 0.024, 0.1), glassBlack);
   front.position.z = PD / 2 + 0.0005;
   phoneInner.add(front);
@@ -495,7 +505,10 @@ export function mountDevicesScene({
     [0.23, 0.06],
     [0.11, -0.06],
   ]) {
-    const ring = new Mesh(new CylinderGeometry(0.058, 0.058, 0.03, 24), titanium);
+    const ring = new Mesh(
+      new CylinderGeometry(0.058, 0.058, 0.03, 24),
+      titanium,
+    );
     ring.rotation.x = Math.PI / 2;
     ring.position.set(x, PH / 2 - 0.2 + y, -PD / 2 - 0.03);
     phoneInner.add(ring);
@@ -510,7 +523,10 @@ export function mountDevicesScene({
     [-PW / 2 - 0.004, 0.17, 0.14],
     [-PW / 2 - 0.004, 0.0, 0.14],
   ]) {
-    const button = new Mesh(new RoundedBoxGeometry(0.012, h, 0.03, 2, 0.005), titanium);
+    const button = new Mesh(
+      new RoundedBoxGeometry(0.012, h, 0.03, 2, 0.005),
+      titanium,
+    );
     button.position.set(x, y, 0);
     phoneInner.add(button);
   }
@@ -601,24 +617,34 @@ export function mountDevicesScene({
   };
   window.addEventListener("pointermove", onPointer, { passive: true });
 
-  // Scroll position as a step: 0 = title, 1 = first project at rest, and so on.
-  // The swap (x.5) happens where the leaving text and the arriving one are
-  // equally visible: halfway on a computer, where the text is centred, and
-  // later on a phone, where the card rests near the bottom.
+  // Scroll position as a step: 0 = title, 1 = first project at rest (its step
+  // at the top of the screen), and so on. Steps can be taller than the screen
+  // when a card is long, so each one is measured. The swap (x.5) happens when
+  // the gap between the leaving text and the arriving one crosses the middle
+  // of the screen.
   function progress() {
-    const box = section.getBoundingClientRect();
-    const height = view.clientHeight || window.innerHeight;
-    const raw = Math.min(STEPS, Math.max(0, -box.top / height));
-    const card = firstCard.getBoundingClientRect();
+    const tops = steps.map((step) => step.getBoundingClientRect().top);
+    if (tops[0] >= 0) return 0;
+    const k = tops.findIndex((top, i) => i > 0 && top > 0) - 1;
+    if (k < 0) return STEPS;
+    const length = tops[k + 1] - tops[k];
+    const f = -tops[k] / length;
+    const gap =
+      (cards[k].getBoundingClientRect().bottom +
+        cards[k + 1].getBoundingClientRect().top) /
+      2;
     const middle = Math.min(
       0.9,
-      Math.max(0.3, (card.top + card.height / 2) / height + (raw - 1)),
+      Math.max(
+        0.3,
+        f + (gap - (view.clientHeight || window.innerHeight) / 2) / length,
+      ),
     );
-    const step = Math.min(STEPS - 1, Math.floor(raw));
-    const f = raw - step;
     return (
-      step +
-      (f <= middle ? (0.5 * f) / middle : 0.5 + (0.5 * (f - middle)) / (1 - middle))
+      k +
+      (f <= middle
+        ? (0.5 * f) / middle
+        : 0.5 + (0.5 * (f - middle)) / (1 - middle))
     );
   }
 
@@ -765,7 +791,7 @@ export function mountDevicesScene({
     } else {
       distance = Math.max(2.3 / (tanH * aspect), 1.9 / tanH);
       tx = -0.2;
-      ty = 0.75 - tanH * distance * 0.1;
+      ty = 0.75 - tanH * distance * 0.3;
     }
     look.set(tx, ty, 0);
     camera.position.set(
@@ -802,7 +828,8 @@ export function mountDevicesScene({
       scene.traverse((object) => {
         if (object instanceof Mesh) {
           geometries.add(object.geometry);
-          for (const material of [object.material].flat()) materials.add(material);
+          for (const material of [object.material].flat())
+            materials.add(material);
         }
       });
       geometries.forEach((geometry) => geometry.dispose());

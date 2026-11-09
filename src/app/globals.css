@@ -261,10 +261,13 @@
 
     .devices-step {
       display: flex;
-      align-items: flex-end;
+      align-items: flex-start;
       min-height: 100vh;
       min-height: 100svh;
-      padding-top: 5rem;
+      /* On phones the devices hold the top of the screen, and a long card
+         passes over them as the page scrolls (PRD, D89). */
+      padding-top: 58vh;
+      padding-top: 58svh;
       padding-bottom: max(5vh, env(safe-area-inset-bottom, 0px));
     }
 
@@ -285,7 +288,7 @@
     @media (min-aspect-ratio: 11/10) {
       .devices-step {
         align-items: center;
-        padding-bottom: 0;
+        padding-block: 5rem;
       }
 
       .devices-card {

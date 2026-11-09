@@ -20,7 +20,11 @@ let held = false;
 // the first frame is drawn, the stage is empty, with its space already taken.
 // With reduced motion, no JavaScript or no WebGL, CSS hides it and the
 // section shows its screenshots instead (FDD aparelhos-3d, PRD D90).
-export function DevicesStage({ media, pauseLabel, resumeLabel }: DevicesStageProps) {
+export function DevicesStage({
+  media,
+  pauseLabel,
+  resumeLabel,
+}: DevicesStageProps) {
   const stageRef = useRef<HTMLDivElement>(null);
   const viewRef = useRef<HTMLDivElement>(null);
   const sceneRef = useRef<DevicesScene | null>(null);
@@ -31,8 +35,12 @@ export function DevicesStage({ media, pauseLabel, resumeLabel }: DevicesStagePro
     const stage = stageRef.current;
     const view = viewRef.current;
     const section = stage?.closest<HTMLElement>("[data-devices]");
-    const firstCard = section?.querySelector<HTMLElement>("[data-devices-card]");
-    if (!stage || !view || !section || !firstCard) return;
+    if (!stage || !view || !section) return;
+    const steps = [...section.querySelectorAll<HTMLElement>(".devices-step")];
+    const cards = [
+      ...section.querySelectorAll<HTMLElement>("[data-devices-card]"),
+    ];
+    if (steps.length !== 4 || cards.length !== 4) return;
     if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
     let cancelled = false;
@@ -44,7 +52,8 @@ export function DevicesStage({ media, pauseLabel, resumeLabel }: DevicesStagePro
         sceneRef.current = mountDevicesScene({
           view,
           section,
-          firstCard,
+          steps,
+          cards,
           media,
           paused: held,
           onReady: () => setReady(true),
