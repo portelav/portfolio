@@ -13,7 +13,7 @@ export function Sobre() {
   return (
     <section
       id="sobre"
-      className="page-frame reveal border-line grid scroll-mt-14 gap-8 border-t py-16 md:grid-cols-12 md:items-center md:gap-10 md:py-24"
+      className="page-frame reveal grid scroll-mt-14 gap-8 py-16 md:grid-cols-12 md:items-center md:gap-10 md:py-24"
     >
       <div className="max-w-56 md:col-span-3 md:max-w-none">
         <Image
@@ -26,13 +26,13 @@ export function Sobre() {
         />
       </div>
       <div className="flex flex-col gap-5 md:col-span-8 md:col-start-5">
-        <h2 className="font-display text-xl">{t("title")}</h2>
+        <h1 className="font-display text-xl">{t("title")}</h1>
         <p className="font-display md:text-display max-w-[32ch] text-xl">
           {t("text")}
         </p>
       </div>
       <div className="border-line mt-4 grid gap-8 border-t pt-10 md:col-span-12 md:mt-6 md:grid-cols-12 md:gap-10 md:pt-14">
-        <h3 className="font-display text-display max-w-[14ch] md:col-span-4">
+        <h2 className="font-display text-display max-w-[14ch] md:col-span-4">
           {t.rich("methodTitle", {
             accent: (chunks) => <span className="text-accent">{chunks}</span>,
             // Keeps "AI-Driven" whole, so the line never breaks at the hyphen.
@@ -40,7 +40,7 @@ export function Sobre() {
               <span className="whitespace-nowrap">{chunks}</span>
             ),
           })}
-        </h3>
+        </h2>
         <div className="flex flex-col gap-6 md:col-span-7 md:col-start-6">
           <ol>
             {methodSteps.map((step, index) => (

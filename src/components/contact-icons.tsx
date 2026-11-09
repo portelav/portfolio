@@ -57,8 +57,9 @@ const colors: Record<IconKey, string> = {
 const isIconKey = (key: string): key is IconKey => key in icons;
 
 // WhatsApp, email and Instagram in the header, as icons, in the order of
-// Contact for the page language. Below 360 px, Instagram leaves the header so
-// the rest still fits; it stays in Contact.
+// Contact for the page language. On phones, where the Menu button takes its
+// place, Instagram leaves the header, and below 390 px only the first channel
+// stays, so the rest still fits. All of them stay in Contact.
 export function ContactIcons({ className = "" }: { className?: string }) {
   const t = useTranslations("Contact");
   const header = useTranslations("Header");
@@ -68,11 +69,15 @@ export function ContactIcons({ className = "" }: { className?: string }) {
 
   return (
     <ul aria-label={header("contactLabel")} className={`flex ${className}`}>
-      {channels.map((channel) => (
+      {channels.map((channel, index) => (
         <li
           key={channel.key}
           className={
-            channel.key === "instagram" ? "max-[359px]:hidden" : undefined
+            channel.key === "instagram"
+              ? "max-md:hidden"
+              : index > 0
+                ? "max-[389px]:hidden"
+                : undefined
           }
         >
           <a

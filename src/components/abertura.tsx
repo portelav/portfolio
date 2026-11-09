@@ -2,11 +2,14 @@ import type { CSSProperties } from "react";
 
 import { useTranslations } from "next-intl";
 
+import { Link } from "@/i18n/navigation";
+
 const action =
   "inline-flex min-h-11 items-center justify-center px-5 font-mono transition-opacity duration-150 hover:opacity-70";
 
 // Says who this is, what he does and what he is after. The first project
-// starts right below, so the work is already on the first screen.
+// starts right below, so the work is already on the first screen. The two
+// actions lead to the Services and Contact pages (PRD, D79).
 export function Abertura() {
   const t = useTranslations("Home");
 
@@ -28,12 +31,12 @@ export function Abertura() {
           className="intro-in flex flex-wrap gap-3 md:flex-none"
           style={{ "--delay": "160ms" } as CSSProperties}
         >
-          <a href="#site" className={`bg-fg text-bg ${action}`}>
+          <Link href="/servicos" className={`bg-fg text-bg ${action}`}>
             {t("wantSite")}
-          </a>
-          <a href="#contato" className={`border-line border ${action}`}>
+          </Link>
+          <Link href="/contato" className={`border-line border ${action}`}>
             {t("internship")}
-          </a>
+          </Link>
         </div>
       </div>
     </section>

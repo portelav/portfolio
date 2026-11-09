@@ -26,13 +26,13 @@ export function Projetos() {
   const t = useTranslations("Projects");
 
   return (
-    <section id="projetos" className="page-frame scroll-mt-14 pb-16 md:pb-24">
-      <h2
+    <section id="projetos" className="page-frame scroll-mt-14 pt-8 pb-16 md:pt-12 md:pb-24">
+      <h1
         className="intro-in font-display text-xl"
         style={{ "--delay": "200ms" } as CSSProperties}
       >
         {t("title")}
-      </h2>
+      </h1>
       <ul className="mt-5 flex flex-col gap-16 md:gap-24">
         {projects.map((project, index) => {
           const shared = {
@@ -64,9 +64,9 @@ export function Projetos() {
             }
           >
             <div className="flex flex-col gap-1 md:col-span-4 md:col-start-9 md:row-start-1">
-              <h3 className="font-display text-xl">
+              <h2 className="font-display text-xl">
                 {t(`${project.id}.name`)}
-              </h3>
+              </h2>
               <p className={labelClassName}>
                 {t.rich(`${project.id}.kind`, {
                   coauthor: (chunks) => (

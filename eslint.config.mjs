@@ -12,6 +12,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Drafts outside git, such as the 3D tests.
+    "private/**",
   ]),
 ]);
 

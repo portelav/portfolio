@@ -93,7 +93,7 @@ O Crewz é app de celular (PRD, D65), então o caminho só tem prints de celular
 
 - Endereço próprio por caso: `/projetos/<id>` em português e `/en/projects/<id>` em inglês. Outro `id` dá a página 404.
 - No card do caso, em Projetos, o link "Ver caso completo", em inglês "See full case", ao lado de "Ver site".
-- No topo, "Voltar aos projetos" leva a `/#projetos`, no mesmo idioma.
+- No topo, "Voltar aos projetos" leva à página Projetos, no mesmo idioma (PRD, D78).
 - O topo repete o card do caso: o rótulo "Caso completo", em inglês "Full case", e o título no lugar do nome, a mídia do card, com os botões de versão, e a frase de abertura com os links do site e do código. Depois, as seções na ordem da tabela.
 - As versões aparecem em grade: no celular, duas por linha nos prints de celular e uma por linha nos de computador. No computador, quatro por linha nos de celular e duas nos de computador. Cada print tem legenda com a data.
 - O seletor de idioma leva ao mesmo caso no outro idioma.
@@ -140,7 +140,7 @@ Usa a API de transição de vistas do navegador, pelo `ViewTransition` do React.
 
 ## Critérios de aceite
 
-- [ ] O card da landing leva ao caso no mesmo idioma, e o caso volta a `/#projetos`.
+- [ ] O card leva ao caso no mesmo idioma, e o caso volta à página Projetos.
 - [ ] `/projetos/landing` e `/en/projects/landing` abrem, e `/projetos/outro` dá 404.
 - [ ] O seletor de idioma troca de idioma sem sair do caso.
 - [ ] Em 390 px e 1350 px, escuro e claro, sem transbordo, com toque de 44 px e foco visível.

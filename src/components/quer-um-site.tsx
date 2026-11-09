@@ -24,10 +24,10 @@ export function QuerUmSite() {
   return (
     <section
       id="site"
-      className="page-frame reveal border-line grid scroll-mt-14 gap-10 border-t py-16 md:grid-cols-12 md:gap-10 md:py-24"
+      className="page-frame reveal grid scroll-mt-14 gap-10 py-16 md:grid-cols-12 md:gap-10 md:py-24"
     >
       <div className="flex flex-col items-start gap-5 md:col-span-6">
-        <h2 className="font-display text-display">{t("title")}</h2>
+        <h1 className="font-display text-display">{t("title")}</h1>
         <p className="max-w-lg text-lg">{t("lead")}</p>
         <div className="flex flex-wrap gap-3">
           {buttons.map((button, index) => (
@@ -44,7 +44,7 @@ export function QuerUmSite() {
         </div>
       </div>
       <div className="md:col-span-5 md:col-start-8">
-        <h3 className="font-mono text-sm">{t("stepsTitle")}</h3>
+        <h2 className="font-mono text-sm">{t("stepsTitle")}</h2>
         <ol className="mt-4">
           {steps.map((step, index) => (
             <li

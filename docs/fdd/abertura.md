@@ -1,7 +1,7 @@
 # FDD: Seção Abertura
 
 Status: implementado
-PRD: seção 6, item Abertura; D44, D46, D48 e D49
+PRD: seção 6, item Abertura; D44, D46, D48, D49 e D79
 
 ## Objetivo
 
@@ -30,14 +30,14 @@ Depois de ver o nome `portelav` ser reescrito, o visitante sabe, na mesma tela, 
 
 ## Comportamento
 
-- O preloader cobre a tela em toda carga de `/` e `/en` sem âncora (PRD, D46). Quem chega por um link com âncora vai direto ao conteúdo.
+- O preloader cobre a tela em toda carga de `/` e `/en` sem âncora (PRD, D46). Um endereço antigo com âncora leva direto à página nova, sem preloader (PRD, D81).
 - Sequência: Reescrita de 2,6 s, pausa de 350 ms, e voo do nome até o cabeçalho em 800 ms, enquanto o véu some. São cerca de 3,8 s, contados da primeira pintura do nome. Se o JavaScript chegar depois do fim da Reescrita, o nome voa na hora (PRD, D60).
 - A rolagem fica presa enquanto o preloader roda.
 - Um script curto no `<head>`, antes da primeira pintura, marca a página para o preloader. Se algo falhar, a marca sai sozinha em 7 s e a página aparece.
 - O HTML traz o estado final. Sem JavaScript, nada fica coberto.
 - Depois do preloader, a frase ocupa até duas linhas no computador, em `text-huge`. Abaixo, o apoio à esquerda e as chamadas à direita. No celular, tudo em uma coluna.
 - O primeiro caso começa logo abaixo, ainda na primeira tela (FDD de Projetos).
-- "Quero um site" leva a `#site`. "Falar sobre estágio" leva a `#contato`.
+- "Quero um site" leva à página Serviços. "Falar sobre estágio" leva à página Contato (PRD, D79).
 - O destaque usa `--accent`, permitido por ser texto grande.
 
 ## Movimento
@@ -88,8 +88,8 @@ Nunca anima: nada além das letras, do cursor, do voo e da chegada. Sem desfoque
 - [ ] Em 390 px e no computador, o preloader roda até o fim em cerca de 3,8 s, sem deslocamento de layout medido.
 - [ ] O nome termina o voo exatamente no lugar dele no cabeçalho.
 - [ ] Na primeira tela, em 390 px e no computador, aparecem a frase, o apoio, as duas chamadas e o começo do primeiro caso.
-- [ ] "Quero um site" leva a `#site` e "Falar sobre estágio" leva a `#contato`, com o título visível.
-- [ ] Abrir com âncora na URL não mostra o preloader.
+- [ ] "Quero um site" leva a Serviços e "Falar sobre estágio" leva a Contato.
+- [ ] Abrir um endereço antigo com âncora leva à página nova, sem preloader.
 - [ ] Quadro final comparado ao `nome-escuro.svg` e ao `nome-claro.svg`, sem diferença visível.
 - [ ] Com `prefers-reduced-motion`, nenhuma animação roda, nem no hover.
 - [ ] Com JavaScript desligado, todo o conteúdo aparece.

@@ -4,8 +4,9 @@ import type { ReactNode } from "react";
 
 import { useParams } from "next/navigation";
 
-import { Link } from "@/i18n/navigation";
+import { Link, usePathname } from "@/i18n/navigation";
 import type { routing } from "@/i18n/routing";
+import { type PageHref, pages } from "@/lib/pages";
 
 type LocaleLinkProps = {
   locale: (typeof routing.locales)[number];
@@ -14,7 +15,10 @@ type LocaleLinkProps = {
   children: ReactNode;
 };
 
-// Switches the language without leaving the page: a case stays on the same case.
+const pageHrefs: readonly string[] = pages.map(({ href }) => href);
+
+// Switches the language without leaving the page: a page stays on the same
+// page, and a case on the same case. The 404 page leads to the home page.
 // On phones, only the other language shows, to leave room for the contact icons.
 export function LocaleLink({
   locale,
@@ -23,9 +27,12 @@ export function LocaleLink({
   children,
 }: LocaleLinkProps) {
   const params = useParams<{ id?: string }>();
+  const pathname = usePathname();
   const href = params.id
     ? { pathname: "/projetos/[id]" as const, params: { id: params.id } }
-    : "/";
+    : pageHrefs.includes(pathname)
+      ? (pathname as PageHref)
+      : "/";
 
   return (
     <Link

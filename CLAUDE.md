@@ -30,7 +30,7 @@ Onde está cada coisa:
 
 ## Estado atual
 
-Direção "trabalho na primeira tela" aprovada (PRD, D44 a D56). O site inteiro está na `main` (`tasks/trabalho-primeiro.md`), publicado em `portelav-site.vercel.app` e fora do índice dos buscadores. Os três projetos têm página de caso própria, e o cabeçalho tem menu no computador (PRD, D67 a D72). Contato tem e-mail e Instagram, e o cabeçalho tem ícones coloridos de WhatsApp, e-mail e Instagram (PRD, D73 a D75). O Sobre e os casos apresentam o método, AI-Driven Development (PRD, D76 e D77). O LCP da página inicial tem exceção aceita (PRD, D60 e D63). Falta o currículo em PDF, e o lançamento segue o `docs/ROADMAP.md`. No endereço público, https://portelav.vercel.app, ainda está a versão antiga.
+Direção "trabalho na primeira tela" aprovada (PRD, D44 a D56). O site inteiro está na `main` (`tasks/trabalho-primeiro.md`), publicado em `portelav-site.vercel.app` e fora do índice dos buscadores. Os três projetos têm página de caso própria, e o cabeçalho tem menu no computador (PRD, D67 a D72). Contato tem e-mail e Instagram, e o cabeçalho tem ícones coloridos de WhatsApp, e-mail e Instagram (PRD, D73 a D75). O Sobre e os casos apresentam o método, AI-Driven Development (PRD, D76 e D77). O LCP da página inicial tem exceção aceita (PRD, D60 e D63). O site está em páginas: a inicial curta, Projetos, Sobre, Serviços e Contato, com menu também no celular (PRD, D78 a D81). Os aparelhos 3D vêm na entrega seguinte (PRD, D82 a D86). Falta o currículo em PDF, e o lançamento segue o `docs/ROADMAP.md`. No endereço público, https://portelav.vercel.app, ainda está a versão antiga.
 
 ## Ambientes
 
@@ -58,7 +58,7 @@ Regras que decorrem da stack:
 - `AGENTS.md`, gerado pelo Next.js: manter e commitar.
 - TypeScript fica na 6.0 enquanto o `typescript-eslint`, usado pelo `eslint-config-next`, não aceitar a 7.
 - Todo texto de interface vive nos arquivos de mensagens, em pt-BR e em inglês, na mesma entrega. Nenhum texto fixo em componente.
-- Animação só de `transform` e `opacity`. Nada de desfoque ou `mix-blend-mode` em elemento que se move. O que se mexe sozinho por mais de 5 s para ou tem pausa (WCAG 2.2.2).
+- Animação preferencialmente de `transform` e `opacity`. Desfoque e `mix-blend-mode` em elemento que se move são permitidos (PRD, D84), medindo a fluidez no celular. O que se mexe sozinho por mais de 5 s para ou tem pausa (WCAG 2.2.2).
 - Nenhum cookie não essencial. Cookie novo muda o PRD, porque pede consentimento.
 
 ## Fluxo com agentes
@@ -148,7 +148,7 @@ npm run build
 ```text
 messages/            textos em pt-BR e inglês
 public/              ícones e manifesto do kit; prints e vídeos em public/projetos/, por tela
-src/app/[locale]/    layout raiz, páginas e 404, só composição
+src/app/[locale]/    layout raiz, inicial, páginas Projetos, Sobre, Serviços e Contato, casos e 404, só composição
 src/app/globals.css  tokens do DESIGN.md
 src/components/      componentes
 src/i18n/            rotas e carga de mensagens de next-intl

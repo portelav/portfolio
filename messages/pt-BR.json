@@ -10,17 +10,51 @@
     "wantSite": "Quero um site",
     "internship": "Falar sobre estágio"
   },
+  "HomeProjects": {
+    "title": "Projetos",
+    "landing": "Site de uma cirurgiã-dentista em Maceió, que leva o paciente ao WhatsApp.",
+    "draftcs": "Jogo web: monte um time com jogadores reais de um Major de CS e simule o título.",
+    "crewz": "Rede social para achar gente que faz a mesma atividade que você.",
+    "seeCase": "Ver caso",
+    "caseLabel": "Ver o caso de {name}",
+    "all": "Ver todos os projetos"
+  },
+  "HomeCta": {
+    "title": "Quer um site ou falar sobre estágio?",
+    "services": "Ver serviços",
+    "contact": "Falar comigo"
+  },
   "Header": {
     "homeLabel": "portelav, voltar ao início",
     "themeToLight": "Claro",
     "themeToDark": "Escuro",
     "themeToLightLabel": "Mudar para o modo claro",
     "themeToDarkLabel": "Mudar para o modo escuro",
-    "navLabel": "Seções",
-    "navProjects": "Projetos",
-    "navAbout": "Sobre",
-    "navContact": "Contato",
     "contactLabel": "Contatos"
+  },
+  "Pages": {
+    "label": "Páginas",
+    "menu": "Menu",
+    "projects": {
+      "name": "Projetos",
+      "title": "Projetos · Lucas Portela",
+      "description": "Três projetos no ar: um site, um jogo web e uma rede social."
+    },
+    "about": {
+      "name": "Sobre",
+      "title": "Sobre · Lucas Portela",
+      "description": "Como Lucas Portela trabalha e com quais tecnologias."
+    },
+    "services": {
+      "name": "Serviços",
+      "title": "Serviços · Lucas Portela",
+      "description": "Sites para negócios, pensados primeiro para o celular."
+    },
+    "contact": {
+      "name": "Contato",
+      "title": "Contato · Lucas Portela",
+      "description": "WhatsApp, e-mail, Instagram, LinkedIn e GitHub."
+    }
   },
   "Language": {
     "label": "Idioma",
@@ -49,7 +83,7 @@
       "kind": "Site · feito sozinho",
       "what": "Página de uma cirurgiã-dentista em Maceió, que apresenta a profissional e leva o visitante ao WhatsApp.",
       "part": "Tudo, do desenho ao código, pensado primeiro para o celular.",
-      "decision": "Sem preço, sem promoção e sem promessa de resultado. Antes e depois só com autorização dos pacientes e com nome e CRO na imagem, por causa das regras do Conselho Federal de Odontologia.",
+      "decision": "Sem preço, sem promoção e sem promessa de resultado, pelas regras do Conselho Federal de Odontologia. O detalhe dos antes e depois fica no caso.",
       "caseLabel": "Ver o caso completo do site da Dra. Thaiane Lessa"
     },
     "draftcs": {
@@ -207,7 +241,7 @@
     "title": "Sobre",
     "text": "Curso Ciência da Computação e me importo com os pequenos detalhes: como o site fica no celular, o tempo de cada animação, o texto de cada botão.",
     "methodTitle": "Trabalho com <accent><keep>AI-Driven</keep> Development</accent>.",
-    "methodStep1": "Escrevo a documentação: o que o produto faz, para quem, as regras e cada decisão.",
+    "methodStep1": "Escrevo a documentação: o produto, o público, as regras e cada decisão.",
     "methodStep2": "Agentes de IA escrevem o código a partir dela.",
     "methodStep3": "Eu reviso, testo no celular e no computador e ajusto até ficar certo.",
     "repo": "Este site foi feito assim: o código e as decisões estão no <link>repositório público</link>.",
@@ -215,7 +249,7 @@
   },
   "Hire": {
     "title": "Quer um site?",
-    "lead": "Faço a página do seu negócio do desenho ao código, pensada primeiro para o celular e com um caminho direto até o seu WhatsApp.",
+    "lead": "Faço o site do seu negócio, do desenho ao código, pensado primeiro para o celular.",
     "cta": "Falar no WhatsApp",
     "stepsTitle": "Como funciona",
     "step1": "Você me conta o que precisa.",

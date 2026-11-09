@@ -10,17 +10,51 @@
     "wantSite": "I need a website",
     "internship": "Talk about an internship"
   },
+  "HomeProjects": {
+    "title": "Projects",
+    "landing": "A dental surgeon's website in Maceió that takes patients to WhatsApp.",
+    "draftcs": "Web game: build a team of real players from a CS Major and simulate the title run.",
+    "crewz": "A social network for finding people who do the same activity as you.",
+    "seeCase": "See case",
+    "caseLabel": "See the case of {name}",
+    "all": "See all projects"
+  },
+  "HomeCta": {
+    "title": "Need a website or want to talk about an internship?",
+    "services": "See services",
+    "contact": "Get in touch"
+  },
   "Header": {
     "homeLabel": "portelav, back to home",
     "themeToLight": "Light",
     "themeToDark": "Dark",
     "themeToLightLabel": "Switch to light mode",
     "themeToDarkLabel": "Switch to dark mode",
-    "navLabel": "Sections",
-    "navProjects": "Projects",
-    "navAbout": "About",
-    "navContact": "Contact",
     "contactLabel": "Contact"
+  },
+  "Pages": {
+    "label": "Pages",
+    "menu": "Menu",
+    "projects": {
+      "name": "Projects",
+      "title": "Projects · Lucas Portela",
+      "description": "Three live projects: a website, a web game and a social network."
+    },
+    "about": {
+      "name": "About",
+      "title": "About · Lucas Portela",
+      "description": "How Lucas Portela works and which technologies he uses."
+    },
+    "services": {
+      "name": "Services",
+      "title": "Services · Lucas Portela",
+      "description": "Websites for businesses, made for phones first."
+    },
+    "contact": {
+      "name": "Contact",
+      "title": "Contact · Lucas Portela",
+      "description": "WhatsApp, email, Instagram, LinkedIn and GitHub."
+    }
   },
   "Language": {
     "label": "Language",
@@ -49,7 +83,7 @@
       "kind": "Website · built on my own",
       "what": "A page for a dental surgeon in Maceió that introduces her and takes visitors to WhatsApp.",
       "part": "All of it, from design to code, made for phones first.",
-      "decision": "No prices, no promotions and no promised results. Before-and-after photos only with the patients' consent and with her name and license number on the image, because of the Brazilian dental council's rules.",
+      "decision": "No prices, no promotions and no promised results, under the Brazilian dental council's rules. The before-and-after details are in the case.",
       "caseLabel": "See the full case of Dr. Thaiane Lessa's website"
     },
     "draftcs": {
@@ -207,7 +241,7 @@
     "title": "About",
     "text": "I study Computer Science and I care about the small details: how a website feels on a phone, the timing of each animation, the words on each button.",
     "methodTitle": "I work with <accent><keep>AI-Driven</keep> Development</accent>.",
-    "methodStep1": "I write the documentation: what the product does, who it's for, the rules and every decision.",
+    "methodStep1": "I write the documentation: the product, the audience, the rules and every decision.",
     "methodStep2": "AI agents write the code from it.",
     "methodStep3": "I review it, test it on phone and desktop, and adjust until it's right.",
     "repo": "This website was built this way: the code and the decisions are in the <link>public repository</link>.",
@@ -215,7 +249,7 @@
   },
   "Hire": {
     "title": "Need a website?",
-    "lead": "I build the page for your business from design to code, made for phones first, with a direct path to your WhatsApp.",
+    "lead": "I build your business website, from design to code, made for phones first.",
     "cta": "Message me on WhatsApp",
     "stepsTitle": "How it works",
     "step1": "You tell me what you need.",
