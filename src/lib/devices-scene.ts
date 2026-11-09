@@ -9,6 +9,7 @@ import {
   Group,
   InstancedMesh,
   LinearFilter,
+  LinearMipmapLinearFilter,
   MathUtils,
   Matrix4,
   Mesh,
@@ -74,6 +75,9 @@ type Screen = {
 const STEPS = 3;
 // How long each text holds still, as a share of the screen: same as --hold.
 const HOLD = 0.4;
+// Slow frames lower the resolution, but never below one pixel per CSS pixel,
+// where the videos on the screens turn soft.
+const MIN_RATIO = 1;
 const WIDE = "(min-aspect-ratio: 11/10)";
 
 const clamp = (x: number) => Math.min(1, Math.max(0, x));
@@ -116,9 +120,10 @@ function roundedRect(w: number, h: number, r: number, segments = 10, top = r) {
 }
 
 // A video drawn on a screen. The texture goes to the GPU only when the video
-// has a new frame, not on every render, and has no mipmaps: rebuilding them
-// for each HD frame was the main cost in the demo.
-function videoScreen(aspect: number): Screen {
+// has a new frame, not on every render. It keeps mipmaps and anisotropic
+// filtering: the screens show an HD video at a fraction of its size, and
+// without them the text in the video shimmers and breaks up.
+function videoScreen(aspect: number, anisotropy: number): Screen {
   const video = document.createElement("video");
   video.muted = true;
   video.loop = true;
@@ -131,9 +136,10 @@ function videoScreen(aspect: number): Screen {
   // element's width attribute, which a video does not have, and it stays black.
   const texture = new VideoTexture(video);
   texture.colorSpace = SRGBColorSpace;
-  texture.generateMipmaps = false;
-  texture.minFilter = LinearFilter;
+  texture.generateMipmaps = true;
+  texture.minFilter = LinearMipmapLinearFilter;
   texture.magFilter = LinearFilter;
+  texture.anisotropy = anisotropy;
 
   let src: string | null = null;
   let frameHandle = 0;
@@ -263,6 +269,7 @@ export function mountDevicesScene({
   canvas.className = "absolute inset-0 block h-full w-full";
   view.append(canvas);
 
+  const anisotropy = Math.min(8, renderer.capabilities.getMaxAnisotropy());
   const scene = new Scene();
   const camera = new PerspectiveCamera(28, 1, 0.1, 200);
   const pmrem = new PMREMGenerator(renderer);
@@ -423,7 +430,7 @@ export function mountDevicesScene({
   // Same shape as the computer videos, 1920 x 1200.
   const SW = 2.96;
   const SH = SW / 1.6;
-  const computerScreen = videoScreen(SW / SH);
+  const computerScreen = videoScreen(SW / SH, anisotropy);
   const computerMesh = new Mesh(
     new PlaneGeometry(SW, SH),
     new MeshBasicMaterial({ map: computerScreen.texture, toneMapped: false }),
@@ -465,7 +472,7 @@ export function mountDevicesScene({
   const CSH = PH - 0.06;
   const VH = CSW / 0.5625;
   const BAND = CSH - VH;
-  const phoneScreen = videoScreen(CSW / VH);
+  const phoneScreen = videoScreen(CSW / VH, anisotropy);
   const phoneMesh = new Mesh(
     roundedRect(CSW, VH, 0.085, 10, 0.012),
     new MeshBasicMaterial({ map: phoneScreen.texture, toneMapped: false }),
@@ -659,8 +666,8 @@ export function mountDevicesScene({
     }
     if (perf.count === 30) {
       const average = perf.sum / perf.count;
-      if (average > 1 / 50 && ratio > 0.75) {
-        ratio = Math.max(0.75, ratio - 0.25);
+      if (average > 1 / 50 && ratio > MIN_RATIO) {
+        ratio = Math.max(MIN_RATIO, ratio - 0.25);
         perf.good = 0;
         renderer.setPixelRatio(ratio);
         fit();
