@@ -1,7 +1,9 @@
 # FDD: Seção Projetos
 
 Status: implementado
-PRD: seção 6, item Projetos; D3, D22, D40, D41, D43, D44, D50, D51, D77, D78 e D79
+PRD: seção 6, item Projetos; D3, D22, D40, D41, D43, D44, D50, D51, D77, D78, D79 e D88 a D90
+
+> Na entrega do 3D (`tasks/projects-3d-devices.md`), a mídia desta página passa aos aparelhos 3D (`aparelhos-3d.md`): o texto abaixo continua, mas print, vídeo e botões de versão saem dos cards e ficam só na reserva parada e nas páginas de caso.
 
 ## Objetivo
 
@@ -50,6 +52,7 @@ Título da seção: "Projetos"; em inglês, "Projects". Rótulos: "Minha parte" 
 
 ## Comportamento
 
+- Com a entrega do 3D, os três casos ficam ao lado dos aparelhos, no computador, e num cartão por cima deles, no celular (`aparelhos-3d.md`). Os itens abaixo sobre mídia, botões de versão e pausa passam a valer só para a reserva parada e para as páginas de caso.
 - Os cards completos ficam na página Projetos (`/projetos`, `/en/projects`), com o título "Projetos" em `h1` (PRD, D78). Na página inicial, os três aparecem em versão curta (`pagina-inicial.md`).
 - Na página Projetos, o primeiro caso começa ainda na primeira tela.
 - Os casos ficam um abaixo do outro, nunca lado a lado, sem faixa lateral.
