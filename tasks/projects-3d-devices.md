@@ -108,7 +108,7 @@ Até 10 itens, um commit cada, na ordem do `/exec`. Antes de cada commit, explic
 6. [x] **Cena:** módulo em `src/lib/` portado da demo, com montagem, linha do tempo, troca de vídeo, pausa, tema e limpeza.
 7. [x] **Componente:** seção com palco, passos, prints de reserva, botão de pausa e carga da cena depois do preloader e perto da tela.
 8. [x] **Páginas:** inicial com a versão curta no lugar de `home-projects.tsx`; Projetos com a versão completa no lugar dos cartões de mídia. Remover o que ficar sem uso.
-9. [ ] **Mídia:** vídeos em alta resolução da landing e do DraftCS em `public/projetos/video/`, sem metadado. Crewz regravado com o app local e Supabase temporário, e o banco apagado depois.
+9. [x] **Mídia:** vídeos em alta resolução da landing e do DraftCS em `public/projetos/video/`, sem metadado. Crewz regravado com o app local e Supabase temporário, e o banco apagado depois.
 10. [ ] **Docs finais:** status dos FDDs, ROADMAP e `CLAUDE.md`.
 
 ---
