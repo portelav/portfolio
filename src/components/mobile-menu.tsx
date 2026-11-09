@@ -17,18 +17,17 @@ import { currentPage } from "./site-nav";
 type MobileMenuProps = {
   label: string;
   open: string;
-  close: string;
   items: Record<PageKey, string>;
 };
 
 const computerQuery = "(min-width: 768px)";
 
-// The phone menu (PRD, D80). A button at the end of the header opens a panel
-// over the page, below the header, with the pages one per line. While it is
-// open, focus stays between the button and the links, the page behind does not
-// scroll and the header stays on screen. Esc, the button, a page or a wider
-// screen close it, and focus goes back to the button.
-export function MobileMenu({ label, open, close, items }: MobileMenuProps) {
+// The phone menu (PRD, D80 and D87). A button with three bars, at the start of
+// the header, opens a panel over the page, below the header, with the pages one
+// per line. While it is open, focus stays between the button and the links, the
+// page behind does not scroll and the header stays on screen. Esc, the button,
+// a page or a wider screen close it, and focus goes back to the button.
+export function MobileMenu({ label, open, items }: MobileMenuProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [openedAt, setOpenedAt] = useState<string | null>(null);
   const pathname = usePathname();
@@ -106,18 +105,21 @@ export function MobileMenu({ label, open, close, items }: MobileMenuProps) {
             setIsOpen(true);
           }
         }}
-        className="grid min-h-11 min-w-11 place-items-center font-mono text-sm"
+        aria-label={open}
+        className="-ml-3 grid min-h-11 min-w-11 place-items-center"
       >
-        {/* Both labels share one cell, so the button keeps the width of the
-            longer one and nothing in the header moves when it opens. */}
-        <span className={`col-start-1 row-start-1 ${shown ? "invisible" : ""}`}>
-          {open}
-        </span>
-        <span
-          aria-hidden={!shown}
-          className={`col-start-1 row-start-1 ${shown ? "" : "invisible"}`}
-        >
-          {close}
+        {/* Three bars that turn into an X while the menu is open. */}
+        <span aria-hidden="true" className="flex w-5 flex-col gap-1.5">
+          {[
+            shown ? "translate-y-2 rotate-45" : "",
+            shown ? "opacity-0" : "",
+            shown ? "-translate-y-2 -rotate-45" : "",
+          ].map((state, index) => (
+            <span
+              key={index}
+              className={`ease-out-quint h-0.5 rounded-full bg-current transition-[opacity,transform] duration-250 motion-reduce:transition-none ${state}`}
+            />
+          ))}
         </span>
       </button>
       <div

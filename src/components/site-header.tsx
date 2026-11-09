@@ -21,14 +21,17 @@ export function SiteHeader() {
   return (
     <HeaderShell>
       <div className="page-frame flex h-14 items-center justify-between gap-4">
-        <div data-header-name className="header-name">
-          <Link
-            href="/"
-            aria-label={t("homeLabel")}
-            className="brand-link flex min-h-11 items-center"
-          >
-            <BrandName className="h-auto w-24" />
-          </Link>
+        <div className="flex items-center gap-1">
+          <MobileMenu label={page("label")} open={page("menu")} items={items} />
+          <div data-header-name className="header-name">
+            <Link
+              href="/"
+              aria-label={t("homeLabel")}
+              className="brand-link flex min-h-11 items-center"
+            >
+              <BrandName className="h-auto w-24" />
+            </Link>
+          </div>
         </div>
         <div className="flex items-center md:gap-2">
           <SiteNav label={page("label")} items={items} />
@@ -39,12 +42,6 @@ export function SiteHeader() {
             toLightLabel={t("themeToLightLabel")}
             toDark={t("themeToDark")}
             toDarkLabel={t("themeToDarkLabel")}
-          />
-          <MobileMenu
-            label={page("label")}
-            open={page("menu")}
-            close={page("close")}
-            items={items}
           />
         </div>
       </div>
