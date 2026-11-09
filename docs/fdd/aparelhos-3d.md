@@ -66,7 +66,7 @@ O Crewz só tem vídeo de celular, gravado por dentro do app (D65, D91).
 | DraftCS | Fecha quase todo na troca e abre de novo | Gira na troca | Vídeo do DraftCS |
 | Crewz | Fecha e vai para trás | Vem para a frente e cresce | Vídeo do Crewz só no celular |
 
-- A troca de projeto acontece quando o texto que sai e o que chega estão igualmente visíveis.
+- Quando o texto de um projeto chega ao lugar, ele fica preso por 40% de uma tela de rolagem, e os aparelhos param com ele, como nas seções presas do site da Dra. Thaiane. Depois os dois seguem, e a troca acontece no meio do caminho até o próximo. Pedido do dono em 2026-11-09.
 - A cena segue a rolagem com suavidade, nunca muda a velocidade nem a direção da rolagem, e volta ao passo anterior quando o visitante sobe.
 
 **Vídeos**
@@ -123,7 +123,7 @@ Com `prefers-reduced-motion`, vale a reserva parada.
 
 - O Three.js fica fora do primeiro carregamento, num pedaço próprio do build.
 - Média de 50 quadros por segundo ou mais no Chrome do computador. A resolução da cena cai sozinha quando os quadros ficam lentos.
-- Textura de vídeo sem mipmap, sombra redesenhada só quando algo mexe, nada desenhado com a seção fora da tela.
+- Textura de vídeo com mipmap e filtro anisotrópico, para o texto dos vídeos não serrilhar na tela menor. Sombra redesenhada só quando algo mexe, nada desenhado com a seção fora da tela. A resolução da cena não cai abaixo de 1 pixel por pixel CSS.
 - Nenhum deslocamento de layout.
 
 ## Fora de escopo
