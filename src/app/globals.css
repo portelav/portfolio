@@ -259,16 +259,28 @@
       pointer-events: none;
     }
 
+    /*
+     * Each text rests at --rest from the top and holds there for --hold of
+     * scrolling before it moves on, so the page sticks a little on each
+     * project. --h is the text height, measured by the stage. On phones the
+     * devices keep the top of the screen and the card rests below them, or
+     * higher when it is long, passing over them (PRD, D89).
+     */
     .devices-step {
-      display: flex;
-      align-items: flex-start;
-      min-height: 100vh;
-      min-height: 100svh;
-      /* On phones the devices hold the top of the screen, and a long card
-         passes over them as the page scrolls (PRD, D89). */
-      padding-top: 58vh;
-      padding-top: 58svh;
-      padding-bottom: max(5vh, env(safe-area-inset-bottom, 0px));
+      --hold: 40svh;
+      --rest: max(4.5rem, min(58svh, calc(95svh - var(--h, 20rem))));
+      --gap: max(5svh, calc(100svh - var(--rest) - var(--h, 20rem)));
+      display: block;
+      /* The hold sits inside the content box: a sticky text only sticks
+         within the content of its parent. */
+      min-height: calc(var(--rest) + var(--h, 20rem) + var(--hold) + var(--gap));
+      padding-top: var(--rest);
+      padding-bottom: var(--gap);
+    }
+
+    [data-devices-card] {
+      position: sticky;
+      top: var(--rest);
     }
 
     .devices-print {
@@ -287,8 +299,7 @@
 
     @media (min-aspect-ratio: 11/10) {
       .devices-step {
-        align-items: center;
-        padding-block: 5rem;
+        --rest: max(5rem, calc((100svh - var(--h, 20rem)) / 2));
       }
 
       .devices-card {

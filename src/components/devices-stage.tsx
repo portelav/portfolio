@@ -41,7 +41,18 @@ export function DevicesStage({
       ...section.querySelectorAll<HTMLElement>("[data-devices-card]"),
     ];
     if (steps.length !== 4 || cards.length !== 4) return;
-    if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    // Each step needs its text height to know where the text rests (CSS --h).
+    const measure = new ResizeObserver(() => {
+      cards.forEach((card, i) =>
+        steps[i].style.setProperty("--h", `${card.offsetHeight}px`),
+      );
+    });
+    cards.forEach((card) => measure.observe(card));
+
+    if (matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      return () => measure.disconnect();
+    }
 
     let cancelled = false;
 
@@ -53,7 +64,6 @@ export function DevicesStage({
           view,
           section,
           steps,
-          cards,
           media,
           paused: held,
           onReady: () => setReady(true),
@@ -76,6 +86,7 @@ export function DevicesStage({
 
     return () => {
       cancelled = true;
+      measure.disconnect();
       stopWaiting();
       near.disconnect();
       sceneRef.current?.dispose();

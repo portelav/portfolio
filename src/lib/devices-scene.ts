@@ -44,10 +44,9 @@ export type DevicesSceneOptions = {
   view: HTMLElement;
   // The whole section: its position on the page is the scroll timeline.
   section: HTMLElement;
-  // The four text steps (title and three projects) and the text block in
-  // each: the title, then each card. Together they set the timeline.
+  // The four text steps (title and three projects). Their positions on the
+  // page are the scroll timeline.
   steps: HTMLElement[];
-  cards: HTMLElement[];
   media: readonly DeviceMedia[];
   paused: boolean;
   // Called once the first frame is on screen, so the stage can fade it in.
@@ -73,6 +72,8 @@ type Screen = {
 };
 
 const STEPS = 3;
+// How long each text holds still, as a share of the screen: same as --hold.
+const HOLD = 0.4;
 const WIDE = "(min-aspect-ratio: 11/10)";
 
 const clamp = (x: number) => Math.min(1, Math.max(0, x));
@@ -237,7 +238,6 @@ export function mountDevicesScene({
   view,
   section,
   steps,
-  cards,
   media,
   paused: startPaused,
   onReady,
@@ -618,34 +618,20 @@ export function mountDevicesScene({
   window.addEventListener("pointermove", onPointer, { passive: true });
 
   // Scroll position as a step: 0 = title, 1 = first project at rest (its step
-  // at the top of the screen), and so on. Steps can be taller than the screen
-  // when a card is long, so each one is measured. The swap (x.5) happens when
-  // the gap between the leaving text and the arriving one crosses the middle
-  // of the screen.
+  // at the top of the screen, its text at its resting place), and so on. Each
+  // text holds still for HOLD of a screen (CSS --hold), and the devices hold
+  // with it; then both move on to the next one. Steps are measured, because a
+  // long card makes its step taller than the screen.
   function progress() {
     const tops = steps.map((step) => step.getBoundingClientRect().top);
     if (tops[0] >= 0) return 0;
     const k = tops.findIndex((top, i) => i > 0 && top > 0) - 1;
     if (k < 0) return STEPS;
     const length = tops[k + 1] - tops[k];
-    const f = -tops[k] / length;
-    const gap =
-      (cards[k].getBoundingClientRect().bottom +
-        cards[k + 1].getBoundingClientRect().top) /
-      2;
-    const middle = Math.min(
-      0.9,
-      Math.max(
-        0.3,
-        f + (gap - (view.clientHeight || window.innerHeight) / 2) / length,
-      ),
-    );
-    return (
-      k +
-      (f <= middle
-        ? (0.5 * f) / middle
-        : 0.5 + (0.5 * (f - middle)) / (1 - middle))
-    );
+    const scrolled = -tops[k];
+    const hold = HOLD * (view.clientHeight || window.innerHeight);
+    if (scrolled <= hold) return k;
+    return k + (scrolled - hold) / Math.max(1, length - hold);
   }
 
   const perf = { sum: 0, count: 0, good: 0, start: performance.now() };
