@@ -47,8 +47,8 @@ Título da seção: "Projetos"; em inglês, "Projects". Rótulos: "Minha parte" 
 
 | Tela | Print | Vídeo |
 |---|---|---|
-| Computador, a partir de 768 px | `public/projetos/<id>.webp`, 1425 x 900 | `public/projetos/video/<id>.mp4`, H.264, 1280 x 808 |
-| Celular | `public/projetos/celular/<id>.webp`, 780 x 1170, parte de cima da página | `public/projetos/video/celular/<id>.mp4`, H.264, 540 x 960 |
+| Computador, a partir de 768 px | `public/projetos/<id>.webp`, 1425 x 900 | `public/projetos/video/<id>.mp4`, H.264, 1920 x 1200 (D86) |
+| Celular | `public/projetos/celular/<id>.webp`, 780 x 1170, parte de cima da página | `public/projetos/video/celular/<id>.mp4`, H.264, 1080 x 1920 (D86) |
 
 ## Comportamento
 
@@ -104,7 +104,7 @@ Sem `animation-timeline`, os casos aparecem sem efeito. Nunca muda a velocidade 
 - Prints em WebP, em `<picture>`, cada tela baixa só o seu.
 - Print trocado ganha nome novo, como `crewz-app.webp`, porque o otimizador de imagens e o navegador guardam o arquivo pelo endereço.
 - O print do primeiro caso carrega com prioridade, porque está na primeira tela. Os outros carregam sob demanda.
-- Vídeos com `preload="none"` no HTML, que passa a `metadata` quando o vídeo se aproxima da tela, entre 0,5 e 1 MB cada (PRD, D64).
+- Vídeos com `preload="none"` no HTML, que passa a `metadata` quando o vídeo se aproxima da tela, cerca de 1,2 MB cada (PRD, D64 e D86).
 - Largura e altura reservadas, sem deslocamento de layout.
 
 ## Fora de escopo

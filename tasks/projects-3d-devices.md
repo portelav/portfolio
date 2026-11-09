@@ -3,7 +3,7 @@
 **Slug:** `projects-3d-devices`
 **Branch:** `feat/projects-3d-devices`
 **Seção ou área:** página inicial (projetos curtos) e página Projetos
-**Status:** Planning
+**Status:** Review
 **Gate S2:** Livre
 
 ---
@@ -109,7 +109,7 @@ Até 10 itens, um commit cada, na ordem do `/exec`. Antes de cada commit, explic
 7. [x] **Componente:** seção com palco, passos, prints de reserva, botão de pausa e carga da cena depois do preloader e perto da tela.
 8. [x] **Páginas:** inicial com a versão curta no lugar de `home-projects.tsx`; Projetos com a versão completa no lugar dos cartões de mídia. Remover o que ficar sem uso.
 9. [x] **Mídia:** vídeos em alta resolução da landing e do DraftCS em `public/projetos/video/`, sem metadado. Crewz regravado com o app local e Supabase temporário, e o banco apagado depois.
-10. [ ] **Docs finais:** status dos FDDs, ROADMAP e `CLAUDE.md`.
+10. [x] **Docs finais:** status dos FDDs, ROADMAP e `CLAUDE.md`.
 
 ---
 
@@ -126,19 +126,61 @@ Até 10 itens, um commit cada, na ordem do `/exec`. Antes de cada commit, explic
 
 ## Stage 6 — Code Execution
 
-*(Preenchido pelo exec.)*
+| Camada | Arquivo | Status |
+|---|---|---|
+| Decisões | `docs/adr/0005-threejs-aparelhos.md`, `docs/adr/README.md`, `docs/PRD.md` (D88 a D91), `CLAUDE.md` | criado / modificado |
+| Spec | `docs/fdd/aparelhos-3d.md` (implementado), `docs/fdd/projetos.md`, `docs/fdd/pagina-inicial.md`, `docs/fdd/README.md` | criado / modificado |
+| Dependência | `package.json`, `package-lock.json`: `three` 0.186.1, `@types/three` 0.186.0 | modificado |
+| Mensagens | `messages/pt-BR.json`, `messages/en.json`: `Devices` (três textos); sai `Projects.landing.caseLabel`, sem uso | modificado |
+| Cena | `src/lib/devices-scene.ts` | criado |
+| Componentes | `src/components/devices.tsx`, `src/components/devices-stage.tsx`, `src/lib/after-preloader.ts` | criado |
+| Componentes | `src/components/project-video.tsx` (usa `after-preloader`), `src/app/globals.css` (seção `.devices-*`) | modificado |
+| Páginas | `src/app/[locale]/page.tsx`, `src/app/[locale]/projetos/page.tsx` | modificado |
+| Removidos | `src/components/home-projects.tsx`, `src/components/projetos.tsx` | removido |
+| Mídia | `public/projetos/video/{landing,draftcs}.mp4` (1920 × 1200), `public/projetos/video/celular/{landing,draftcs,crewz}.mp4` (1080 × 1920) | modificado |
+| Docs | `docs/ROADMAP.md` | modificado |
+
+### Desvios
+
+- **Celular, opção A:** o cartão começa a 58% da altura da tela e sobe passando por cima dos aparelhos, em vez de parar no pé da tela, porque o cartão completo de Projetos tem até 561 px em 390 px de largura e cobria a cena. A linha do tempo passou a medir a posição real de cada passo. FDD ajustado (`ad7e078`).
+- **Botão de pausa:** fica no canto de cima no celular, abaixo do cabeçalho, porque os cartões ocupam a parte de baixo. O nome muda com a ação, sem `aria-pressed`, para não anunciar duas vezes o mesmo estado.
+- **Textura de vídeo:** o Three.js 0.186 aloca uma `Texture` comum pela largura do elemento, que um `<video>` não tem, e as telas ficavam pretas. A cena usa `VideoTexture`.
+- **Transição de mídia para o caso:** sai o morph do print para a capa do caso (D69), porque a seção não tem mais print fixo. A troca de página continua empurrando a página (D71).
+- **Link "Ver caso completo" em Projetos:** cada projeto passa a ter nome próprio para o leitor de tela. Antes, os três usavam o nome da landing.
+- **Vídeo do Crewz:** gravado quadro a quadro em 1080 × 1920 (o screencast do Chrome entrega só 360 × 640). As trocas de tela são cortes. O roteiro ganhou a aba Pessoas, porque a página do grupo não liga ao perfil de quem participa. Lucas viu o vídeo antes do commit.
 
 ---
 
 ## Stage 7 — Tests
 
-*(Preenchido pelo exec.)*
+- `npm run lint`, `npm run typecheck` e `npm run build`: verdes.
+- Build: o Three.js fica num pedaço próprio, de 578 KB, ou 144 KB com gzip, pedido só pelo `import()` da seção.
+
+| Critério | Como foi verificado |
+|---|---|
+| 1. Computador, texto à esquerda, aparelhos à direita | Chrome 1440 × 900, `/en` e `/projetos`, escuro e claro: cartão à esquerda, aparelhos à direita, vídeos nas telas |
+| 2. Celular, opção A, sem transbordo | Chrome 390 × 844 a 3x: `scrollWidth` 390 em `/projetos`; cartões por cima dos aparelhos, Crewz no fim |
+| 3. Rolagem conduz, Crewz só no celular | Prints nos passos 0, 1, 2 e 3: notebook fechado e aberto, celular de pé, notebook fecha no Crewz |
+| 4. Vídeo só com o projeto na tela, pausa vale para a página | Pausa troca o nome para "Resume motion"; ao ir a Sobre e voltar, o botão volta em "Resume motion" |
+| 5. Nada baixa antes do preloader | Em `/en`, nenhum pedido de `three` ou `.mp4` enquanto `data-reescrita` existe; depois, só os vídeos do projeto atual e do seguinte |
+| 6. Menos movimento leva aos prints | Com `prefers-reduced-motion`, palco `display: none`, prints visíveis, nenhum canvas, Three.js não baixa |
+| 7. Fluidez | Rolagem automática pelos quatro passos em 6 s: 60 quadros por segundo, nenhuma travada acima de 50 ms; com CPU 4× mais lenta, 60 e pior quadro de 17 ms (servidor de desenvolvimento) |
+| 8. Vídeos em HD, sem metadado | `ffprobe`: 1920 × 1200 e 1080 × 1920, sem áudio, sem tag de autor, aparelho ou encoder; cerca de 1 a 1,27 MB |
+| 9. Texto em HTML, teclado, mensagens | Cartões e links em HTML por cima do canvas `aria-hidden`; textos nos arquivos de mensagens |
+| 10. Sem deslocamento | Palco com `100svh` reservado no CSS desde o primeiro quadro; a escolha entre palco e prints sai do CSS |
 
 ---
 
 ## Stage 8 — Verification
 
-*(Preenchido pelo exec.)*
+- Chrome do MCP, servidor de desenvolvimento local:
+  - 1440 × 900, escuro, `/projetos`: cena pronta em menos de 4 s, seção com 3600 px (4 telas), vídeos tocando nas telas, console sem aviso.
+  - 390 × 844, `/projetos`: passos de 844, 1093, 952 e 931 px, cartão a 58% da tela, sem transbordo.
+  - 1440 × 900, claro, `/en`: preloader, depois a cena; DraftCS no notebook e no celular.
+  - 390 × 844 com menos movimento, `/`: prints e textos curtos, sem canvas.
+  - Troca de página: ao ir a Sobre o canvas sai, e ao voltar sobra um canvas só.
+- Gravação do Crewz: cópia temporária do app, Supabase local em projeto próprio (`portfolio-video`), seed de demonstração, grupo da altinha apagado, conta fictícia da Camila em modo claro. Depois: `supabase stop --no-backup`, nenhum contêiner nem volume restante, cópia e perfil de Chrome apagados, Docker fechado. O banco local do Crewz e o repositório dele não foram tocados.
+- Falta: teste de Lucas no celular dele (fluidez real e vídeos nas telas) e a prévia da Vercel.
 
 ---
 

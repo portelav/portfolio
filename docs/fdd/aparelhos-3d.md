@@ -1,6 +1,6 @@
 # FDD: Aparelhos 3D
 
-Status: aprovado
+Status: implementado
 PRD: D44, D64, D65, D82 a D86 e D88 a D91. ADR 0005.
 
 ## Objetivo
