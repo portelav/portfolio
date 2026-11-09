@@ -53,8 +53,8 @@ O Crewz só tem vídeo de celular, gravado por dentro do app (D65, D91).
 
 **Celular** (tela mais alta que larga, D89)
 
-- Os aparelhos ocupam a tela. O cartão de cada projeto sobe por baixo, por cima da cena, e para perto do pé da tela, com o mesmo fundo com desfoque.
-- Na versão completa, se o texto não couber, o cartão cresce para cima, e os aparelhos ficam atrás dele.
+- Os aparelhos ficam na parte de cima da tela. O cartão de cada projeto começa a 58% da altura da tela, com o mesmo fundo com desfoque, e sobe com a página, passando por cima dos aparelhos.
+- Na versão completa, o cartão pode passar do pé da tela. O passo dele cresce, e a troca de projeto acompanha a posição real de cada cartão.
 - Sem transbordo em 360 e 390 px.
 
 **Rolagem**
@@ -76,7 +76,7 @@ O Crewz só tem vídeo de celular, gravado por dentro do app (D65, D91).
 
 **Pausa (WCAG 2.2.2)**
 
-- Um botão de 44 px, no canto de baixo do palco, para os vídeos e o balanço dos aparelhos. A rolagem continua mexendo os aparelhos, porque é o visitante quem move.
+- Um botão de 44 px, no canto de baixo do palco no computador e no canto de cima, abaixo do cabeçalho, no celular, onde os cartões ocupam a parte de baixo, para os vídeos e o balanço dos aparelhos. A rolagem continua mexendo os aparelhos, porque é o visitante quem move.
 - Ícone de pausa ou de tocar, com o nome do botão no idioma da página.
 - A pausa vale para a página toda e para a outra página com aparelhos, até recarregar o site.
 
@@ -117,7 +117,7 @@ Com `prefers-reduced-motion`, vale a reserva parada.
 - O canvas tem `aria-hidden`. O conteúdo está no texto.
 - Links alcançáveis pelo teclado, com foco visível, e nome que distingue o projeto.
 - Os passos sem link não recebem foco.
-- O botão de pausa tem nome no idioma certo, `aria-pressed`, 44 px e foco visível.
+- O botão de pausa tem nome no idioma certo, que diz o que ele faz agora, 44 px e foco visível.
 
 ## Desempenho
 
