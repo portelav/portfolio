@@ -26,7 +26,7 @@ export function OldAnchors() {
 
   useEffect(() => {
     const anchor = window.location.hash.slice(1);
-    if (!(anchor in moved)) return;
+    if (!Object.hasOwn(moved, anchor)) return;
     const { href, hash } = moved[anchor as keyof typeof moved];
     router.replace(getPathname({ locale, href }) + hash);
   }, [router, locale]);
