@@ -50,7 +50,7 @@ O link de privacidade do rodapé leva ao fim da página Contato, na âncora `#pr
 **Menu, no celular (PRD, D80 e D87)**
 
 - Abaixo de 768 px, o menu do computador some e o botão de três traços aparece à esquerda do nome, com o nome "Menu" para leitor de tela, `aria-expanded` e `aria-controls`.
-- Ao tocar, um painel cobre a tela abaixo do cabeçalho, com fundo `--bg`, os quatro links em letra grande, um por linha, e o item atual marcado como no computador. Os três traços viram um X.
+- Ao tocar, um painel cobre a tela abaixo do cabeçalho, com fundo `--bg`, os quatro links na letra de títulos, em 28 px, um por linha, separados por um traço fino e com o toque ocupando a largura toda, e o item atual marcado como no computador. Os três traços viram um X.
 - Fecha ao tocar no X, com Esc, ao escolher uma página e ao passar para 768 px ou mais. O foco fica preso no painel enquanto ele está aberto e volta ao botão ao fechar.
 - Com o painel aberto, a página de trás não rola, e o cabeçalho não sai da tela.
 - Sem JavaScript, o botão não aparece, e os links de página ficam no rodapé.
