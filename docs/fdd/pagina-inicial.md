@@ -1,7 +1,7 @@
 # FDD: Site em páginas e página inicial
 
 Status: implementado
-PRD: seção 6, item Site em páginas; D46, D67, D71, D78, D79, D80 e D81
+PRD: seção 6, item Site em páginas; D46, D67, D71, D78, D79, D80, D81 e D88 a D90
 
 ## Objetivo
 
@@ -68,7 +68,7 @@ Os outros textos de Projetos, Sobre, Tecnologias, Serviços e Contato já são c
 **Página inicial**
 
 - Ordem: preloader, abertura, projetos em versão curta, chamada final. O preloader roda só aqui (D46).
-- Projetos em versão curta: os três um abaixo do outro, cada um com o print de hoje da tela de quem visita, o nome, o tipo, uma linha e o link "Ver caso". Sem vídeo, sem botões de versão e sem "Minha parte". Na entrega do 3D, esse bloco vira os aparelhos (D82).
+- Projetos em versão curta: os três um abaixo do outro, cada um com o print de hoje da tela de quem visita, o nome, o tipo, uma linha e o link "Ver caso". Sem vídeo, sem botões de versão e sem "Minha parte". Na entrega do 3D, esse bloco vira os aparelhos, em versão curta (`aparelhos-3d.md`), e o print fica só na reserva parada.
 - Depois dos três, o link "Ver todos os projetos" leva à página Projetos.
 - A chamada final tem o título e dois botões: "Ver serviços" leva a Serviços e "Falar comigo" leva a Contato.
 - "Quero um site" leva a Serviços, e "Falar sobre estágio" leva a Contato (D79).
@@ -114,7 +114,7 @@ Com `prefers-reduced-motion`, nada se move.
 
 ## Fora de escopo
 
-- Aparelhos 3D, ADR do Three.js e vídeos novos: entrega seguinte (D82 a D86).
+- Aparelhos 3D, ADR do Three.js e vídeos novos: `aparelhos-3d.md` (D82 a D91).
 - Redesenho visual.
 
 ## Critérios de aceite

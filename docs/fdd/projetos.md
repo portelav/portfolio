@@ -1,7 +1,9 @@
 # FDD: Seção Projetos
 
 Status: implementado
-PRD: seção 6, item Projetos; D3, D22, D40, D41, D43, D44, D50, D51, D77, D78 e D79
+PRD: seção 6, item Projetos; D3, D22, D40, D41, D43, D44, D50, D51, D77, D78, D79 e D88 a D90
+
+> Na entrega do 3D (`tasks/projects-3d-devices.md`), a mídia desta página passa aos aparelhos 3D (`aparelhos-3d.md`): o texto abaixo continua, mas print, vídeo e botões de versão saem dos cards e ficam só na reserva parada e nas páginas de caso.
 
 ## Objetivo
 
@@ -45,11 +47,12 @@ Título da seção: "Projetos"; em inglês, "Projects". Rótulos: "Minha parte" 
 
 | Tela | Print | Vídeo |
 |---|---|---|
-| Computador, a partir de 768 px | `public/projetos/<id>.webp`, 1425 x 900 | `public/projetos/video/<id>.mp4`, H.264, 1280 x 808 |
-| Celular | `public/projetos/celular/<id>.webp`, 780 x 1170, parte de cima da página | `public/projetos/video/celular/<id>.mp4`, H.264, 540 x 960 |
+| Computador, a partir de 768 px | `public/projetos/<id>.webp`, 1425 x 900 | `public/projetos/video/<id>.mp4`, H.264, 1920 x 1200 (D86) |
+| Celular | `public/projetos/celular/<id>.webp`, 780 x 1170, parte de cima da página | `public/projetos/video/celular/<id>.mp4`, H.264, 1080 x 1920 (D86) |
 
 ## Comportamento
 
+- Com a entrega do 3D, os três casos ficam ao lado dos aparelhos, no computador, e num cartão por cima deles, no celular (`aparelhos-3d.md`). Os itens abaixo sobre mídia, botões de versão e pausa passam a valer só para a reserva parada e para as páginas de caso.
 - Os cards completos ficam na página Projetos (`/projetos`, `/en/projects`), com o título "Projetos" em `h1` (PRD, D78). Na página inicial, os três aparecem em versão curta (`pagina-inicial.md`).
 - Na página Projetos, o primeiro caso começa ainda na primeira tela.
 - Os casos ficam um abaixo do outro, nunca lado a lado, sem faixa lateral.
@@ -101,7 +104,7 @@ Sem `animation-timeline`, os casos aparecem sem efeito. Nunca muda a velocidade 
 - Prints em WebP, em `<picture>`, cada tela baixa só o seu.
 - Print trocado ganha nome novo, como `crewz-app.webp`, porque o otimizador de imagens e o navegador guardam o arquivo pelo endereço.
 - O print do primeiro caso carrega com prioridade, porque está na primeira tela. Os outros carregam sob demanda.
-- Vídeos com `preload="none"` no HTML, que passa a `metadata` quando o vídeo se aproxima da tela, entre 0,5 e 1 MB cada (PRD, D64).
+- Vídeos com `preload="none"` no HTML, que passa a `metadata` quando o vídeo se aproxima da tela, cerca de 1,2 MB cada (PRD, D64 e D86).
 - Largura e altura reservadas, sem deslocamento de layout.
 
 ## Fora de escopo

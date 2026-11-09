@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-import { Projetos } from "@/components/projetos";
+import { Devices } from "@/components/devices";
 import { PageTransition } from "@/components/page-transition";
 import { pageMetadata } from "@/i18n/page-metadata";
 
@@ -15,7 +15,7 @@ export default function ProjectsPage() {
   return (
     <PageTransition>
       <main className="flex-1">
-        <Projetos />
+        <Devices variant="full" />
       </main>
     </PageTransition>
   );

@@ -83,8 +83,7 @@
       "kind": "Website · built on my own",
       "what": "A page for a dental surgeon in Maceió that introduces her and takes visitors to WhatsApp.",
       "part": "All of it, from design to code, made for phones first.",
-      "decision": "No prices, no promotions and no promised results, under the Brazilian dental council's rules. The before-and-after details are in the case.",
-      "caseLabel": "See the full case of Dr. Thaiane Lessa's website"
+      "decision": "No prices, no promotions and no promised results, under the Brazilian dental council's rules. The before-and-after details are in the case."
     },
     "draftcs": {
       "alt": "First screen of DraftCS: the call “Monte o time invencível”.",
@@ -110,6 +109,11 @@
     "partLabel": "My part",
     "decisionLabel": "One decision",
     "seeCase": "See full case"
+  },
+  "Devices": {
+    "motionPause": "Pause motion",
+    "motionResume": "Resume motion",
+    "phoneOnly": "Phone only: it's an app"
   },
   "CaseStudy": {
     "kicker": "Full case",

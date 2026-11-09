@@ -30,7 +30,7 @@ Onde está cada coisa:
 
 ## Estado atual
 
-Direção "trabalho na primeira tela" aprovada (PRD, D44 a D56). O site inteiro está na `main` (`tasks/trabalho-primeiro.md`), publicado em `portelav-site.vercel.app` e fora do índice dos buscadores. Os três projetos têm página de caso própria, e o cabeçalho tem menu no computador (PRD, D67 a D72). Contato tem e-mail e Instagram, e o cabeçalho tem ícones coloridos de WhatsApp, e-mail e Instagram (PRD, D73 a D75). O Sobre e os casos apresentam o método, AI-Driven Development (PRD, D76 e D77). O LCP da página inicial tem exceção aceita (PRD, D60 e D63). O site está em páginas: a inicial curta, Projetos, Sobre, Serviços e Contato, com menu também no celular (PRD, D78 a D81). Os aparelhos 3D vêm na entrega seguinte (PRD, D82 a D86). Falta o currículo em PDF, e o lançamento segue o `docs/ROADMAP.md`. No endereço público, https://portelav.vercel.app, ainda está a versão antiga.
+Direção "trabalho na primeira tela" aprovada (PRD, D44 a D56). O site inteiro está na `main` (`tasks/trabalho-primeiro.md`), publicado em `portelav-site.vercel.app` e fora do índice dos buscadores. Os três projetos têm página de caso própria, e o cabeçalho tem menu no computador (PRD, D67 a D72). Contato tem e-mail e Instagram, e o cabeçalho tem ícones coloridos de WhatsApp, e-mail e Instagram (PRD, D73 a D75). O Sobre e os casos apresentam o método, AI-Driven Development (PRD, D76 e D77). O LCP da página inicial tem exceção aceita (PRD, D60 e D63). O site está em páginas: a inicial curta, Projetos, Sobre, Serviços e Contato, com menu também no celular (PRD, D78 a D81). Os três projetos aparecem num notebook e num celular em 3D, guiados pela rolagem, na inicial e em Projetos, com Three.js carregado só perto da seção (PRD, D82 a D91; ADR 0005). Falta o currículo em PDF, e o lançamento segue o `docs/ROADMAP.md`. No endereço público, https://portelav.vercel.app, ainda está a versão antiga.
 
 ## Ambientes
 
@@ -47,6 +47,7 @@ Direção "trabalho na primeira tela" aprovada (PRD, D44 a D56). O site inteiro 
 | Framework | Next.js 16, React 19, TypeScript 6.0 | 0001 |
 | Estilo | Tailwind CSS 4, tokens do `DESIGN.md` | 0001 |
 | Movimento | CSS e APIs do navegador | 0004 |
+| 3D | Three.js, carregado só perto dos aparelhos | 0005 |
 | Idiomas | `next-intl`, pt-BR em `/` e inglês em `/en` | 0002 |
 | Hospedagem e medição | Vercel e Vercel Web Analytics | 0003 |
 
