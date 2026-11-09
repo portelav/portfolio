@@ -147,6 +147,7 @@ Até 10 itens, um commit cada, na ordem do `/exec`. Antes de cada commit, explic
 - **Lint:** `private/**` entrou nos ignorados do ESLint (`bb29b10`), porque o servidor dos rascunhos do 3D, fora do git, quebrava o `npm run lint` local.
 - **Âncora `#privacidade`:** o roteador do `next-intl` descarta o `hash`, então `old-anchors.tsx` monta o endereço com `getPathname` e usa o roteador do Next.js. A correção foi junto do item 9.
 - **Linha "Uma decisão" da landing:** o texto aprovado encurta a D68. A regra dos antes e depois autorizados continua na página do caso.
+- **Menu do celular depois do teste no preview (PRD, D87):** Lucas testou no celular e pediu o botão como ícone de três traços, no início do cabeçalho. O botão vai para antes do nome, vira um X ao abrir e tem a mesma largura aberto e fechado; o texto "Fechar" saiu das mensagens (`9efa593`, `ea04d89`). Os links do painel passam da letra de título grande para 28 px, com um traço fino entre eles e o toque na largura toda (`2e6b94b`, `5c3ff11`). FDD `cabecalho-rodape.md` atualizado nos dois casos.
 
 ---
 
@@ -180,4 +181,55 @@ Sem testes automáticos no projeto. Verificação no navegador pelo MCP do Chrom
 
 ## Stage 9 — Walkthrough
 
-*(Preenchido pelo walkthrough.)*
+> Data: 2026-11-08
+
+### Resumo
+- **Veredito:** WARNINGS
+- **Arquivos analisados:** 39
+- **Findings:** 0 críticos, 3 avisos
+
+### Checklist
+| Item | Status | Observação |
+|---|---|---|
+| Escopo | OK | Só o que o Stage 4 previa, mais o ajuste do menu pedido por Lucas no teste (D87), registrado no Stage 6 |
+| Next.js 16 | OK | `await params` em `generateMetadata`, tipos `PageProps` gerados pelo `next typegen`. `"use client"` só em `mobile-menu`, `site-nav`, `locale-link` e `old-anchors`, que têm estado, efeito ou rota do navegador |
+| Segredo | OK | Nenhuma variável nova |
+| FDD e PRD | OK | Rotas, inicial curta, menus, rodapé e âncoras antigas batem com os FDDs e com D78 a D81 e D87 |
+| Decisões do dono | OK | Textos curtos aprovados antes do código; menu de três traços e letra do painel escolhidos por Lucas e registrados (D87, FDD) |
+| Cookies e terceiros | OK | Nenhum cookie novo; nenhum dado de terceiro; nenhuma mídia nova |
+| Textos | OK | Tudo nas mensagens; mesmas chaves em pt-BR e inglês, conferido por script |
+| Tokens e marca | OK | Só tokens do `DESIGN.md` (`border-line`, `text-accent`, `text-xl`, `text-display`); sem card, sombra ou cor solta |
+| 390 px e computador, escuro e claro | OK | 360, 390 e 1440 px sem transbordo; menu nos dois temas; teste no celular de Lucas pelo preview |
+| Toque, foco, contraste | OK | Botões e links com 44 px ou mais (links do painel com 56 px); foco preso e devolvido; marca da página atual no claro em `--fg` sublinhado, pelo contraste |
+| Movimento | OK | Painel, traços e links animam `opacity`, `visibility` e `transform`; `motion-reduce:transition-none` em todos |
+| Desempenho | OK | Inicial mais leve que antes: sem vídeos, só os prints, com o primeiro em `eager` e o resto preguiçoso |
+| Lint, typecheck, build | OK | Verdes; 18 páginas estáticas |
+| Commits | Aviso | Conventional Commits, sem atribuição. Um título passa de 72 caracteres |
+| `.env.example` | OK | Sem variável nova |
+| Docs | OK | PRD, FDDs, ROADMAP, `CLAUDE.md` e este plano atualizados |
+
+### Findings
+#### Critical
+- Nenhum.
+
+#### Warnings
+- `old-anchors.tsx` testa a âncora com `in`, que também acha propriedades herdadas de `Object`. Um endereço como `/#constructor` cai no redirecionamento com `href` indefinido e gera erro no console — `src/components/old-anchors.tsx:29` — trocar por `Object.hasOwn(moved, anchor)`.
+- O título do commit `c4fba27` tem 76 caracteres, acima dos 72 do `CLAUDE.md`. Já está no remoto; reescrever pediria force push na branch. Fica registrado.
+- Medição de CLS em aparelho real não foi feita. O cabeçalho tem altura fixa e o botão do menu não muda de largura, então o risco é baixo. Fica para o teste de lançamento (LCP e CLS já estão na lista do ROADMAP).
+
+#### Positive
+- Lista única de páginas (`src/lib/pages.ts`) alimenta os dois menus, o rodapé e a troca de idioma; nenhuma rota repetida.
+- Metadados por página com `canonical`, `hreflang` e `x-default` num só lugar (`page-metadata.ts`).
+- Âncoras antigas trocam a entrada do histórico, então voltar não cai na inicial; o preloader não roda no caminho.
+- Menu do celular acessível: `aria-expanded`, `aria-controls`, foco preso, Esc, fecha ao trocar de página ou ao passar para 768 px, rolagem travada, e sem JavaScript os links ficam no rodapé.
+- `h1` único por página, com a hierarquia de títulos corrigida em Projetos, Sobre, Serviços e Contato.
+
+### Verificações executadas
+- `npm run lint`: Pass
+- `npm run typecheck`: Pass
+- `npm run build`: Pass, 18/18 páginas estáticas
+- `git log --format=%B main..HEAD | grep -i -E "co-authored|generated with|claude"`: vazio
+- Paridade das chaves de `messages/pt-BR.json` e `messages/en.json`: iguais
+- Navegador (MCP do Chrome DevTools): menu do celular aberto e fechado em 390 px nos temas escuro e claro, `scrollWidth` igual à largura em 360 e 390 px
+
+**Gate S9 — WARNINGS**
