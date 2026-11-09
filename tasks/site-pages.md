@@ -213,7 +213,7 @@ Sem testes automáticos no projeto. Verificação no navegador pelo MCP do Chrom
 - Nenhum.
 
 #### Warnings
-- `old-anchors.tsx` testa a âncora com `in`, que também acha propriedades herdadas de `Object`. Um endereço como `/#constructor` cai no redirecionamento com `href` indefinido e gera erro no console — `src/components/old-anchors.tsx:29` — trocar por `Object.hasOwn(moved, anchor)`.
+- `old-anchors.tsx` testa a âncora com `in`, que também acha propriedades herdadas de `Object`. Um endereço como `/#constructor` cai no redirecionamento com `href` indefinido e gera erro no console — `src/components/old-anchors.tsx:29` — trocar por `Object.hasOwn(moved, anchor)`. Corrigido depois do walkthrough, com o aval de Lucas.
 - O título do commit `c4fba27` tem 76 caracteres, acima dos 72 do `CLAUDE.md`. Já está no remoto; reescrever pediria force push na branch. Fica registrado.
 - Medição de CLS em aparelho real não foi feita. O cabeçalho tem altura fixa e o botão do menu não muda de largura, então o risco é baixo. Fica para o teste de lançamento (LCP e CLS já estão na lista do ROADMAP).
 
