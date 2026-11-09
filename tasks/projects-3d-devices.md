@@ -186,4 +186,57 @@ Até 10 itens, um commit cada, na ordem do `/exec`. Antes de cada commit, explic
 
 ## Stage 9 — Walkthrough
 
-*(Preenchido pelo walkthrough.)*
+> Data: 2026-11-09
+
+### Resumo
+- **Veredito:** WARNINGS
+- **Arquivos analisados:** 29
+- **Findings:** 0 críticos, 4 avisos
+
+### Checklist
+| Item | Status | Observação |
+|---|---|---|
+| Escopo | OK | Só o previsto no Stage 4. O "colar" em cada projeto e a nitidez das telas entraram a pedido de Lucas, depois da prévia (`82f3356`, `071de01`, `dba43d1`) |
+| Next.js 16 | OK | Cena só no cliente, por `import()` em `devices-stage.tsx`; `devices.tsx` renderiza no servidor; páginas só compõem |
+| Segredos | OK | Nenhuma variável nova. O `.env.local` da gravação ficou na cópia temporária do Crewz, apagada |
+| Comportamento × FDD e PRD | OK | `aparelhos-3d.md` implementado; D88 a D91 atendidas; desvios no Stage 6 e no FDD |
+| Decisões fora do PRD | OK | Desenho do celular escolhido por Lucas (D89); reserva parada deixada a critério e registrada (D90) |
+| Cookies, terceiros, autorização | OK | Nenhum cookie. Crewz só com o seed de demonstração, sem o grupo da altinha; landing com a recepcionista já autorizada |
+| Textos | OK | Três textos novos em `Devices`, nos dois idiomas; nenhum texto fixo em componente |
+| Repositório público | OK | Vídeos sem áudio e sem tag de autor, aparelho ou encoder; nenhuma nota interna |
+| Tokens e "O que não fazer" | OK | Raio 0, borda de 1 px em `--line` só no cartão, sem numeração, cor da cena lida de `--accent` |
+| Marca | OK | Cabeçalho intocado |
+| 390 px e computador, `/` e `/en`, escuro e claro | OK | Conferido no Chrome do MCP; Lucas viu no celular e no PC |
+| Toque, foco, alternativo, contraste | OK | Pausa de 44 px com nome no idioma; links em HTML; prints com `alt`; canvas `aria-hidden` |
+| Movimento | OK | Pausa para vídeos e balanço (WCAG 2.2.2); menos movimento leva aos prints; a rolagem não muda de velocidade |
+| Desempenho | OK | Three.js em pedaço próprio (144 KB com gzip), só perto da seção e depois do preloader; 60 quadros por segundo; palco reservado no CSS |
+| lint, typecheck, build | OK | Verdes no último commit |
+| Commits | OK | 21 commits, Conventional Commits, títulos até 72 caracteres, nenhuma menção a IA |
+| `.env.example` | N/A | Nenhuma variável nova |
+| Docs | OK | ADR 0005, PRD D88 a D91, FDDs, ROADMAP e `CLAUDE.md` |
+
+### Findings
+#### Critical
+- Nenhum.
+
+#### Warnings
+- A ida da inicial ou de Projetos para o caso perdeu o print que crescia até a capa (D69), porque a seção não tem mais print fixo; a página continua sendo empurrada (D71). O desvio está no Stage 6, mas não no PRD — `docs/PRD.md`, D69 — registrar numa linha, junto da D88, na próxima mudança de docs.
+- Sem WebGL, a troca do palco para os prints acontece depois da hidratação, com um deslocamento de layout. É raro e está aceito no FDD — `src/components/devices-stage.tsx:73` — nada a fazer agora.
+- O Chrome mostra uma vez o aviso "texImage2D: no video" quando a cena monta, antes do primeiro quadro do vídeo. Não afeta a imagem — `src/lib/devices-scene.ts` (`videoScreen`) — pode ser silenciado depois, criando a textura só após `loadeddata`.
+- Falta a medida no celular real de Lucas, com a pausa de 40% de tela em cada projeto. As medidas de fluidez foram no Chrome do computador, no servidor de desenvolvimento.
+
+#### Positive
+- A cena libera geometrias, materiais, texturas, vídeos e o contexto WebGL ao sair da página. Voltar deixa um canvas só.
+- A escolha entre palco e prints sai do CSS (`html[data-js]` e `prefers-reduced-motion`), sem esperar o JavaScript.
+- A causa das telas pretas, a textura comum dimensionada pelo atributo `width` do vídeo no Three.js 0.186, foi achada e corrigida com `VideoTexture`.
+- O link "Ver caso completo" passou a ter nome próprio em cada projeto. Antes, os três usavam o nome da landing.
+- A gravação do Crewz usou projeto Supabase próprio, apagado com `--no-backup`, sem tocar no banco local nem no repositório do Crewz.
+
+### Verificações executadas
+- `npm run lint`, `npm run typecheck` e `npm run build`: verdes.
+- `git log --format=%B main..HEAD | grep -ciE "co-authored|generated with|claude"`: 0.
+- Títulos de commit acima de 72 caracteres: nenhum.
+- `git diff main...HEAD -- src` sem `NEXT_PUBLIC`, `process.env`, cookie ou `localStorage` novos.
+- Chrome do MCP, depois do "colar": em 390 px, o cartão fica parado a 241 px do topo por cerca de 340 px de rolagem e depois segue; em 1440 px, 60 quadros por segundo na rolagem automática, pior quadro de 33 ms, canvas em 2137 × 1350 (1,5×), texto dos vídeos legível nas telas.
+
+**Gate S9 — WARNINGS**
