@@ -253,8 +253,10 @@ export function mountDevicesScene({
     alpha: true,
     powerPreference: "high-performance",
   });
-  // Native resolution, capped at 2x. If frames get slow, it steps down on its own.
-  const maxRatio = Math.min(window.devicePixelRatio || 1, 2);
+  // Native resolution, capped at 2x, and at least 1.5x: on a 1x computer
+  // screen the extra pixels smooth the small text inside the videos. If
+  // frames get slow, it steps down on its own.
+  const maxRatio = Math.min(Math.max(window.devicePixelRatio || 1, 1.5), 2);
   let ratio = maxRatio;
   renderer.setPixelRatio(ratio);
   renderer.shadowMap.enabled = true;
