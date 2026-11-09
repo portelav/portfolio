@@ -128,13 +128,13 @@ export function MobileMenu({ label, open, items }: MobileMenuProps) {
         data-open={shown}
         className="bg-bg ease-out-quint invisible absolute inset-x-0 top-full h-[calc(100dvh-3.5rem)] overflow-y-auto opacity-0 transition-[opacity,visibility] duration-250 data-[open=true]:visible data-[open=true]:opacity-100 motion-reduce:transition-none"
       >
-        <nav aria-label={label} className="page-frame pt-6 pb-10">
-          <ul className="flex flex-col">
+        <nav aria-label={label} className="page-frame pt-4 pb-10">
+          <ul className="border-line flex flex-col border-b">
             {pages.map(({ key, href }, index) => (
               <li
                 key={key}
                 style={{ "--delay": `${index * 40}ms` } as CSSProperties}
-                className={`ease-out-quint transition-[opacity,transform] delay-(--delay) duration-250 motion-reduce:transition-none ${
+                className={`border-line ease-out-quint border-t transition-[opacity,transform] delay-(--delay) duration-250 motion-reduce:transition-none ${
                   shown ? "translate-y-0 opacity-100" : "translate-y-2 opacity-0"
                 }`}
               >
@@ -142,9 +142,9 @@ export function MobileMenu({ label, open, items }: MobileMenuProps) {
                   href={href}
                   onClick={hide}
                   aria-current={current === href ? "page" : undefined}
-                  className={`font-display text-display inline-flex min-h-11 items-center py-2 ${
+                  className={`font-display flex min-h-14 w-full items-center text-xl ${
                     current === href
-                      ? "text-accent light:text-fg decoration-accent underline decoration-2 underline-offset-8"
+                      ? "text-accent light:text-fg decoration-accent underline decoration-2 underline-offset-6"
                       : ""
                   }`}
                 >
