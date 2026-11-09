@@ -47,6 +47,7 @@ Direção "trabalho na primeira tela" aprovada (PRD, D44 a D56). O site inteiro 
 | Framework | Next.js 16, React 19, TypeScript 6.0 | 0001 |
 | Estilo | Tailwind CSS 4, tokens do `DESIGN.md` | 0001 |
 | Movimento | CSS e APIs do navegador | 0004 |
+| 3D | Three.js, carregado só perto dos aparelhos | 0005 |
 | Idiomas | `next-intl`, pt-BR em `/` e inglês em `/en` | 0002 |
 | Hospedagem e medição | Vercel e Vercel Web Analytics | 0003 |
 

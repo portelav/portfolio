@@ -244,3 +244,10 @@ Depois de comparar o rascunho com uma amostra de portfólios de outros devs, o d
 - **D85.** O nome em 3D e o fundo em shader foram testados e rejeitados pelo dono em 2026-11-07.
 - **D86.** Os vídeos dos projetos passam a 1080×1920 no celular e 1920×1200 no computador, em todas as telas, cerca de 1,2 MB cada. Continuam baixando só depois do preloader e perto de entrar na tela. O vídeo do Crewz segue mostrando o app por dentro (D65), regravado na nova resolução. Decisão do dono em 2026-11-08. Ajusta o limite de peso da D64. Entra com a entrega do 3D.
 - **D87.** No celular, o botão do menu é um ícone de três traços, no início do cabeçalho, antes do nome, e vira um X ao abrir. Decisão do dono em 2026-11-08. Ajusta D80.
+
+### Rodada 15 (2026-11-09): aparelhos 3D
+
+- **D88.** No computador, os aparelhos ficam fixos à direita enquanto o texto de cada projeto rola à esquerda, na página inicial, com nome, tipo, uma linha e "Ver caso", e em Projetos, com o texto completo e os links. Decisão do dono em 2026-11-09.
+- **D89.** No celular, os aparelhos ocupam a tela, e o texto de cada projeto passa por cima deles num cartão com desfoque. O dono escolheu esse desenho em 2026-11-09, entre três testados num protótipo: texto por cima, tela dividida e troca por toque.
+- **D90.** Com `prefers-reduced-motion`, sem WebGL ou sem JavaScript, a seção mostra os prints parados, com o mesmo texto e os mesmos links, e o Three.js não baixa. O dono deixou essa escolha ao executor em 2026-11-09.
+- **D91.** O vídeo do Crewz é regravado como o anterior (D65): app rodando local, banco temporário só com dados de demonstração, apagado depois da gravação. Decisão do dono em 2026-11-09.

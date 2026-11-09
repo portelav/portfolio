@@ -100,8 +100,8 @@
 
 Até 10 itens, um commit cada, na ordem do `/exec`. Antes de cada commit, explicar a Lucas o que a mudança faz.
 
-1. [ ] **Protótipo do celular (fora do git):** a demo privada ganha um seletor com três desenhos para o celular: (A) aparelhos em cima e texto passando por cima, como hoje; (B) aparelhos na metade de cima e texto na metade de baixo, sem sobrepor; (C) uma cena por projeto, sem palco fixo, com o texto embaixo. O computador já mostra o lado a lado. **Parar aqui até Lucas escolher.**
-2. [ ] **ADR e PRD:** `docs/adr/0005-threejs-aparelhos.md`, que revisa o 0004. PRD com as decisões 1 a 4 do Stage 1 e o desenho escolhido. `CLAUDE.md` com o Three.js na tabela da stack.
+1. [x] **Protótipo do celular (fora do git):** a demo privada ganha um seletor com três desenhos para o celular: (A) aparelhos em cima e texto passando por cima, como hoje; (B) aparelhos na metade de cima e texto na metade de baixo, sem sobrepor; (C) uma cena por projeto, sem palco fixo, com o texto embaixo. O computador já mostra o lado a lado. **Parar aqui até Lucas escolher.** Escolhido em 2026-11-09: A, texto por cima (D89).
+2. [x] **ADR e PRD:** `docs/adr/0005-threejs-aparelhos.md`, que revisa o 0004. PRD com as decisões 1 a 4 do Stage 1 e o desenho escolhido. `CLAUDE.md` com o Three.js na tabela da stack.
 3. [ ] **FDD:** `docs/fdd/aparelhos-3d.md` novo (layout, estados, rolagem, pausa, reserva parada, textos); ajustes em `projetos.md` e `pagina-inicial.md`. **Parar até Lucas aprovar textos novos, se houver.**
 4. [ ] **Dependência:** `three` e `@types/three`, versão fixa publicada há pelo menos duas semanas.
 5. [ ] **Mensagens:** textos novos do FDD nos dois idiomas, se houver.
