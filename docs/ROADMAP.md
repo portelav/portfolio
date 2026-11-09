@@ -11,7 +11,7 @@ Sem data fixa (PRD, D5). Todo o trabalho entra na `main` deste repositório, pub
 | Contato e nota de privacidade | FDD `docs/fdd/contato.md` aprovado e implementado, com os quatro canais, nota nos dois idiomas e link no rodapé | `tasks/trabalho-primeiro.md` |
 | Página de caso da landing (PRD, D67) | FDD `docs/fdd/caso.md` implementado, com o caso da landing nos dois idiomas | `tasks/case-study-landing.md` |
 | Site em páginas (PRD, D78 a D81) | Inicial curta, páginas Projetos, Sobre, Serviços e Contato nos dois idiomas, menu no celular e endereços antigos levando à página certa | `tasks/site-pages.md` |
-| Aparelhos 3D (PRD, D82 a D86) | ADR do Three.js, notebook e celular guiados pela rolagem na inicial e em Projetos, vídeos em alta resolução e o Crewz regravado por dentro do app | `tasks/projects-3d-devices.md`, a criar |
+| Aparelhos 3D (PRD, D82 a D86) | ADR do Three.js, notebook e celular guiados pela rolagem na inicial e em Projetos, vídeos em alta resolução e o Crewz regravado por dentro do app | `tasks/projects-3d-devices.md` |
 | Lançamento | Critérios do PRD, seção 10, cumpridos. Web Analytics ligado. Prévia de link pronta. `noindex` retirado. Teste de 1 minuto feito. LCP medido. Conferido no painel da Vercel como `portelav.vercel.app` passa de projeto, e o endereço apontando para o projeto novo | a criar |
 
 ## Depois
