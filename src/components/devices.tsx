@@ -61,7 +61,7 @@ export function Devices({ variant }: DevicesProps) {
               {full ? t("title") : short("title")}
             </Title>
           </li>
-          {projects.map((project, index) => {
+          {projects.map((project) => {
             const { id } = project;
             const name = t(`${id}.name`);
             const shared = { alt: t(`${id}.alt`), loading: "lazy" as const };
