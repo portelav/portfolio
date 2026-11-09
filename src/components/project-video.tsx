@@ -2,6 +2,8 @@
 
 import { useEffect, useRef, useState } from "react";
 
+import { afterPreloader } from "@/lib/after-preloader";
+
 type ProjectVideoProps = {
   src: string;
   phoneSrc: string;
@@ -11,23 +13,6 @@ type ProjectVideoProps = {
 
 // A pause on one project holds them all, so moving down the page keeps it.
 let held = false;
-
-// Runs once the preloader lets go, or at once on a load without it.
-function afterPreloader(run: () => void) {
-  const root = document.documentElement;
-  if (!root.dataset.reescrita) {
-    run();
-    return () => {};
-  }
-
-  const watcher = new MutationObserver(() => {
-    if (root.dataset.reescrita) return;
-    watcher.disconnect();
-    run();
-  });
-  watcher.observe(root, { attributeFilter: ["data-reescrita"] });
-  return () => watcher.disconnect();
-}
 
 // Sits over the screenshot and only shows once it plays, so a missing
 // file or reduced motion simply leaves the screenshot. Plays only while most

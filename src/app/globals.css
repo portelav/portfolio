@@ -162,6 +162,145 @@
   opacity: 1;
 }
 
+/*
+ * 3D devices (FDD aparelhos-3d). The base is the fallback: each project with
+ * its screenshot beside the text, as with reduced motion, no JavaScript or no
+ * WebGL. With motion and JavaScript, the sticky stage holds the scene and the
+ * texts scroll over it in cards, one screen each.
+ */
+.devices-stage {
+  display: none;
+}
+
+.devices-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  padding-bottom: 4rem;
+}
+
+.devices-step {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.devices-title {
+  padding-top: 2rem;
+}
+
+@media (min-width: 48rem) {
+  .devices-steps {
+    gap: 5rem;
+    padding-bottom: 6rem;
+  }
+
+  .devices-step {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    align-items: start;
+    column-gap: 2.5rem;
+  }
+
+  .devices-title > * {
+    grid-column: 1 / -1;
+  }
+
+  .devices-print {
+    grid-column: span 8;
+  }
+
+  .devices-print.is-phone {
+    width: 42.105%;
+    margin-inline: auto;
+  }
+
+  .devices-card {
+    grid-column: span 4;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html[data-js] .devices:not([data-fallback]) {
+    position: relative;
+
+    .devices-stage {
+      display: block;
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      height: 100svh;
+      overflow: hidden;
+    }
+
+    .devices-view {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity 0.4s var(--ease-out-quint);
+    }
+
+    .devices-view.is-ready {
+      opacity: 1;
+    }
+
+    /* Below the header on phones, where the cards rest at the bottom. */
+    .devices-pause {
+      position: absolute;
+      z-index: 1;
+      top: 4.5rem;
+      right: 1rem;
+    }
+
+    .devices-steps {
+      position: relative;
+      margin-top: -100vh;
+      margin-top: -100svh;
+      gap: 0;
+      padding-bottom: 0;
+      pointer-events: none;
+    }
+
+    .devices-step {
+      display: flex;
+      align-items: flex-end;
+      min-height: 100vh;
+      min-height: 100svh;
+      padding-top: 5rem;
+      padding-bottom: max(5vh, env(safe-area-inset-bottom, 0px));
+    }
+
+    .devices-print {
+      display: none;
+    }
+
+    .devices-card {
+      pointer-events: auto;
+      width: 100%;
+      padding: 1rem 1.25rem 1.15rem;
+      border: 1px solid var(--line);
+      background: color-mix(in srgb, var(--bg) 68%, transparent);
+      -webkit-backdrop-filter: blur(16px) saturate(1.2);
+      backdrop-filter: blur(16px) saturate(1.2);
+    }
+
+    @media (min-aspect-ratio: 11/10) {
+      .devices-step {
+        align-items: center;
+        padding-bottom: 0;
+      }
+
+      .devices-card {
+        max-width: 28rem;
+      }
+
+      .devices-pause {
+        top: auto;
+        bottom: 1.5rem;
+        right: 1.5rem;
+      }
+    }
+  }
+}
+
 /* Preloader. Only shows while the page is marked. */
 .preloader {
   display: none;
