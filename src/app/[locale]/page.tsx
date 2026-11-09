@@ -1,8 +1,8 @@
 import { useTranslations } from "next-intl";
 
 import { Abertura } from "@/components/abertura";
+import { Devices } from "@/components/devices";
 import { HomeCta } from "@/components/home-cta";
-import { HomeProjects } from "@/components/home-projects";
 import { OldAnchors } from "@/components/old-anchors";
 import { PageTransition } from "@/components/page-transition";
 import { Preloader } from "@/components/preloader";
@@ -21,7 +21,7 @@ export default function HomePage() {
       <PageTransition>
         <main>
           <Abertura />
-          <HomeProjects />
+          <Devices variant="short" />
           <HomeCta />
         </main>
       </PageTransition>
