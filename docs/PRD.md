@@ -243,3 +243,4 @@ Depois de comparar o rascunho com uma amostra de portfólios de outros devs, o d
 - **D84.** Desfoque e `mix-blend-mode` em elemento que se move ficam liberados. Decisão do dono em 2026-11-07.
 - **D85.** O nome em 3D e o fundo em shader foram testados e rejeitados pelo dono em 2026-11-07.
 - **D86.** Os vídeos dos projetos passam a 1080×1920 no celular e 1920×1200 no computador, em todas as telas, cerca de 1,2 MB cada. Continuam baixando só depois do preloader e perto de entrar na tela. O vídeo do Crewz segue mostrando o app por dentro (D65), regravado na nova resolução. Decisão do dono em 2026-11-08. Ajusta o limite de peso da D64. Entra com a entrega do 3D.
+- **D87.** No celular, o botão do menu é um ícone de três traços, no início do cabeçalho, antes do nome, e vira um X ao abrir. Decisão do dono em 2026-11-08. Ajusta D80.
