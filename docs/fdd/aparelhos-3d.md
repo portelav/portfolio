@@ -1,6 +1,6 @@
 # FDD: Aparelhos 3D
 
-Status: rascunho
+Status: aprovado
 PRD: D44, D64, D65, D82 a D86 e D88 a D91. ADR 0005.
 
 ## Objetivo
@@ -20,7 +20,7 @@ Um componente só serve às duas páginas. As páginas de caso continuam com a m
 
 Os textos de hoje continuam: os de `projetos.md` na página Projetos e os de `pagina-inicial.md` na inicial. O título da seção, "Projetos", fica no primeiro passo, em `h1` na página Projetos e em `h2` na inicial.
 
-**Textos novos**, a aprovar por Lucas:
+**Textos novos**, aprovados por Lucas em 2026-11-09:
 
 | Lugar | pt-BR | Inglês |
 |---|---|---|

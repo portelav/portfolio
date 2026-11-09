@@ -19,7 +19,7 @@ Em ordem de página. O protótipo da direção de 2026-11-03 já roda na branch 
 | [Quer um site?](quer-um-site.md) | aprovado | `tasks/trabalho-primeiro.md`, a criar |
 | [Contato e nota de privacidade](contato.md) | aprovado | `tasks/trabalho-primeiro.md`, a criar |
 | [Página de caso](caso.md) | implementado | `tasks/case-study-landing.md` |
-| [Aparelhos 3D](aparelhos-3d.md) | rascunho | `tasks/projects-3d-devices.md` |
+| [Aparelhos 3D](aparelhos-3d.md) | aprovado | `tasks/projects-3d-devices.md` |
 
 Planos anteriores, já auditados, da versão que a direção nova substitui: `tasks/cabecalho-rodape.md`, `tasks/abertura.md` e `tasks/projetos.md`.
 
