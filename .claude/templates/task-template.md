@@ -105,7 +105,7 @@ Até 10 itens, um commit cada, na ordem do `/exec`.
 - **lint:** Pass | Fail
 - **typecheck:** Pass | Fail
 - **build:** Pass | Fail
-- **Navegador (390 px e computador, `/` e `/en`, escuro e claro):** Pass | Fail
+- **Navegador (390 px e 1440 px, `/` e `/en`, nos modos de cor do site):** Pass | Fail
 
 ---
 

@@ -1,6 +1,8 @@
 # FDD: Seção Sobre
 
-Status: implementado
+Status: em revisão
+
+> Revisão de 2026-11-22 (PRD, Rodada 16): a página vira a porta dos recrutadores; trajetória e retrato são decididos no texto novo, e o método vira um caso próprio (D103, D104, D108). Este FDD descreve o que existe hoje.
 PRD: seção 6, item Sobre; D17, D55, D61, D76, D77 e D78
 
 ## Objetivo

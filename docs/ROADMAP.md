@@ -1,34 +1,43 @@
 # Roadmap
 
-Sem data fixa (PRD, D5). Todo o trabalho entra na `main` deste repositório, publicada em projeto próprio na Vercel. O endereço público só muda no lançamento (PRD, D21). Cada item é um `/plan`; o plano nasce quando o item começa.
+Sem data fixa (PRD, D5). Todo o trabalho entra na `main` deste repositório, publicada em projeto próprio na Vercel. O endereço público só muda no lançamento (PRD, D21). Entrega grande passa pelo `/plan`; ajuste de tela ou de texto vai direto, conforme o `CLAUDE.md`.
 
-## Agora
+## Feito
 
-| Item | Critério de pronto | Plano |
-|---|---|---|
-| Base técnica | Next.js 16, Tailwind 4, Motion e `next-intl` rodando em `/` e `/en`. Tokens, fontes e ícones do kit no lugar. Hook de lint e typecheck, e CI com `gitleaks`, verdes em PR para `main` | `tasks/base-tecnica.md` |
-| Direção "trabalho na primeira tela" (PRD, D44 a D56) | A branch `proto/trabalho-primeiro` passa por teste em aparelho real e auditoria, com os FDDs de cabeçalho e rodapé, abertura, projetos, sobre, tecnologias e quer um site atendidos, e entra na `main` | `tasks/trabalho-primeiro.md` |
-| Contato e nota de privacidade | FDD `docs/fdd/contato.md` aprovado e implementado, com os quatro canais, nota nos dois idiomas e link no rodapé | `tasks/trabalho-primeiro.md` |
-| Página de caso da landing (PRD, D67) | FDD `docs/fdd/caso.md` implementado, com o caso da landing nos dois idiomas | `tasks/case-study-landing.md` |
-| Site em páginas (PRD, D78 a D81) | Inicial curta, páginas Projetos, Sobre, Serviços e Contato nos dois idiomas, menu no celular e endereços antigos levando à página certa | `tasks/site-pages.md` |
-| Aparelhos 3D (PRD, D82 a D91) | ADR do Three.js, notebook e celular guiados pela rolagem na inicial e em Projetos, vídeos em alta resolução e o Crewz regravado por dentro do app | `tasks/projects-3d-devices.md` |
-| Lançamento | Critérios do PRD, seção 10, cumpridos. Web Analytics ligado. Prévia de link pronta. `noindex` retirado. Teste de 1 minuto feito. LCP medido. Conferido no painel da Vercel como `portelav.vercel.app` passa de projeto, e o endereço apontando para o projeto novo | a criar |
+Base técnica, direção "trabalho na primeira tela", contato e nota de privacidade, as três páginas de caso, site em páginas e aparelhos 3D. Planos em `tasks/`.
+
+## Agora: nova direção (PRD, Rodada 16)
+
+Nesta ordem, por escolha de Lucas:
+
+| Item | Critério de pronto |
+|---|---|
+| 1. Paleta nova | 3 ou 4 paletas, em um modo só, mostradas no site de hoje, cada uma com o logo em âmbar e com o logo na cor nova. Lucas escolhe uma. Ela entra nos tokens com o contraste calculado, o seletor de tema sai, e o `DESIGN.md` registra a paleta (D96) |
+| 2. Estrutura em teste | Landing em `/`, `/sobre` para recrutadores e uma página por caso, nos dois idiomas, com ordem das seções, menu e rodapé aprovados por Lucas (D103) |
+| 3. Textos novos | Abertura, casos, `/sobre` e Serviços reescritos no tom novo, frase por frase com Lucas, nos dois idiomas. Preço, trajetória e retrato decididos (D106 a D108) |
+| 4. Caso do método | Página de caso própria do AI-Driven Development, nos dois idiomas (D104) |
+| 5. Ajustes dos aparelhos 3D | A lista de Lucas feita e vista no celular e no computador |
+
+> TODO: a lista de ajustes dos aparelhos 3D. Lucas manda.
 
 ## Depois
 
-- Domínio próprio (PRD, D7).
-- Outros projetos além dos três casos em destaque.
-- Regravar os vídeos dos casos com mais capricho: feito em alta resolução com os aparelhos 3D (`tasks/projects-3d-devices.md`).
-- Páginas de caso dos três projetos, no formato da landing (PRD, D67): feitas (`tasks/case-study-landing.md`, `tasks/case-study-draftcs.md` e `tasks/case-study-crewz.md`).
+| Item | Critério de pronto |
+|---|---|
+| Currículo no site | Botão para o PDF no `/sobre`, nos dois idiomas, com o arquivo sem metadado |
+| Lançamento | Autorização de cada caso registrada e CI verde (D102). Web Analytics ligado, prévia de link pronta, `noindex` retirado, e `portelav.vercel.app` apontando para o projeto novo, conferido no painel da Vercel |
+| Ferramentas de mídia | Aimg testado no Chrome e `exiftool` instalado, conforme o `CLAUDE.md` |
+| Domínio próprio | Depois do lançamento (D7) |
 
 ## Talvez
 
 - Referência a eXtreme Go Horse como detalhe escondido.
 - Símbolo do salto do cavalo como detalhe do site, sem substituir a marca.
+- Nome em 3D ou fundo em shader, testados de novo (D110).
 
 ## Aberto (depende de alguém)
 
 | O quê | De quem | Desde |
 |---|---|---|
-| Currículo em PDF, nos dois idiomas | Lucas | 2026-11-03 |
+| Lista de ajustes dos aparelhos 3D | Lucas | 2026-11-21 |
 | Revisão do inglês | Lucas | 2026-11-03 |

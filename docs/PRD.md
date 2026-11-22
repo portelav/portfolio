@@ -1,86 +1,98 @@
 # PRD: portfolio
 
-Documento vivo. O quê e por quê. Decisão de produto nova entra no registro da seção 12, com data, e depois no corpo.
+Documento vivo. O quê e por quê. Decisão de produto nova entra no registro da seção 11, com data, e depois no corpo. As decisões D1 a D91 estão em `docs/decisoes-ate-2026-11.md`. Valem as que a Rodada 16 não troca.
 
 ## 1. Visão
 
-Site pessoal de Lucas Portela, estudante de Ciência da Computação em Maceió. Quem chega entende rápido quem é Lucas, vê projetos reais e sabe como entrar em contato.
+Site pessoal de Lucas Portela, estudante de Ciência da Computação em Maceió. Quem chega olha o trabalho, gosta muito e chama para um orçamento. O próprio site também é trabalho: é uma amostra do que Lucas entrega.
 
-## 3. Público
+## 2. Público
 
-Dois públicos com o mesmo peso (D1):
+Dois públicos, com clientes primeiro (D92):
 
-- **Quem avalia estudante para estágio:** recrutador ou dev, muitas vezes no celular e com pouco tempo. Quer ver projeto real, organização e o que a pessoa fez de fato. Desconfia de quem se apresenta como sênior sem ser.
-- **Quem quer contratar um site:** dono de negócio ou profissional, sem olhar técnico. Quer ver um site bom no ar e um jeito fácil de chamar.
+- **Quem quer contratar um site:** dono de negócio ou profissional, sem olhar técnico, quase sempre no celular. Quer ver um site bom no ar e um jeito fácil de chamar.
+- **Quem avalia estudante para estágio:** recrutador ou dev, com pouco tempo. Quer ver projeto real, a parte que a pessoa fez de fato e o currículo.
 
-## 5. Objetivos e métricas
+Posicionamento: quem entrega site no ar, com prova concreta e sem aumentar nada. Não se apresenta como sênior (D93).
+
+## 3. Objetivo e medida
 
 | Objetivo | Como medir | Meta |
 |---|---|---|
-| Entender quem é em pouco tempo | Teste com pessoas no celular | Em 1 minuto, a pessoa diz quem é Lucas, cita um projeto e acha o contato |
-| Trazer conversa | Contatos recebidos pelo site, contados à mão | Acompanhar, sem meta numérica por enquanto |
-| Ser visto | Visitas e origem no Vercel Web Analytics | Acompanhar, sem meta numérica por enquanto |
+| Trazer pedidos de orçamento | Conversas de quem quer um site, vindas pelo WhatsApp ou pelo e-mail do site, contadas à mão | Acompanhar, sem meta numérica |
+| Ser visto | Visitas e origem no Vercel Web Analytics | Acompanhar, sem meta numérica |
+| Entender quem é em pouco tempo | Teste com pessoas no celular | Recomendação: em 1 minuto, a pessoa diz quem é Lucas, cita um projeto e acha o contato |
 
-## 6. Escopo
+## 4. Estrutura
 
-Páginas e seções (D78). Detalhe no FDD de cada uma. "Na `main`" quer dizer publicado em `portelav-site.vercel.app`, ainda fora do endereço público e do índice dos buscadores.
+Em teste (D103): uma landing para clientes, uma página para recrutadores e uma página para cada caso.
 
-| Item | Objetivo | FDD | Estado |
-|---|---|---|---|
-| Base técnica | Next.js, idiomas, tokens, ícones e CI prontos na `main` | não precisa, é só infraestrutura | feito |
-| Cabeçalho e rodapé | Seletores de idioma e tema, nome depois do preloader, rodapé e página 404 | `docs/fdd/cabecalho-rodape.md` | na `main` |
-| Abertura | Reescrever o nome no preloader e dizer quem é, o que faz e o que procura | `docs/fdd/abertura.md` | na `main` |
-| Projetos | Mostrar os três casos em destaque, com a parte de Lucas em cada um | `docs/fdd/projetos.md` | na `main` |
-| Sobre | Dizer como Lucas trabalha, em uma frase | `docs/fdd/sobre.md` | na `main` |
-| Tecnologias | Listar linguagens e tecnologias que Lucas usa | `docs/fdd/tecnologias.md` | na `main` |
-| Quer um site? | Dizer a quem quer contratar um site o que recebe e como funciona | `docs/fdd/quer-um-site.md` | na `main` |
-| Contato | Levar a WhatsApp, e-mail, LinkedIn e GitHub | `docs/fdd/contato.md` | na `main` |
-| Nota de privacidade | Dizer o que é medido e por quem, nos dois idiomas | no FDD de contato | na `main` |
-| Site em páginas (D78 a D81) | Inicial curta e páginas Projetos, Sobre, Serviços e Contato, com menu no celular | `docs/fdd/pagina-inicial.md` e os FDDs de cada seção | em andamento (`tasks/site-pages.md`) |
-| Aparelhos 3D (D82 a D86) | Notebook e celular em 3D, guiados pela rolagem, com o vídeo de cada projeto, na inicial e em Projetos | a escrever | próxima entrega |
+| Endereço | Para quem | O que tem |
+|---|---|---|
+| `/` e `/en` | Clientes | Abertura, os casos nos aparelhos 3D, como funciona e orçamento, contato |
+| `/sobre` e `/en/about` | Recrutadores, pelo link do currículo e do LinkedIn | Quem é Lucas, como trabalha, tecnologias, currículo em PDF, link para os casos |
+| Página de cada caso | Os dois | Landing da Dra. Thaiane, DraftCS, Crewz e o método |
 
-Casos em destaque (D3):
+> TODO: ordem e texto das seções da landing e do `/sobre`, menu e rodapé. Decididos com Lucas na nova direção. Se a estrutura não funcionar no teste, ela volta a ser decidida.
+
+## 5. Escopo
+
+"Na `main`" quer dizer publicado em `portelav-site.vercel.app`, ainda fora do endereço público e do índice dos buscadores.
+
+| Item | Estado | FDD |
+|---|---|---|
+| Base técnica: Next.js, idiomas, tokens, ícones e CI | feito | não precisa |
+| Cabeçalho, rodapé e 404 | na `main`; menu e rodapé revistos com a estrutura | `docs/fdd/cabecalho-rodape.md` |
+| Abertura e preloader | na `main`; texto reescrito no tom novo | `docs/fdd/abertura.md` |
+| Aparelhos 3D | na `main`; faltam ajustes | `docs/fdd/aparelhos-3d.md` |
+| Páginas de caso: landing, DraftCS e Crewz | na `main`; textos reescritos no tom novo | `docs/fdd/caso.md` |
+| Caso do método | a fazer (D104) | `docs/fdd/caso.md` |
+| Landing e `/sobre` na estrutura nova | a fazer | a revisar |
+| Paleta nova, em um modo só | a fazer (D96) | não precisa |
+
+> TODO: quais ajustes faltam nos aparelhos 3D. Lucas lista.
+
+Casos em destaque, nesta ordem (D3, D40):
 
 | Caso | Tipo | Código | Link |
 |---|---|---|---|
-| Landing da Dra. Thaiane Lessa | Projeto real, no ar | Repositório público | https://www.drathaianelessa.com.br |
-| DraftCS | Jogo web, feito em dupla | Repositório privado | https://draftcs.com |
-| Crewz | Rede social, feita em dupla | Repositório privado | https://crewz-ashy.vercel.app |
+| Landing da Dra. Thaiane Lessa | Site de cliente, no ar (D105) | Repositório público | https://www.drathaianelessa.com.br |
+| DraftCS | Jogo web, feito em dupla com o Vinicius | Repositório privado | https://draftcs.com |
+| Crewz | Rede social, feita em dupla com o Vinicius | Repositório privado | https://crewz-ashy.vercel.app |
 
 ### Conteúdo pendente
 
 | O quê | Quem manda | Para qual item |
 |---|---|---|
-| Currículo em PDF, nos dois idiomas | Lucas | Abertura |
+| Currículo em PDF, nos dois idiomas | Lucas | `/sobre` |
 | Revisão do inglês | Lucas | Todas |
+| Preço em Serviços: sem preço, "a partir de" ou faixa (D107) | Lucas | Landing |
+| Trajetória no Sobre e retrato (D108) | Lucas | `/sobre` |
 
-## 7. Fora de escopo
+## 6. Fora de escopo
 
-- Formulário de contato: traz servidor, anti-spam e mais obrigações de dados, para ganho pequeno (D10).
+- Formulário de contato: traz servidor, anti-spam e dados de terceiros, para ganho pequeno (D10). Se entrar, o `/kickoff` roda de novo antes.
 - Banco, login e painel de edição: o conteúdo mora no repositório.
-- Domínio próprio na primeira versão: entra depois, sem retrabalho (D7).
+- Domínio próprio no lançamento: entra depois, sem retrabalho (D7).
 - Google Analytics e qualquer cookie não essencial: pediriam banner de consentimento (D14).
-- Redesenho da marca: a identidade já está pronta (D18).
 
-## 8. Requisitos não funcionais
+## 7. Requisitos não funcionais
 
-Valores propostos no kickoff, a ajustar se a medição real pedir.
+- **Telas:** celular, em 390 px, e computador, em 1440 px, desenhados juntos, cada um com o layout que serve àquela tela. Nenhuma entrega é aprovada sem os dois vistos no navegador (D109).
+- **Desempenho, como recomendação:** LCP abaixo de 2,5 s no 4G. A página inicial tem exceção aceita por causa do preloader (D60 e D63). Sem deslocamento de layout na animação do nome (D101).
+- **Acessibilidade, como meta:** WCAG 2.2 AA, sem checagem formal a cada entrega (D101).
+- **SEO e compartilhamento:** título, descrição e prévia de link nos dois idiomas, com `hreflang` entre eles, na landing, no `/sobre` e em cada caso.
 
-- Desempenho: LCP abaixo de 2,5 s no 4G, com exceção aceita para a página inicial com preloader (D60 e D63), e sem deslocamento de layout na animação do nome.
-- Acessibilidade: WCAG 2.2 AA.
-- Dispositivos: celular primeiro, 390 px, e computador logo depois.
-- SEO e compartilhamento: metadados e prévia de link nos dois idiomas, `hreflang` entre eles.
-
-## Regras de fora
+## 8. Regras de fora
 
 Consulta em 2026-11-01. Esta tabela é leitura de produto, não parecer jurídico.
 
 | Regra | Efeito no produto | Fonte |
 |---|---|---|
-| LGPD, transparência sobre tratamento de dados (art. 9º) | Nota curta de privacidade, em pt-BR e inglês: o que é medido, para quê, e que a Vercel processa | Lei 13.709/2018; [resumo do guia da ANPD](https://www.mattosfilho.com.br/?p=89899) |
+| LGPD, transparência sobre tratamento de dados (art. 9º) | Nota curta de privacidade, em pt-BR e inglês: o que é medido, para quê, e que a Vercel processa (D57) | Lei 13.709/2018; [resumo do guia da ANPD](https://www.mattosfilho.com.br/?p=89899) |
 | Cookie que identifica usuário é dado pessoal, e cookie não essencial pede consentimento com opção fácil de recusar | Nenhum cookie não essencial. Se um entrar, o site passa a precisar de banner | [Guia da ANPD, resumo](https://www.machadomeyer.com.br/pt/inteligencia-juridica/publicacoes-ij/direito-digital/anpd-divulga-novo-guia-com-orientacoes-sobre-cookies) |
 | Web Analytics identifica visitante por hash da requisição, sem cookie, com sessão descartada em 24 horas | Sem banner por causa da medição. URLs não carregam dado pessoal | [Vercel](https://vercel.com/docs/analytics/privacy-policy) |
-| Regras de publicidade odontológica do CFO valem para o caso da Dra. Thaiane | No caso, sem paciente identificável, sem antes e depois, sem promessa de resultado. Nome e CRO como na landing | `docs/PRD.md` do repositório `landing-drathaiane` |
+| Regras de publicidade odontológica do CFO valem para o caso da Dra. Thaiane | No caso, sem paciente identificável, sem antes e depois, sem promessa de resultado. Nome e CRO como na landing (D68) | `docs/PRD.md` do repositório `landing-drathaiane` |
 
 Graus de certeza:
 
@@ -91,163 +103,57 @@ Graus de certeza:
 
 | Risco ou premissa | Impacto | O que fazer |
 |---|---|---|
-| Inflar a própria participação em projeto feito em dupla | Perde credibilidade com quem avalia | Cada caso diz se foi sozinho ou em dupla, e com quem, sem arredondar para cima. O detalhe fica para a conversa (D39) |
-| Caso publicado sem autorização | Problema para cliente ou colega | Caso só vai ao ar com autorização de quem aparece ou divide a autoria |
+| Inflar a própria participação em projeto feito em dupla | Perde credibilidade com quem avalia | Cada caso diz se foi sozinho ou em dupla, e com quem, sem arredondar para cima (D106) |
+| Caso publicado sem autorização | Problema para cliente ou colega | Caso só vai ao ar com autorização de quem aparece ou divide a autoria, registrada em `private/` |
 | Print da landing com paciente ou dado sensível | Problema profissional para a Dra. Thaiane | Paciente nunca aparece. Imagem de pessoa só com autorização |
-| Site com cara de template | Contradiz a marca e a proposta | Seguir "O que não fazer" do `DESIGN.md` |
+| Recrutador ler o site como de freelancer, não de quem quer estágio | Perde a vaga | `/sobre` como porta própria, no link do currículo e do LinkedIn (D103) |
 | Texto em dois idiomas sair de sincronia | Parte do site fica sem tradução | Toda entrega traz as duas línguas. Falta de mensagem quebra o build |
 | Número de WhatsApp e e-mail públicos | Spam | Aceito pelo dono. Cada um mora em um arquivo só, para trocar ou tirar fácil |
 | Site pela metade substituir o atual | Má impressão | Repositório e projeto próprios na Vercel. O endereço público só muda no lançamento (D21) |
-| Preloader de cerca de 3,8 s em toda carga afastar quem tem pressa | Parte dos visitantes pode sair antes de ver o trabalho | Decisão mantida pelo dono (D46 e D60). Observar no teste de 1 minuto |
+| Preloader de cerca de 3,8 s em toda carga afastar quem tem pressa | Parte dos visitantes pode sair antes de ver o trabalho | Decisão mantida pelo dono (D46, D60 e Rodada 16) |
 
-## 10. Critérios de pronto
+## 10. Critérios de pronto do lançamento
 
-- [ ] Todas as seções da tabela implementadas em pt-BR e inglês, com FDD `implementado`.
-- [ ] Teste de 1 minuto no celular feito com pelo menos três pessoas de fora do projeto.
+Exigidos (D102):
+
 - [ ] Autorização registrada, em `private/`, para cada caso publicado.
-- [ ] LCP e WCAG da seção 8 conferidos com Lighthouse e à mão, em 390 px e no computador.
-- [ ] Nota de privacidade no ar e nenhum cookie não essencial, conferido no navegador.
-- [ ] Nenhum `> TODO` nos documentos que afete o que está no ar.
 - [ ] `lint`, `typecheck`, `build` e `gitleaks` verdes no CI.
 
-## 12. Registro de decisões
+Recomendados:
 
-Cada rodada é uma conversa com o dono. Decisões numeradas (D1, D2...) para o agente citar.
+- Teste de 1 minuto no celular com pelo menos três pessoas de fora do projeto.
+- LCP e WCAG da seção 7 conferidos com Lighthouse e à mão, em 390 px e 1440 px.
+- Nota de privacidade no ar e nenhum cookie não essencial, conferido no navegador.
+- Nenhum `> TODO` nos documentos que afete o que está no ar.
 
-### Rodada 1 (2026-11-01): kickoff
+## 11. Registro de decisões
 
-- **D1.** Objetivo: estágio e trabalhos de freela, com o mesmo peso.
-- **D2.** Posicionamento: estudante promissor e organizado, que constrói projetos reais. Não se apresenta como sênior.
-- **D3.** Casos em destaque: landing da Dra. Thaiane, DraftCS e Crewz.
-- **D4.** Substituída por D20. Mesmo repositório `portelav/portfolio`. A versão antiga fica guardada na tag `v1-academic`.
-- **D5.** Sem data fixa de lançamento.
-- **D6.** Ajustada por D58. Stack: Next.js 16, Tailwind e Motion (ADR 0001).
-- **D7.** Endereço: `portelav.vercel.app`. Domínio próprio depois.
-- **D8.** Português e inglês desde o início (ADR 0002).
-- **D9.** Contato por e-mail, LinkedIn, GitHub e botão de WhatsApp. O número próprio fica público, por escolha do dono.
-- **D10.** Sem formulário de contato.
-- **D11.** Branch e PR por padrão, sem obrigação para ajustes pequenos.
-- **D12.** Nenhuma atribuição de IA, em qualquer aspecto.
-- **D13.** Fluxo completo de agentes.
-- **D14.** Medição com Vercel Web Analytics (ADR 0003).
-- **D15.** Substituída por D21. Reconstrução na branch `v2`. Ela só entra na `main` no lançamento.
-- **D16.** Ajustada por D27. O cursor do nome pisca e, depois de 5 s, para aceso. Volta a piscar ao passar o mouse ou focar. Atende à WCAG 2.2.2.
-- **D17.** Curso: Ciência da Computação, 4º período, passando ao 5º em 2027.
-- **D18.** A identidade visual é a do kit de marca e não se redesenha neste projeto (`docs/design/DESIGN.md`).
-- **D19.** Medida de sucesso: o teste de 1 minuto da seção 5, proposto no kickoff.
+Cada rodada é uma conversa com o dono. Decisões numeradas para o agente citar. As rodadas 1 a 15 estão em `docs/decisoes-ate-2026-11.md`.
 
-### Rodada 2 (2026-11-02): repositório
+### Rodada 16 (2026-11-21 e 2026-11-22): revisão das regras
 
-- **D20.** Repositório novo `portelav/portfolio`, sem o histórico da versão antiga, que era acadêmica. A versão antiga fica em um repositório privado à parte. Substitui D4.
-- **D21.** Sem branch `v2`. A `main` do repositório novo é a reconstrução, em projeto próprio na Vercel. `portelav.vercel.app` passa para esse projeto no lançamento. Substitui D15.
+Lucas revisou com o agente as regras do CLAUDE.md, do PRD e do `DESIGN.md`, e as decisões D1 a D91, uma por uma. O estado anterior está guardado na tag `before-kickoff-review`.
 
-### Rodada 3 (2026-11-02): revisão do PRD e do FDD da abertura
+- **D92.** Clientes vêm primeiro, e quem avalia estudante para estágio vem depois. Substitui D1.
+- **D93.** Posicionamento: quem entrega site no ar, com prova concreta e sem aumentar nada. Não se apresenta como sênior. Substitui D2.
+- **D94.** A medida principal são os pedidos de orçamento, contados à mão. Visitas e o teste de 1 minuto ficam de apoio. Ajusta D19.
+- **D95.** A marca atual é o padrão, sem ser trava: muda quando Lucas pedir. Substitui D18.
+- **D96.** O site passa a ter um modo de cor só, e sai o seletor de tema. A paleta é refeita, e o destaque pode deixar de ser âmbar. O logo é decidido vendo as paletas no site, cada uma com o logo em âmbar e com o logo na cor nova. Substitui D25 e D31.
+- **D97.** Tom de voz: primeira pessoa, confiante, com fato ou número datado em cada afirmação, a parte de Lucas dita com clareza e uma decisão difícil ou um erro contado sem esconder. O curso aparece só no `/sobre`. Referência: o site do Vinicius. As palavras genéricas de agência continuam vetadas; "full stack" e "soluções" continuam liberadas (D59).
+- **D98.** A lista "O que não fazer" do `DESIGN.md` vira recomendação: o agente avisa quando um pedido bater nela, mas ela não barra o pedido.
+- **D99.** Forma (raio, sombra, borda) fica em aberto até a nova direção. Tipografia, fontes e tamanhos ficam liberados.
+- **D100.** Motion e GSAP ficam liberados. A biblioteca entra quando uma animação concreta pedir, com ADR. Rolagem suave fica liberada. Desfoque e `mix-blend-mode` em movimento continuam liberados (D84), com a medição de fluidez como recomendação. Ajusta D56, D58 e D84.
+- **D101.** WCAG 2.2 AA continua como meta, sem checagem formal a cada entrega. A meta de LCP vira recomendação, e a exceção da página inicial continua (D63).
+- **D102.** O lançamento exige só a autorização registrada de cada caso e o CI verde. Os outros critérios viram recomendação.
+- **D103.** Estrutura em teste: uma landing para clientes em `/`, uma página `/sobre` para recrutadores, com o link do currículo e do LinkedIn levando a ela, e uma página para cada caso. Serviços e Contato viram seções da landing. Menu (D70, D80, D87) e rodapé (D32) são revistos com ela. Ajusta D78 e D79.
+- **D104.** O método AI-Driven Development vira um caso próprio, ao lado dos três projetos. Ajusta D77.
+- **D105.** A Dra. Thaiane aparece como cliente de Lucas, com o aval dela registrado em `private/` em 2026-11-22. Substitui D22.
+- **D106.** Os textos da abertura e dos casos são reescritos no tom novo, frase por frase com Lucas. Cada caso continua dizendo a parte de Lucas, sem arredondar. O período do curso não aparece em lugar nenhum do site (D36). Ajusta D28, D48, D49, D50, D62 e D77.
+- **D107.** Preço em Serviços fica em aberto, decidido quando a seção for escrita: sem preço, "a partir de" ou faixa. Ajusta D53.
+- **D108.** A trajetória no `/sobre` e o retrato (D55, D72) são decididos quando o texto novo for escrito. Até lá, vale a D61. Tecnologias (D52) fica, e o lugar dela sai da estrutura nova.
+- **D109.** Celular, em 390 px, e computador, em 1440 px, são desenhados juntos, e nenhuma entrega é aprovada sem os dois vistos no navegador.
+- **D110.** O nome em 3D e o fundo em shader podem voltar a ser testados. Ajusta D85.
+- **D111.** Os ícones de contato do cabeçalho ficam, e as cores deles são revistas com a paleta (D74, D75). A borda dos prints (D43) e a densidade das telas (D56) são revistas na nova direção.
+- **D112.** O fluxo completo de agentes vale só para entrega grande, e os documentos ficam leves, conforme o `CLAUDE.md`. Ajusta D13.
 
-- **D22.** A landing da Dra. Thaiane aparece como projeto real, sem ser chamada de cliente.
-- **D23.** Substituída por D61. A troca do Direito pela computação pode aparecer no site. É o motivo da Reescrita.
-- **D24.** O e-mail de contato no site é o Gmail do próprio Lucas, por escolha do dono. Mora em um arquivo só.
-- **D25.** O site tem modo escuro e claro, com seletor. O modo padrão fecha na base técnica.
-- **D26.** Cabeçalho, rodapé e página 404 entram no escopo, com FDD próprio.
-- **D27.** O foco só faz o cursor voltar a piscar onde o nome é link. Na abertura, o nome não recebe foco. Ajusta D16.
-- **D28.** Na abertura, a frase de apresentação começa com "Lucas Portela", e há duas chamadas, para Projetos e para Contato.
-- **D29.** Substituída por D46. Tempo fechado na D38. A Reescrita roda só na primeira carga da sessão, com teto provisório de 3 s. Lucas fecha o tempo vendo o protótipo no navegador. Não repete ao recarregar nem ao trocar de idioma ou de tema.
-- **D30.** Substituída por D47. Na primeira dobra, o cabeçalho mostra só os seletores. O nome entra nele depois que a abertura sai da tela.
-
-### Rodada 4 (2026-11-02): base técnica
-
-- **D31.** O modo padrão é o escuro, e o texto corrido usa Red Hat Text. Fecha o modo padrão deixado em aberto na D25.
-
-### Rodada 5 (2026-11-02): cabeçalho e rodapé
-
-- **D32.** O rodapé tem só "Todos os direitos reservados" e o link da nota de privacidade. Os contatos ficam na seção Contato.
-- **D33.** Ajustada por D47 e D70. O cabeçalho não tem menu. Depois que a abertura sai da tela, mostra o nome e os seletores.
-
-### Rodada 6 (2026-11-02): abertura
-
-- **D34.** Substituída por D61. A troca do Direito pela computação é contada no Sobre. A abertura tem só a frase curta de apresentação.
-- **D35.** Substituída por D49. As chamadas da abertura são "Ver projetos" e "Falar comigo".
-- **D36.** A frase de apresentação não cita o período do curso, para não envelhecer.
-- **D37.** Substituída por D48. A frase de apresentação é "Me chamo Lucas Portela e estudo Ciência da Computação. Atualmente estou aprendendo a desenvolver com IA." Fala de como Lucas aprende, por escolha do dono, e não é atribuição de autoria. Ajusta o início previsto na D28.
-- **D38.** Lucas aprovou no preview o tempo de 2,6 s da Reescrita e o layout da primeira dobra.
-
-### Rodada 7 (2026-11-02): projetos
-
-- **D39.** Substituída por D50. Os casos têm texto curto: a landing diz que foi feita sozinho, do desenho ao código, pensada primeiro para o celular. DraftCS e Crewz dizem só que foram feitos em dupla com o Vinicius.
-- **D40.** Ordem dos casos: landing, DraftCS e Crewz.
-- **D41.** O nome do Vinicius aparece nos casos, com link para o GitHub dele.
-- **D42.** Ajustada por D45 e D78. O site é uma página única com rolagem: abertura, projetos, sobre e contato.
-- **D43.** Os prints dos projetos têm borda fina de 1 px, para não se confundirem com o fundo.
-
-### Rodada 8 (2026-11-03): direção "trabalho na primeira tela"
-
-Depois de comparar o rascunho com uma amostra de portfólios de outros devs, o dono escolheu esta direção. A marca não muda (D18). Mudam a ordem, o texto e a densidade.
-
-- **D44.** O trabalho aparece na primeira tela: quem é, o que faz, o que procura, as chamadas e o começo do primeiro caso, com o texto dele ao lado.
-- **D45.** Ajustada por D78. Ordem da página: abertura, projetos, sobre, tecnologias, "Quer um site?" e contato. Ajusta D42.
-- **D46.** O preloader fica: a Reescrita roda em tela limpa em toda carga de `/` e `/en` sem âncora, e o nome voa até o cabeçalho, somando cerca de 3,8 s. A rolagem fica presa nesse tempo. Os tempos da Reescrita continuam os da D38. Substitui D29.
-- **D47.** O nome fica no cabeçalho desde o fim do preloader. O cabeçalho sai ao rolar para baixo e volta ao rolar para cima. Substitui D30 e ajusta D33.
-- **D48.** Ajustada por D61. A frase de apresentação é "Me chamo Lucas Portela e já fiz alguns sites que estão no ar.", seguida de "Estudo Ciência da Computação em Maceió. Procuro estágio em desenvolvimento e faço sites para quem precisa de um." O aprendizado com IA passa para o Sobre, com o mesmo sentido da D37. Substitui D37.
-- **D49.** As chamadas da abertura são "Quero um site" e "Falar sobre estágio", uma para cada público (D1). Substitui D35.
-- **D50.** Cada caso diz a parte de Lucas no trabalho. Em dupla, com o nome do Vinicius ao lado (D41). Lucas confirmou o texto de cada caso. Substitui D39. Ajustada por D77.
-- **D51.** Cada caso tem um vídeo do próprio site sobre o print, um tocando por vez e com pausa. Celular e computador têm print e vídeo próprios. Quem aparece autorizou.
-- **D52.** Tecnologias entra como seção própria, depois do Sobre, com os logos nas cores originais. O veto a ícones coloridos sai do `DESIGN.md`.
-- **D53.** Ajustada por D73. O bloco "Quer um site?" tem oferta, quatro passos e um botão para o WhatsApp com mensagem pronta. Sem preço por enquanto. Os passos são compromisso de Lucas com quem contrata.
-- **D54.** Ajustada por D73. Contato lista WhatsApp, e-mail, LinkedIn e GitHub, nessa ordem. Número e e-mail moram em um arquivo só. Ajusta a ordem da D9.
-- **D55.** Ajustada por D61. O Sobre conta a saída do Direito em uma frase, com um retrato ilustrado em tamanho contido. Sem efeito preso à rolagem. Mantém D34.
-- **D56.** O site troca "muito espaço, poucos elementos por tela" por mais conteúdo em cada tela: quem chega sem contexto precisa entender o que Lucas faz. Sem biblioteca de rolagem suave.
-- **D57.** A nota de privacidade é um bloco curto no fim da própria página, com o link do rodapé levando até ele. Mantém a página única (D42), sem rota nova.
-- **D58.** Motion sai das dependências, porque nenhum componente o usa. O movimento fica em CSS e nas APIs do navegador (ADR 0004). Ajusta D6.
-- **D59.** "Full stack" e "soluções" deixam de ser palavras vetadas, por decisão do dono.
-- **D60.** O preloader fica em toda carga, e o dono aceita o LCP acima da meta da seção 8 na página inicial: cerca de 4,8 s sem limite de rede e de 5,6 a 6,7 s em 4G lento simulado. O tempo da sequência passa a contar desde o começo da própria animação, e não desde a carga do JavaScript. Com isso, a espera no 4G lento cai de até 7 s para cerca de 4,7 s. Ajusta a seção 8. Ajustada por D63.
-
-### Rodada 9 (2026-11-04): auditoria de textos
-
-- **D61.** A frase do Sobre é "Curso Ciência da Computação e me importo com os pequenos detalhes: como o site fica no celular, o tempo de cada animação, o texto de cada botão." O site não cita a saída do Direito, o aprendizado com IA nem o nome da instituição, por decisão do dono. Substitui D23 e D34, e ajusta D48 e D55. Retrato e movimento da D55 continuam. Ajustada por D76. Ajustada por D77.
-- **D62.** Textos revistos na auditoria, com aval do dono. O Crewz passa a dizer "Você acha grupos, eventos e pessoas pela atividade, como pedal, corrida ou clube do livro." O WhatsApp aparece com o código do país. No inglês, o termo é "website", e o caso da landing se chama "Dr. Thaiane Lessa". Ajusta D50.
-
-### Rodada 10 (2026-11-05): LCP em produção
-
-- **D63.** Medido em produção em 2026-11-04, em 390 px e 4G lento simulado, o LCP da página inicial fica de 6,5 a 6,8 s na primeira visita e em cerca de 5,6 s com cache, sem diferença entre `/` e `/en`. O dono aceita esses valores. Cerca de 5 s vêm do preloader e da entrada do conteúdo, por decisão de produto. Ajusta D60.
-- **D64.** Ajustada por D86. Os vídeos dos projetos só começam a baixar depois do preloader, e quando estão a até uma tela de distância. Isso libera a rede para o código da página e poupa os dados de quem não rola até eles. Em troca, o primeiro vídeo começa um pouco depois.
-- **D65.** O print e o vídeo do Crewz deixam de mostrar a landing e passam a mostrar o app por dentro, no modo claro, por decisão do dono, com aval do coautor. A gravação é local, só com dados de demonstração, para nenhuma conta real aparecer. No computador, a mídia fica do tamanho do app, sem as margens vazias.
-- **D66.** Na landing e no DraftCS, o visitante escolhe entre a versão de celular e a de computador, por decisão do dono, porque os dois layouts mudam. O site começa na versão da tela de quem visita. No celular, nome, tipo e botões vêm antes da mídia, para os botões não saírem do lugar quando a altura dela muda.
-
-### Rodada 11 (2026-11-05): página de caso
-
-- **D67.** Cada projeto pode ter uma página de caso própria, aberta por "Ver caso completo", com pedido, público, regras, decisões, versões descartadas, resultado e aprendizado. A primeira é a da landing. O site deixa de ser só uma página, mas a página inicial continua sendo o caminho principal. Ajusta D42 e D45.
-- **D68.** O card da landing passa a dizer "Sem preço, sem promoção e sem promessa de resultado. Antes e depois só com autorização dos pacientes e com nome e CRO na imagem, por causa das regras do Conselho Federal de Odontologia.", porque o site da landing ganhou casos com antes e depois em 2026-10-28. Ajusta D50.
-- **D69.** Ajustada por D71 e D88. A ida para a página de caso e a volta são animadas, para ficar claro que o visitante trocou de lugar: a página desliza, e a mídia do card cresce até a capa do caso. O topo do caso repete o card. Pedido do dono em 2026-11-05.
-- **D70.** Ajustada por D80. No computador, o cabeçalho ganha um menu com Projetos, Sobre e Contato, que levam às seções da página inicial. O item atual fica em destaque: na página inicial, o da seção que está na tela; na página de caso, Projetos. No modo escuro, a letra e uma linha embaixo dele ficam em `--accent`. No modo claro, só a linha, porque `--accent` reprova em texto pequeno. A linha desliza até o item novo quando ele muda. No celular, o site segue sem menu. Pedido do dono em 2026-11-05. Ajusta D33.
-- **D71.** A ida para a página de caso e a volta passam a empurrar a página inteira para o lado, como num app de celular, porque o deslize de 60 px passava despercebido. Pedido do dono em 2026-11-05. Ajusta D69.
-- **D72.** O retrato do Sobre perde o degradê nas bordas e fica num círculo de borda nítida, porque o degradê dava cara de imagem feita por IA. Pedido do dono em 2026-11-05. Ajusta D55.
-
-### Rodada 12 (2026-11-05): contato
-
-- **D73.** "Quer um site?" ganha um botão de e-mail ao lado do de WhatsApp, e Contato ganha o Instagram `@lucasportelav`, nos dois idiomas. Em `/en`, o e-mail vem primeiro, no bloco e em Contato, porque fora do Brasil o WhatsApp é menos usado. Em pt-BR, o WhatsApp segue primeiro. Os textos escondidos em inglês ficam como estão. Decisão do dono em 2026-11-05. Ajusta D53 e D54.
-- **D74.** No computador, o cabeçalho ganha ícones de WhatsApp, e-mail e Instagram, depois do menu e antes do idioma, como na landing da Dra. Thaiane, mas só o desenho, na cor do texto, sem quadrado em volta. A ordem segue a de Contato no idioma da página. No celular, os três ícones também ficam no cabeçalho: para caber, o tema vira sol ou lua, e o idioma mostra só o outro. Abaixo de 360 px, o Instagram sai do cabeçalho e fica só em Contato. Pedido do dono em 2026-11-06. Ajustada por D75.
-- **D75.** Os ícones de contato do cabeçalho ganham cor, como os logos de Tecnologias: WhatsApp no verde da marca, `#25D366` no modo escuro e o verde-escuro `#128C7E` no modo claro, porque o verde da marca some no fundo claro; Instagram no degradê da marca; e-mail em `--accent`, porque e-mail não tem cor de marca. Sol, lua e idioma seguem na cor do texto. Pedido do dono em 2026-11-06. Ajusta D74.
-
-### Rodada 13 (2026-11-06): método
-
-- **D76.** O site pode dizer que Lucas trabalha com AI-Driven Development, como método: ele escreve a documentação, com produto, regras e decisões, e agentes de IA escrevem o código a partir dela. O que a D61 tirou foi a ideia de "estou aprendendo com IA", não o método. Os casos contam o método e o papel de Lucas em cada projeto. Decisão do dono em 2026-11-06. Ajusta D61.
-- **D77.** O Sobre ganha um bloco de método, com destaque: "Trabalho com AI-Driven Development", com o nome do método em `--accent`, três passos (a documentação que Lucas escreve, o código que os agentes escrevem a partir dela, e a revisão e o teste de Lucas) e o repositório deste site como prova. Cada página de caso ganha a seção "Como foi feito", com o método naquele projeto. No card do DraftCS, a parte de Lucas passa a ser a documentação, escrita com o Vinicius, a curadoria dos dados e o card de resultado. Decisão do dono em 2026-11-06. Ajusta D50 e D61.
-
-### Rodada 14 (2026-11-08): site em páginas e aparelhos 3D
-
-- **D78.** O site deixa de ser uma página só. Ganha as páginas Projetos, Sobre, Serviços e Contato, em `/projetos`, `/sobre`, `/servicos` e `/contato`, e em inglês `/en/projects`, `/en/about`, `/en/services` e `/en/contact`. Os textos ficam mais curtos, propostos no FDD e aprovados pelo dono antes do código. Sobre reúne o Sobre, o método e Tecnologias. Serviços é o "Quer um site?". Contato traz os canais e a nota de privacidade. Decisão do dono em 2026-11-08. Ajusta D42 e D45.
-- **D79.** A página inicial fica com a abertura, os três projetos em versão curta, cada um levando ao caso, e uma chamada final para Serviços e Contato. Sobre e Tecnologias saem da inicial. O preloader continua só nela (D46). "Quero um site" leva a Serviços, e "Falar sobre estágio" leva a Contato. Decisão do dono em 2026-11-08.
-- **D80.** No celular, um botão "Menu" no cabeçalho abre a lista de páginas por cima do site. No computador, o menu passa a levar às páginas e marca a atual. Decisão do dono em 2026-11-08. Ajusta D70.
-- **D81.** Endereços antigos com âncora, como `/#contato`, continuam funcionando e levam à página nova.
-- **D82.** Os aparelhos 3D, um notebook e um celular guiados pela rolagem, com o vídeo de cada projeto nas telas, entram na página inicial, em versão curta, e na página Projetos, completos. A direção foi testada pelo dono em demos de 2026-11-07 e 2026-11-08. Entrega seguinte à D78.
-- **D83.** Bibliotecas 3D, como Three.js, ficam liberadas, para o site e para estudo. O ADR que revisa o 0004 vem com a entrega do 3D. Decisão do dono em 2026-11-07.
-- **D84.** Desfoque e `mix-blend-mode` em elemento que se move ficam liberados. Decisão do dono em 2026-11-07.
-- **D85.** O nome em 3D e o fundo em shader foram testados e rejeitados pelo dono em 2026-11-07.
-- **D86.** Os vídeos dos projetos passam a 1080×1920 no celular e 1920×1200 no computador, em todas as telas, cerca de 1,2 MB cada. Continuam baixando só depois do preloader e perto de entrar na tela. O vídeo do Crewz segue mostrando o app por dentro (D65), regravado na nova resolução. Decisão do dono em 2026-11-08. Ajusta o limite de peso da D64. Entra com a entrega do 3D.
-- **D87.** No celular, o botão do menu é um ícone de três traços, no início do cabeçalho, antes do nome, e vira um X ao abrir. Decisão do dono em 2026-11-08. Ajusta D80.
-
-### Rodada 15 (2026-11-09): aparelhos 3D
-
-- **D88.** No computador, os aparelhos ficam fixos à direita enquanto o texto de cada projeto rola à esquerda, na página inicial, com nome, tipo, uma linha e "Ver caso", e em Projetos, com o texto completo e os links. Decisão do dono em 2026-11-09. Como a seção não tem mais print fixo, a mídia do card deixa de crescer até a capa do caso; a troca de página continua empurrando a página (D71). Ajusta D69.
-- **D89.** No celular, os aparelhos ocupam a tela, e o texto de cada projeto passa por cima deles num cartão com desfoque. O dono escolheu esse desenho em 2026-11-09, entre três testados num protótipo: texto por cima, tela dividida e troca por toque.
-- **D90.** Com `prefers-reduced-motion`, sem WebGL ou sem JavaScript, a seção mostra os prints parados, com o mesmo texto e os mesmos links, e o Three.js não baixa. O dono deixou essa escolha ao executor em 2026-11-09.
-- **D91.** O vídeo do Crewz é regravado como o anterior (D65): app rodando local, banco temporário só com dados de demonstração, apagado depois da gravação. Decisão do dono em 2026-11-09.
+Confirmadas sem mudança: D3, D5, D7, D8, D9, D10, D11, D12, D14, D16, D17 (4º período, passando ao 5º em 2027), D20, D21, D24, D26, D27, D36, D38, D40, D41, D44, D46, D47, D51, D54, D57, D59, D60, D63, D64, D65, D66, D67, D68, D69, D71, D73, D76, D81, D82, D83, D86, D88, D89, D90 e D91.

@@ -1,6 +1,8 @@
 # FDD: Site em páginas e página inicial
 
-Status: implementado
+Status: em revisão
+
+> Revisão de 2026-11-22 (PRD, Rodada 16): a estrutura em páginas dá lugar, em teste, a uma landing para clientes, uma página `/sobre` para recrutadores e uma página por caso (D103). Este FDD descreve o que existe hoje.
 PRD: seção 6, item Site em páginas; D46, D67, D71, D78, D79, D80, D81 e D88 a D90
 
 ## Objetivo

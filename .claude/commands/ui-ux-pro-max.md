@@ -15,9 +15,9 @@ Complementa `docs/design/DESIGN.md` (identidade) e o `/ui` (implementação). Is
 | 2 | Toque e interação | CRÍTICO | mínimo 44×44 px, 8 px entre alvos, retorno ao toque e à espera |
 | 3 | Performance | ALTO | WebP/AVIF, imagem otimizada, espaço reservado (CLS < 0.1), LCP |
 | 4 | Estilo | ALTO | coerente com o DESIGN.md, uma família de ícones, sem emoji como ícone |
-| 5 | Layout e responsivo | ALTO | 390 px primeiro, sem scroll horizontal |
+| 5 | Layout e responsivo | ALTO | 390 px e 1440 px juntos, sem scroll horizontal |
 | 6 | Tipografia e cor | MÉDIO | escala do DESIGN.md, tokens semânticos |
-| 7 | Animação | MÉDIO | `transform` e `opacity`, movimento com significado, pausa |
+| 7 | Animação | MÉDIO | Fluidez no celular, pausa, movimento reduzido |
 | 8 | Formulários e feedback | MÉDIO | label visível, erro perto do campo |
 | 9 | Navegação | ALTO | voltar previsível, toda tela chave com URL |
 
@@ -65,7 +65,7 @@ Complementa `docs/design/DESIGN.md` (identidade) e o `/ui` (implementação). Is
 
 ### 7. Animação
 - Microinteração 150 a 300 ms; exceções declaradas no DESIGN.md.
-- Só `transform` e `opacity`. Nunca animar `width`, `height`, `top`, `left`. Nada de desfoque nem `mix-blend-mode` em elemento que se move.
+- Desfoque e `mix-blend-mode` em movimento estão liberados (PRD, D100). Medir a fluidez no celular é recomendação.
 - `ease-out` entrando, `ease-in` saindo. Toda animação expressa causa e efeito.
 - Texto animado por linha, nunca letra a letra em parágrafo.
 

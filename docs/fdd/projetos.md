@@ -1,6 +1,8 @@
 # FDD: Seção Projetos
 
-Status: implementado
+Status: em revisão
+
+> Revisão de 2026-11-22 (PRD, Rodada 16): a seção passa para a landing, e os textos são reescritos no tom novo (D103, D106). Este FDD descreve o que existe hoje.
 PRD: seção 6, item Projetos; D3, D22, D40, D41, D43, D44, D50, D51, D77, D78, D79 e D88 a D90
 
 > Na entrega do 3D (`tasks/projects-3d-devices.md`), a mídia desta página passa aos aparelhos 3D (`aparelhos-3d.md`): o texto abaixo continua, mas print, vídeo e botões de versão saem dos cards e ficam só na reserva parada e nas páginas de caso.

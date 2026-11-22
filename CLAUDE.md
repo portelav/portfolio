@@ -4,8 +4,7 @@ Contexto operacional para agentes neste repositório. Ler antes de qualquer tare
 
 ## Projeto
 
-**portfolio**: site pessoal de Lucas Portela (`portelav`), estudante de Ciência da Computação em Maceió. Para quem avalia estudante para estágio e para quem quer contratar um site, com o mesmo peso.
-Reconstrução do zero, em repositório novo. A identidade visual já está pronta e não se redesenha aqui.
+**portfolio**: site pessoal de Lucas Portela (`portelav`), estudante de Ciência da Computação em Maceió. Fala primeiro com quem quer contratar um site, e depois com quem avalia estudante para estágio.
 
 ## Equipe
 
@@ -13,9 +12,18 @@ Lucas Portela (`portelav`), sozinho. Lucas aprova conteúdo e visual e faz o mer
 
 Repositório: `portelav/portfolio` (público). Deploy: Vercel, em projeto próprio, produção a partir da `main`.
 
-## Marco atual
+## Decisões são do Lucas
 
-Reconstrução na `main` deste repositório. A versão antiga vem de outro repositório, privado, e segue em `portelav.vercel.app` até o lançamento, quando esse endereço passa para o projeto novo na Vercel. Lista de trabalho em `docs/ROADMAP.md`.
+- Nenhuma regra, proibição ou decisão entra nos documentos sem Lucas aprovar, uma por uma. Antes de escrever ou reescrever um documento, listar as regras que ele vai ter e perguntar cada uma, com a opção recomendada primeiro.
+- O que o agente preencher sozinho aparece como proposta ou explicação, nunca como regra.
+- Dúvida entre duas leituras de um documento: perguntar. Decisão do dono entra no registro do PRD, com data.
+- O que ainda não foi decidido recebe `> TODO` com o que falta, nunca texto inventado.
+
+## Estado atual
+
+O site está na `main`, publicado em `portelav-site.vercel.app` e fora do índice dos buscadores. No endereço público, https://portelav.vercel.app, ainda está a versão antiga, que vem de outro repositório, privado, até o lançamento.
+
+Em 2026-11-21 os documentos foram revistos (PRD, Rodada 16): clientes vêm primeiro, a paleta vai ser refeita em um modo só, a marca atual é o padrão sem ser trava, e Motion, GSAP e rolagem suave ficam liberados. A lista de trabalho está em `docs/ROADMAP.md`.
 
 Onde está cada coisa:
 
@@ -23,14 +31,10 @@ Onde está cada coisa:
 |---|---|
 | O quê e por quê, público, escopo, decisões do dono | `docs/PRD.md` |
 | Por que cada decisão técnica foi tomada | `docs/adr/` |
-| Como cada seção se comporta | `docs/fdd/<nome>.md` |
+| Como cada seção com comportamento funciona | `docs/fdd/<nome>.md` |
 | O que vem agora e depois | `docs/ROADMAP.md` |
 | Cor, tipografia, forma, movimento, tom de voz | `docs/design/DESIGN.md` |
 | Pendências internas, avais de terceiros | `private/` (fora do git) |
-
-## Estado atual
-
-Direção "trabalho na primeira tela" aprovada (PRD, D44 a D56). O site inteiro está na `main` (`tasks/trabalho-primeiro.md`), publicado em `portelav-site.vercel.app` e fora do índice dos buscadores. Os três projetos têm página de caso própria, e o cabeçalho tem menu no computador (PRD, D67 a D72). Contato tem e-mail e Instagram, e o cabeçalho tem ícones coloridos de WhatsApp, e-mail e Instagram (PRD, D73 a D75). O Sobre e os casos apresentam o método, AI-Driven Development (PRD, D76 e D77). O LCP da página inicial tem exceção aceita (PRD, D60 e D63). O site está em páginas: a inicial curta, Projetos, Sobre, Serviços e Contato, com menu também no celular (PRD, D78 a D81). Os três projetos aparecem num notebook e num celular em 3D, guiados pela rolagem, na inicial e em Projetos, com Three.js carregado só perto da seção (PRD, D82 a D91; ADR 0005). Falta o currículo em PDF, e o lançamento segue o `docs/ROADMAP.md`. No endereço público, https://portelav.vercel.app, ainda está a versão antiga.
 
 ## Ambientes
 
@@ -46,12 +50,12 @@ Direção "trabalho na primeira tela" aprovada (PRD, D44 a D56). O site inteiro 
 |---|---|---|
 | Framework | Next.js 16, React 19, TypeScript 6.0 | 0001 |
 | Estilo | Tailwind CSS 4, tokens do `DESIGN.md` | 0001 |
-| Movimento | CSS e APIs do navegador | 0004 |
+| Movimento | CSS e APIs do navegador hoje. Motion e GSAP liberados, e entram quando uma animação concreta pedir | 0004, 0006 |
 | 3D | Three.js, carregado só perto dos aparelhos | 0005 |
 | Idiomas | `next-intl`, pt-BR em `/` e inglês em `/en` | 0002 |
 | Hospedagem e medição | Vercel e Vercel Web Analytics | 0003 |
 
-Sem banco, sem login e sem formulário. Se algum entrar, rodar `/kickoff` de novo antes.
+Sem banco, sem login e sem formulário. Se algum entrar, rodar `/kickoff` de novo antes, para trazer as peças de segurança e de dados.
 
 Regras que decorrem da stack:
 
@@ -59,17 +63,26 @@ Regras que decorrem da stack:
 - `AGENTS.md`, gerado pelo Next.js: manter e commitar.
 - TypeScript fica na 6.0 enquanto o `typescript-eslint`, usado pelo `eslint-config-next`, não aceitar a 7.
 - Todo texto de interface vive nos arquivos de mensagens, em pt-BR e em inglês, na mesma entrega. Nenhum texto fixo em componente.
-- Animação preferencialmente de `transform` e `opacity`. Desfoque e `mix-blend-mode` em elemento que se move são permitidos (PRD, D84), medindo a fluidez no celular. O que se mexe sozinho por mais de 5 s para ou tem pausa (WCAG 2.2.2).
 - Nenhum cookie não essencial. Cookie novo muda o PRD, porque pede consentimento.
+
+## Documentação
+
+- O PRD guarda o estado atual e as decisões do dono, com data. Implementação divergiu: o PRD muda na mesma branch.
+- FDD só para seção com comportamento, como preloader, aparelhos 3D, menu e página de caso. Texto e ajuste visual não pedem documento.
+- ADR só para dependência nova ou troca de stack, antes do código.
+- Documento pronto: commit logo depois que Lucas ler e aprovar.
+- Markdown, uma ideia por seção, diagramas em Mermaid no próprio arquivo.
 
 ## Fluxo com agentes
 
-Comandos em `.claude/commands/`, skills em `.claude/skills/`. Artefato-mestre de cada entrega: `tasks/{slug}.md` (template em `.claude/templates/task-template.md`).
+Comandos em `.claude/commands/`, skills em `.claude/skills/`.
 
-1. `/plan <pedido>`: cria a branch `tipo/{slug}`, faz a triagem e escreve os Stages 1 a 5. Para no **Gate S2** até aprovação humana. Não escreve código.
+O fluxo completo vale para entrega grande, como os aparelhos 3D ou a nova direção visual. Ajuste de tela ou de texto dispensa o fluxo: o agente faz, mostra no navegador e Lucas aprova. A regra de branch da seção Git continua valendo.
+
+1. `/plan <pedido>`: cria a branch `tipo/{slug}`, faz a triagem e escreve os Stages 1 a 5 de `tasks/{slug}.md` (template em `.claude/templates/task-template.md`). Para no **Gate S2** até aprovação humana. Não escreve código.
 2. `/exec`: implementa na ordem do plano, um commit por item, escreve os Stages 6 a 8.
 3. `/walkthrough`: audita e escreve o Stage 9. APPROVED, WARNINGS ou BLOCKED.
-4. `/pr`: abre o PR. Lucas faz o merge, ou autoriza no `/pr`.
+4. `/pr`: abre o PR. Lucas faz o merge, ou autoriza no `/pr` depois do CI verde.
 
 | Comando ou skill | Para quê |
 |---|---|
@@ -80,27 +93,19 @@ Comandos em `.claude/commands/`, skills em `.claude/skills/`. Artefato-mestre de
 | `/ui`, `/ui-ux-pro-max` | Componentes com os tokens; checklist de qualidade de interface |
 | `/cot`, `/tot` | Raciocínio passo a passo; comparação de alternativas |
 
-Skills de design usadas, instaladas no usuário (não no repositório): `taste-skill`, `emil-design-eng`, `animate`, `frontend-design`.
+Skills de design disponíveis, instaladas no usuário (não no repositório): `taste-skill`, `emil-design-eng`, `animate`, `frontend-design`. Nenhuma é obrigatória: o agente escolhe a que serve em cada tarefa e diz qual usou.
 
 Hooks em `.claude/settings.json`: validação de frontmatter ao abrir a sessão, e lint e typecheck ao fim do turno quando o código mudou.
 
-QA automático no navegador pelo MCP do Chrome DevTools, sem pedir licença, avisando. Depois pedir o teste manual. Fechar no fim só o Chrome aberto pelo MCP.
-
-## Fluxo de trabalho: docs primeiro
-
-1. Nenhuma seção sem FDD. O FDD é a spec.
-2. Mudança de arquitetura ou de stack exige ADR antes do código.
-3. O PRD é vivo: implementação divergiu, o doc muda na mesma branch.
-4. Dúvida entre duas leituras do doc: perguntar. Decisão de produto é do dono, registrada no PRD com data.
-5. Documento pronto ou seção concluída: commit imediato.
+QA automático no navegador pelo MCP do Chrome DevTools, sem pedir licença, avisando. Depois pedir o teste manual. No fim de cada tarefa, fechar o que o agente abriu: o Chrome do MCP inteiro, os servidores locais e o Docker. Nunca tocar no Chrome pessoal de Lucas.
 
 ## Git
 
 - Commits pequenos, uma mudança lógica por commit.
 - Conventional Commits: `feat`, `fix`, `chore`, `docs`, `refactor`, `test`, `style`, `perf`, `ci`. Título em inglês, imperativo, sem ponto final, até 72 caracteres.
-- NUNCA adicionar Co-Authored-By, Generated with ou qualquer atribuição ou menção a IA em commits, PRs ou no README.
+- NUNCA adicionar Co-Authored-By, Generated with ou qualquer atribuição ou menção a IA em commits, PRs ou no README. O método de trabalho pode ser contado no site e no README.
 - **Base de trabalho:** `main`. Ela não toca no site antigo, que vem de outro repositório.
-- **Padrão:** branch `tipo/nome` a partir da base e PR sem squash.
+- **Padrão:** branch `tipo/nome` a partir da base e PR sem squash. O preview da branch é onde Lucas testa.
 - **Ajuste pequeno vai direto na base, sem branch e sem PR:** texto, documentação ou correção que não muda layout, comportamento nem dependência.
 - PR nunca é rascunho. Confirmar com Lucas antes de abrir, porque Lucas testa antes.
 - Nunca `git push --force` em `main`. Nunca commitar `.env`, segredos ou credenciais.
@@ -114,7 +119,8 @@ Tudo que entra no git fica visível para sempre, inclusive no histórico e nos d
 - **Dado de terceiro nunca:** paciente, cliente, colega, telefone pessoal, CPF, endereço de casa. Paciente não aparece nem com consentimento. Imagem de cliente ou de colega, como um print de projeto, só entra com autorização de quem aparece.
 - **Exceção registrada:** o número de WhatsApp e o Gmail do próprio Lucas aparecem no site e no código por escolha própria (PRD, D9 e D24). Cada um mora em um arquivo só. Commit continua com o e-mail noreply.
 - **Documento interno fica em `private/`** (ignorado aqui): dúvida aberta, pendência de terceiro, estratégia, opinião sobre alguém, situação pessoal. O doc público registra só decisão tomada e regra.
-- **Mídia sem metadado.** Foto e vídeo novos entram limpos (`exiftool -all=`, `magick -strip`, `ffmpeg -map_metadata -1`): GPS, aparelho, autor, conta e id do documento saem.
+- **Mídia sem metadado.** Foto e vídeo novos entram limpos: GPS, aparelho, autor, conta e id do documento saem. Imagem pelo Aimg (animg.vercel.app), vídeo pelo `ffmpeg -map_metadata -1`, e o agente confere tudo com `exiftool` antes do commit.
+  > TODO: testar o Aimg no Chrome (se a imagem sai do computador e se o resultado volta sem metadado) e instalar o `exiftool`. Até lá, imagem só entra conferida de outro jeito.
 - **Commit com o e-mail noreply** do GitHub, já configurado neste clone.
 - **Direitos:** todos os direitos reservados. Sem licença de uso. Marcas e imagens de clientes e de colegas continuam de quem são.
 
@@ -123,11 +129,6 @@ Tudo que entra no git fica visível para sempre, inclusive no histórico e nos d
 - Documentação: português do Brasil.
 - Código, identificadores, comentários, commits, branches: inglês.
 - Interface: português do Brasil e inglês.
-
-## Convenções de documento
-
-- Markdown, uma ideia por seção, diagramas em Mermaid no próprio arquivo.
-- Seção ainda não escrita recebe `> TODO` com o que falta, nunca texto inventado.
 
 ## Comandos
 
@@ -159,9 +160,9 @@ src/proxy.ts         resolve o idioma pela URL
 
 ## Kit
 
-Organizado pelo `/kickoff` do `claude-kit` em 2026-11-01 (kit 3ac1809).
+Organizado pelo `/kickoff` do `claude-kit` em 2026-11-01 (kit 3ac1809) e revisto em 2026-11-21 (mesma versão do kit), com cada regra aprovada por Lucas.
 
-- **Adotado:** `CLAUDE.md`, PRD leve, ADRs, FDDs por seção, `DESIGN.md`, ROADMAP leve, `tasks/{slug}.md`, README, `/plan`, `/exec`, `/walkthrough`, `/pr`, `/commit`, `/feature-flow`, `/refine`, `/fix-loop`, `/cot`, `/tot`, `/ui`, `/ui-ux-pro-max`, subagentes dos comandos adotados, hook de frontmatter, hook de lint e typecheck, CI com `gitleaks`, MCP do Chrome DevTools, regras de repositório público.
+- **Adotado:** `CLAUDE.md`, PRD leve, ADRs, FDDs só para seção com comportamento, `DESIGN.md`, ROADMAP leve, `tasks/{slug}.md` para entrega grande, README, `/plan`, `/exec`, `/walkthrough`, `/pr`, `/commit`, `/feature-flow`, `/refine`, `/fix-loop`, `/cot`, `/tot`, `/ui`, `/ui-ux-pro-max`, subagentes dos comandos adotados, hook de frontmatter, hook de lint e typecheck, CI com `gitleaks`, MCP do Chrome DevTools, regras de repositório público.
 - **Fora, e quando entra:** ADD (entra se houver banco, login ou formulário que grava); `security-threat-model` (formulário, login ou upload); `/db-architect`, `/index-generator`, testes de RLS e migração no merge (banco); `/council` (decisão de produto com trade-off real que os documentos não resolvem); `/good-morning` (equipe); bot de revisão de PR (equipe; o GitHub não deixa o autor aprovar o próprio PR); `docs/research/` (pesquisa grande); Docker (serviço local); camada de serviço (regra de negócio).
 
 Rodar `/kickoff` de novo revisa esta lista.

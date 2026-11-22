@@ -1,6 +1,8 @@
 # FDD: Seção Quer um site?
 
-Status: implementado
+Status: em revisão
+
+> Revisão de 2026-11-22 (PRD, Rodada 16): Serviços vira seção da landing, e o preço fica em aberto (D103, D107). Este FDD descreve o que existe hoje.
 PRD: seção 6, item Quer um site?; D1, D22, D53, D73, D78 e D79
 
 ## Objetivo

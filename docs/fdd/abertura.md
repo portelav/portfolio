@@ -1,6 +1,8 @@
 # FDD: Seção Abertura
 
-Status: implementado
+Status: implementado, com texto em revisão
+
+> Revisão de 2026-11-22 (PRD, Rodada 16): o preloader e os tempos continuam; a frase e as chamadas são reescritas no tom novo, com clientes primeiro (D106).
 PRD: seção 6, item Abertura; D44, D46, D48, D49 e D79
 
 ## Objetivo

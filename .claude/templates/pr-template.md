@@ -28,7 +28,7 @@
 
 - [ ] `tasks/<slug>.md` com Stages 1 a 9 (ou 1 e 4 para trivial)
 - [ ] `npm run lint && npm run typecheck && npm run build` verdes
-- [ ] Testado em 390 px e no computador, em `/` e `/en`, modo escuro e claro
+- [ ] Testado em 390 px e 1440 px, em `/` e `/en`, nos modos de cor que o site tiver
 - [ ] Textos em pt-BR e inglês; toque 44 px, foco visível
 - [ ] Sem segredo, dado de terceiro, nota interna ou metadado em mídia
 - [ ] `.env.example` atualizado se houve variável nova

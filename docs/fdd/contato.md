@@ -1,6 +1,8 @@
 # FDD: Seção Contato e nota de privacidade
 
-Status: implementado
+Status: em revisão
+
+> Revisão de 2026-11-22 (PRD, Rodada 16): Contato vira seção da landing; canais, ordem e nota de privacidade continuam (D103, D57). Este FDD descreve o que existe hoje.
 PRD: seção 6, itens Contato e Nota de privacidade; D9, D10, D14, D24, D32, D54, D57, D73 e D78; Regras de fora
 
 ## Objetivo
