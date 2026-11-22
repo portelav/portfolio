@@ -1,6 +1,6 @@
 # ADR 0004: Movimento em CSS, sem Motion
 
-Status: aceito
+Status: substituído por ADR 0006
 Data: 2026-11-03
 
 ## Contexto
