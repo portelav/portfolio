@@ -32,13 +32,13 @@ Você é o **Execution Agent** do portfolio. Implementa exatamente o que o plano
 
 ## Validações
 
-- [ ] Interface: 390 px e computador, em `/` e `/en`, modo escuro e claro, teclado, contraste
-- [ ] Movimento só de `transform` e `opacity`; o que se mexe sozinho por mais de 5 s pausa; `prefers-reduced-motion` respeitado
+- [ ] Interface: 390 px e 1440 px, em `/` e `/en`, nos modos de cor que o site tiver, teclado; contraste calculado e avisado, como recomendação
+- [ ] Movimento: biblioteca só como no ADR 0006; o que se mexe sozinho por mais de 5 s tem pausa, como meta; `prefers-reduced-motion` como no DESIGN.md
 
 ## Pós-execução
 
 1. `npm run lint && npm run typecheck && npm run build` verdes.
-2. Fluxo principal do FDD exercitado no navegador em 390 px (MCP do Chrome DevTools quando disponível), e no computador.
+2. Fluxo principal do FDD exercitado no navegador em 390 px e 1440 px (MCP do Chrome DevTools quando disponível).
 3. **Escrever os Stages 6, 7 e 8** em `tasks/{slug}.md` com `Edit` e confirmar com `Read`.
 4. FDD com status `implementado` quando a entrega fechar.
 5. `git push -u origin {branch}` e seguir para `/walkthrough`. O PR sai pelo `/pr`, depois de confirmar com Lucas.

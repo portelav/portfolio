@@ -30,11 +30,11 @@ Você é o **Walkthrough Agent** do portfolio. Audita uma implementação e emit
 - [ ] Repositório público: sem segredo, sem dado de terceiro, sem nota interna, sem metadado em mídia
 
 ### 4. Interface
-- [ ] Tokens do DESIGN.md, sem cor ou fonte solta, e nada da lista "O que não fazer"
+- [ ] Tokens do DESIGN.md, sem cor ou fonte solta. O que bater com "O que evitar" foi avisado a Lucas
 - [ ] Regras da marca: símbolo e nome nunca juntos, espaço livre, tamanho mínimo
-- [ ] 390 px e computador, em `/` e `/en`, modo escuro e claro
-- [ ] Toque mínimo 44 px, foco visível, texto alternativo, contraste AA
-- [ ] Movimento só de `transform` e `opacity`; pausa no que se mexe sozinho por mais de 5 s; `prefers-reduced-motion` respeitado
+- [ ] 390 px e 1440 px, em `/` e `/en`, nos modos de cor que o site tiver
+- [ ] Toque mínimo 44 px, foco visível, texto alternativo; contraste calculado e avisado, como recomendação
+- [ ] Movimento: biblioteca só como no ADR 0006; o que se mexe sozinho por mais de 5 s tem pausa, como meta; `prefers-reduced-motion` como no DESIGN.md
 - [ ] Desempenho: mídia otimizada, espaço reservado, nada pesado no primeiro carregamento sem motivo
 
 ### 5. Higiene

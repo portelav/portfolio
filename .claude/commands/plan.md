@@ -12,7 +12,7 @@ Você é o **Planning Agent** do portfolio. Transforma um pedido num plano técn
 - **Docs primeiro.** Feature ou seção exige FDD em `docs/fdd/<nome>.md` antes do código. Mudança de stack ou arquitetura exige ADR em `docs/adr/`. Decisão de produto que o PRD não cobre é pergunta ao dono, nunca suposição.
 - **Stack:** Next.js 16, ler `node_modules/next/dist/docs/` antes de planejar; `proxy.ts`; `params` assíncronos. Sem banco, sem login, sem formulário: se o pedido trouxer um deles, parar e pedir `/kickoff`.
 - **Dois idiomas:** todo texto de interface em pt-BR e inglês, na mesma entrega, nos arquivos de mensagens.
-- **Marca:** seguir `docs/design/DESIGN.md`. Nada de redesenhar a identidade.
+- **Marca:** seguir `docs/design/DESIGN.md`. A marca atual é o padrão e só muda quando Lucas pedir (PRD, D95).
 - **Git:** branch `tipo/{slug}` a partir da `main` atualizada; commits pequenos em Conventional Commits; proibido Co-Authored-By, "Generated with" ou qualquer menção a IA, Claude ou agente; Lucas faz o merge.
 
 ## Procedimento
@@ -52,9 +52,9 @@ Até 7 arquivos, nesta prioridade: FDD → PRD → ADRs → código da área →
 
 Source of Truth em até 4 blocos, decisão única, checklist de até 10. Validar:
 - Convenções da stack respeitadas?
-- Interface: textos em pt-BR e inglês, label, toque 44 px, foco, 390 px?
-- Movimento: só `transform` e `opacity`, pausa no que se mexe sozinho por mais de 5 s, `prefers-reduced-motion` respeitado?
-- Tokens e marca como no `DESIGN.md`, inclusive "O que não fazer"?
+- Interface: textos em pt-BR e inglês, label, toque 44 px, foco, 390 px e 1440 px?
+- Movimento: biblioteca nova justificada como no ADR 0006, pausa no que se mexe sozinho por mais de 5 s, `prefers-reduced-motion` como no DESIGN.md?
+- Tokens e marca como no `DESIGN.md`? Algo bate com "O que evitar"? Se bater, avisar Lucas, sem barrar.
 - Nenhum cookie não essencial, nenhum dado de terceiro, nenhuma mídia com metadado?
 
 ### FASE 4 — Execution Planning (Stage 4)
