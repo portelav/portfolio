@@ -1,6 +1,8 @@
 # FDD: Seção Cabeçalho e rodapé
 
-Status: implementado
+Status: implementado, com menu e rodapé em revisão
+
+> Revisão de 2026-11-22 (PRD, Rodada 16): menu e rodapé são revistos com a estrutura nova, e o seletor de tema sai com a paleta de um modo só (D96, D103).
 PRD: seção 6, item Cabeçalho e rodapé; D25, D26, D27, D32, D33, D47, D70, D74, D75, D78 e D80
 
 ## Objetivo

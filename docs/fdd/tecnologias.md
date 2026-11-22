@@ -1,6 +1,8 @@
 # FDD: Seção Tecnologias
 
-Status: implementado
+Status: em revisão
+
+> Revisão de 2026-11-22 (PRD, Rodada 16): Tecnologias fica, e o lugar dela sai da estrutura nova (D108). Este FDD descreve o que existe hoje.
 PRD: seção 6, item Tecnologias; D52 e D78
 
 ## Objetivo

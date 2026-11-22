@@ -1,6 +1,8 @@
 # FDD: Aparelhos 3D
 
-Status: implementado
+Status: implementado, com ajustes pendentes
+
+> Revisão de 2026-11-22 (PRD, Rodada 16): Lucas vai listar ajustes; o desenho e a versão parada continuam (D82, D89, D90).
 PRD: D44, D64, D65, D82 a D86 e D88 a D91. ADR 0005.
 
 ## Objetivo

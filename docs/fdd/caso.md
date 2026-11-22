@@ -1,6 +1,8 @@
 # FDD: Página de caso
 
-Status: implementado
+Status: implementado, com textos em revisão
+
+> Revisão de 2026-11-22 (PRD, Rodada 16): os textos são reescritos no tom novo, e entra o caso do método (D104, D106).
 PRD: D22, D41, D50, D61, D65, D67, D68, D69, D70, D71, D76 e D77
 
 ## Objetivo

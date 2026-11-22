@@ -1,27 +1,26 @@
 # FDDs: Functional Design Documents
 
-Um arquivo por seção. Nome: `<nome>.md` em kebab-case.
-Escrito ANTES da implementação. É a spec que o código deve satisfazer.
-
-Regra: seção sem FDD não entra em desenvolvimento.
+Um arquivo por seção com comportamento, como preloader, aparelhos 3D, menu e página de caso. Nome: `<nome>.md` em kebab-case.
+Escrito antes da implementação. É a spec que o código deve satisfazer. Texto e ajuste visual não pedem FDD (`CLAUDE.md`, seção Documentação).
 
 ## Índice
 
-Em ordem de página. O protótipo da direção de 2026-11-03 já roda na branch `proto/trabalho-primeiro`. Cada FDD só passa a implementado depois do plano e da auditoria.
+Os FDDs "em revisão" descrevem o site de hoje e são refeitos, ou juntados, quando a estrutura nova for decidida (PRD, D103).
 
 | Seção | Status | Plano |
 |---|---|---|
-| [Cabeçalho e rodapé](cabecalho-rodape.md) | aprovado | `tasks/trabalho-primeiro.md`, a criar |
-| [Abertura](abertura.md) | aprovado | `tasks/trabalho-primeiro.md`, a criar |
-| [Projetos](projetos.md) | aprovado | `tasks/trabalho-primeiro.md`, a criar |
-| [Sobre](sobre.md) | aprovado | `tasks/trabalho-primeiro.md`, a criar |
-| [Tecnologias](tecnologias.md) | aprovado | `tasks/trabalho-primeiro.md`, a criar |
-| [Quer um site?](quer-um-site.md) | aprovado | `tasks/trabalho-primeiro.md`, a criar |
-| [Contato e nota de privacidade](contato.md) | aprovado | `tasks/trabalho-primeiro.md`, a criar |
-| [Página de caso](caso.md) | implementado | `tasks/case-study-landing.md` |
-| [Aparelhos 3D](aparelhos-3d.md) | implementado | `tasks/projects-3d-devices.md` |
+| [Cabeçalho e rodapé](cabecalho-rodape.md) | implementado, com menu e rodapé em revisão | `tasks/trabalho-primeiro.md`, `tasks/site-pages.md` |
+| [Abertura](abertura.md) | implementado, com texto em revisão | `tasks/trabalho-primeiro.md` |
+| [Página inicial e site em páginas](pagina-inicial.md) | em revisão | `tasks/site-pages.md` |
+| [Projetos](projetos.md) | em revisão | `tasks/trabalho-primeiro.md` |
+| [Aparelhos 3D](aparelhos-3d.md) | implementado, com ajustes pendentes | `tasks/projects-3d-devices.md` |
+| [Página de caso](caso.md) | implementado, com textos em revisão | `tasks/case-study-landing.md` |
+| [Sobre](sobre.md) | em revisão | `tasks/trabalho-primeiro.md` |
+| [Tecnologias](tecnologias.md) | em revisão | `tasks/trabalho-primeiro.md` |
+| [Quer um site?](quer-um-site.md) | em revisão | `tasks/trabalho-primeiro.md` |
+| [Contato e nota de privacidade](contato.md) | em revisão | `tasks/trabalho-primeiro.md` |
 
-Planos anteriores, já auditados, da versão que a direção nova substitui: `tasks/cabecalho-rodape.md`, `tasks/abertura.md` e `tasks/projetos.md`.
+Planos mais antigos, já auditados: `tasks/cabecalho-rodape.md`, `tasks/abertura.md` e `tasks/projetos.md`.
 
 ## Template
 
