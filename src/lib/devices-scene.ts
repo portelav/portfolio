@@ -314,7 +314,7 @@ export function mountDevicesScene({
   };
   const themeWatcher = new MutationObserver(onTheme);
   themeWatcher.observe(document.documentElement, {
-    attributeFilter: ["data-theme"],
+    attributeFilter: ["data-theme", "data-palette", "style"],
   });
 
   /* ---------- materials ---------- */

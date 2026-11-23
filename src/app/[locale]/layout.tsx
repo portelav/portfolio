@@ -6,6 +6,7 @@ import { notFound } from "next/navigation";
 
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
+import { PaletteChooser } from "@/components/palette-chooser";
 import { ThemeScript } from "@/components/theme-script";
 import { getPathname } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
@@ -72,6 +73,7 @@ export default async function LocaleLayout({
           {children}
           <SiteFooter />
         </NextIntlClientProvider>
+        <PaletteChooser />
         <Analytics />
       </body>
     </html>

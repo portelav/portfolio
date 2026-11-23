@@ -96,7 +96,7 @@ export function ThemeToggle({
     <button
       type="button"
       onClick={toggleTheme}
-      className="no-js:hidden inline-flex items-center justify-center px-2 font-mono text-sm"
+      className="theme-toggle no-js:hidden inline-flex items-center justify-center px-2 font-mono text-sm"
     >
       <span className="light:hidden">
         <span className="sr-only">{toLightLabel}</span>
