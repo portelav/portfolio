@@ -66,7 +66,7 @@ export function ReescritaName({ label, className }: ReescritaNameProps) {
         y={cursor.y}
         width={cursor.width}
         height={cursor.height}
-        fill="var(--accent)"
+        fill="var(--brand)"
       />
     </svg>
   );

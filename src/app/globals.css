@@ -10,6 +10,7 @@
   --fg: #f2f2f0;
   --accent: #e3a33b;
   --line: #444448;
+  --brand: var(--accent);
 }
 
 [data-theme="light"] {
@@ -27,6 +28,7 @@
   --color-fg: var(--fg);
   --color-accent: var(--accent);
   --color-line: var(--line);
+  --color-brand: var(--brand);
 
   --font-*: initial;
   --font-sans: var(--font-red-hat-text), sans-serif;
@@ -480,4 +482,9 @@ html[data-reescrita] .header-name {
   .contact-icon:hover svg {
     transform: scale(1.15);
   }
+}
+
+/* Throwaway, with the palette chooser: a palette under test has one mode. */
+html[data-palette] .theme-toggle {
+  display: none;
 }

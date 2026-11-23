@@ -26,7 +26,7 @@ export function BrandName({ label, className }: BrandNameProps) {
         y={cursor.y}
         width={cursor.width}
         height={cursor.height}
-        fill="var(--accent)"
+        fill="var(--brand)"
       />
     </svg>
   );
