@@ -34,7 +34,7 @@ export function QuerUmSite() {
             <a
               key={button.key}
               href={button.href}
-              className={`inline-flex min-h-11 items-center justify-center px-5 font-mono transition-opacity duration-150 hover:opacity-70 ${
+              className={`ui-btn inline-flex min-h-11 items-center justify-center px-5 font-mono transition-opacity duration-150 hover:opacity-70 ${
                 index === 0 ? "bg-fg text-bg" : "border-fg border"
               }`}
             >

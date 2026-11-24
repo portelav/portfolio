@@ -156,7 +156,7 @@ export function CaseStudy({ id }: { id: CaseId }) {
                     alt={text(`${shot.key}PhoneAlt`)}
                     {...projectPhoneImageSize}
                     sizes="(min-width: 768px) 22vw, 45vw"
-                    className="border-line h-auto w-full border"
+                    className="ui-frame border-line h-auto w-full border"
                   />
                   <figcaption className={labelClassName}>
                     {text(shot.key)}
@@ -178,7 +178,7 @@ export function CaseStudy({ id }: { id: CaseId }) {
                       alt={text(`${shot.key}ComputerAlt`)}
                       {...caseComputerImageSize}
                       sizes="(min-width: 768px) 46vw, 92vw"
-                      className="border-line h-auto w-full border"
+                      className="ui-frame border-line h-auto w-full border"
                     />
                     <figcaption className={labelClassName}>
                       {text(shot.key)}

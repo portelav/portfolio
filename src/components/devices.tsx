@@ -85,7 +85,7 @@ export function Devices({ variant }: DevicesProps) {
             return (
               <li key={id} className="devices-step page-frame">
                 <div
-                  className={`devices-print border-line border ${computer ? "" : "is-phone"}`}
+                  className={`ui-frame devices-print border-line border ${computer ? "" : "is-phone"}`}
                 >
                   <picture>
                     {computer && (

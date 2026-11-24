@@ -92,7 +92,7 @@ export function ProjectMedia({
       )}
       <ViewTransition name={transitionName} share="morph" default="none">
         <div
-          className={`border-line relative border ${narrow ? "md:mx-auto md:w-[42.105%]" : ""}`}
+          className={`ui-frame border-line relative border ${narrow ? "md:mx-auto md:w-[42.105%]" : ""}`}
         >
           <picture key={`print-${choice}`}>
             {computer && !choice && (

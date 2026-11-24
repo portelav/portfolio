@@ -3,7 +3,7 @@ import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 
 const action =
-  "inline-flex min-h-11 items-center justify-center px-5 font-mono transition-opacity duration-150 hover:opacity-70";
+  "ui-btn inline-flex min-h-11 items-center justify-center px-5 font-mono transition-opacity duration-150 hover:opacity-70";
 
 // The end of the home page: one question and the two ways forward, to the
 // services and to the contacts (PRD, D79).
