@@ -2,7 +2,7 @@
 
 Site pessoal de Lucas Portela, estudante de Ciência da Computação em Maceió.
 
-**Estado:** em reconstrução do zero, com as seções em protótipo, ainda sem lançamento. Até lá, https://portelav.vercel.app continua mostrando a versão antiga, que não vem deste repositório.
+**No ar:** https://portelav.vercel.app. A nova direção visual e os textos novos entram aos poucos, no mesmo endereço.
 
 ## O que vem aí
 

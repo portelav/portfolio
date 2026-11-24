@@ -46,8 +46,6 @@ export async function generateMetadata({
         "x-default": pathFor(routing.defaultLocale),
       },
     },
-    // The provisional site stays out of search results until launch.
-    robots: { index: false, follow: false },
   };
 }
 

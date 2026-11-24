@@ -1,10 +1,10 @@
 # Roadmap
 
-Sem data fixa (PRD, D5). Todo o trabalho entra na `main` deste repositório, publicada em projeto próprio na Vercel. O endereço público só muda no lançamento (PRD, D21). Entrega grande passa pelo `/plan`; ajuste de tela ou de texto vai direto, conforme o `CLAUDE.md`.
+Sem data fixa (PRD, D5). Todo o trabalho entra na `main` deste repositório, publicada em `portelav.vercel.app` desde o lançamento (PRD, D115). Entrega grande passa pelo `/plan`; ajuste de tela ou de texto vai direto, conforme o `CLAUDE.md`.
 
 ## Feito
 
-Base técnica, direção "trabalho na primeira tela", contato e nota de privacidade, as três páginas de caso, site em páginas e aparelhos 3D. Planos em `tasks/`.
+Base técnica, direção "trabalho na primeira tela", contato e nota de privacidade, as três páginas de caso, site em páginas, aparelhos 3D e lançamento em `portelav.vercel.app` (D115). Planos em `tasks/`.
 
 ## Agora: nova direção (PRD, Rodada 16)
 
@@ -25,7 +25,7 @@ Nesta ordem, por escolha de Lucas:
 | Item | Critério de pronto |
 |---|---|
 | Currículo no site | Botão para o PDF no `/sobre`, nos dois idiomas, com o arquivo sem metadado |
-| Lançamento | Autorização de cada caso registrada e CI verde (D102). Web Analytics ligado, prévia de link pronta, `noindex` retirado, e `portelav.vercel.app` apontando para o projeto novo, conferido no painel da Vercel |
+| Prévia de link | Imagem própria para quando o endereço é colado no WhatsApp ou no LinkedIn |
 | Ferramentas de mídia | Aimg testado no Chrome e `exiftool` instalado, conforme o `CLAUDE.md` |
 | Domínio próprio | Depois do lançamento (D7) |
 
