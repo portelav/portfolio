@@ -1,8 +1,8 @@
 // Throwaway: the visual directions Lucas compares on the real site (PRD, D96
-// and D114). Each one brings a background color, a title font and a shape,
-// set in globals.css under html[data-palette]. Once one is chosen, it moves
-// into the tokens, and this file, the chooser and the pre-paint lines that
-// read it are removed.
+// and D114). Each one brings a background color, a title font and a shape;
+// title weight and shape live in globals.css under html[data-display] and
+// html[data-shape]. Once one is chosen, it moves into the tokens, and this
+// file, the chooser and the pre-paint lines that read it are removed.
 
 export type PaletteTest = {
   id: string;
@@ -14,22 +14,15 @@ export type PaletteTest = {
   line: string;
   // Today's amber, in the version that reads on this background.
   amber: string;
-  // CSS variable of the title font, from src/lib/fonts.ts.
-  display: string;
+  // Title font from src/lib/fonts.ts; empty keeps today's Red Hat Display.
+  display: "" | "plex";
+  // Shape of buttons and media frames; empty keeps today's.
+  shape: "" | "block";
 };
 
+// Variations on the yellow and blue direction, each changing one thing, so
+// Lucas can tell whether the color or the letters made the difference.
 export const paletteTests: PaletteTest[] = [
-  {
-    id: "caslon",
-    name: "Caslon",
-    mode: "dark",
-    bg: "#b82e1a",
-    fg: "#fbf1e1",
-    accent: "#ffd66b",
-    line: "#e07a66",
-    amber: "#f0b04a",
-    display: "--font-test-caslon",
-  },
   {
     id: "plex",
     name: "Plex",
@@ -39,29 +32,44 @@ export const paletteTests: PaletteTest[] = [
     accent: "#1a2be0",
     line: "#121212",
     amber: "#a8650a",
-    display: "--font-test-plex",
+    display: "plex",
+    shape: "block",
   },
   {
-    id: "mar",
-    name: "Mar",
+    id: "so-cor",
+    name: "Só a cor",
+    mode: "light",
+    bg: "#f2e14c",
+    fg: "#121212",
+    accent: "#1a2be0",
+    line: "#121212",
+    amber: "#a8650a",
+    display: "",
+    shape: "",
+  },
+  {
+    id: "so-letra",
+    name: "Só a letra",
     mode: "dark",
-    bg: "#0e5c4a",
-    fg: "#f6efe2",
-    accent: "#ffbc80",
-    line: "#3f8a76",
+    bg: "#0b0b0c",
+    fg: "#f2f2f0",
+    accent: "#e3a33b",
+    line: "#444448",
     amber: "#e3a33b",
-    display: "--font-test-bricolage",
+    display: "plex",
+    shape: "",
   },
   {
-    id: "violeta",
-    name: "Violeta",
+    id: "azul",
+    name: "Azul",
     mode: "dark",
-    bg: "#4a23d6",
-    fg: "#fff7ea",
-    accent: "#c8ff3d",
-    line: "#7d5ee6",
+    bg: "#1a2be0",
+    fg: "#fff8d6",
+    accent: "#f2e14c",
+    line: "#f2e14c",
     amber: "#f0b04a",
-    display: "--font-test-young",
+    display: "plex",
+    shape: "block",
   },
 ];
 
@@ -80,12 +88,13 @@ export function applyPalette(
   if (!p) return;
   d.dataset.palette = p.id;
   d.dataset.theme = p.mode;
+  d.dataset.display = p.display;
+  d.dataset.shape = p.shape;
   d.style.setProperty("--bg", p.bg);
   d.style.setProperty("--fg", p.fg);
   d.style.setProperty("--accent", p.accent);
   d.style.setProperty("--line", p.line);
   d.style.setProperty("--brand", logo === "amber" ? p.amber : p.accent);
-  d.style.setProperty("--font-red-hat-display", `var(${p.display})`);
   document
     .querySelector('meta[name="theme-color"]')
     ?.setAttribute("content", p.bg);

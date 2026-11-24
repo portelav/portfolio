@@ -110,7 +110,12 @@ export function PaletteChooser() {
           aria-pressed={!current}
           className="flex items-center justify-center"
         >
-          <Swatch bg="#0b0b0c" accent="#e3a33b" active={!current} />
+          <Swatch
+            bg="#0b0b0c"
+            accent="#e3a33b"
+            mono={false}
+            active={!current}
+          />
         </button>
         {paletteTests.map((item) => (
           <button
@@ -124,6 +129,7 @@ export function PaletteChooser() {
             <Swatch
               bg={item.bg}
               accent={item.accent}
+              mono={item.display === "plex"}
               active={item.id === palette}
             />
           </button>
@@ -161,27 +167,27 @@ export function PaletteChooser() {
   );
 }
 
+// The letter shows the title font: code letter or today's.
 function Swatch({
   bg,
   accent,
+  mono,
   active,
 }: {
   bg: string;
   accent: string;
+  mono: boolean;
   active: boolean;
 }) {
   return (
     <span
       aria-hidden="true"
-      className={`relative block size-8 border ${
+      className={`flex size-8 items-center justify-center border text-base font-semibold ${mono ? "font-mono" : "font-sans"} ${
         active ? "border-fg border-2" : "border-line"
       }`}
-      style={{ background: bg }}
+      style={{ background: bg, color: accent }}
     >
-      <span
-        className="absolute right-1 bottom-1 size-3"
-        style={{ background: accent }}
-      />
+      A
     </span>
   );
 }

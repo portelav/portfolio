@@ -489,58 +489,20 @@ html[data-palette] .theme-toggle {
   display: none;
 }
 
-/* Throwaway: title weight and shape of each visual direction under test
+/* Throwaway: title font and shape of each visual direction under test
  * (PRD, D114). The tokens come from src/lib/palette-test.ts. */
 html[data-palette] .ui-frame {
   overflow: hidden;
 }
 
-html[data-palette="caslon"] .font-display {
-  font-weight: 400;
-  letter-spacing: -0.01em;
-}
-
-html[data-palette="caslon"] .ui-btn {
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-}
-
-html[data-palette="caslon"] .ui-frame {
-  border-color: var(--fg);
-}
-
-html[data-palette="plex"] .font-display {
+html[data-display="plex"] .font-display {
+  font-family: var(--font-test-plex), monospace;
   font-weight: 600;
   letter-spacing: -0.05em;
 }
 
-html[data-palette="plex"] .ui-btn,
-html[data-palette="plex"] .ui-frame {
+html[data-shape="block"] .ui-btn,
+html[data-shape="block"] .ui-frame {
   border: 2px solid var(--fg);
   box-shadow: 6px 6px 0 var(--fg);
-}
-
-html[data-palette="mar"] .font-display {
-  font-weight: 800;
-  letter-spacing: -0.04em;
-}
-
-html[data-palette="mar"] .ui-btn {
-  border-radius: 999px;
-}
-
-html[data-palette="mar"] .ui-frame {
-  border: 0;
-  border-radius: 1.5rem;
-}
-
-html[data-palette="violeta"] .font-display {
-  font-weight: 400;
-  letter-spacing: -0.02em;
-}
-
-html[data-palette="violeta"] .ui-btn,
-html[data-palette="violeta"] .ui-frame {
-  border: 2px solid var(--fg);
-  border-radius: 0.75rem;
 }
