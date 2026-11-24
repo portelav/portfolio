@@ -139,7 +139,7 @@ Lucas revisou com o agente as regras do CLAUDE.md, do PRD e do `DESIGN.md`, e as
 - **D94.** A medida principal são os pedidos de orçamento, contados à mão. Visitas e o teste de 1 minuto ficam de apoio. Ajusta D19.
 - **D95.** A marca atual é o padrão, sem ser trava: muda quando Lucas pedir. Substitui D18.
 - **D96.** O site passa a ter um modo de cor só, e sai o seletor de tema. A paleta é refeita, e o destaque pode deixar de ser âmbar. O logo é decidido vendo as paletas no site, cada uma com o logo em âmbar e com o logo na cor nova. Substitui D25 e D31.
-- **D97.** Tom de voz: primeira pessoa, confiante, com fato ou número datado em cada afirmação, a parte de Lucas dita com clareza e uma decisão difícil ou um erro contado sem esconder. O curso aparece só no `/sobre`. Referência: o site do Vinicius. As palavras genéricas de agência continuam vetadas; "full stack" e "soluções" continuam liberadas (D59).
+- **D97.** Tom de voz: primeira pessoa, confiante, com fato ou número datado em cada afirmação, a parte de Lucas dita com clareza e uma decisão difícil ou um erro contado sem esconder. O curso aparece só no `/sobre`. As palavras genéricas de agência continuam vetadas; "full stack" e "soluções" continuam liberadas (D59).
 - **D98.** A lista "O que não fazer" do `DESIGN.md` vira recomendação: o agente avisa quando um pedido bater nela, mas ela não barra o pedido.
 - **D99.** Forma (raio, sombra, borda) fica em aberto até a nova direção. Tipografia, fontes e tamanhos ficam liberados.
 - **D100.** Motion e GSAP ficam liberados. A biblioteca entra quando uma animação concreta pedir, com ADR. Rolagem suave fica liberada. Desfoque e `mix-blend-mode` em movimento continuam liberados (D84), com a medição de fluidez como recomendação. Ajusta D56, D58 e D84.
