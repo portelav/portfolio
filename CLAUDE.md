@@ -21,7 +21,7 @@ Repositório: `portelav/portfolio` (público). Deploy: Vercel, em projeto própr
 
 ## Estado atual
 
-O site está na `main`, publicado em `portelav-site.vercel.app` e fora do índice dos buscadores. No endereço público, https://portelav.vercel.app, ainda está a versão antiga, que vem de outro repositório, privado, até o lançamento.
+O site foi lançado em 2026-11-24 (PRD, D115): a `main` está publicada em https://portelav.vercel.app, que também responde em `portelav-site.vercel.app`, e aberta aos buscadores. A versão antiga, de outro repositório, privado, saiu do ar.
 
 Em 2026-11-21 os documentos foram revistos (PRD, Rodada 16): clientes vêm primeiro, a paleta vai ser refeita em um modo só, a marca atual é o padrão sem ser trava, e Motion, GSAP e rolagem suave ficam liberados. A lista de trabalho está em `docs/ROADMAP.md`.
 
@@ -42,7 +42,7 @@ Onde está cada coisa:
 |---|---|
 | Local | `http://localhost:3000` |
 | Preview | URL da Vercel de cada branch e de cada PR |
-| Produção (`main`) | https://portelav-site.vercel.app até o lançamento. Depois, https://portelav.vercel.app |
+| Produção (`main`) | https://portelav.vercel.app, também em `portelav-site.vercel.app` |
 
 ## Stack
 

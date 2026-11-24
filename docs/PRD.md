@@ -37,7 +37,7 @@ Em teste (D103): uma landing para clientes, uma página para recrutadores e uma 
 
 ## 5. Escopo
 
-"Na `main`" quer dizer publicado em `portelav-site.vercel.app`, ainda fora do endereço público e do índice dos buscadores.
+"Na `main`" quer dizer publicado em `portelav.vercel.app`, que também responde em `portelav-site.vercel.app`.
 
 | Item | Estado | FDD |
 |---|---|---|
@@ -116,8 +116,8 @@ Graus de certeza:
 
 Exigidos (D102):
 
-- [ ] Autorização registrada, em `private/`, para cada caso publicado.
-- [ ] `lint`, `typecheck`, `build` e `gitleaks` verdes no CI.
+- [x] Autorização registrada, em `private/`, para cada caso publicado.
+- [x] `lint`, `typecheck`, `build` e `gitleaks` verdes no CI.
 
 Recomendados:
 
@@ -162,3 +162,7 @@ Confirmadas sem mudança: D3, D5, D7, D8, D9, D10, D11, D12, D14, D16, D17 (4º 
 
 - **D113.** A lista "O que evitar" do `DESIGN.md` fica com três avisos: degradê roxo, travessão no texto da interface, e barra de habilidade ou número sem fato. Ajusta D98.
 - **D114.** A paleta é escolhida junto com fonte e forma, em direções completas testadas no site real. Ajusta D96 e D99.
+
+### Rodada 18 (2026-11-24): lançamento
+
+- **D115.** O site é lançado antes da nova direção: a `main` passa a responder em `portelav.vercel.app` e sai o `noindex`. Direção visual, estrutura e textos novos entram depois, no mesmo endereço. Ajusta a ordem do roadmap.
