@@ -139,7 +139,7 @@ Lucas revisou com o agente as regras do CLAUDE.md, do PRD e do `DESIGN.md`, e as
 - **D94.** A medida principal são os pedidos de orçamento, contados à mão. Visitas e o teste de 1 minuto ficam de apoio. Ajusta D19.
 - **D95.** A marca atual é o padrão, sem ser trava: muda quando Lucas pedir. Substitui D18.
 - **D96.** O site passa a ter um modo de cor só, e sai o seletor de tema. A paleta é refeita, e o destaque pode deixar de ser âmbar. O logo é decidido vendo as paletas no site, cada uma com o logo em âmbar e com o logo na cor nova. Substitui D25 e D31.
-- **D97.** Tom de voz: primeira pessoa, confiante, com fato ou número datado em cada afirmação, a parte de Lucas dita com clareza e uma decisão difícil ou um erro contado sem esconder. O curso aparece só no `/sobre`. Referência: o site do Vinicius. As palavras genéricas de agência continuam vetadas; "full stack" e "soluções" continuam liberadas (D59).
+- **D97.** Tom de voz: primeira pessoa, confiante, com fato ou número datado em cada afirmação, a parte de Lucas dita com clareza e uma decisão difícil ou um erro contado sem esconder. O curso aparece só no `/sobre`. As palavras genéricas de agência continuam vetadas; "full stack" e "soluções" continuam liberadas (D59).
 - **D98.** A lista "O que não fazer" do `DESIGN.md` vira recomendação: o agente avisa quando um pedido bater nela, mas ela não barra o pedido.
 - **D99.** Forma (raio, sombra, borda) fica em aberto até a nova direção. Tipografia, fontes e tamanhos ficam liberados.
 - **D100.** Motion e GSAP ficam liberados. A biblioteca entra quando uma animação concreta pedir, com ADR. Rolagem suave fica liberada. Desfoque e `mix-blend-mode` em movimento continuam liberados (D84), com a medição de fluidez como recomendação. Ajusta D56, D58 e D84.
@@ -157,3 +157,8 @@ Lucas revisou com o agente as regras do CLAUDE.md, do PRD e do `DESIGN.md`, e as
 - **D112.** O fluxo completo de agentes vale só para entrega grande, e os documentos ficam leves, conforme o `CLAUDE.md`. Ajusta D13.
 
 Confirmadas sem mudança: D3, D5, D7, D8, D9, D10, D11, D12, D14, D16, D17 (4º período, passando ao 5º em 2027), D20, D21, D24, D26, D27, D36, D38, D40, D41, D44, D46, D47, D51, D54, D57, D59, D60, D63, D64, D65, D66, D67, D68, D69, D71, D73, D76, D81, D82, D83, D86, D88, D89, D90 e D91.
+
+### Rodada 17 (2026-11-24): direção visual
+
+- **D113.** A lista "O que evitar" do `DESIGN.md` fica com três avisos: degradê roxo, travessão no texto da interface, e barra de habilidade ou número sem fato. Ajusta D98.
+- **D114.** A paleta é escolhida junto com fonte e forma, em direções completas testadas no site real. Ajusta D96 e D99.

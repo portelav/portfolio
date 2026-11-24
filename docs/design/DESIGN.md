@@ -6,7 +6,7 @@ Onde este documento diz "retrato", ele descreve o que existe hoje no site, para 
 
 ## 1. Direção
 
-> TODO: personalidade do site e se a pegada de terminal continua (nome em letra de código, fonte mono em dado real). Decididas com Lucas na nova direção, junto com a paleta. Referências que Lucas apontou: o site do Vinicius, mais vivo; Kenji Lambert; Inspora; wowww.
+> TODO: personalidade do site e se a pegada de terminal continua (nome em letra de código, fonte mono em dado real). Decididas com Lucas na nova direção, junto com a paleta.
 
 Retrato: hoje o site é sóbrio, com fundo quase preto, um destaque só e fonte mono para datas, tags e rótulos.
 
@@ -102,7 +102,7 @@ Retrato. O seletor de tema sai quando a paleta de um modo só entrar (PRD, D96).
 
 ## 8. Tom de voz
 
-- Primeira pessoa, confiante e direta (PRD, D97). Referência: o site do Vinicius.
+- Primeira pessoa, confiante e direta (PRD, D97).
 - Cada afirmação vem com fato ou número datado. A parte de Lucas em cada caso é dita com clareza, e uma decisão difícil ou um erro é contado sem esconder. Nada é aumentado, e Lucas não se apresenta como sênior (PRD, D93).
 - O curso aparece só no `/sobre`, sem o período (PRD, D106).
 - Os dois idiomas têm o mesmo tom. O inglês é reescrito, não traduzido ao pé da letra.
@@ -110,12 +110,8 @@ Retrato. O seletor de tema sai quando a paleta de um modo só entrar (PRD, D96).
 
 ## 9. O que evitar
 
-Recomendação, não proibição (PRD, D98). O agente avisa quando um pedido bater num destes itens, e Lucas decide.
+Recomendação, não proibição (PRD, D98). O agente avisa quando um pedido bater num destes itens, e Lucas decide. Lista revista item por item em 2026-11-24 (PRD, D113).
 
-- Degradês e brilhos roxos ou azuis, acentos neon.
-- Inter como fonte padrão, Fraunces, Instrument Serif.
-- Três cards iguais lado a lado. Tudo centralizado.
-- Terminal ou painel falso em `div`.
+- Degradê roxo. Cor saturada e neon ficam liberados.
 - Travessão no texto da interface.
-- Rótulo em mono e caixa alta em cima de cada seção. Numeração de seção como "01 /". Pontinho de status decorativo.
-- Barras de habilidade, contadores de vaidade.
+- Barra de habilidade com porcentagem e número sem fato, como "1000+ cafés". Número real com data é prova e fica liberado (PRD, D97).
