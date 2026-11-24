@@ -157,3 +157,8 @@ Lucas revisou com o agente as regras do CLAUDE.md, do PRD e do `DESIGN.md`, e as
 - **D112.** O fluxo completo de agentes vale só para entrega grande, e os documentos ficam leves, conforme o `CLAUDE.md`. Ajusta D13.
 
 Confirmadas sem mudança: D3, D5, D7, D8, D9, D10, D11, D12, D14, D16, D17 (4º período, passando ao 5º em 2027), D20, D21, D24, D26, D27, D36, D38, D40, D41, D44, D46, D47, D51, D54, D57, D59, D60, D63, D64, D65, D66, D67, D68, D69, D71, D73, D76, D81, D82, D83, D86, D88, D89, D90 e D91.
+
+### Rodada 17 (2026-11-24): direção visual
+
+- **D113.** A lista "O que evitar" do `DESIGN.md` fica com três avisos: degradê roxo, travessão no texto da interface, e barra de habilidade ou número sem fato. Ajusta D98.
+- **D114.** A paleta é escolhida junto com fonte e forma, em direções completas testadas no site real. Ajusta D96 e D99.

@@ -110,12 +110,8 @@ Retrato. O seletor de tema sai quando a paleta de um modo só entrar (PRD, D96).
 
 ## 9. O que evitar
 
-Recomendação, não proibição (PRD, D98). O agente avisa quando um pedido bater num destes itens, e Lucas decide.
+Recomendação, não proibição (PRD, D98). O agente avisa quando um pedido bater num destes itens, e Lucas decide. Lista revista item por item em 2026-11-24 (PRD, D113).
 
-- Degradês e brilhos roxos ou azuis, acentos neon.
-- Inter como fonte padrão, Fraunces, Instrument Serif.
-- Três cards iguais lado a lado. Tudo centralizado.
-- Terminal ou painel falso em `div`.
+- Degradê roxo. Cor saturada e neon ficam liberados.
 - Travessão no texto da interface.
-- Rótulo em mono e caixa alta em cima de cada seção. Numeração de seção como "01 /". Pontinho de status decorativo.
-- Barras de habilidade, contadores de vaidade.
+- Barra de habilidade com porcentagem e número sem fato, como "1000+ cafés". Número real com data é prova e fica liberado (PRD, D97).

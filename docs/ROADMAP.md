@@ -12,7 +12,7 @@ Nesta ordem, por escolha de Lucas:
 
 | Item | Critério de pronto |
 |---|---|
-| 1. Paleta nova | 3 ou 4 paletas, em um modo só, mostradas no site de hoje, cada uma com o logo em âmbar e com o logo na cor nova. Lucas escolhe uma. Ela entra nos tokens com o contraste calculado, o seletor de tema sai, e o `DESIGN.md` registra a paleta (D96) |
+| 1. Direção visual | 3 ou 4 direções, em um modo só, mostradas no site de hoje, cada uma com cor viva no fundo, fonte de título e forma próprias, e com o logo em âmbar e na cor nova. Lucas escolhe uma. Ela entra nos tokens com o contraste calculado, o seletor de tema sai, e o `DESIGN.md` registra direção, paleta, fonte e forma (D96, D114) |
 | 2. Estrutura em teste | Landing em `/`, `/sobre` para recrutadores e uma página por caso, nos dois idiomas, com ordem das seções, menu e rodapé aprovados por Lucas (D103) |
 | 3. Textos novos | Abertura, casos, `/sobre` e Serviços reescritos no tom novo, frase por frase com Lucas, nos dois idiomas. Preço, trajetória e retrato decididos (D106 a D108) |
 | 4. Caso do método | Página de caso própria do AI-Driven Development, nos dois idiomas (D104) |
